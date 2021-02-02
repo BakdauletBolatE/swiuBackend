@@ -135,7 +135,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles_cdn'
 
 MEDIA_URL = '/mediafiles_cdn/'
 MEDIA_ROOT = BASE_DIR / 'mediafiles_cdn'
@@ -144,5 +143,4 @@ MEDIAFILES_DIRS = [
 ]
 STATICFILES_DIRS = [
     BASE_DIR / "static",
-    '/var/www/static/',
 ]
