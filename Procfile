@@ -1,1 +1,1 @@
-web: gunicorn Sciense.wsgi --log-file -
+web: gunicorn SwiuMain.wsgi --log-file -
