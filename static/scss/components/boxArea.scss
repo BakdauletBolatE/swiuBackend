@@ -1,0 +1,36 @@
+.box-area__row{
+    display: grid;
+    position: relative;
+    top:-2rem;
+    z-index: 10;
+    grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
+    grid-gap:2rem;
+
+    @media screen and (max-width:700px){
+        top:2rem;
+    }
+    
+}
+.box-area__item{
+    display: flex;
+    padding: 3.5rem 2rem 2rem;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    box-shadow: 0px 1.2rem 2.5rem rgb(0 0 0 / 7%);
+}
+.box-area__title{
+    color: rgb(24, 43, 73);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+}
+.box-area__description{
+    font-size: 1.4rem;
+    color: rgb(150, 150, 150);
+}
+.box-area__icon{
+    margin-right: 1rem;
+    width: 6rem;
+}

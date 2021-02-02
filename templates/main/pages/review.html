@@ -1,0 +1,12 @@
+{% extends 'layouts/app.html' %}
+{% load static %}
+{% block content %}
+    
+    <section >
+        <form class="review" action="{% url 'questionsView' %}" method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+        <button type="submit" class="review__btn">Отправить</button>
+        </form>
+    </section>
+{% endblock %}

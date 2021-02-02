@@ -1,0 +1,198 @@
+{% extends 'layouts/app.html' %}
+{% load static %}
+{% block content %}
+<section class="about-us-page">
+    <div class="container">
+        <div class="about-us-page__row">
+            <div class="about-us-page__sidebar">
+                <ul class="about-us-page__mainsidebar-list">
+                    <li class="about-us-page__litem about-us-page__litem--active">История университета</li>
+                    <li class="about-us-page__litem">Международный экспертный Совет</li>
+                    <li class="about-us-page__litem">Попечительский Совет</li>
+                    <li class="about-us-page__litem">Руководство университета</li>
+                    <li class="about-us-page__litem">Миссия и стратегия</li>
+                    <li class="about-us-page__litem">АККРЕДИТАЦИЯ</li>
+                </ul>
+            </div>
+            <div class="about-us-page__content">
+
+                <!-- История университета -->
+
+                <div class="about-us-page__item">
+                    <h2 class="about-us-page__title">
+                        ИСТОРИЯ
+                    </h2>
+                    <p class="about-us-page__p">
+                        <img class="about-us-page__imgfloat" src="{% static '/img/universtatic/univer-r/president.webp' %}" alt="">
+                        После распада СССР, когда на постсоветском пространстве стали появляться элементы рыночной экономики, в сфере образования начали создаваться вузы нового типа – негосударственные учебные заведения. В Казахстане стала применяться общепринятая в мировой практике идея функционирования современных, частных по форме собственности, университетов. Южно-Казахстанский педагогический университет (ЮКПУ) — один из первых негосударственных ВУЗов Казахстана (лицензия 00002). Биография вуза начинается с образования в 1992 году педагогического колледжа им. Ходжи Ахмеда Ясави. На базе колледжа был создан институт Востоковедения.С началом нового тысячелетия Казахстан стал постепенно становиться на ноги. Стабильное внутреннее общественно-политическое положение стимулировало экономический рост страны. Известно, что именно образование – ключевой фактор подъема интеллектуального потенциала и экономики страны. Совершенствовался и наш университет. Он рос и в связи с расширением, в 2000 году изменив свой статус, стал именоваться Южно-Казахстанским педагогическим университетом. Динамика развития всегда была положительной – из года в год укреплялся профессорско-преподавательский состав и материально-техническая база.
+                        Основателем и первым президентом ЮКПУ являлся – Юнусов Бахтияр Саидович (1954-2010 г.г.) – профессор, ученый-арабист, член-корреспондент Академии естественных наук РК и Международной Академии наук педагогического образования России, Почетный доктор университета «Танта» Арабской республики Египет, «Почетный работник образования РК», обладатель медали им. Ибрая Алтынсарина.</p>
+                </div>
+
+                 <!-- Конец История университета -->
+
+                  <!--  Международный экспертный Совет -->
+                <div class="about-us-page__item">
+                    <h2 class="about-us-page__title">
+                        Международный экспертный Совет
+                    </h2>
+                    <p class="about-us-page__p">Основная цель Международного совета Университета ИТМО, созданного в 2018 году – помощь в выработке стратегии по укреплению репутации Международного университета Silkway в международной образовательной среде. Основное внимание Совета уделяется правильному позиционированию SWIU на рынке международного образования и интеграции его в международный образовательный контекст.</p>
+                    <h3 class="about-us-page__title">Основные задачи Международного экспертного совета:</h3>
+                    <ul class="about-us-page__liststyle">
+                        <li class="about-us-page__listitem">Cодействие в разработке эффективной стратегии Международного Университета Silkway и международного продвижения;</li>
+                        <li class="about-us-page__listitem">консультирование по разработке стратегических инициатив и операционных мероприятий для эффективного международного продвижения;</li>
+                        <li class="about-us-page__listitem">содействие в выборе глобальных и региональных стратегических партнеров и заключении партнерских соглашений и договоров;</li>
+                        <li class="about-us-page__listitem">привлечение ведущих специалистов международного уровня, в том числе приглашенных профессоров, научных работников и преподавателей;</li>
+                        <li class="about-us-page__listitem">консультирование по укреплению конкурентных позиций университета в международных и национальных рейтингах.</li>
+                    </ul>
+                    <div class="employee">
+                        <div class="container">
+                            <div class="employee__row">
+                                {% for interStaff in intarnationalStaff %}
+                                <div class="employee__item">
+                                    <img class="employee__img" src="{{interStaff.img.url}}" alt="">
+                                    <div class="employee__text">
+                                        <div class="employee__name"><a class="employee__name" href="{% url 'stuffDetailView' interStaff.slug  %}">{{interStaff.name}}</a></div>
+                                        <div class="employee__country">{{interStaff.about}}</div>
+                                        <div class="employee__presidency">{{interStaff.adress}}</div>
+                                        
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>               
+                    </div>
+                </div>
+
+                 <!--  Конец Международный экспертный Совет -->
+
+
+                <div class="about-us-page__item">
+                    <h2 class="about-us-page__title">
+                       Попечительский Совет
+                    </h2>
+                    <p class="about-us-page__p">Попечительский совет Учреждения «Международный университет SILKWAY» – орган, являющийся формой коллегиального управления организацией образования, созданный в целях содействия развитию университета с учетом требований, предъявляемых обществом, государством, рынком труда.</p>
+                    <h3 class="about-us-page__title">Задачи Попечительского Совета:</h3>
+                    <ul class="about-us-page__liststyle">
+                        <li class="about-us-page__listitem">содействие в формировании стратегии и программ развития Университета и их реализации;</li>
+                        <li class="about-us-page__listitem">содействие в развитии научно-исследовательской, инновационной деятельности, формировании фундаментальных и прикладных научных разработок, развитии интеграции учебного и научного процессов в университете;</li>
+                        <li class="about-us-page__listitem">содействие в становлении и развитии международного, научного, технического и культурного сотрудничества Университета, требующего решения вопросов повышения квалификации специалистов, экспертно-консультационной деятельности;</li>
+                        <li class="about-us-page__listitem">содействие в трудоустройстве выпускников Университета совместно с Ассоциацией выпускников;</li>
+                        <li class="about-us-page__listitem">- содействие привлечению финансовых средств для реализации программ развития Университета;</li>
+                    </ul>
+                    <div class="employee">
+                        <div class="container">
+                            <div class="employee__row">
+                                <div class="employee__item">
+                                    <img class="employee__img" src="./img/universtatic/employes/1.png" alt="">
+                                    <div class="employee__text">
+                                        <div class="employee__name">Manuel António Cotão de Assunção</div>
+                                        <div class="employee__presidency">Экс - ректор университета Авейро</div>
+                                        <div class="employee__country">Португалия</div>
+                                    </div>
+                                </div>
+                                <div class="employee__item">
+                                    <img class="employee__img" src="./img/universtatic/employes/2.png" alt="">
+                                    <div class="employee__text">
+                                        <div class="employee__name">Manuel António Cotão de Assunção</div>
+                                        <div class="employee__presidency">Экс - ректор университета Авейро</div>
+                                        <div class="employee__country">Португалия</div>
+                                    </div>
+                                </div>
+                                <div class="employee__item">
+                                    <img class="employee__img" src="./img/universtatic/employes/3.png" alt="">
+                                    <div class="employee__text">
+                                        <div class="employee__name">Manuel António Cotão de Assunção</div>
+                                        <div class="employee__presidency">Экс - ректор университета Авейро</div>
+                                        <div class="employee__country">Португалия</div>
+                                    </div>
+                                </div>
+                                <div class="employee__item">
+                                    <img class="employee__img" src="./img/universtatic/employes/4.png" alt="">
+                                    <div class="employee__text">
+                                        <div class="employee__name">Manuel António Cotão de Assunção</div>
+                                        <div class="employee__presidency">Экс - ректор университета Авейро</div>
+                                        <div class="employee__country">Португалия</div>
+                                    </div>
+                                </div>
+                                <div class="employee__item">
+                                    <img class="employee__img" src="./img/universtatic/employes/5.png" alt="">
+                                    <div class="employee__text">
+                                        <div class="employee__name">Manuel António Cotão de Assunção</div>
+                                        <div class="employee__presidency">Экс - ректор университета Авейро</div>
+                                        <div class="employee__country">Португалия</div>
+                                    </div>
+                                </div>
+                                <div class="employee__item">
+                                    <img class="employee__img" src="./img/universtatic/employes/6.png" alt="">
+                                    <div class="employee__text">
+                                        <div class="employee__name">Manuel António Cotão de Assunção</div>
+                                        <div class="employee__presidency">Экс - ректор университета Авейро</div>
+                                        <div class="employee__country">Португалия</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>               
+                    </div>
+                </div>
+                <div class="about-us-page__item">
+                    <h2 class="about-us-page__title">
+                        Hey my name is bakdaulet
+                    </h2>
+                    <p class="about-us-page__p">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos necessitatibus nulla temporibus repudiandae maiores consequuntur ea earum molestiae vero deleniti esse, deserunt repellat suscipit maxime impedit incidunt nihil! Voluptatum, modi?</p>
+                    <p class="about-us-page__p">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos necessitatibus nulla temporibus repudiandae maiores consequuntur ea earum molestiae vero deleniti esse, deserunt repellat suscipit maxime impedit incidunt nihil! Voluptatum, modi?</p>
+                    <p class="about-us-page__p">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos necessitatibus nulla temporibus repudiandae maiores consequuntur ea earum molestiae vero deleniti esse, deserunt repellat suscipit maxime impedit incidunt nihil! Voluptatum, modi?</p>
+                </div>
+                <div class="about-us-page__item">
+                    <h2 class="about-us-page__title">
+                        Миссия и стратегия
+                    </h2>
+                    <div class="accordion">
+                        <div class="accordion__tab">
+                            <h4 class="accordion__title">Миссия</h4>
+                            <p class="accordion__content">Достойное образование для будущих профессионалов</p>
+                        </div>
+                        <div class="accordion__tab">
+                            <h4 class="accordion__title">Видение</h4>
+                            <div class="accordion__content">
+                                <ul class="about-us-page__liststyle">
+                                    <li class="about-us-page__listitem">Конкурентоспособный, устойчиво развивающийся региональный центр профессионального педагогического и гуманитарно-экономического образования, обеспечивающий высокое качество образования и подготовку высококвалифицированных специалистов, соответствующих новым потребностям общества и социально-экономического развития страны.</li>
+                                    <li class="about-us-page__listitem">Научно-методический центр педагогического образования, имеющий высокое признание на республиканском и региональном уровне.</li>
+                                    <li class="about-us-page__listitem">Базовый центр углубленной современной подготовки, переподготовки и повышения квалификации учителей, работников образования и социальной сферы.</li>
+                                    <li class="about-us-page__listitem">Обобщение и внедрение инновационных передовых технологий в рамках партнерства с организациями образования южного региона.</li>
+                                    <li class="about-us-page__listitem">- содействие привлечению финансовых средств для реализации программ развития Университета;</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="accordion__tab">
+                            <h4 class="accordion__title">Ценности</h4>
+                            <div class="accordion__content">
+                                <p>Основные ценности Университета заложены в его логотипе в качестве аббревиатуры SWIU. Здесь заключен основной призыв: «Be smart, well-doing, innovative, and unique» («Будь умным, добрым, инновационным и уникальным»).
+                                </p>
+                                <p>
+                                    Smart. Стремление к образованности, уму и повышению интеллектуальных способностей. Развитие научного мышления.
+Well – doing. Философия доброты и правильных поступков. Стремление к чистоте помыслов и честности.
+Innovative. Продвижение инновационности. Развитие инновационного мышления, применение новых инфокоммуникационных и образовательных технологий.
+Unique. Приветствие уникальности каждого студента и сотрудника Университета, поддержка креативности и нестандартных решений.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="accordion__tab">
+                            <h4 class="accordion__title">Стратегия развития Международного университета на 2019-2025 годы</h4>
+                            <div class="accordion__content">
+                                <ul class="about-us-page__liststyle">
+                                    <li class="about-us-page__listitem">Совершенствование системы управления университетом</li>
+                                    <li class="about-us-page__listitem">Подготовка конкурентоспособных специалистов.</li>
+                                    <li class="about-us-page__listitem"> Проведение научных исследований по актуальным вопросам непрерывного профессионального образования.</li>
+                                    <li class="about-us-page__listitem">Развитие внешних связей и академической мобильности для повышения конкурентоспособности университета.</li>
+                                    <li class="about-us-page__listitem">Модернизация и совершенствование воспитательной деятельности университета.</li>
+                                    <li class="about-us-page__listitem">. Развитие материально-технической базы университета</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

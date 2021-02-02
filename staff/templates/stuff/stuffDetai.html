@@ -1,0 +1,100 @@
+{% extends 'layouts/app.html' %}
+{% load static %}
+{% block content %}
+<section class="course">
+    <div class="container">
+        <div class="course__row">
+            <div class="course-detail">
+                <h1 class="course__main-title">
+                    {{stuff.name}}
+                </h1>
+                <div class="course__overviews">
+                    <div class="course-over-article">
+                        <h3>Должность:</h3>
+                        <p>{{stuff.position.name}}
+                        </p>
+                    </div>
+                    <div class="course-over-article">
+                        <h3>Почта:</h3>
+                        <p>{{stuff.email}}
+                        </p>
+                    </div>
+                    <div class="course-over-article">
+                        <h3>Номер:</h3>
+                        <p>{{stuff.phone}}
+                        </p>
+                    </div>
+                    <div class="course-over-article">
+                        <h3>Адрес:</h3>
+                        <p>{{stuff.adress}}
+                        </p>
+                    </div>
+                </div>
+                <div class="course__main-img">
+                    <img src="{{ stuff.img.url }}" alt="">
+                </div>
+                <div class="course__tab-list">
+                    <ul class="course-tab-btns">
+                        <li class="course-tab-btn course-tab-btn--active">О Преподавателе</li>
+                    </ul>
+                    <div class="course-tab-content">
+                        <h2 class="course-tab-title">
+                            {{stuff.name}}
+                        </h2>
+                        <p class="course-tab-description">
+                            {{stuff.about}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="course-sidebar">
+                <div class="main-sidebar">
+                    <h3 class="main-sidebar__title">
+                        Course Details
+                    </h3>
+                    <div class="main-sidebar__list">
+                        <div class="main-sidebar__item">
+                            <div>
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Start Date:</span>
+                            </div>
+                                <span>Aug 21,2020</span>
+                        </div>
+                       
+                        <div class="main-sidebar__item">
+                           <div><i class="fas fa-clock"></i><span>Duration:</span></div>
+                               <span>1 year</span>
+                        </div>
+                        <div class="main-sidebar__item">
+                            <div><i class="fas fa-globe-europe"></i><span>Language:</span></div>
+                                <span>English</span>
+                        </div>
+                        <div class="main-sidebar__item">
+                            <div><i class="fas fa-chevron-double-up"></i><span>Skill Level:</span></div>
+                                <span>Beginner</span>
+                        </div>
+                        <div class="main-sidebar__item">
+                            <div><i class="fas fa-graduation-cap"></i><span>Subject:</span></div>
+                                <span>Web</span>
+                        </div>
+                        <div class="main-sidebar__item">
+                           <div> <i class="fas fa-book"></i><span>Lectures:</span></div>
+                               <span>46</span>
+                        </div>
+                        <div class="main-sidebar__item">
+                            <div><i class="fas fa-bookmark"></i><span>Enrolled:</span></div>
+                                <span>333</span>
+                        </div>
+                        <div class="main-sidebar__item">
+                            <div><i class="fas fa-file-certificate"></i><span>Certification:</span></div>
+                                <span>YEs</span>
+                        </div>       
+                        <a class="btn"href="">Enroll Course</a>                           
+                   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

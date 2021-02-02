@@ -1,0 +1,238 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}">
+</head>
+<body>
+    <div class="slide-menu">
+        <div class="container">
+            <ul class="slide-menu__row">
+                <li class="slide-menu__item">
+                    <i class="slide-menu__item-i fad fa-university"></i>
+                    <span>Об университете</span>
+                </li>
+                <li class="slide-menu__item">
+                    <i class="slide-menu__item-i fad fa-folder-tree"></i>
+                    <span>Структура</span>
+                </li>
+                <li class="slide-menu__item">
+                    <i class="slide-menu__item-i fad fa-globe-asia"></i>
+                    <span>Интернациолизация</span>
+                </li>
+                <li class="slide-menu__item">
+                    <i class="slide-menu__item-i fad fa-laptop-house"></i>
+                    <span>Дистанционная оброзование</span>
+                </li>
+                <li class="slide-menu__item">
+                    <i class="slide-menu__item-i fad fa-telescope"></i>
+                    <span>Исследование</span>
+                </li>
+
+            </ul>
+        </div>
+        
+    </div>
+    <div class="page">
+
+        <header class="header">
+            <section class="top-bar">
+                <div class="container">
+                    <div class="top-bar__row">
+                        <div class="top-bar__right">
+                            <div class="top-bar__adress">
+                                <i class="fas green fa-map-marker-alt"></i>
+                                <span class="link">г.Шымкент, ул.Токаева 27. Главный корпус</span>
+                            </div>
+                            <div class="top-bar__que">
+                                <a class="link" href="{% url 'questionsView' %}">Хотите задать вопросы?</a>
+                            </div>
+                        </div>
+                        <div class="top-bar__left">
+                            <div class="social">
+                                <div>
+                                    <i class=" icon-c-w fab fa-twitter"></i>
+                                </div>
+                                <div>
+                                    <i class=" icon-c-w fab fa-facebook-square"></i>
+                                </div>
+                                <div>
+                                    <i class=" icon-c-w fab fa-instagram"></i>
+                                </div>
+                                <div>
+                                    <i class=" icon-c-w fab fa-vk"></i>
+                                </div>           
+                            </div>
+                            <div class="language">
+                                <p>English</p>
+                            </div>
+                            <div class="sign">
+                                <div class="login">
+                                    <i class="icon-c-w fas fa-user"></i>
+                                    <a class="link" href="">Login</a>
+                                </div>
+                                <div class="login">
+                                    <i class="icon-c-w fas fa-user-edit"></i>
+                                    <a class="link" href="">Register</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+            <section class="menu menu2">
+                <div class="container">
+                    <div class="menu__row menu__row2">
+                        <div class="logo-area__img">
+                            <a href="{% url 'index' %} "><img src="{% static 'img/logo_ru1.png' %}" alt=""></a>
+                        </div>
+                        <ul class="menu__list">
+                            <li class="menu__item"><a class="menu__link menu__link2" href="{% url 'aboutU' %}">Об университете</a>
+                                <ul class="sub-menu">
+                                    <li class="sub-menu__item"><a class="sub-menu__link" href="">История</a></li>
+                                    <li class="sub-menu__item"><a class="sub-menu__link" href="">Международный советный эксперт</a></li>
+                                    <li class="sub-menu__item"><a class="sub-menu__link" href="">Руководства университета</a></li>
+                                    <li class="sub-menu__item"><a class="sub-menu__link" href="">Аккредитация</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu__item"><a class="menu__link menu__link2" href="{% url 'facult' %}">Структура</a>
+                                <ul class="sub-menu">
+                                    <li class="sub-menu__item"><a class="sub-menu__link" href="">Факультеты</a></li>
+                                    <li class="sub-menu__item"><a class="sub-menu__link" href="">Фронт офис обучающимся</a></li>
+                                    <li class="sub-menu__item"><a class="sub-menu__link" href="">Руководства университета</a></li>
+                                    <li class="sub-menu__item"><a class="sub-menu__link" href="">Аккредитация</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu__item"><a class="menu__link menu__link2" href="">Интернациолизация</a>
+                                <ul class="sub-menu">
+                                    <li class="sub-menu__item"><a class="sub-menu__link" href="">Международое сотрудничество</a></li>
+                                    <li class="sub-menu__item"><a class="sub-menu__link" href="">Двухдиполомное оброзование</a></li>
+                                    <li class="sub-menu__item"><a class="sub-menu__link" href="">Руководства университета</a></li>
+                                    <li class="sub-menu__item"><a class="sub-menu__link" href="">Аккредитация</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu__item"><a class="menu__link menu__link2" href="">Дистанционная образование</a></li>
+                            <li class="menu__item"><a class="menu__link menu__link2" href="">Исследование</a></li>
+                            
+                        </ul>
+                        
+                    </div>
+                </div>
+            </section>
+            <section class="mob-menu">
+                <div class="container">
+                    <div class="mob-menu__row">
+                        <div class="logo">
+                            <img src="{% static 'img/logo_ru.png' %}" alt="">
+                        </div>
+                        <div class="burger">
+                            <i class="bur-c fas fa-bars"></i>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </section>
+            
+        </header>
+        
+        {% block content %}
+            
+        {% endblock %}
+        
+        <footer class="footer">
+            <section class="newsletter">
+                <div class="container">
+                    <div class="newsletter__row">
+                        <h2>Get The Latest News & Updates On Your Box
+                            Enter your Name
+                            </h2>
+                        <div class="newsletter__form">
+                            <input class="input__form" type="text" placeholder="Enter you name">
+                            <input class="input__form" type="text" placeholder="Enter you email">
+                            <a class="btn btn_to-f btn--dark-blue" href="">Subscribe</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+            <div class="container">
+                <div class="footer__row">
+                    <div class="footer__item">
+                        <img src="{% static 'img/logo_ru.png' %}" alt="">
+                        <p>Lorem ipsum dolor sit amet, consectet adipisicing elit. Saepe porro neque a nam null quos.  Adipisci eius unde magnam ad, nisi voluptates.</p>
+                        <div>
+                            <i class="fas icon-c-w fa-map-marker-alt"></i>
+                            <span>г.Шымкент, ул.Токаева 27. Главный корпус</span>
+                        </div>
+                        <div>
+                            <i class="icon-c-w fad fa-phone"></i>           
+                            <span>8(7252)536782</span>
+                        </div>
+                        <div>
+                            <i class="icon-c-w  fad fa-paper-plane"></i>     
+                            <span>ukpu_kaz@mail.ru</span>    
+                        </div>
+                        
+                    </div>
+                    <div class="footer__item">
+                        <h3>USEFULL links</h3>
+                        <p>Lorem ipsum dolor sit amet, consectet adipisicing elit. Saepe porro neque a nam null quos.  Adipisci eius unde magnam ad, nisi voluptates.</p>
+                        <div>
+                            <i class="fas icon-c-w fa-map-marker-alt"></i>
+                            <span>г.Шымкент, ул.Токаева 27. Главный корпус</span>
+                        </div>
+                        <div>
+                            <i class="icon-c-w fad fa-phone"></i>           
+                            <span>8(7252)536782</span>
+                        </div>
+                        <div>
+                            <i class="icon-c-w fad fa-paper-plane"></i>     
+                            <span>ukpu_kaz@mail.ru</span>    
+                        </div>
+                    </div>
+                    <div class="footer__item">
+                        <h3>USEFULL links</h3>
+                        <p>Lorem ipsum dolor sit amet, consectet adipisicing elit. Saepe porro neque a nam null quos.  Adipisci eius unde magnam ad, nisi voluptates.</p>
+                        <div>
+                            <i class="fas icon-c-w fa-map-marker-alt"></i>
+                            <span>г.Шымкент, ул.Токаева 27. Главный корпус</span>
+                        </div>
+                        <div>
+                            <i class="icon-c-w fad fa-phone"></i>           
+                            <span>8(7252)536782</span>
+                        </div>
+                        <div>
+                            <i class="icon-c-w fad fa-paper-plane"></i>     
+                            <span>ukpu_kaz@mail.ru</span>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <div class="footer2">
+            <div class="container">
+                <p>Copyright © 2020 SWIU</p>
+            </div>
+        </div>
+
+    </div>
+
+   
+
+<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script src="{% static './fontawesome/js/all.min.js' %}"></script>
+    <script src="{% static 'js/tab.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/accordian.js' %}"></script>
+</body>
+</html>

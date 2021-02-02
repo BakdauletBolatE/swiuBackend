@@ -1,0 +1,18 @@
+{% extends 'layouts/app.html' %}
+{% load static %}
+{% block content %}
+<div class="facult">
+    <div class="container">
+        <div class="facult__row">
+            {% for facult in facults %}
+            <div class="facult__item">
+                <img src="{{ facult.photo.url }}" alt="">
+                <div class="facult__text">
+                    <h3 class="facult__title"><div><a href="{% url 'facultDetailView' facult.slug  %}">{{facult.name}}</a></div></h3>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{%  endblock %}

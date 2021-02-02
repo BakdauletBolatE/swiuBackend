@@ -1,0 +1,22 @@
+{% extends 'layouts/app.html' %}
+{% load static %}
+{% block content %}
+<div class="facult">
+    <div class="container">
+        <div class="facult__main-title">
+            <h2 class="about-us__title" >{{facult.name}}</h2>
+            <p class="about-us__desciption">{{facult.description}}</p>
+        </div>
+        <div class="facult__row">
+            {% for department in departments %}
+            <div class="facult__item">
+                <img src="{{ department.img.url }}" alt="">
+                <div class="facult__text">
+                    <h3 class="facult__title"><div><a href="{% url 'departmentDetailView' department.slug %}">{{department.name}}</a></div></h3>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{%  endblock %}

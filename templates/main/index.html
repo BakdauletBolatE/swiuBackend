@@ -1,0 +1,286 @@
+{% extends 'layouts/app.html' %}
+{% load static %}
+{% block content %}
+            
+<div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide bg">
+            <img class="swiper-slide__img" src="{% static 'img/1593617345.jpeg' %}" alt="">
+            <div class="swiper-slide__text">
+                <div class="container">
+                    <h3>SILKWAY Международный университет 1992</h3>
+                    <h2 class="mt-1">Достойное образование для будущих профессионалов</h2>
+                    <div class="mt-3">
+                        <a class="btn" href="">Наши факультеты</a>
+                        <a class="btn btn--dark-blue" href="">Связаться</a>
+                    </div>     
+                </div>
+            </div>
+      </div>
+      <div class="swiper-slide bg">
+        <img class="swiper-slide__img" src="{% static 'img/unnamed.jpg' %}" alt="">
+        <div class="swiper-slide__text">
+            <div class="container">
+                <h3>Достойное образование для будущих профессионало</h3>
+                <h2 class="mt-1">SILKWAY Международный университет 1922</h2>
+                <div class="mt-3">
+                    <a class="btn" href="">Наши факультеты</a>
+                    <a class="btn btn--dark-blue" href="">Связаться</a>
+                </div>     
+            </div>
+        </div>
+  </div>
+      
+    </div>
+    
+  
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  
+    <!-- If we need scrollbar -->
+    
+  </div>
+
+<section class="box-area">
+    <div class="container">
+        <div class="box-area__row">
+            <article class="box-area__item">
+                <div class="box-area__icon">
+                    <i style="color:rgb(255, 111, 111); font-size: 6rem;" class="fad fa-chevron-double-up"></i>
+                </div>
+                <div class="box-area__text">
+                    <h3 class="box-area__title">Популярные ОП</h3>
+                    <p class="box-area__description">Лучшие оброзовательные программы</p>
+                </div>
+            </article>
+            <article class="box-area__item">
+                <div class="box-area__icon">
+                    <i style="color:rgb(132, 71, 156); font-size: 6rem;" class="fad fa-book"></i>
+                </div>
+                <div class="box-area__text">
+                    <h3 class="box-area__title">Современная библиотека</h3>
+                    <p class="box-area__description">Лучшие оброзовательные программы библиотека</p>
+                </div>
+            </article>
+            <article class="box-area__item">
+                <div class="box-area__icon">              
+                    <i  style="color:rgb(44, 151, 234); font-size: 6rem;" class="fad fa-file-certificate"></i>
+                </div>
+                <div class="box-area__text">
+                    <h3 class="box-area__title">Квалифицированные специалисты</h3>
+                    <p class="box-area__description">Лучшие оброзовательные программы</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="about-us mt-7">
+    <div class="container">
+        <div class="about-us__row">
+            <div class="about-us__img">
+                <img src="{% static '/img/about-1.jpg' %}" alt="">
+                <img class="about-us-a" src="{% static '/img/about-1.jpg' %}" alt="">
+            </div>
+            <div class="about-us__text">
+                <h2 class="about-us__title">
+                    We Have Experienced Professionals & We Do Our Best To Achieve Your Goal. Your Happiness Is Our First Priority.
+                </h2>
+                <p class="about-us__desciption">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis error ut provident vel repellendus nihil atque possimus aliquam, mollitia tempora neque voluptate debitis illum veniam.Numquam blanditiis dignissimos laboriosam illum ut officia.
+Nam aperiam autem nesciunt perferendis id. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas nulla sequi pariatur quam animi ipsum molestias assumenda cumque.
+                </p>
+                <div class="about-us__box">
+                    <div class="about-us__box-item">
+                        <h2 class="about-us__number orange">
+                            970+
+                        </h2>
+                        <p class="about-us__box-text">Happy Students</p>
+                    </div>
+                    <div class="about-us__box-item">
+                        <h2 class="about-us__number purple">
+                            130+
+                        </h2>
+                        <p class="about-us__box-text">Teachers</p>
+                    </div>
+                    <div class="about-us__box-item">
+                        <h2 class="about-us__number blue">
+                            130+
+                        </h2>
+                        <p class="about-us__box-text">Courses</p>
+                    </div>
+                </div>
+                <a class="btn about-us__btn mt-5" href="">Read more</a>
+            </div>
+        </div>
+    </div>
+    
+</section>
+
+<section class="testimonial-area">
+    <div class="container">
+        <div class="testimonial-area__row">
+            <h2 class="testimonial-area__title">Lets See What Our Valuable Students Think About Us. Their Testimonials.</h2>
+            
+                <!-- Slider main container -->
+                <div class="swiper-container2">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    {% for quote in quotes %}
+                    <div class="swiper-slide">           
+                        <div class="testimonial-area__item">
+                            <div class="testimonial-area__text">
+                                <h3>{{ quote.title }}</h3>
+                                <p>{{ quote.description }}</p>
+                            </div>
+                            <div class="testimonial-area__writer">
+                                <img src="{{ quote.img.url }}" alt="">
+                                <div>
+                                    <h2>{{quote.author}}</h2>
+                                <p>Президент</p>
+                                </div>    
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    
+
+                    </div>
+                    <!-- If we need pagination -->
+                    <div class="swiper-pagination"></div>
+
+                </div>
+         
+            
+        </div>
+    </div>
+</section>
+
+<section class="news-area">
+    <div class="container">
+        <div class="news-area__title">
+            <h2>Lets See What We Can Show To You Our Useful Blog Article Post.</h2>
+        </div>
+        <div class="news">
+            <div class="news__item">
+                <div class="news__img">
+                    <img src="{% static 'img/universtatic/news1.jpeg' %}" alt="">
+                </div>
+                <div class="news__content">
+                    <div class="news__header">
+                        <span>28 Қаңтар</span>
+                        <h3 class="news__title">Выпускникам Международного университета SILKWAY!.</h3>
+                    </div>
+                    <div class="news__body">
+                        <p>Онлайн-семинар по трудоустройству будет организован выпускниками нашего университета и кафедрой «Экономики и бизнеса». На тему «Трудоустройство выпускников экономических специальностей университета в условиях СOVID 19»</p>
+                    </div>
+                    <div class="news__footer">
+                        <div class="news__footer-item">
+                            <i class="far fa-user"></i>
+                            <span>Swiu</span>
+                        </div>
+                        <div class="news__footer-item">
+                            <i class="far fa-comments"></i>
+                            <span>39</span>
+                        </div>
+                        <div class="news__footer-item">
+                            <i class="far fa-heart"></i>
+                            <span>16</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="news__item">
+                <div class="news__img">
+                    <img src="img/universtatic/news2.jpeg" alt="">
+                </div>
+                <div class="news__content">
+                    <div class="news__header">
+                        <span>14 Қаңтар</span>
+                        <h3 class="news__title">Об организации весеннего семестра 2020-2021 учебного года</h3>
+                    </div>
+                    <div class="news__body">
+                        <p>Lorem ipsum dolor sit amet consecte adipisicing elit. Quisquam excepturi eum necessitatibus.</p>
+                        
+                    </div>
+                    <div class="news__footer">
+                        <div class="news__footer-item">
+                            <i class="far fa-user"></i>
+                            <span>Jhon</span>
+                        </div>
+                        <div class="news__footer-item">
+                            <i class="far fa-comments"></i>
+                            <span>39</span>
+                        </div>
+                        <div class="news__footer-item">
+                            <i class="far fa-heart"></i>
+                            <span>16</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="news__item">
+                <div class="news__img">
+                    <img src="img/about-1.jpg" alt="">
+                </div>
+                <div class="news__content">
+                    <div class="news__header">
+                        <span>25 Mar</span>
+                        <h3 class="news__title">Libero nulla illo quam iure reiciendis maxime.</h3>
+                    </div>
+                    <div class="news__body">
+                        <p>Lorem ipsum dolor sit amet consecte adipisicing elit. Quisquam excepturi eum necessitatibus.</p>
+                    </div>
+                    <div class="news__footer">
+                        <div class="news__footer-item">
+                            <i class="fas fa-user"></i>
+                            <span>Jhon</span>
+                        </div>
+                        <div class="news__footer-item">
+                            <i class="fas fa-comments"></i>
+                            <span>39</span>
+                        </div>
+                        <div class="news__footer-item">
+                            <i class="fas fa-heart"></i>
+                            <span>16</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="news__item">
+                <div class="news__img">
+                    <img src="img/about-1.jpg" alt="">
+                </div>
+                <div class="news__content">
+                    <div class="news__header">
+                        <span>25 Mar</span>
+                        <h3 class="news__title">Libero nulla illo quam iure reiciendis maxime.</h3>
+                    </div>
+                    <div class="news__body">
+                        <p>Lorem ipsum dolor sit amet consecte adipisicing elit. Quisquam excepturi eum necessitatibus.</p>
+                    </div>
+                    <div class="news__footer">
+                        <div class="news__footer-item">
+                            <i class="fas fa-user"></i>
+                            <span>Jhon</span>
+                        </div>
+                        <div class="news__footer-item">
+                            <i class="fas fa-comments"></i>
+                            <span>39</span>
+                        </div>
+                        <div class="news__footer-item">
+                            <i class="fas fa-heart"></i>
+                            <span>16</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
