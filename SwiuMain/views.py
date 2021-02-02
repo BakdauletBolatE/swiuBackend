@@ -8,7 +8,7 @@ def index(request):
     context = {
         'quotes':quotes,
     }
-    return render(request,'Main/index.html',context)
+    return render(request,'main/index.html',context)
 
 def aboutUs(request):
     intarnationalStaff = Staff.objects.filter(staffCat_id=1)
@@ -16,7 +16,7 @@ def aboutUs(request):
     context = {
         'intarnationalStaff':intarnationalStaff,
     }
-    return render(request,'Main/pages/about-us.html', context)
+    return render(request,'main/pages/about-us.html', context)
 
 def facultView(request):
 
