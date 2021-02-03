@@ -22,7 +22,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = '+v6-04zu!l#h&+p4f(u^un@(+^u0oa$ew2nfs4w5_m=rb=41$d'
+
 
 
 
@@ -30,7 +31,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['swiu.herokuapp.com']
+ALLOWED_HOSTS = ['195.210.47.65']
+
 
 
 # Application definition
@@ -50,7 +52,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -80,27 +81,22 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'SwiuMain.wsgi.application'
 
-DB_NAME = os.environ.get('DB_NAME')
-DB_PASSWORD = os.environ.get('DB_PASSWORD')
-DB_HOST = os.environ.get('DB_HOST')
-DB_USER = os.environ.get('DB_USER')
+]
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': DB_NAME,
-        'USER': DB_USER,
-        'PASSWORD': DB_PASSWORD,
-        'HOST': DB_HOST,
-        'PORT':'5432'
+        'NAME': 'sb',
+        'USER': 'bbb',
+        'PASSWORD': 'baguvix123F,
+        'HOST': 'localhost',
+        'PORT':''
     }
 }
 
-import dj_database_url
-db = dj_database_url.config()
-DATABASES['default'].update(db)
+
 
 
 # Password validation
@@ -140,12 +136,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles_cdn'
+STATIC_ROOT = BASE_DIR / 'static'
 
-MEDIA_URL = '/mediafiles_cdn/'
-MEDIA_ROOT = BASE_DIR / 'mediafiles_cdn'
+MEDIA_URL = '/static/'
+MEDIA_ROOT = BASE_DIR / 'static'
 MEDIAFILES_DIRS = [
-    BASE_DIR / 'mediafiles_cdn',
+    BASE_DIR / 'static',
 ]
 STATICFILES_DIRS = [
     BASE_DIR / "static",
