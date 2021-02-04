@@ -12,7 +12,11 @@ SECRET_KEY = '+v6-04zu!l#h&+p4f(u^un@(+^u0oa$ew2nfs4w5_m=rb=41$d'
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['195.210.47.65']
+
+if DEBUG:
+    ALLOWED_HOSTS = ['*']
+else:
+    ALLOWED_HOSTS = ['195.210.47.65', 'localhost']
 
 
 
