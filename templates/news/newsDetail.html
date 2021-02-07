@@ -1,0 +1,69 @@
+{% extends 'layouts/app.html' %}
+{% load static %}
+{% block title %}
+{{post.title}}
+{% endblock %}
+{% block content %}
+<section class="course">
+    <div class="container">
+        <div class="course__row">
+            <div class="course-detail">
+                <h1 class="course__main-title">
+                    {{post.title}}
+                </h1>
+                <div class="course__overviews">
+                    <div class="course-over-article">
+                        <h3>Лайки</h3>
+                        <p>{{post.likes.count}}
+                        </p>
+                    </div>
+                    <div class="course-over-article">
+                        <h3>Коментарий</h3>
+                        <p>{{post.post_com.count}}
+                        </p>
+                    </div>
+                    <div class="course-over-article">
+                        <h3>Просмотры</h3>
+                        <p>{{page.count}}
+                        </p>
+                    </div>
+                </div>
+                <div class="course__tab-list">
+                    <ul class="course-tab-btns">
+                        <li class="course-tab-btn course-tab-btn--active">{{post.created_at}}</li>
+                        <li class="course-tab-btn course-tab-btn--active">Коментарий</li>
+                    </ul>
+                    <div class="course-tab-content">
+                        <h2 class="course-tab-title">
+                            {{post.title}}
+                        </h2>
+                        <p class="course-tab-description">
+                            {{post.description}}
+                        </p>
+                        <div class="course__main-img">
+                            <img src="{{post.post_img.first.img.url}}" alt="">
+                        </div>
+                    </div>
+                    <div class="course-tab-content">
+                        {% for com in post.post_com.all %}
+                        <div class="mt-5">
+                            <h2 class="course-tab-title">
+                                {{com.description}}
+                            </h2>
+                            <p class="course-tab-description">
+                                {{com.author}}
+                            </p>
+                        </div>
+                        {% endfor %}
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="course-sidebar">
+                
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -4,7 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    
+    <link rel="shortcut icon" href="{% static 'photo.png'  %}" type="image/png">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -73,6 +78,15 @@
                                 <p>English</p>
                             </div>
                             <div class="sign">
+                                {% if request.user.is_authenticated %}
+                                <div class="login">
+                                    <i class="icon-c-w fas fa-user"></i>
+                                    <a class="link" href="">{{request.user.username}}</a>
+                                    <h2>
+                                
+                                    </h2>
+                                </div>
+                                {% else %}
                                 <div class="login">
                                     <i class="icon-c-w fas fa-user"></i>
                                     <a class="link" href="">Login</a>
@@ -81,6 +95,7 @@
                                     <i class="icon-c-w fas fa-user-edit"></i>
                                     <a class="link" href="">Register</a>
                                 </div>
+                                {% endif %}
                             </div>
                         </div>
                         
@@ -119,7 +134,7 @@
                                 </ul>
                             </li>
                             <li class="menu__item"><a class="menu__link menu__link2" href="">Дистанционная образование</a></li>
-                            <li class="menu__item"><a class="menu__link menu__link2" href="">Исследование</a></li>
+                            <li class="menu__item"><a class="menu__link menu__link2" href="{% url 'libindex' %}">Библиотека</a></li>
                             
                         </ul>
                         

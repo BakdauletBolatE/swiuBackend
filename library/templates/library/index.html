@@ -1,0 +1,20 @@
+{% extends 'layouts/app.html' %}
+
+{% block content %}
+<div class="container">
+    <div >
+        <h2 style="text-align: center;" class="about-us-page__title">Труды преподавательско-профессорского состава</h2>
+    </div>
+    <div class="employee__row">
+    {%for year in years %}
+    <div class="employee__item">
+        <img class="employee__img" src="{{year.img.url}}" alt="">
+        <div class="employee__text">
+            <div class="employee__presidency"><a class="employee__presidency" href="{% url 'bookList' year.slug  %}">{{year.year}}</a></div>     
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
+    
+{% endblock %}

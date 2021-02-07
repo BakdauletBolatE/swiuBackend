@@ -1,0 +1,151 @@
+{% extends 'layouts/app.html' %}
+
+{% block content %}
+<script src="//mozilla.github.io/pdf.js/build/pdf.js"></script>
+
+    <div class="book-container">
+        <div class="book">
+            <div class="book-sidebar">
+                <div class="book-sidebar-item">
+                    <img class="book-sidebar__img" src="{{book.img.url}}" alt="">
+                    <h2 class="book-sidebar__title">{{book.name}}</h2>
+                    <p class="book-sidebar__year"><a class="book-sidebar__year" href="{% url 'bookList' book.year.slug %}">{{book.year.year}}</a> жыл</p>
+                    <p class="book-sidebar__edu">
+                        <span><a href="{% url 'eduProgDetailView' book.eduProgram.slug %}">Оку Бакдарламасы</a> </span>{{book.eduProgram.name}}
+                    </p>
+                    <p class="book-sidebar__description">{{book.description}}</p>
+                </div>
+                <div class="book-sidebar-item">
+                    <p class="book-sidebar__more">
+                        Еще рекомендаций от нас:
+                    </p>
+                    <a class="book-sidebar__btn" href="">
+                        Ә.Е. Сихымбаев, Ф.Ж. Жаббарова Биохимия пәні бойынша зертханалық сабақтарға арналған әдістемелік нұсқаулық.
+                    </a>
+                    <a class="book-sidebar__btn" href="">
+                        Ә.Е. Сихымбаев, Ф.Ж. Жаббарова Биохимия пәні бойынша зертханалық сабақтарға арналған әдістемелік нұсқаулық.
+                    </a>
+                </div>
+            </div>
+            <div class="book-content">
+                <div class="book-content__btns">
+                    <div id="back" class="book-content__item">
+                        <i class="far fa-chevron-circle-left"></i>
+                        <span></span>
+                    </div>
+                    <div id="next" class="book-content__item">
+                        <span></span>
+                        <i class="far fa-chevron-circle-right"></i>
+                    </div>
+                    <div id="scaleUp" class="book-content__item">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                    <div id="scaleDown" class="book-content__item">
+                        <i class="fas fa-search-minus"></i>
+                    </div>
+                </div>
+                <canvas id="the-canvas"></canvas>
+            </div>
+        </div>
+    </div>  
+
+    <script>
+        var url = "{{book.pdffile.url}}"
+
+        // Loaded via <script> tag, create shortcut to access PDF.js exports.
+        var pdfjsLib = window['pdfjs-dist/build/pdf'];
+
+        // The workerSrc property shall be specified.
+        pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js';
+
+
+        const back = document.getElementById("back");
+        const next = document.getElementById("next");
+        const scaleUp = document.getElementById("scaleUp");
+        const scaleDown = document.getElementById("scaleDown");
+        const nextCount = next.firstElementChild;
+        const backCount = back.lastElementChild;
+
+
+
+
+
+        var loadingTask = pdfjsLib.getDocument(url);
+        loadingTask.promise.then(function(pdf) {
+        
+        // Fetch the first page
+        let pageNumber = 1;
+        let scaleC = 1.5;
+        let canvas = document.getElementById('the-canvas');
+        let context = canvas.getContext('2d');
+
+        
+            
+            let maxPage = pdf._transport._numPages;
+            function render() {
+                pdf.getPage(pageNumber).then(function(page) {
+                    console.log('Page loaded');
+                let viewport = page.getViewport({scale: scaleC});
+                
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+                let renderContext = {
+                    canvasContext: context,
+                    viewport: viewport
+                };
+                nextCount.innerHTML = "/ "+maxPage;
+                backCount.innerHTML = pageNumber+"  ";
+                page.render(renderContext);
+                
+            });
+            }
+
+            render()
+
+            back.addEventListener('click',()=>{
+                if (pageNumber <= 1){
+                    console.log("Вы находитесь в первом варианте")
+                }
+                else{
+                    pageNumber -= 1;
+                    render()
+                }
+            });
+            next.addEventListener('click',()=>{
+                if (pageNumber >= maxPage){
+                    console.log("Максимальное количество"+maxPage)
+                }
+                else{
+                    pageNumber += 1;
+                    render()
+                }
+            });
+
+            scaleUp.addEventListener('click',()=>{
+                if (scaleC >= 2){
+                    console.log("Максимальное количество"+maxPage)
+                }
+                else{
+                    scaleC += 0.2;
+                    render()
+                }
+            });
+            scaleDown.addEventListener('click',()=>{
+                if (scaleC <= 0.8){
+                    console.log("Максимальное количество"+maxPage)
+                }
+                else{
+                    scaleC -= 0.2;
+                    render()
+                }
+            });
+
+
+        }, function (reason) {
+        // PDF loading error
+        console.error(reason);
+        });
+    </script>
+
+
+{% endblock %}

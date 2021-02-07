@@ -10,7 +10,7 @@ SECRET_KEY = '+v6-04zu!l#h&+p4f(u^un@(+^u0oa$ew2nfs4w5_m=rb=41$d'
 
 
 
-DEBUG = False
+DEBUG = True
 
 
 if DEBUG:
@@ -31,7 +31,8 @@ INSTALLED_APPS = [
     'faculties',
     'departments',
     'staff',
-    'news'
+    'news',
+    'library'
 ]
 
 MIDDLEWARE = [

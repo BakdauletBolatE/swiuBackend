@@ -26,6 +26,7 @@ urlpatterns = [
     path('departments/',include('departments.urls')),
     path('stuff/',include('staff.urls')),
     path('creative/',include('news.urls')),
+    path('library/',include('library.urls')),
     path('admin/', admin.site.urls),
 ] 
 

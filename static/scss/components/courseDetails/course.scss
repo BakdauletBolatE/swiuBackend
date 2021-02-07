@@ -5,6 +5,10 @@
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-gap:4rem;
+
+    @media screen and (max-width:700px){
+        grid-template-columns: 1fr;
+    }
 }
 .course__main-title{
     color: rgb(24, 43, 73);
@@ -37,15 +41,7 @@
         font-weight: 500;    
     }
 }
-.course__main-img{
-    width: 100%;
-    border-radius: 0.5rem;
-    overflow: hidden;
-    & img{
-        width: 100%;
-    }
-    margin-bottom: 4rem;
-}
+
 .course-tab-btns{
     display: flex;
     display: inline-block;
@@ -95,7 +91,14 @@
 .course-tab-description{
     font-size: 1.5rem;
     color: rgb(102, 102, 102);
-    line-height: 2.5rem
+    line-height: 2.5rem;
+}
+.course__main-img{
+    width: 100%;
+    float: left;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-bottom: 4rem;
 }
 
 

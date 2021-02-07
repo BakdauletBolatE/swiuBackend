@@ -1,6 +1,10 @@
 {% extends 'layouts/app.html' %}
 {% load static %}
+{% block title %}
+Международный Университет SILKWAY
+{% endblock %}
 {% block content %}
+
             
 <div class="swiper-container">
     <!-- Additional required wrapper -->
@@ -21,6 +25,7 @@
       </div>
       <div class="swiper-slide bg">
         <img class="swiper-slide__img" src="{% static 'img/unnamed.jpg' %}" alt="">
+        
         <div class="swiper-slide__text">
             <div class="container">
                 <h3>Достойное образование для будущих профессионало</h3>
@@ -163,124 +168,197 @@ Nam aperiam autem nesciunt perferendis id. Lorem ipsum dolor sit, amet consectet
 <section class="news-area">
     <div class="container">
         <div class="news-area__title">
-            <h2>Lets See What We Can Show To You Our Useful Blog Article Post.</h2>
+            <h2>Последние новости университета SILKWAY</h2>
         </div>
         <div class="news">
+            {% for post in posts %}
             <div class="news__item">
                 <div class="news__img">
-                    <img src="{% static 'img/universtatic/news1.jpeg' %}" alt="">
+                    <img src="{{post.post_img.first.img.url}}" alt="">
                 </div>
                 <div class="news__content">
                     <div class="news__header">
-                        <span>28 Қаңтар</span>
-                        <h3 class="news__title">Выпускникам Международного университета SILKWAY!.</h3>
+                        <span>{{ post.created_at }}</span>
+                        <h3 class="news__title"><a class="news__title" href="{% url 'postDetailView' post.slug %}">{{ post.title}}</a></h3>
                     </div>
                     <div class="news__body">
-                        <p>Онлайн-семинар по трудоустройству будет организован выпускниками нашего университета и кафедрой «Экономики и бизнеса». На тему «Трудоустройство выпускников экономических специальностей университета в условиях СOVID 19»</p>
+                        <p>{{post.description}}</p>
                     </div>
                     <div class="news__footer">
                         <div class="news__footer-item">
                             <i class="far fa-user"></i>
-                            <span>Swiu</span>
+                            <span>{{post.author}}</span>
                         </div>
-                        <div class="news__footer-item">
-                            <i class="far fa-comments"></i>
-                            <span>39</span>
-                        </div>
-                        <div class="news__footer-item">
-                            <i class="far fa-heart"></i>
-                            <span>16</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="news__item">
-                <div class="news__img">
-                    <img src="img/universtatic/news2.jpeg" alt="">
-                </div>
-                <div class="news__content">
-                    <div class="news__header">
-                        <span>14 Қаңтар</span>
-                        <h3 class="news__title">Об организации весеннего семестра 2020-2021 учебного года</h3>
-                    </div>
-                    <div class="news__body">
-                        <p>Lorem ipsum dolor sit amet consecte adipisicing elit. Quisquam excepturi eum necessitatibus.</p>
                         
-                    </div>
-                    <div class="news__footer">
-                        <div class="news__footer-item">
-                            <i class="far fa-user"></i>
-                            <span>Jhon</span>
+                        <div class="comment news__footer-item">
+                            <input type="hidden" value="{{post.slug}}">
+                                <i class="none-click far fa-comments"></i>
+                                <input type="hidden" value="{{post.slug}}">
+                                <span class="none-click">{{ post.post_com.count }}</span>
+                            
+                            <div class="news__comment hide">
+                                <input class="comment_title review__form" placeholder="Пишите свой коммент">
+                                <input value="{{post.slug}}" class="comment_url" type="hidden">
+                                <button class="btn comment_btn">Отправить</button>
+                                <ul class="lastComments">
+                                    
+                                </ul>
+                            </div>
                         </div>
-                        <div class="news__footer-item">
-                            <i class="far fa-comments"></i>
-                            <span>39</span>
-                        </div>
-                        <div class="news__footer-item">
-                            <i class="far fa-heart"></i>
-                            <span>16</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="news__item">
-                <div class="news__img">
-                    <img src="img/about-1.jpg" alt="">
-                </div>
-                <div class="news__content">
-                    <div class="news__header">
-                        <span>25 Mar</span>
-                        <h3 class="news__title">Libero nulla illo quam iure reiciendis maxime.</h3>
-                    </div>
-                    <div class="news__body">
-                        <p>Lorem ipsum dolor sit amet consecte adipisicing elit. Quisquam excepturi eum necessitatibus.</p>
-                    </div>
-                    <div class="news__footer">
-                        <div class="news__footer-item">
-                            <i class="fas fa-user"></i>
-                            <span>Jhon</span>
-                        </div>
-                        <div class="news__footer-item">
-                            <i class="fas fa-comments"></i>
-                            <span>39</span>
-                        </div>
-                        <div class="news__footer-item">
-                            <i class="fas fa-heart"></i>
-                            <span>16</span>
+                        <div class="news__footer-item ">       
+                                <input type="hidden" value="{{post.slug}}">
+                                <button class="like_btn" type="submit"><i class="none-click far fa-heart"></i></button>            
+                            <span class="none-click">{{ post.likes.count }}</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="news__item">
-                <div class="news__img">
-                    <img src="img/about-1.jpg" alt="">
-                </div>
-                <div class="news__content">
-                    <div class="news__header">
-                        <span>25 Mar</span>
-                        <h3 class="news__title">Libero nulla illo quam iure reiciendis maxime.</h3>
-                    </div>
-                    <div class="news__body">
-                        <p>Lorem ipsum dolor sit amet consecte adipisicing elit. Quisquam excepturi eum necessitatibus.</p>
-                    </div>
-                    <div class="news__footer">
-                        <div class="news__footer-item">
-                            <i class="fas fa-user"></i>
-                            <span>Jhon</span>
-                        </div>
-                        <div class="news__footer-item">
-                            <i class="fas fa-comments"></i>
-                            <span>39</span>
-                        </div>
-                        <div class="news__footer-item">
-                            <i class="fas fa-heart"></i>
-                            <span>16</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
+<script>
+    const mainsiteurl = "swiu.online"
+    const likeBtn = document.querySelectorAll('.like_btn');
+    likeBtn.forEach(e=>{
+        e.addEventListener('click',btn=>{
+            btn = btn.target;
+            if (btn.classList.contains('like_btn')){
+                var url = btn.previousElementSibling.value;
+                var likeCount = btn.nextElementSibling;
+                let myData = {
+                    'slug':url,
+                    'session_key':"{{request.session.session_key}}"
+                }
+                fetch(mainsiteurl+"/creative/post/like",{
+                    method:"POST",
+                    headers: {
+                        "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+                        "X-CSRFToken": "{{csrf_token}}"
+                    },
+                    body: JSON.stringify(myData)
+                })
+                .then(function (data) {
+                console.log('Request succeeded with JSON response', data);
+                })
+                .then(view)
+                .catch(function (error) {
+                    console.log('Request failed', error);
+                });
+                }
+                function view(){
+                    fetch(mainsiteurl+"/creative/post/likecount/"+url)
+                    .then(response => response.json())
+                    .then(likes => likesf(likes))
 
+                    function likesf(datalike){
+                        const dataliker = datalike;
+                        likeCount.innerHTML = dataliker.like
+                    }
+
+                }
+
+                
+        });
+    });
+    const comment = document.querySelectorAll('.comment')
+    comment.forEach(com=>{
+        com.addEventListener('click',(com)=>{
+            com = com.target;
+            if (com.classList.contains('comment')){
+                changer = com.lastElementChild;
+                changer.classList.toggle('hide');
+                url = com.firstElementChild.value;
+                lastComments = changer.lastElementChild;
+                fetch(mainsiteurl+'/creative/comments/'+url)
+                .then(response => response.json())
+                .then(commits => view(commits))
+
+                function view(data){
+                    data = data.comments;
+                    lastComments.innerHTML = "";
+                    data.forEach(e=>{
+                        li = document.createElement('li');
+                        li.innerHTML = e.author+": "+e.description;
+                        lastComments.append(li)
+                    });
+                    
+                }
+               
+            }
+        })
+    })
+
+    
+
+    const btn = document.querySelectorAll('.comment_btn')
+
+    btn.forEach((e)=>{
+        e.addEventListener('click',(com)=>{
+            com = com.target
+            let lastComments = com.nextElementSibling;
+            let url = com.previousElementSibling.value;
+            let count = com.parentElement.previousElementSibling;
+            let desciption = com.previousElementSibling.previousElementSibling.value;
+            console.log(count);
+
+            let myData = {
+                'slug': url,
+                'desciption':desciption
+            }
+
+            fetch(mainsiteurl+'/creative/comments/add', {
+            method: 'post',
+            credentials: 'same-origin', 
+            headers: {
+                "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+                "X-CSRFToken": "{{csrf_token}}"
+            },
+            body: JSON.stringify(myData)
+            })
+            .then(function (data) {
+                console.log('Request succeeded with JSON response', data);
+            })
+            .then(view)
+            .catch(function (error) {
+                console.log('Request failed', error);
+            });
+
+            function view(){
+                li = document.createElement('li');
+                li.innerHTML = "{{request.user.username}}"+": "+myData.desciption;
+                lastComments.append(li);
+                desciption.value = "";
+                a = parseInt(count.innerHTML);
+                count.innerHTML = a + 1;
+            }
+
+        })
+    });
+
+
+
+
+
+  
+
+//   fetch('http://127.0.0.1:8000/creative/comments/add', {
+//     method: 'post',
+//     credentials: 'same-origin', 
+//     headers: {
+//       "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+//       "X-CSRFToken": "{{csrf_token}}"
+//     },
+//     body: JSON.stringify(myData)
+//   })
+//   .then(function (data) {
+//     console.log('Request succeeded with JSON response', data);
+//   })
+//   .catch(function (error) {
+//     console.log('Request failed', error);
+//   });
+//         fetch('http://127.0.0.1:8000/creative/comments/')
+//   .then(response => response.json())
+//   .then(commits => console.log(commits));
+</script>
 {% endblock %}

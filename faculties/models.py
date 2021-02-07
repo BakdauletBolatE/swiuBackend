@@ -15,3 +15,6 @@ class Facult(models.Model):
         verbose_name = "Факультет"
         verbose_name_plural = "Факультеты"
 
+
+
+

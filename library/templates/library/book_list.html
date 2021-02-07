@@ -1,0 +1,26 @@
+{% extends 'layouts/app.html' %}
+
+{% block content %}
+<div class="container">
+    <div >
+        <h2 style="text-align: center;" class="about-us-page__title">Труды преподавательско-профессорского состава {{year.year}}</h2>
+    </div>
+    <div class="grid-with-text">
+        {% for book in books %}
+        <div class="grid-with-text__item">
+            <img class="grid-with-text__img" src="{{ book.poster.url }}"/>
+            <div class="grid-with-text__text">
+                <h3 class="grid-with-text__title"><a class="grid-with-text__title" href="{% url 'bookDetail' book.slug %}">{{book.name}}</a></h3>
+                <p class="grid-with-text__desc">{{ book.description}}</p>
+                <div class="grid-with-text__span">
+                    <div class="grid-with-text__span-i">Год: {{book.year.year}}</div>
+                    <div class="grid-with-text__span-i"><span>ОП: </span>{{book.eduProgram.name}}</div>
+                </div>
+            </div>       
+        </div>
+        {% endfor %}
+    </div>  
+</div>
+
+
+{% endblock %}
