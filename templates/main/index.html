@@ -218,10 +218,11 @@ Nam aperiam autem nesciunt perferendis id. Lorem ipsum dolor sit, amet consectet
     </div>
 </section>
 <script>
-    const mainsiteurl = "https://swiu.online"
+    // const mainsiteurl = "127.0.0.1:8000"
     const likeBtn = document.querySelectorAll('.like_btn');
     likeBtn.forEach(e=>{
         e.addEventListener('click',btn=>{
+           
             btn = btn.target;
             if (btn.classList.contains('like_btn')){
                 var url = btn.previousElementSibling.value;
@@ -230,7 +231,7 @@ Nam aperiam autem nesciunt perferendis id. Lorem ipsum dolor sit, amet consectet
                     'slug':url,
                     'session_key':"{{request.session.session_key}}"
                 }
-                fetch(mainsiteurl+"/creative/post/like",{
+                fetch("/creative/post/like",{
                     method:"POST",
                     headers: {
                         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
@@ -247,7 +248,7 @@ Nam aperiam autem nesciunt perferendis id. Lorem ipsum dolor sit, amet consectet
                 });
                 }
                 function view(){
-                    fetch(mainsiteurl+"/creative/post/likecount/"+url)
+                    fetch("/creative/post/likecount/"+url)
                     .then(response => response.json())
                     .then(likes => likesf(likes))
 
@@ -270,7 +271,7 @@ Nam aperiam autem nesciunt perferendis id. Lorem ipsum dolor sit, amet consectet
                 changer.classList.toggle('hide');
                 url = com.firstElementChild.value;
                 lastComments = changer.lastElementChild;
-                fetch(mainsiteurl+'/creative/comments/'+url)
+                fetch('/creative/comments/'+url)
                 .then(response => response.json())
                 .then(commits => view(commits))
 
@@ -307,7 +308,7 @@ Nam aperiam autem nesciunt perferendis id. Lorem ipsum dolor sit, amet consectet
                 'desciption':desciption
             }
 
-            fetch(mainsiteurl+'/creative/comments/add', {
+            fetch('/creative/comments/add', {
             method: 'post',
             credentials: 'same-origin', 
             headers: {

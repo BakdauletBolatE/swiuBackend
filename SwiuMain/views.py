@@ -6,7 +6,9 @@ from news.decoretors import counted
 
 @counted
 def index(request):
-    
+    if not request.session or not request.session.session_key:
+        request.session.save()
+        
     quotes = Quote.objects.all()[:3]
     posts = Post.objects.order_by('-created_at').all()[:3]
     context = {
