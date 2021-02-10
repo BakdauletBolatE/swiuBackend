@@ -10,13 +10,13 @@ SECRET_KEY = '+v6-04zu!l#h&+p4f(u^un@(+^u0oa$ew2nfs4w5_m=rb=41$d'
 
 
 
-DEBUG = True
+DEBUG = False
 
 
 if DEBUG:
     ALLOWED_HOSTS = ['*']
 else:
-    ALLOWED_HOSTS = ['195.210.47.65', 'localhost']
+    ALLOWED_HOSTS = ['192.168.32.76', 'localhost','swiu.online']
 
 
 
@@ -110,17 +110,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-if DEBUG:
-    STATIC_DIR = os.path.join(BASE_DIR, 'static')
-    STATICFILES_DIRS = [
+
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [
         STATIC_DIR,
     ]
-else:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
-    STATICFILES_FINDERS = (
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
+STATICFILES_FINDERS = (
         'django.contrib.staticfiles.finders.FileSystemFinder',
         'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    )
+)
 
 MEDIA_URL = '/media/'
 
