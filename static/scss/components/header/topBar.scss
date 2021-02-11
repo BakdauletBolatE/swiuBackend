@@ -18,6 +18,7 @@
 .top-bar__right,.top-bar__left{
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
 }
 .top-bar__adress{
     padding: 1rem 1.5rem;
@@ -28,4 +29,27 @@
 .link{
     text-decoration: none;
     color:$white;
+}
+.language{
+    height: 100%;
+
+    & select{
+        display: block;
+        border:none;
+        width: 100%; /* от ширины блока div */
+        background: none; /* убираем фон */
+        padding:0.75rem 2rem;
+        border-radius: 3px;/* скругление полей формы */
+        -webkit-appearance: none;/* Chrome */
+        -moz-appearance: none;/* Firefox */
+        appearance: none;/* убираем дефолнтные стрелочки */
+        font-family: inherit;/* наследует от родителя */
+        font-size: inherit;
+        text-transform: uppercase;
+        color: rgb(255, 255, 255);
+    }
+    & option{
+    
+        color: rgb(0, 0, 0);
+    }
 }

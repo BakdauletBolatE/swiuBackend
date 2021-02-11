@@ -1,0 +1,33 @@
+{% extends 'layouts/app.html' %}
+{% load static %}
+{% load i18n %} 
+{% load static i18n %}
+
+{% block title %}
+{{ page.title }}
+{% endblock %}
+{% block content %}
+
+
+
+
+<!-- Swiper -->
+    <div class="container">
+
+      <h2 class="about-us-page__title mt-3">{{page.title}}</h2>
+      <p class="about-us-page__p mb-3">{% autoescape off %}{{page.content}}{% endautoescape %} </p>
+      <div id="animated-thumbnials" class="mt-3 gallery_grid">
+        {% for photo in page.pageImages.all %}
+          <a class="gallery_img" href="{{photo.img.url}}" >
+            <img src="{{photo.img.url}}" alt="">
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+    
+
+
+
+
+
+{% endblock %}

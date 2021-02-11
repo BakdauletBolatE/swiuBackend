@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Department,ActivityDepartment,EducationalPrograms
 from staff.models import Staff
+from faculties.models import PageCategory
 
 
 def departmentDetailView(request,url):
@@ -12,18 +13,21 @@ def departmentDetailView(request,url):
 
     staffEdus = Staff.objects.filter(department=department)
 
+    pageCats = PageCategory.objects.all()
 
 
     context = {
         'department':department,
         'activityDepartments':activityDepartments,
         'eduPros':eduPros,
-        'staffEdus':staffEdus
+        'staffEdus':staffEdus,
+        'pageCats':pageCats,
     }
 
     return render(request,'departments/departmentDetail.html',context)
 
 def eduProgramDetail(request, url):
+    pageCats = PageCategory.objects.all()
     
     eduProgram = EducationalPrograms.objects.get(slug=url)
 
@@ -32,6 +36,7 @@ def eduProgramDetail(request, url):
     context = {
         'eduStuffs':eduStuffs,
         'eduProgram':eduProgram,
+        'pageCats':pageCats,
     }
 
     return render(request,'departments/eduprogramDetail.html',context)

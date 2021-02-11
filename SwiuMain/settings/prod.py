@@ -22,6 +22,7 @@ else:
 
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -34,11 +35,13 @@ INSTALLED_APPS = [
     'news',
     'library'
 ]
+INSTALLED_APPS += ('django_summernote', )
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -65,7 +68,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'SwiuMain.wsgi.application'
-
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 
 DATABASES = {
@@ -96,7 +99,19 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LANGUAGE_CODE = 'ru'
+LANGUAGE_CODE = 'kk'
+
+gettext = lambda s: s
+
+LANGUAGES = (
+    ('ru', gettext('Russia')),
+    ('en',gettext('English')),
+    ('kk',gettext('Kazakhstan')),
+)
+
+LOCALE_PATHS = [
+    BASE_DIR / 'locale'
+]
 
 TIME_ZONE = 'UTC'
 

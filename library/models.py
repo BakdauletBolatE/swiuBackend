@@ -11,6 +11,10 @@ class Year(models.Model):
     def __str__(self):
         return f"Год :{self.year}"
 
+    class Meta:
+        verbose_name = 'Год для Библиотеки'
+        verbose_name_plural = "Год для Библиотеки"
+
 
 class Book(models.Model):
 
@@ -26,6 +30,10 @@ class Book(models.Model):
 
     def __str__(self):
         return f"Книгу {self.name} сделали {self.author.name}"
+
+    class Meta:
+        verbose_name = 'Библиотека'
+        verbose_name_plural = "Библиотеки"
 
 
 

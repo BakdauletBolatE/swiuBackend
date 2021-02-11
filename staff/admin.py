@@ -1,19 +1,20 @@
 from django.contrib import admin
+from modeltranslation.admin import TranslationAdmin
 from .models import *
 # Register your models here.
 
-class PositionAdmin(admin.ModelAdmin):
+class PositionAdmin(TranslationAdmin):
     prepopulated_fields = {"slug": ("name",)}
 
 admin.site.register(Position,PositionAdmin)
 
-class StaffCatAdmin(admin.ModelAdmin):
+class StaffCatAdmin(TranslationAdmin):
     prepopulated_fields = {"slug": ("name",)}
     list_display = ('id', 'name')
     
 admin.site.register(StaffCat,StaffCatAdmin)
 
-class StaffAdmin(admin.ModelAdmin):
+class StaffAdmin(TranslationAdmin):
     list_display = ('id', 'name','staffCat')
     prepopulated_fields = {"slug": ("name",)}
     

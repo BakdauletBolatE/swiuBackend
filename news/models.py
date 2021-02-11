@@ -1,6 +1,6 @@
 from django.db import models
 from django.conf import settings
-from datetime import datetime
+from django.utils import timezone
 
 # Create your models here.
 
@@ -12,11 +12,24 @@ class Post(models.Model):
     slug = models.SlugField(unique=True)
     description = models.TextField('Описание поста')
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,default=0)
-    created_at = models.DateTimeField('Время',default=datetime.now())
+    created_at = models.DateTimeField('Время',default=timezone.now)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Пост'
+        verbose_name_plural = "Посты"
 
 class Like(models.Model):
     post = models.ForeignKey(Post,related_name="likes",  on_delete=models.CASCADE)
     user = models.CharField(max_length=255)
+
+    
+
+    class Meta:
+        verbose_name = 'Лайк'
+        verbose_name_plural = "Лайки"
 
 
 
@@ -24,10 +37,24 @@ class PostImages(models.Model):
     img = models.ImageField('Изображения',upload_to='Posts/Images')
     post = models.ForeignKey(Post,related_name="post_img", on_delete=models.CASCADE,default=0)
 
+    def __str__(self):
+        return self.post.title
+
+    class Meta:
+        verbose_name = 'Фотография поста'
+        verbose_name_plural = "Фотографий поста"
+
 class PostComments(models.Model):
     description = models.TextField('Описание')
     post = models.ForeignKey(Post,related_name='post_com',on_delete=models.CASCADE)
     author = models.CharField('Автор',max_length=255)
+
+    def __str__(self):
+        return self.author
+
+    class Meta:
+        verbose_name = 'Коментарий поста'
+        verbose_name_plural = "Коментарий поста"
 
 class Quote(models.Model):
 
@@ -39,6 +66,10 @@ class Quote(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        verbose_name = 'Цитата'
+        verbose_name_plural = "Цитаты"
+
 class Questions(models.Model):
 
     title = models.CharField('Заголовок вопроса',max_length=255)
@@ -48,7 +79,18 @@ class Questions(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        verbose_name = 'Вопрос'
+        verbose_name_plural = "Вопросы"
+
 class PageHit(models.Model):
     url = models.CharField(max_length=255,unique=True)
     count = models.PositiveIntegerField(default=0)
+
+    def __str__(self):
+        return self.count
+
+    class Meta:
+        verbose_name = 'Просмотры страницы'
+        verbose_name_plural = "Просмотры страницы"
     

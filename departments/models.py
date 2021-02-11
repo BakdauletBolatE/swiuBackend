@@ -25,6 +25,10 @@ class EducationalProgramsCat(models.Model):
 
     def __str__(self):
         return self.name
+    
+    class Meta:
+        verbose_name = "Категория оброзовательных программам"
+        verbose_name_plural = "Категорий оброзовательных программам"
 
 class EducationalPrograms(models.Model):
     name = models.CharField('Название кафедры',max_length=255)

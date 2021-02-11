@@ -1,7 +1,8 @@
 {% extends 'layouts/app.html' %}
+{% load i18n %} 
 {% load static %}
 {% block title %}
-Международный Университет SILKWAY
+{% trans "SILKWAY Халықаралық университеті" %}
 {% endblock %}
 {% block content %}
 
@@ -11,28 +12,29 @@
     <div class="swiper-wrapper">
       <!-- Slides -->
       <div class="swiper-slide bg">
-            <img class="swiper-slide__img" src="{% static 'img/1593617345.jpeg' %}" alt="">
+            <img class="swiper-slide__img" src="{% static 'img/2.jpg' %}" alt="">
             <div class="swiper-slide__text">
                 <div class="container">
-                    <h3>SILKWAY Международный университет 1992</h3>
-                    <h2 class="mt-1">Достойное образование для будущих профессионалов</h2>
+                    <h3> {% translate "SILKWAY Халықаралық университеті 1992" %}</h3>
+                    <h2 class="mt-1">{% trans 'Болашақ мамандарға лайықты білім беру' %}</h2>
+                    <!-- <h2 class="mt-1">Достойное образование для будущих профессионалов</h2> -->
                     <div class="mt-3">
-                        <a class="btn" href="">Наши факультеты</a>
-                        <a class="btn btn--dark-blue" href="">Связаться</a>
+                        <a class="btn" href="">{% trans 'Біздің факультеттер' %}</a>
+                        <a class="btn btn--dark-blue" href="">{% trans 'Байланыс' %}</a>
                     </div>     
                 </div>
             </div>
       </div>
       <div class="swiper-slide bg">
-        <img class="swiper-slide__img" src="{% static 'img/unnamed.jpg' %}" alt="">
+        <img class="swiper-slide__img" src="{% static 'img/1.jpeg' %}" alt="">
         
         <div class="swiper-slide__text">
             <div class="container">
-                <h3>Достойное образование для будущих профессионало</h3>
-                <h2 class="mt-1">SILKWAY Международный университет 1922</h2>
+                <h3>{% trans 'Болашақ мамандарға лайықты білім беру' %}</h3>
+                <h2 class="mt-1">{% trans 'SILKWAY Халықаралық университеті 1922 ж' %}</h2>
                 <div class="mt-3">
-                    <a class="btn" href="">Наши факультеты</a>
-                    <a class="btn btn--dark-blue" href="">Связаться</a>
+                    <a class="btn" href="">{% trans 'Біздің факультеттер' %}</a>
+                    <a class="btn btn--dark-blue" href="">{% trans 'Байланыс' %}</a>
                 </div>     
             </div>
         </div>
@@ -57,8 +59,8 @@
                     <i style="color:rgb(255, 111, 111); font-size: 6rem;" class="fad fa-chevron-double-up"></i>
                 </div>
                 <div class="box-area__text">
-                    <h3 class="box-area__title">Популярные ОП</h3>
-                    <p class="box-area__description">Лучшие оброзовательные программы</p>
+                    <h3 class="box-area__title">{% trans 'Танымал ОП' %}</h3>
+                    <p class="box-area__description">{% trans 'Үздік білім беру бағдарламалары' %}</p>
                 </div>
             </article>
             <article class="box-area__item">
@@ -66,8 +68,8 @@
                     <i style="color:rgb(132, 71, 156); font-size: 6rem;" class="fad fa-book"></i>
                 </div>
                 <div class="box-area__text">
-                    <h3 class="box-area__title">Современная библиотека</h3>
-                    <p class="box-area__description">Лучшие оброзовательные программы библиотека</p>
+                    <h3 class="box-area__title">{% trans 'Заманауи кітапхана' %}</h3>
+                    <p class="box-area__description">{% trans 'Үздік білім беру бағдарламалары' %}</p>
                 </div>
             </article>
             <article class="box-area__item">
@@ -75,8 +77,8 @@
                     <i  style="color:rgb(44, 151, 234); font-size: 6rem;" class="fad fa-file-certificate"></i>
                 </div>
                 <div class="box-area__text">
-                    <h3 class="box-area__title">Квалифицированные специалисты</h3>
-                    <p class="box-area__description">Лучшие оброзовательные программы</p>
+                    <h3 class="box-area__title">{% trans 'Білікті мамандар' %}</h3>
+                    <p class="box-area__description">{% trans 'Үздік білім беру бағдарламалары' %}</p>
                 </div>
             </article>
         </div>
@@ -87,38 +89,42 @@
     <div class="container">
         <div class="about-us__row">
             <div class="about-us__img">
-                <img src="{% static '/img/about-1.jpg' %}" alt="">
-                <img class="about-us-a" src="{% static '/img/about-1.jpg' %}" alt="">
+                <img src="{% static '/img/swiumainpage.jpg' %}" alt="">
+                <img class="about-us-a" src="{% static '/img/img2.jpg' %}" alt="">
+                <a class="about-us-btnn" href="https://www.youtube.com/watch?v=_p-EjQdhGIU"><i class="orange fas about-us-svg fa-play"></i></a>
             </div>
             <div class="about-us__text">
                 <h2 class="about-us__title">
-                    We Have Experienced Professionals & We Do Our Best To Achieve Your Goal. Your Happiness Is Our First Priority.
+                    {% trans 'S SILKWAY Университетін таңдаудың 5 себебі 🤩🌏 сондықтан кеттік🚀' %}
                 </h2>
                 <p class="about-us__desciption">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis error ut provident vel repellendus nihil atque possimus aliquam, mollitia tempora neque voluptate debitis illum veniam.Numquam blanditiis dignissimos laboriosam illum ut officia.
-Nam aperiam autem nesciunt perferendis id. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas nulla sequi pariatur quam animi ipsum molestias assumenda cumque.
+                   {% trans '1. Біз аккредиттелген жоғары оқу орнымыз' %} <br>
+                   {% trans '1. Біз аккредиттелген жоғары оқу орнымыз' %} <br>
+                   {% trans '3. Бізде - білім гранттары' %}<br>
+                   {% trans '4. Бай материалдық-техникалық база' %}<br>
+                   {% trans '5. Біз республикамыздағы ең үздік педагогикалық университетпіз.' %}  <br>
                 </p>
                 <div class="about-us__box">
                     <div class="about-us__box-item">
                         <h2 class="about-us__number orange">
-                            970+
+                            9%
                         </h2>
-                        <p class="about-us__box-text">Happy Students</p>
+                        <p class="about-us__box-text">{% trans 'Академиялық шетелдік студенттер' %}</p>
                     </div>
                     <div class="about-us__box-item">
                         <h2 class="about-us__number purple">
-                            130+
+                            44+
                         </h2>
-                        <p class="about-us__box-text">Teachers</p>
+                        <p class="about-us__box-text">{% trans 'Білім беру бағдарламалары' %}</p>
                     </div>
                     <div class="about-us__box-item">
                         <h2 class="about-us__number blue">
-                            130+
+                            4
                         </h2>
-                        <p class="about-us__box-text">Courses</p>
+                        <p class="about-us__box-text">{% trans 'NR педагогикалық университеттеріндегі орны' %}</p>
                     </div>
                 </div>
-                <a class="btn about-us__btn mt-5" href="">Read more</a>
+                <a class="btn about-us__btn mt-5" href="">{% trans 'Толығырақ' %}</a>
             </div>
         </div>
     </div>
@@ -128,7 +134,7 @@ Nam aperiam autem nesciunt perferendis id. Lorem ipsum dolor sit, amet consectet
 <section class="testimonial-area">
     <div class="container">
         <div class="testimonial-area__row">
-            <h2 class="testimonial-area__title">Lets See What Our Valuable Students Think About Us. Their Testimonials.</h2>
+            <h2 class="testimonial-area__title">{% trans 'Біздің менеджерлер кеңес береді' %}</h2>
             
                 <!-- Slider main container -->
                 <div class="swiper-container2">
@@ -146,7 +152,7 @@ Nam aperiam autem nesciunt perferendis id. Lorem ipsum dolor sit, amet consectet
                                 <img src="{{ quote.img.url }}" alt="">
                                 <div>
                                     <h2>{{quote.author}}</h2>
-                                <p>Президент</p>
+                            
                                 </div>    
                             </div>
                         </div>
@@ -168,7 +174,7 @@ Nam aperiam autem nesciunt perferendis id. Lorem ipsum dolor sit, amet consectet
 <section class="news-area">
     <div class="container">
         <div class="news-area__title">
-            <h2>Последние новости университета SILKWAY</h2>
+            <h2>{% trans 'SILKWAY университетінің соңғы жаңалықтары' %}</h2>
         </div>
         <div class="news">
             {% for post in posts %}
@@ -219,6 +225,7 @@ Nam aperiam autem nesciunt perferendis id. Lorem ipsum dolor sit, amet consectet
 </section>
 <script>
     // const mainsiteurl = "127.0.0.1:8000"
+    '{% get_current_language as LANGUAGE_CODE %}'
     const likeBtn = document.querySelectorAll('.like_btn');
     likeBtn.forEach(e=>{
         e.addEventListener('click',btn=>{
@@ -231,7 +238,7 @@ Nam aperiam autem nesciunt perferendis id. Lorem ipsum dolor sit, amet consectet
                     'slug':url,
                     'session_key':"{{request.session.session_key}}"
                 }
-                fetch("/creative/post/like",{
+                fetch("creative/post/like",{
                     method:"POST",
                     headers: {
                         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
@@ -248,7 +255,7 @@ Nam aperiam autem nesciunt perferendis id. Lorem ipsum dolor sit, amet consectet
                 });
                 }
                 function view(){
-                    fetch("/creative/post/likecount/"+url)
+                    fetch("creative/post/likecount/"+url)
                     .then(response => response.json())
                     .then(likes => likesf(likes))
 
@@ -271,7 +278,7 @@ Nam aperiam autem nesciunt perferendis id. Lorem ipsum dolor sit, amet consectet
                 changer.classList.toggle('hide');
                 url = com.firstElementChild.value;
                 lastComments = changer.lastElementChild;
-                fetch('/creative/comments/'+url)
+                fetch('creative/comments/'+url)
                 .then(response => response.json())
                 .then(commits => view(commits))
 
@@ -308,7 +315,7 @@ Nam aperiam autem nesciunt perferendis id. Lorem ipsum dolor sit, amet consectet
                 'desciption':desciption
             }
 
-            fetch('/creative/comments/add', {
+            fetch('creative/comments/add', {
             method: 'post',
             credentials: 'same-origin', 
             headers: {

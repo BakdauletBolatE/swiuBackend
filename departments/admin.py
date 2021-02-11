@@ -1,19 +1,19 @@
 from django.contrib import admin
 from .models import *
 from django import forms
-from django.utils.functional import lazy
+from modeltranslation.admin import TranslationAdmin
 
 
 
 # Register your models here.
 
 
-class DepartmentAdmin(admin.ModelAdmin):
+class DepartmentAdmin(TranslationAdmin):
     prepopulated_fields = {"slug": ("name",)}
 
 admin.site.register(Department,DepartmentAdmin)
 
-class EducationalProgramsAdmin(admin.ModelAdmin):
+class EducationalProgramsAdmin(TranslationAdmin):
     prepopulated_fields = {"slug": ("name",)}
 
 admin.site.register(EducationalPrograms,EducationalProgramsAdmin)
@@ -23,10 +23,8 @@ admin.site.register(EducationalProgramsCat)
 class ActivityDetailsInline(admin.TabularInline):
     model = ActivityDepartmentFoto
 
-class ActivityChoiceField(forms.ModelChoiceField):
-    pass
 
-class ActivityAdmin(admin.ModelAdmin):
+class ActivityAdmin(TranslationAdmin):
 
     inlines = [ActivityDetailsInline]
     prepopulated_fields = {"slug": ("title",)}
@@ -34,7 +32,7 @@ class ActivityAdmin(admin.ModelAdmin):
 admin.site.register(ActivityDepartment, ActivityAdmin)
 admin.site.register(ActivityDepartmentFoto)
 
-class ActivityDepartmentCatAdmin(admin.ModelAdmin):
+class ActivityDepartmentCatAdmin(TranslationAdmin):
     prepopulated_fields = {"slug": ("name",)}
 
 admin.site.register(ActivityDepartmentCat,ActivityDepartmentCatAdmin)

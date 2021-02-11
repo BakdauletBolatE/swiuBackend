@@ -1,4 +1,6 @@
 {% extends 'layouts/app.html' %}
+{% load i18n %} 
+{% load static i18n %}
 {% load static %}
 {% block title %}
 {{department.name}}
@@ -9,10 +11,10 @@
         <div class="about-us-page__row">
             <div class="about-us-page__sidebar">
                 <ul class="about-us-page__mainsidebar-list">
-                    <li class="about-us-page__litem about-us-page__litem--active">О кафедре</li>
-                    <li class="about-us-page__litem">Образовательные программы</li>
-                    <li class="about-us-page__litem">Преподаватели кафедры</li>
-                    <li class="about-us-page__litem">Деятельность кафедры</li>
+                    <li class="about-us-page__litem about-us-page__litem--active">{% trans 'Кафедра жайлы' %}</li>
+                    <li class="about-us-page__litem">{% trans 'Білім беру бағдарламалары' %}</li>
+                    <li class="about-us-page__litem">{% trans 'Кафедра оқытушылары' %}</li>
+                    <li class="about-us-page__litem">{% trans 'Кафедраның қызметі' %}</li>
                 </ul>
             </div>
             <div class="about-us-page__content">
@@ -25,7 +27,7 @@
                 </div>
                 <div class="about-us-page__item">
                     <h2 class="about-us-page__title">
-                        Образовательные программы
+                        {% trans 'Білім беру бағдарламалары' %}
                     </h2>
                     <div class="grid-with-text">
                         {% for eduPro in eduPros %}
@@ -47,7 +49,7 @@
 
                 <div class="about-us-page__item">
                     <h2 class="about-us-page__title">
-                        Преподаватели кафедры
+                        {% trans 'Кафедра оқытушылары' %}
                     </h2>
                     <div class="employee__row">
                         {% for staffEdu in staffEdus  %}
@@ -64,7 +66,7 @@
                 </div>
                 <div class="about-us-page__item">
                     <h2 class="about-us-page__title">
-                        Деятельность кафедры
+                        {% trans 'Кафедраның қызметі' %} 
                     </h2>
                     <div class="activity-department__row">
                         {% for activityDepartment in activityDepartments %}

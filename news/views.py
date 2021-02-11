@@ -3,6 +3,7 @@ from .forms import QuestionsForm,PostCommentsForm
 from .models import *
 from django.http import JsonResponse
 from news.decoretors import counted
+from faculties.models import PageCategory
 import json
 
 
@@ -13,9 +14,11 @@ import json
 def postDetailView(request,url):
     post = Post.objects.get(slug=url)
     page = PageHit.objects.get(url=request.path)
+    pageCats = PageCategory.objects.all()
     context = {
         'page':page,
-        "post":post
+        "post":post,
+        'pageCats':pageCats
     }
     return render(request,"news/newsDetail.html",context)
 
@@ -62,9 +65,11 @@ def likePost(request):
         post = Post.objects.get(slug=url)
         like,created = Like.objects.get_or_create(
             post=post,
-            user=request.session.session_key
+            user=session_key
         )
+        print(session_key)
         if created == False:
+            print(session_key)
             like.delete()
         
 
