@@ -5,7 +5,7 @@ from django.db.models.base import Model
 
 class Facult(models.Model):
     name = models.CharField('Название факультета',max_length=255)
-    slug = models.SlugField('Url факультета',unique=True)
+    slug = models.SlugField('Url факультета')
     description = models.TextField('Описание факультета',blank=True,null=True)
     photo = models.ImageField('Изображения',upload_to='Facult/Posters/',default=0)
 
