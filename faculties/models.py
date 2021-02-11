@@ -5,7 +5,7 @@ from django.db.models.base import Model
 
 class Facult(models.Model):
     name = models.CharField('Название факультета',max_length=255)
-    slug = models.SlugField('Url факультета')
+    slug = models.SlugField('Url факультета',unique=True)
     description = models.TextField('Описание факультета',blank=True,null=True)
     photo = models.ImageField('Изображения',upload_to='Facult/Posters/',default=0)
 
@@ -32,8 +32,8 @@ class PageCategory(models.Model):
 class Page(models.Model):
 
     title = models.CharField('Название страницы',max_length=255)
-    url = models.CharField('Ссылка',max_length=255)
-    slug = models.SlugField('slug',unique=True,null=True,blank=True)
+    url = models.CharField('Ссылка НУЖНО ИМЯ',max_length=255)
+    slug = models.SlugField('slug это обычный слаг',null=True,blank=True)
     content = models.TextField('Контентная часть')
     img = models.ImageField('Постер страницы',upload_to="Page/")
     category = models.ForeignKey(PageCategory,related_name='page',on_delete=models.CASCADE)
