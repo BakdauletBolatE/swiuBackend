@@ -131,13 +131,15 @@
                             {% for cat in pageCats %}
                             <li class="menu__item"><a class="menu__link menu__link2" href="">{{cat.name}}</a>
                                 {% for page in cat.page.all %}
+                                {% if page.slug == "1" %}
                                 <ul class="sub-menu">
-                                    {% if page.slug == "1" %}
+                                    
                                     <li class="sub-menu__item"><a class="sub-menu__link" href="{% url page.url %}">{{ page.title }}</a></li>
                                     {% else %}
                                     <li class="sub-menu__item"><a class="sub-menu__link" href="{% url page.url page.slug%}">{{ page.title }}</a></li>
-                                    {% endif %}
+                                    
                                 </ul>
+                                {% endif %}
                                 {% endfor %}
                                 
                             </li>
