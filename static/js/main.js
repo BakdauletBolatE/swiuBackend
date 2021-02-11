@@ -106,12 +106,13 @@ tabs.tabView();
 
 const menu = document.querySelector('.burger');
 const slideM = document.querySelector('.slide-menu');
-const page = document.querySelector('.page');
+const page = document.querySelector('body');
 
 menu.addEventListener('click', () =>{
   slideM.classList.toggle('active');
   // page.classList.toggle('active');
   menu.classList.toggle('cliced');
+  page.classList.toggle('active');
 })
 
 

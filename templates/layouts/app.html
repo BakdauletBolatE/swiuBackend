@@ -19,36 +19,6 @@
     <link rel="stylesheet" href="{% static 'css/galety.css' %}">
 </head>
 <body>
-    <div class="slide-menu">
-        <div class="container">
-            <ul class="slide-menu__row">
-               
-                <li class="slide-menu__item">
-                    <i class="slide-menu__item-i fad fa-university"></i>
-                    <span><a style="color:inherit; text-decoration: none;" href="{% url 'aboutU' %}">{% trans 'Универ жайлы'  %}</a></span>
-                </li>
-                
-                <li class="slide-menu__item">
-                    <i class="slide-menu__item-i fad fa-folder-tree"></i>
-                    <span> <a style="color:inherit; text-decoration: none;" href="{% url 'facult' %}">{% trans 'Құрылым' %}</a></span>
-                </li>
-                <li class="slide-menu__item">
-                    <i class="slide-menu__item-i fad fa-globe-asia"></i>
-                    <span>Интернациолизация</span>
-                </li>
-                <li class="slide-menu__item">
-                    <i class="slide-menu__item-i fad fa-laptop-house"></i>
-                    <span>{% trans 'Қашықтықтан оқыту' %}</span>
-                </li>
-                <li class="slide-menu__item">
-                    <i class="slide-menu__item-i fad fa-telescope"></i>
-                    <span><a style="color:inherit; text-decoration: none;" href="{% url 'libindex' %}"> {% trans 'Кітапхана' %}</a></span>
-                </li>
-
-            </ul>
-        </div>
-        
-    </div>
     <div class="page">
 
         <header class="header">
@@ -166,6 +136,33 @@
                     </div>
                 </div>
             </section>
+            <div class="slide-menu">
+                <div class="container">
+                    <ul class="slide-menu__row">
+                        <div class="accordion__tab">
+                            <h4 class="accordion__title">{% trans 'Миссия' %}</h4>
+                            <p class="accordion__content">{% trans 'Болашақ мамандарға лайықты білім беру' %}</p>
+                        </div>
+                        {% for cat in pageCats %}
+                        <li class="slide-menu__item accordion__tab">
+                            <i class="slide-menu__item-i fad fa-university"></i>
+                            <span><a class="accordion__title" style="color:inherit; text-decoration: none;" >{{cat.name}}</a>
+                                <ul class="accordion__content sub-menu">
+                                    {% for page in cat.page.all %}
+                                    {% if page.slug == "1" %}
+                                    <li class="sub-menu__item"><a class="sub-menu__link" href="{% url page.url %}">{{page.title}}</a></li>
+                                    {% else %}
+                                    <li class="sub-menu__item"><a class="sub-menu__link" href="{% url page.url page.slug %}">{{page.title}}</a></li>
+                                    {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                
+            </div>
             <section class="mob-menu">
                 <div class="container">
                     <div class="mob-menu__row">
