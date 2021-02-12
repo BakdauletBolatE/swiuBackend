@@ -33,7 +33,7 @@ class Staff(models.Model):
     position = models.ForeignKey(Position,on_delete=models.CASCADE,blank=True,null=True)
     staffCat = models.ForeignKey(StaffCat,on_delete=models.CASCADE,blank=True,null=True)
     department = models.ForeignKey(Department,on_delete=models.CASCADE,blank=True,null=True)
-    educationalPrograms = models.ForeignKey(EducationalPrograms,on_delete=models.CASCADE,blank=True,null=True)
+    educationalPrograms = models.ManyToManyField(EducationalPrograms,blank=True,null=True)
     email = models.EmailField('Почта персонала',blank=True,null=True,max_length=255)
     adress = models.CharField('Адрес персонала',blank=True,null=True,max_length=255)
     phone = models.CharField('Телефон персонала',blank=True,null=True,max_length=255)
