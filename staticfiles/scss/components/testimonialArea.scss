@@ -1,0 +1,94 @@
+
+
+.testimonial-area{
+    margin-top: 10rem;
+    padding: 6.3rem 0px;
+}
+.testimonial-area{
+    background: url('../img/3.jpg') no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 55rem;
+
+    @media screen and (max-width:700px){
+        height: 60rem;
+    }
+    background-position: center;
+
+    &::after{
+        content:"";
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        background-color: rgba($dark-blue, $alpha: 0.9);
+    }
+}
+.testimonial-area__title{
+    color: rgb(255, 255, 255);
+    line-height: 3.5rem;
+    font-weight: 600;
+    max-width: 55rem;
+    position: relative;
+    z-index: 3;
+    margin: auto auto 4.3rem;
+}
+.testimonial-area__row{
+    overflow: hidden;
+}
+.testimonial-area__item{
+    position: relative;
+    z-index:2;
+}
+.testimonial-area__text{
+    background-color: rgba(255, 255, 255, 0.08);
+    padding: 3rem 3.8rem;
+    border-radius: 0.5rem;
+    position: relative;
+    & h3{
+        color: rgb(238, 238, 238);
+        margin-bottom: 1.5rem;
+        font-size: 1.8rem;
+    }
+    & p{
+        font-size: 1.3rem;
+        color: rgb(221, 221, 221);
+        line-height: 2.5rem;
+    }
+    &:after{
+        content: "";
+        position: absolute;
+        border-width: 1.5rem;
+        border-style: solid;
+        border-color: rgba(255, 255, 255, 0.08) transparent transparent;
+        top: 100%;
+        left: 4.7rem;
+        z-index: 1;
+    }
+}
+.testimonial-area__writer{
+    margin-top:3rem;
+    margin-left: 2.3rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    & img{
+        width: 7rem;
+        height: 7rem;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-right: 2rem;
+    }
+    & h2{
+        font-size: 1.6rem;
+        color: rgb(238, 238, 238);
+        padding-top: 1rem;
+        margin-bottom: 0.3rem;
+    }
+    & p{
+       color: rgb(221, 221, 221)
+    }
+
+}

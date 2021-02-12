@@ -1,0 +1,42 @@
+.logo-area{
+    padding: 2.2rem 0px;
+    @media screen and (max-width:600px) {
+        display: none;
+    }
+}
+.logo-area__row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-area__contact{
+    display: flex;
+    align-items: center;
+}
+.logo-area__img{
+    height: 4.1rem;
+
+    & img{
+        height: 100%;
+    }
+}
+.logo-area__item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 4.5rem;
+
+    font-size: 1.7rem;
+}
+.logo-area__item-text{
+
+    margin-left:1rem;
+    & p{
+        color:$dark-silver;
+        font-size: 1.3rem;
+    }
+    & span{
+        font-weight: 500;
+    }
+}
