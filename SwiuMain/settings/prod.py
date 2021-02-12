@@ -74,7 +74,7 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'sb',
+        'NAME': 'swiu',
         'USER': 'bbb',
         'PASSWORD': 'bagivox123F',
         'HOST': 'localhost',
