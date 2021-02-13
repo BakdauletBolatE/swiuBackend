@@ -16,9 +16,8 @@ class PagePhotoTabulerInline(admin.TabularInline):
     model = PageImages
 
 @admin.register(Page)
-class PageAdmin(SummernoteModelAdmin,TranslationAdmin):
+class PageAdmin(TranslationAdmin):
     prepopulated_fields = {"slug": ("title",)}
-    summernote_fields = ('content',)
     inlines = [PagePhotoTabulerInline]
 
 @admin.register(PageCategory)

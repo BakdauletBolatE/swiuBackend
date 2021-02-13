@@ -1,5 +1,5 @@
 from django.db import models
-from django.db.models.base import Model
+from ckeditor_uploader.fields import RichTextUploadingField
 
 # Create your models here.
 
@@ -34,7 +34,7 @@ class Page(models.Model):
     title = models.CharField('Название страницы',max_length=255)
     url = models.CharField('Ссылка НУЖНО ИМЯ',max_length=255)
     slug = models.SlugField('slug это обычный слаг',null=True,blank=True)
-    content = models.TextField('Контентная часть')
+    content = RichTextUploadingField('Контентная часть',null=True)
     img = models.ImageField('Постер страницы',upload_to="Page/")
     category = models.ForeignKey(PageCategory,related_name='page',on_delete=models.CASCADE)
 
