@@ -16,6 +16,24 @@
 
       <h2 class="about-us-page__title titlecke mt-3">{{page.title}}</h2>
       <div class="pcke mb-3">{% autoescape off %}{{page.content}}{% endautoescape %} </div>
+      <div>
+        {% if page.staff.all %}
+       
+       
+      <div class="employee__row">
+          {% for eduStuff in page.staff.all  %}
+          <div class="employee__item">
+              <img class="employee__img" src="{{eduStuff.img.url}}" alt="">
+              <div class="employee__text">
+                  <div class="employee__name">{{ eduStuff.name}}</div>
+                  <div class="employee__presidency"><a class="employee__presidency" href="{% url 'stuffDetailView' eduStuff.slug  %}">{{eduStuff.position.name}}</a></div>
+                  <div class="employee__country">{{eduStuff.email}}</div>
+              </div>
+          </div>
+          {%endfor%}
+        </div> 
+          {% endif %}
+      </div>
       <div id="animated-thumbnials" class="mt-3 gallery_grid">
         {% for photo in page.pageImages.all %}
           <a class="gallery_img" href="{{photo.img.url}}" >
