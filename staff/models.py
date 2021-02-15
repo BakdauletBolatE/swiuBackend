@@ -1,6 +1,7 @@
 from django.db import models
 from departments.models import Department,EducationalPrograms
-from faculties.models import Facult
+from faculties.models import Facult,Page
+from django.utils.text import slugify
 
 # Create your models here.
 class Position(models.Model):
@@ -34,16 +35,19 @@ class Staff(models.Model):
     position = models.ForeignKey(Position,on_delete=models.CASCADE,blank=True,null=True)
     staffCat = models.ForeignKey(StaffCat,on_delete=models.CASCADE,blank=True,null=True)
     department = models.ForeignKey(Department,on_delete=models.CASCADE,blank=True,null=True)
-    educationalPrograms = models.ManyToManyField(EducationalPrograms)
+    educationalPrograms = models.ManyToManyField(EducationalPrograms,null=True,blank=True)
     email = models.EmailField('Почта персонала',blank=True,null=True,max_length=255)
     adress = models.CharField('Адрес персонала',blank=True,null=True,max_length=255)
     phone = models.CharField('Телефон персонала',blank=True,null=True,max_length=255)
     facult = models.ForeignKey(Facult,on_delete=models.CASCADE)
     about = models.TextField('О персонале')
+    page = models.ForeignKey(Page,on_delete=models.CASCADE,null=True,blank=True)
 
     class Meta:
         verbose_name = 'Персонал'
         verbose_name_plural = 'Персонали'
+
+    
 
     def __str__(self):
         return self.name

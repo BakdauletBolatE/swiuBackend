@@ -1,0 +1,200 @@
+{% extends 'swiupanel/layouts/app.html' %}
+
+{% block 'content' %}
+<div class="dashboard-wrapper">
+    <div class="dashboard-ecommerce">
+        <div class="container-fluid dashboard-content ">
+ <!-- ============================================================== -->
+                        <!-- basic form  -->
+                        <!-- ============================================================== -->
+                       
+                       <form method="POST" enctype="multipart/form-data" action="{% url 'addStaff' %}">
+                        {% csrf_token %}
+                     
+                        
+                        <div class="form-group row">
+                           
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                {{ form.name }}
+                            </div>
+                            <!-- <div class="col-12 col-sm-8 col-lg-6">
+                                {{ form.name_ru }}
+                            </div>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                {{ form.name_en }}
+                            </div> -->
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-12 col-sm-3 col-form-label text-sm-right" for="id_name"> {{form.slug.label}}</label>
+                            <div class="col-12 col-sm-8 col-lg-6">
+                                {{ form.slug }}
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <div class="col-12">
+                                {{form.staffCat}}
+                            </div>
+                            <div class="col-12">
+                                {{form.educationalPrograms}}
+                            </div>
+                            <div class="col-12" id="sass"></div>
+                            <div class="col-12" id="dep"></div>
+                             <div class="col-12" id=op></div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-4">
+                                {{form.adress}}
+                            </div>
+                            <div class="col-4">
+                                {{form.email}}
+                            </div>
+                            <div class="col-4">
+                                {{form.position}}
+                            </div>
+                            <div class="col-4">
+                                {{form.phone}}
+                            </div>
+                            
+                        </div>
+                        <div class="form-group">
+                            {{form.img}}
+                            
+                        </div>
+                       
+                       <div class="form-group row">
+                           <label class="col-12" for="id_about"></label>
+                           <div class="col-12">
+                            {{ form.about }}
+                            <!-- {{ form.about_en }}
+                            {{ form.about_ru }} -->
+                           </div>
+                          
+                       </div>
+                       
+
+                       
+                       
+                     
+                       <button class="btn" type="submit">Ok</button>
+                       </form>
+                       
+                       
+                        <!-- ============================================================== -->
+                        <!-- end basic form  -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                    </div>
+                    </div>
+</div>
+    <!-- <script>
+        const selectCat = document.getElementById('id_staffCat');
+      
+    </script> -->
+<script>
+    const selectCat = document.getElementById('id_staffCat');
+    selectCat.setAttribute('class','form-control')
+    const box = document.getElementById('sass');
+    const box2 = document.getElementById('dep');
+    const box3 = document.getElementById('op');
+    const zag = document.createElement('option'); 
+    zag.textContent =  "------";
+    const url = 'swiu-panel/';
+    selectCat.addEventListener('change',(e)=>{
+        
+        fetch('../get-facult-json/'+e.target.value)
+        .then(response => response.json())
+        .then((data)=> {
+           
+            const depData = data.data
+            box.innerHTML = "";
+            box2.innerHTML = "";
+            box3.innerHTML = "";
+            const selectd = document.createElement('select');
+            let page = false
+            selectd.setAttribute('name','facult');
+            selectd.setAttribute('id','id_facult');
+            selectd.setAttribute('class','form-control');
+            
+            selectd.appendChild(zag);
+            depData.map(item=>{
+                const option = document.createElement('option');
+                option.setAttribute('value',item.id);
+                
+                if (item.title){
+                    selectd.setAttribute('name','page');
+                    selectd.setAttribute('id','id_page');
+                    option.textContent =  item.title;
+                    selectd.appendChild(option);
+                    page = true;
+                }
+                else{
+                    option.textContent =  item.name;
+                    selectd.appendChild(option);
+                    page = false
+                }
+                
+                
+            });
+            if (selectd){
+                box.appendChild(selectd);
+                if (page == false){
+                    selectd.addEventListener('change',(e)=>{
+                    box2.innerHTML = "";
+                    box3.innerHTML = "";
+                    const depa = document.createElement('select');
+                    
+                    depa.setAttribute('name','department');
+                    depa.setAttribute('id','id_department');
+                    depa.setAttribute('class','form-control');
+                    depa.appendChild(zag);
+                    
+                    fetch('../getd/'+e.target.value)
+                    .then(response => response.json())
+                    .then((departments)=>{
+                        data = departments.data
+                        
+                        data.map(item=>{
+                            const option = document.createElement('option');
+                            option.setAttribute('value',item.id);
+                            option.textContent =  item.name;
+                            depa.appendChild(option);
+                        });
+                    });
+                    if (depa){
+                        box2.appendChild(depa);
+                        
+                        box3.innerHTML = ""
+                        const op = document.createElement('select');
+                        op.appendChild(zag);
+                        op.setAttribute('name','educationalPrograms');
+                        op.setAttribute('id','id_educationalPrograms');
+                        op.setAttribute('class','form-control');
+
+                        depa.addEventListener('change',e=>{
+                            fetch('../get-op-json/'+e.target.value)
+                            .then(response => response.json())
+                            .then(data=>{
+                                data.data.map(item=>{
+                                    const option = document.createElement('option');
+                                    option.setAttribute('value',item.id);
+                                    option.textContent =  item.name;
+                                    op.appendChild(option);
+                                })
+
+                                if (op){
+                                    box3.appendChild(op)
+                                }
+                            })
+                        })
+                    }
+                });
+                }
+               
+            }
+           
+            
+        })
+    })
+</script>
+{% endblock %}

@@ -38,7 +38,18 @@
                     <!-- ============================================================== -->
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="card">
-                            <h5 class="card-header">Образовательные программы</h5>
+                            <div class="col-12">
+                                <div class="row">
+                                    <h5 class="card-header">Образовательные программы</h5>
+                                    <div class="text-center">
+                                        <form class="" class="" action="">
+                                            <input class="form-control" type="text">
+                                        </form>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                            
                             <div class="card-body p-0">
                                 <div class="table-responsive">
                                     <table class="table">
@@ -63,6 +74,57 @@
                                                 <td>{{eduPro.cat.name}} </td>
                                                 <td>{{eduPro.facult.name}}</td>
                                                 <td>{{eduPro.department.name}}</td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end recent orders  -->
+
+                                    <!-- recent orders  -->
+                    <!-- ============================================================== -->
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="col-12">
+                                <div class="row">
+                                    <h5 class="card-header">Пре</h5>
+                                    <div class="text-center">
+                                        <form class="" class="" action="">
+                                            <input class="form-control" type="text">
+                                        </form>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                            
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead class="bg-light">
+                                            <tr class="border-0">
+                                                <th class="border-0">#</th>
+                                                <th class="border-0">img</th>
+                                                <th class="border-0">name</th>
+                                                <th class="border-0">cat</th>
+                                                <th class="border-0">facult</th>
+                                                <th class="border-0">department</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for staff in staffs %}
+                                            <tr>
+                                                <td>{{staff.id}}</td>
+                                                <td>
+                                                    <div class="m-r-10"><img src="{{eduPro.img.url}}" alt="user" class="rounded" width="45"></div>
+                                                </td>
+                                                <td><a href="{% url 'editStaff' staff.slug %}">{{staff.name}}</a> </td>
+                                                <td>{{staff.facult.name}} </td>
+                                                <td>{{staff.educationalPrograms.first}}</td>
+                                                <td>{{staff.department.name}}</td>
                                             </tr>
                                             {% endfor %}
                                         </tbody>

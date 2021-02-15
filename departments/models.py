@@ -1,7 +1,7 @@
 from django.db import models
-from faculties.models import Facult
+from faculties.models import Facult,Page
 from django import forms
-from django.utils.functional import lazy
+
 
 # Create your models here.
 
@@ -38,6 +38,7 @@ class EducationalPrograms(models.Model):
     img = models.ImageField('Изображения', upload_to="Edu/Posters/")
     facult = models.ForeignKey(Facult,on_delete=models.CASCADE,default=0)
     department = models.ForeignKey(Department,on_delete=models.CASCADE,default=0)
+    
 
     def __str__(self):
         return self.name
