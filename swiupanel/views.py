@@ -68,7 +68,7 @@ def addStaff(request):
         form = StuffForm(request.POST or None,request.FILES or None)
         if form.is_valid():
             form.save()
-            return redirect('swiuindex')
+            return redirect('staffListView')
 
     else:
         form = StuffForm()

@@ -39,9 +39,9 @@ class Staff(models.Model):
     email = models.EmailField('Почта персонала',blank=True,null=True,max_length=255)
     adress = models.CharField('Адрес персонала',blank=True,null=True,max_length=255)
     phone = models.CharField('Телефон персонала',blank=True,null=True,max_length=255)
-    facult = models.ForeignKey(Facult,on_delete=models.CASCADE)
+    facult = models.ForeignKey(Facult,on_delete=models.CASCADE,null=True,blank=True)
     about = models.TextField('О персонале')
-    page = models.ForeignKey(Page,on_delete=models.CASCADE,null=True,blank=True)
+    page = models.ForeignKey(Page,on_delete=models.CASCADE,related_name='staff',null=True,blank=True)
 
     class Meta:
         verbose_name = 'Персонал'

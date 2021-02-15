@@ -60,4 +60,4 @@ class StuffForm(forms.ModelForm):
     
     class Meta:
         model = Staff
-        fields = ('name_ru','name_en','name_kk','img','email','adress','slug','phone','about_ru','about_en','about_kk','staffCat','facult','department','educationalPrograms') 
+        fields = ('name_ru','name_en','name_kk','img','email','adress','slug','phone','about_ru','about_en','about_kk','staffCat','facult','department','educationalPrograms','page') 
