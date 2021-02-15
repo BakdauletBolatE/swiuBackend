@@ -30,13 +30,13 @@ class StuffForm(forms.ModelForm):
     slug = forms.CharField(label='url сотрудника', 
                             max_length=100,
                             widget=forms.TextInput(attrs={'class': 'form-control'}))
-    # name_en = forms.CharField(label='Staff name(engilsh)', 
-    #                         max_length=100,
-    #                         widget=forms.TextInput(attrs={'class': 'form-control'}))
+    name_en = forms.CharField(label='Staff name(engilsh)', 
+                            max_length=100,
+                            widget=forms.TextInput(attrs={'class': 'form-control'}))
     
-    # name_kk = forms.CharField(label='Жұмысшының есімі(қазақша)', 
-    #                         max_length=100,
-    #                         widget=forms.TextInput(attrs={'class': 'form-control'}))
+    name_kk = forms.CharField(label='Жұмысшының есімі(қазақша)', 
+                            max_length=100,
+                            widget=forms.TextInput(attrs={'class': 'form-control'}))
     
     email = forms.EmailField(label='Email сотрудника', 
                             widget=forms.EmailInput(attrs={'class': 'form-control'}))
@@ -52,12 +52,12 @@ class StuffForm(forms.ModelForm):
     about_ru = forms.Field(label='Краткое описание сотрдуника', 
                             widget=forms.TextInput(attrs={'class': 'form-control'}))
     
-    # about_en = forms.Field(label='Short description about staff', 
-    #                         widget=forms.TextInput(attrs={'class': 'form-control'}))
+    about_en = forms.Field(label='Short description about staff', 
+                            widget=forms.TextInput(attrs={'class': 'form-control'}))
 
-    # about_kk = forms.Field(label='Жұмыскер бойынша қысқаша ақпарат', 
-    #                         widget=forms.TextInput(attrs={'class': 'form-control'}))
+    about_kk = forms.Field(label='Жұмыскер бойынша қысқаша ақпарат', 
+                            widget=forms.TextInput(attrs={'class': 'form-control'}))
     
     class Meta:
         model = Staff
-        fields = ('name_ru','img','email','adress','slug','phone','about_ru','staffCat','facult','department','educationalPrograms') 
+        fields = ('name_ru','name_en','name_kk','img','email','adress','slug','phone','about_ru','about_en','about_kk','staffCat','facult','department','educationalPrograms') 

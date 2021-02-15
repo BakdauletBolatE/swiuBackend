@@ -27,6 +27,16 @@
                                         
                                     </div>
                                     <div class="form-group">
+                                        <label for="id_name" class="col-form-label">{{form.name_ru.label}}</label>
+                                        {{ form.name_en }}
+                                        
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="id_name" class="col-form-label">{{form.name_ru.label}}</label>
+                                        {{ form.name_kk }}
+                                        
+                                    </div>
+                                    <div class="form-group">
                                         <label class="col-form-label" for="id_slug">{{form.slug.label}}</label>
                                         {{form.slug}}
                                         <!-- {{form.slug}} -->
@@ -55,9 +65,16 @@
                                         {{form.img}}
                                     </div>
                                     <div class="form-group">
-                                        <label for="id_about">{{form.about.label}}</label>
+                                        <label for="id_about">{{form.about_ru.label}}</label>
                                         {{form.about_ru}}
-                                       
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="id_about">{{form.about_en.label}}</label>
+                                        {{form.about_en}}
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="id_about">{{form.about_kk.label}}</label>
+                                        {{form.about_kk}}
                                     </div>
                                     <button class="btn">Создать</button>
                                 </form>
