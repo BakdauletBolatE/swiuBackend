@@ -29,7 +29,7 @@
         <!-- ============================================================== -->
         <div class="dashboard-header">
             <nav class="navbar navbar-expand-lg bg-white fixed-top">
-                <a class="navbar-brand" href="index.html">Swiu Panel</a>
+                <a class="navbar-brand" href="{% url 'swiuindex' %}">Swiu Panel</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -164,24 +164,9 @@
                                             <a class="nav-link" href="{% url 'staffListView' %}">Посмотреть сотрудники</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{% url 'eduProListView' %}">Добавить сотрудники</a>
+                                            <a class="nav-link" href="{% url 'addStaff' %}">Добавить сотрудники</a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-1" aria-controls="submenu-1-1">Infulencer</a>
-                                            <div id="submenu-1-1" class="collapse submenu" style="">
-                                                <ul class="nav flex-column">
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="dashboard-influencer.html">Influencer</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="influencer-finder.html">Influencer Finder</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="influencer-profile.html">Influencer Profile</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
+                                        
                                     </ul>
                                 </div>
                             </li>
@@ -193,24 +178,9 @@
                                             <a class="nav-link" href="{% url 'eduProListView' %}">Посмотреть образовательные программы</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="{% url 'eduProListView' %}">Добавить образовательные программы</a>
+                                            <a class="nav-link" href="{% url 'addEdu' %}">Добавить образовательные программы</a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-1" aria-controls="submenu-1-1">Infulencer</a>
-                                            <div id="submenu-1-1" class="collapse submenu" style="">
-                                                <ul class="nav flex-column">
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="dashboard-influencer.html">Influencer</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="influencer-finder.html">Influencer Finder</a>
-                                                    </li>
-                                                    <li class="nav-item">
-                                                        <a class="nav-link" href="influencer-profile.html">Influencer Profile</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </li>
+                                        
                                     </ul>
                                 </div>
                             </li>

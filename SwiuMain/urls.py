@@ -27,7 +27,6 @@ urlpatterns = [
     path('i18n/',include('django.conf.urls.i18n')),
     path('swiu-panel/',include('swiupanel.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
-    path('summernote/', include('django_summernote.urls')),
 ] 
 
 

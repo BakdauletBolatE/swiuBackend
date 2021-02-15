@@ -33,9 +33,10 @@ INSTALLED_APPS = [
     'departments',
     'staff',
     'news',
-    'library'
+    'library',
+    'ckeditor',
+    'swiupanel'
 ]
-INSTALLED_APPS += ('django_summernote', )
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -143,4 +144,12 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 
 
+CKEDITOR_CONFIGS = {
+    'default': {
+        'skin':'office2013'
+        
+    }
+}
 
+        
+CKEDITOR_UPLOAD_PATH = "uploads/"

@@ -23,6 +23,7 @@ def index(request):
     }
     return render(request,'swiupanel/index.html',context)
 
+#@permission_required()
 def staffListView(request):
     staffs = Staff.objects.all()
     context = {
@@ -30,6 +31,7 @@ def staffListView(request):
     }
     return render(request,'swiupanel/Staff/listView.html',context)
 
+#@permission_required()
 def eduProListView(request):
     eduPros = EducationalPrograms.objects.all()
     context = {
@@ -37,6 +39,7 @@ def eduProListView(request):
     }
     return render(request,'swiupanel/EducationalPrograms/listView.html',context)
 
+#@permission_required()
 def addEdu(request):
     
     if request.method == "POST":
@@ -51,7 +54,7 @@ def addEdu(request):
         }
         return render(request,'swiupanel/EducationalPrograms/add.html',context)
     
-
+#@permission_required()
 def getDepartments(request,*args,**kwargs):
     facult = kwargs.get('fac')
     departments = list(Department.objects.filter(facult_id=facult).values())
@@ -59,7 +62,7 @@ def getDepartments(request,*args,**kwargs):
     return JsonResponse({'data':departments})
 
 
-
+#@permission_required()
 def addStaff(request):
     if request.method == "POST":
         form = StuffForm(request.POST or None,request.FILES or None)
@@ -74,15 +77,14 @@ def addStaff(request):
         }
         return render(request,'swiupanel/Staff/add.html',context)
 
+#@permission_required()
 def editStaff(request,url):
     if request.method == "POST":
         form = StuffForm(request.POST or None,request.FILES or None)
         if form.is_valid():
             form.save()
             return redirect('swiuindex')
-       
-       
-            
+
     else:
         staff = Staff.objects.get(slug=url)
         form = StuffForm(request.POST or None,request.FILES or None,instance=staff)
@@ -92,17 +94,35 @@ def editStaff(request,url):
         }
         return render(request,'swiupanel/Staff/edit.html',context)
 
+#@permission_required()
 def getFacultStaff(request,*args,**kwargs):
     staffCat = kwargs.get('cat')
     if staffCat == "1":
+        data = list(Page.objects.values())
+    elif staffCat == "2":
         data = list(Page.objects.values())
     else:
         data = list(Facult.objects.values())
 
     return JsonResponse({'data':data})
 
+# @permission_required()
 def getOpJson(request,*args,**kwargs):
     op = kwargs.get('op')
     data = list(EducationalPrograms.objects.filter(department_id=op).values())
+
+    return JsonResponse({'data':data})
+
+# @permission_required()
+def searchEdu(request,*args,**kwargs):
+    qs = kwargs.get('search');
+
+    s_data = list(EducationalPrograms.objects.values())
+    d_data = []
+    for i in range(1,len(s_data)):
+        if qs in s_data[i]['name']:
+            d_data.append(s_data[i])
+        
+    data = d_data
 
     return JsonResponse({'data':data})

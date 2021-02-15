@@ -40,13 +40,11 @@
                         <div class="card">
                             <div class="col-12">
                                 <div class="row">
-                                    <h5 class="card-header">Образовательные программы</h5>
-                                    <div class="text-center">
-                                        <form class="" class="" action="">
-                                            <input class="form-control" type="text">
-                                        </form>
-                                    </div>
-                                   
+                                    <h5 class="card-header col-4">Образовательные программы</h5>
+                                    
+                                        <div id="custom-search" class=" col-8 top-search-bar">
+                                            <input id="searchEdu" class="form-control" type="text" placeholder="Search..">
+                                        </div>
                                 </div>
                             </div>
                             
@@ -63,6 +61,7 @@
                                                 <th class="border-0">department</th>
                                             </tr>
                                         </thead>
+                                        <div id="tableAll">
                                         <tbody>
                                             {% for eduPro in eduPros %}
                                             <tr>
@@ -77,6 +76,10 @@
                                             </tr>
                                             {% endfor %}
                                         </tbody>
+                                        </div>
+                                        <div id="tableSearch" class="table__search">
+
+                                        </div>
                                     </table>
                                 </div>
                             </div>

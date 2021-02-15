@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import index,addEdu,getDepartments,addStaff,getFacultStaff,getOpJson,editStaff,staffListView,eduProListView
+from .views import *
 
 
 urlpatterns = [
@@ -11,5 +11,6 @@ urlpatterns = [
     path('staff/',addStaff,name="addStaff"),
     path('staff/edit/<str:url>/',editStaff,name="editStaff"),
     path('get-facult-json/<str:cat>',getFacultStaff),
-    path('get-op-json/<str:op>',getOpJson)
+    path('get-op-json/<str:op>',getOpJson),
+    path('searchedu/<str:search>/',searchEdu,name="searchEdu")
 ]

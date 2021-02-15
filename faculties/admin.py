@@ -1,7 +1,7 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin
 
-from django_summernote.admin import SummernoteModelAdmin
+
 from .models import *
 
 # Register your models here.
