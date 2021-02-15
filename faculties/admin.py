@@ -1,7 +1,7 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin
 
-from django_summernote.admin import SummernoteModelAdmin
+
 from .models import *
 
 # Register your models here.
@@ -16,9 +16,8 @@ class PagePhotoTabulerInline(admin.TabularInline):
     model = PageImages
 
 @admin.register(Page)
-class PageAdmin(SummernoteModelAdmin,TranslationAdmin):
+class PageAdmin(TranslationAdmin):
     prepopulated_fields = {"slug": ("title",)}
-    summernote_fields = ('content',)
     inlines = [PagePhotoTabulerInline]
 
 @admin.register(PageCategory)

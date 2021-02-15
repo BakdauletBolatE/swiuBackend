@@ -25,7 +25,8 @@ from django.conf.urls.i18n import i18n_patterns
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('i18n/',include('django.conf.urls.i18n')),
-    path('summernote/', include('django_summernote.urls')),
+    path('swiu-panel/',include('swiupanel.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ] 
 
 

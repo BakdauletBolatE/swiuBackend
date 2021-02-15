@@ -1,0 +1,68 @@
+{% extends 'swiupanel/layouts/app.html' %}
+
+{% block 'content' %}
+<div class="dashboard-wrapper">
+    <div class="dashboard-ecommerce">
+        <div class="container-fluid dashboard-content ">
+ <!-- ============================================================== -->
+                        <!-- basic form  -->
+                        <!-- ============================================================== -->
+                       
+                       <form method="POST" enctype="multipart/form-data" action="{% url 'addEdu' %}">
+                        {% csrf_token %}
+                        
+                        <label for="id_name" class="col-form-label"> {{form.name.label}}</label>
+                        {{ form.name }}
+                        <label for="id_description" class="col-form-label"> {{form.description.label}}</label>
+                        {{ form.description }}
+                        {{form.facult}}
+                        {{form.img}}
+                        {{form.slug}}
+                        {{form.slug}}
+                       <div id="sass">
+
+                       </div>
+                       <button type="submit">Ok</button>
+                       </form>
+                       
+                       
+                        <!-- ============================================================== -->
+                        <!-- end basic form  -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                    </div>
+                    </div>
+</div>
+
+<script>
+    const select = document.getElementById('id_facult');
+    const box = document.getElementById('sass');
+   
+    select.addEventListener('change',(e)=>{
+        console.log(e.target.value);
+        fetch(window.location.pathname+'/getd/'+e.target.value)
+        .then(response => response.json())
+        .then((data)=> {
+            
+            const depData = data.data
+            box.innerHTML = ""
+            const selectd = document.createElement('select');
+            
+            selectd.setAttribute('name','department');
+            selectd.setAttribute('id','department_id');
+            depData.map(item=>{
+                const option = document.createElement('option');
+                option.setAttribute('value',item.id);
+                option.textContent = item.name
+                selectd.appendChild(option)
+                
+            });
+            if (selectd){
+                box.appendChild(selectd)
+            }
+           
+            
+        })
+    })
+</script>
+{% endblock %}

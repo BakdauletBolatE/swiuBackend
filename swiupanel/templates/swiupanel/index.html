@@ -1,0 +1,197 @@
+{% extends 'swiupanel/layouts/app.html' %}
+
+{% block 'content' %}
+<div class="dashboard-wrapper">
+    <div class="dashboard-ecommerce">
+        <div class="container-fluid dashboard-content ">
+            <!-- ============================================================== -->
+            <!-- pageheader  -->
+            <!-- ============================================================== -->
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="page-header">
+                        <h2 class="pageheader-title">E-commerce Dashboard Template </h2>
+                        <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
+                        <div class="page-breadcrumb">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">E-Commerce Dashboard Template</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- end pageheader  -->
+            <!-- ============================================================== -->
+            <div class="ecommerce-widget">
+
+               
+                <div class="row">
+                    <!-- ============================================================== -->
+              
+                    <!-- ============================================================== -->
+
+                                  <!-- recent orders  -->
+                    <!-- ============================================================== -->
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="col-12">
+                                <div class="row">
+                                    <h5 class="card-header col-4">Образовательные программы</h5>
+                                    
+                                        <div id="custom-search" class=" col-8 top-search-bar">
+                                            <input id="searchEdu" class="form-control" type="text" placeholder="Search..">
+                                        </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead class="bg-light">
+                                            <tr class="border-0">
+                                                <th class="border-0">#</th>
+                                                <th class="border-0">img</th>
+                                                <th class="border-0">name</th>
+                                                <th class="border-0">cat</th>
+                                                <th class="border-0">facult</th>
+                                                <th class="border-0">department</th>
+                                            </tr>
+                                        </thead>
+                                        <div id="tableAll">
+                                        <tbody>
+                                            {% for eduPro in eduPros %}
+                                            <tr>
+                                                <td>{{eduPro.id}}</td>
+                                                <td>
+                                                    <div class="m-r-10"><img src="{{eduPro.img.url}}" alt="user" class="rounded" width="45"></div>
+                                                </td>
+                                                <td>{{eduPro.name}}</td>
+                                                <td>{{eduPro.cat.name}} </td>
+                                                <td>{{eduPro.facult.name}}</td>
+                                                <td>{{eduPro.department.name}}</td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                        </div>
+                                        <div id="tableSearch" class="table__search">
+
+                                        </div>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end recent orders  -->
+
+                                    <!-- recent orders  -->
+                    <!-- ============================================================== -->
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="col-12">
+                                <div class="row">
+                                    <h5 class="card-header">Пре</h5>
+                                    <div class="text-center">
+                                        <form class="" class="" action="">
+                                            <input class="form-control" type="text">
+                                        </form>
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                            
+                            <div class="card-body p-0">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead class="bg-light">
+                                            <tr class="border-0">
+                                                <th class="border-0">#</th>
+                                                <th class="border-0">img</th>
+                                                <th class="border-0">name</th>
+                                                <th class="border-0">cat</th>
+                                                <th class="border-0">facult</th>
+                                                <th class="border-0">department</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for staff in staffs %}
+                                            <tr>
+                                                <td>{{staff.id}}</td>
+                                                <td>
+                                                    <div class="m-r-10"><img src="{{eduPro.img.url}}" alt="user" class="rounded" width="45"></div>
+                                                </td>
+                                                <td><a href="{% url 'editStaff' staff.slug %}">{{staff.name}}</a> </td>
+                                                <td>{{staff.facult.name}} </td>
+                                                <td>{{staff.educationalPrograms.first}}</td>
+                                                <td>{{staff.department.name}}</td>
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end recent orders  -->
+
+
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- customer acquistion  -->
+                    <!-- ============================================================== -->
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Customer Acquisition</h5>
+                            <div class="card-body">
+                                <div class="ct-chart ct-golden-section" style="height: 354px;"></div>
+                                <div class="text-center">
+                                    <span class="legend-item mr-2">
+                                            <span class="fa-xs text-primary mr-1 legend-tile"><i class="fa fa-fw fa-square-full"></i></span>
+                                    <span class="legend-text">Returning</span>
+                                    </span>
+                                    <span class="legend-item mr-2">
+
+                                            <span class="fa-xs text-secondary mr-1 legend-tile"><i class="fa fa-fw fa-square-full"></i></span>
+                                    <span class="legend-text">First Time</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end customer acquistion  -->
+                    <!-- ============================================================== -->
+                </div>
+              
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- footer -->
+    <!-- ============================================================== -->
+    <div class="footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                     Copyright © 2018 Concept. All rights reserved. Dashboard by <a href="https://colorlib.com/wp/">Colorlib</a>.
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="text-md-right footer-links d-none d-sm-block">
+                        <a href="javascript: void(0);">About</a>
+                        <a href="javascript: void(0);">Support</a>
+                        <a href="javascript: void(0);">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- end footer -->
+    <!-- ============================================================== -->
+</div>
+{% endblock%}
