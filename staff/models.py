@@ -1,7 +1,7 @@
 from django.db import models
 from departments.models import Department,EducationalPrograms
 from faculties.models import Facult,Page
-from django.utils.text import slugify
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Position(models.Model):
@@ -51,3 +51,13 @@ class Staff(models.Model):
 
     def __str__(self):
         return self.name
+
+class Profile(models.Model):
+
+    user = models.OneToOneField(User,on_delete=models.CASCADE,blank=True,null=True,related_name='profile')
+    department = models.OneToOneField(Department,on_delete=models.CASCADE,blank=True,null=True,related_name='profile')
+    img = models.ImageField(upload_to="UserProfileImages/",blank=True,null=True)
+
+    class Meta:
+        verbose_name = 'Admin'
+        verbose_name_plural = 'admins'

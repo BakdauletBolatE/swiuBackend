@@ -3,17 +3,19 @@ from django.shortcuts import render
 from faculties.models import Facult,PageCategory
 from staff.models import Staff
 from news.models import Quote,PageHit,PostComments,Post
+
 from news.decoretors import counted
+
 
 @counted
 def index(request):
     if not request.session or not request.session.session_key:
         request.session.save()
 
-        
+
     quotes = Quote.objects.all()[:3]
     pageCats = PageCategory.objects.all()
-    posts = Post.objects.order_by('-created_at').all()[:3]
+    posts = Post.objects.order_by('-created_at').all()[:4]
     context = {
         'quotes':quotes,
         'posts':posts,

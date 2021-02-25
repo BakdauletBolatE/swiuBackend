@@ -36,8 +36,7 @@
                     <ul class="course-tab-btns">
                         <li class="course-tab-btn course-tab-btn--active">О образовательнем программе</li>
                         <li class="course-tab-btn">Преподаватели</li>
-                        <li class="course-tab-btn">Curriculum</li>
-                        <li class="course-tab-btn">Reviews</li>
+                        
                     </ul>
                     <div class="course-tab-content">
                         <h2 class="course-tab-title">
@@ -75,46 +74,27 @@
             <div class="course-sidebar">
                 <div class="main-sidebar">
                     <h3 class="main-sidebar__title">
-                        Course Details
+                        Информация об образовательнем программе
                     </h3>
                     <div class="main-sidebar__list">
                         <div class="main-sidebar__item">
                             <div>
                                 <i class="fas fa-calendar-alt"></i>
-                                <span>Start Date:</span>
+                                <span>CТЕПЕНЬ:</span>
                             </div>
-                                <span>Aug 21,2020</span>
+                                <span>{{eduProgram.cat.name}}</span>
                         </div>
                        
                         <div class="main-sidebar__item">
-                           <div><i class="fas fa-clock"></i><span>Duration:</span></div>
-                               <span>1 year</span>
+                           <div><i class="fas fa-clock"></i><span>Факультет:</span></div>
+                               <span>{{eduProgram.facult.name}}</span>
                         </div>
                         <div class="main-sidebar__item">
-                            <div><i class="fas fa-globe-europe"></i><span>Language:</span></div>
-                                <span>English</span>
+                            <div><i class="fas fa-globe-europe"></i><span>Кафедра:</span></div>
+                                <span>{{eduProgram.department.name}}</span>
                         </div>
-                        <div class="main-sidebar__item">
-                            <div><i class="fas fa-chevron-double-up"></i><span>Skill Level:</span></div>
-                                <span>Beginner</span>
-                        </div>
-                        <div class="main-sidebar__item">
-                            <div><i class="fas fa-graduation-cap"></i><span>Subject:</span></div>
-                                <span>Web</span>
-                        </div>
-                        <div class="main-sidebar__item">
-                           <div> <i class="fas fa-book"></i><span>Lectures:</span></div>
-                               <span>46</span>
-                        </div>
-                        <div class="main-sidebar__item">
-                            <div><i class="fas fa-bookmark"></i><span>Enrolled:</span></div>
-                                <span>333</span>
-                        </div>
-                        <div class="main-sidebar__item">
-                            <div><i class="fas fa-file-certificate"></i><span>Certification:</span></div>
-                                <span>YEs</span>
-                        </div>       
-                        <a class="btn"href="">Enroll Course</a>                           
+                          
+                        <a style="display: block;" class="btn" href="">Поставить лайк</a>                           
                    
                     </div>
                 </div>

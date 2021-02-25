@@ -80,3 +80,13 @@ def viewPostComment(request,url):
     post = Post.objects.get(slug=url)
     comment = PostComments.objects.values('description', 'id','author').filter(post=post)[:5]
     return JsonResponse({'comments': list(comment)})
+
+def postListView(request):
+
+    post = Post.objects.all()
+    context = {
+        'posts':post,
+    }
+
+    return render(request,'news/newsList.html',context)
+    

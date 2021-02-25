@@ -1,13 +1,13 @@
 from django.http.request import HttpHeaders
 from faculties.models import Facult
-from django import forms
 from django.shortcuts import render,redirect
-from departments.models import EducationalPrograms,Department
+from departments.models import ActivityDepartmentFoto, EducationalPrograms,Department,ActivityDepartment
 from faculties.models import Page
-from .forms import EduForm,StuffForm
+from .forms import EduForm,StuffForm,ActivityDepForm,ActivityDepCatForm
 from staff.models import Staff
 from django.http import JsonResponse,HttpResponse
 from django.contrib.auth.decorators import permission_required
+from django.contrib import messages
 
 
 
@@ -68,7 +68,11 @@ def addStaff(request):
         form = StuffForm(request.POST or None,request.FILES or None)
         if form.is_valid():
             form.save()
-            return redirect('staffListView')
+            messages.success(request,str(request.POST.get('name_ru'))+'Новость добавлен успешно')
+            return redirect('addStaff')
+        else:
+            messages.error(request,str(request.POST.get('name_ru'))+'Ошибка при добавлений')
+            return redirect('addStaff')
 
     else:
         form = StuffForm()
@@ -80,17 +84,21 @@ def addStaff(request):
 #@permission_required()
 def editStaff(request,url):
     if request.method == "POST":
-        form = StuffForm(request.POST or None,request.FILES or None)
+        staff = Staff.objects.get(slug=url)
+        form = StuffForm(request.POST or None, request.FILES or None,instance=staff)
         if form.is_valid():
             form.save()
-            return redirect('swiuindex')
+            return redirect('staffListView')
+        else:
+            return HttpResponse(form)
 
     else:
         staff = Staff.objects.get(slug=url)
         form = StuffForm(request.POST or None,request.FILES or None,instance=staff)
         context = {
         'form':form,
-        'id':staff.staffCat.id
+        'id':staff.staffCat.id,
+        'url': url
         }
         return render(request,'swiupanel/Staff/edit.html',context)
 
@@ -115,6 +123,7 @@ def getOpJson(request,*args,**kwargs):
 
 # @permission_required()
 def searchEdu(request,*args,**kwargs):
+
     qs = kwargs.get('search');
 
     s_data = list(EducationalPrograms.objects.values())
@@ -126,3 +135,59 @@ def searchEdu(request,*args,**kwargs):
     data = d_data
 
     return JsonResponse({'data':data})
+
+def activDepAdd(request):
+
+    if request.method == "POST":
+        form = ActivityDepForm(request.POST or None,request.FILES or None)
+        if form.is_valid():
+
+            images = request.FILES.getlist('images')
+            t = form.save()
+
+            if images:
+                dep = ActivityDepartment.objects.get(id=t.id)
+                for img in images:
+                    d = ActivityDepartmentFoto.objects.create(
+                        photo=img,
+                        department=dep 
+                    )
+                    d.save()
+
+            messages.success(request,str(request.POST.get('title'))+'Новость добавлен успешно')
+            return redirect('activDepAdd')
+        else:
+            messages.error(request,str(request.POST.get('title'))+'Ошибка при добавлений')
+            return redirect('activDepAdd')
+
+    else:
+        form = ActivityDepForm()
+        context = {
+        'form':form
+        }
+        return render(request,'swiupanel/Activity/add.html',context)
+
+def activDepList(request):
+
+    activityDeps = ActivityDepartment.objects.all()
+    
+    context = {
+        'activityDeps':activityDeps
+    }
+    return render(request,'swiupanel/Activity/index.html',context)
+
+
+def activDepCatAdd(request):
+
+    if request.method == "POST":
+        form = ActivityDepCatForm(request.POST or None,request.FILES or None)
+        if form.is_valid():
+            form.save()
+            return redirect('staffListView')
+
+    else:
+        form = ActivityDepCatForm()
+        context = {
+        'form':form
+        }
+        return render(request,'swiupanel/ActivityCat/add.html',context)

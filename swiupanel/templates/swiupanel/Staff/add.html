@@ -13,11 +13,18 @@
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="section-block" id="basicform">
-                            <h3 class="section-title">Basic Form Elements</h3>
-                            <p>Use custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.</p>
+                            <h3 class="section-title">Добавление сотрудников</h3>
+                            <p>Добавление сотрудников</p>
                         </div>
+                        {% if messages %}
+                        <ul class="alert">
+                            {% for message in messages %}
+                            <li{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
                         <div class="card">
-                            <h5 class="card-header">Basic Form</h5>
+                            <h5 class="card-header">Форма для их добавление</h5>
                             <div class="card-body">
                                 <form method="POST" enctype="multipart/form-data" action="{% url 'addStaff' %}">
                                     {% csrf_token %}
@@ -166,7 +173,7 @@
                         
                         box3.innerHTML = ""
                         const op = document.createElement('select');
-                        op.appendChild(zag);
+                        
                         op.setAttribute('name','educationalPrograms');
                         op.setAttribute('id','id_educationalPrograms');
                         op.setAttribute('multiple','multiple')
