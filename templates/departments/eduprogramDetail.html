@@ -7,31 +7,14 @@
 {% block content %}
 <section class="course">
     <div class="container">
-        <div class="course__row">
+        <div class="course__row obb__row">
             <div class="course-detail">
                 <h1 class="course__main-title">
                     {{eduProgram.name}}
                 </h1>
-                <div class="course__overviews">
-                    <div class="course-over-article">
-                        <h3>Cтепень:</h3>
-                        <p>{{eduProgram.cat.name}}
-                        </p>
-                    </div>
-                    <div class="course-over-article">
-                        <h3>Факультет</h3>
-                        <p>{{eduProgram.facult.name}}
-                        </p>
-                    </div>
-                    <div class="course-over-article">
-                        <h3>Кафедра</h3>
-                        <p>{{eduProgram.department.name}}
-                        </p>
-                    </div>
-                </div>
-                <div class="course__main-img">
-                    <img src="{{ eduProgram.img.url }}" alt="">
-                </div>
+                
+               
+                
                 <div class="course__tab-list">
                     <ul class="course-tab-btns">
                         <li class="course-tab-btn course-tab-btn--active">О образовательнем программе</li>

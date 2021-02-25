@@ -331,13 +331,23 @@
 
 .course__row {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 9fr 5fr;
   grid-gap: 4rem;
 }
 @media screen and (max-width: 700px) {
   .course__row {
     grid-template-columns: 1fr;
   }
+}
+
+.obb__row {
+  grid-template-columns: 9fr 9fr;
+}
+
+.course-tab__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
 }
 
 .course__main-title {
@@ -597,8 +607,16 @@
 }
 
 .activity-department__title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #182b49;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.activity-department__title2 {
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  color: #254881;
   text-align: center;
 }
 
@@ -606,6 +624,7 @@
   font-size: 1.5rem;
   color: #666666;
   line-height: 3rem;
+  margin-top: 2rem;
   margin-bottom: 2.5rem;
 }
 
