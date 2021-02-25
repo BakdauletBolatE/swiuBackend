@@ -106,14 +106,22 @@
     overflow: hidden;
 }
 .activity-department__title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color:#182b49;
+    text-align: center;
+    margin-top: 3rem;
+}
+.activity-department__title2 {
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    color:#254881;
     text-align: center;
 }
 .activity-department__desc {
     font-size: 1.5rem;
     color: #666666;
     line-height: 3rem;
+    margin-top: 2rem;
     margin-bottom: 2.5rem;
 }
 .swiper-container3 {

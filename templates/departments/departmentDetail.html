@@ -20,15 +20,16 @@
             </div>
             <div class="about-us-page__content">
                 <div class="about-us-page__item">
-                    <h2 class="about-us-page__title">
+                    <!-- <h2 class="about-us-page__title">
                         {% trans 'Кафедраның қызметі' %} 
-                    </h2>
+                    </h2> -->
                     <div class="activity-department__row">
                         {% for activityDepartment in activityDepartments %}
                         <article class="activity-department__item">
                             <h3 class="activity-department__title">
                                 {{activityDepartment.title}}
                             </h3>
+                            <p class="activity-department__title2">Категория: {{activityDepartment.category.name}}</p>
                             <p class="activity-department__desc">
                                 {{activityDepartment.description}}
                             </p>
@@ -105,8 +106,7 @@
                         <div class="employee__item">
                             <img class="employee__img" src="{{staffEdu.img.url}}" alt="">
                             <div class="employee__text">
-                                <div class="employee__name">{{ staffEdu.name}}</div>
-                                <div class="employee__presidency"><a class="employee__presidency" href="{% url 'stuffDetailView' staffEdu.slug  %}">{{staffEdu.position.name}}</a></div>
+                                <div class="employee__name"><a class="employee__presidency" href="{% url 'stuffDetailView' staffEdu.slug  %}">{{ staffEdu.name}}</a></div>
                                 <div class="employee__country">{{staffEdu.email}}</div>
                             </div>
                         </div>
