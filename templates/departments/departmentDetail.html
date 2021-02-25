@@ -11,14 +11,63 @@
         <div class="about-us-page__row">
             <div class="about-us-page__sidebar">
                 <ul class="about-us-page__mainsidebar-list">
+                    <li class="about-us-page__litem">{% trans 'Кафедраның қызметі' %}</li>
                     <li class="about-us-page__litem about-us-page__litem--active">{% trans 'Кафедра жайлы' %}</li>
                     <li class="about-us-page__litem">{% trans 'Білім беру бағдарламалары' %}</li>
                     <li class="about-us-page__litem">{% trans 'Кафедра оқытушылары' %}</li>
-                    <li class="about-us-page__litem">{% trans 'Кафедраның қызметі' %}</li>
+                    
                 </ul>
             </div>
             <div class="about-us-page__content">
-
+                <div class="about-us-page__item">
+                    <h2 class="about-us-page__title">
+                        {% trans 'Кафедраның қызметі' %} 
+                    </h2>
+                    <div class="activity-department__row">
+                        {% for activityDepartment in activityDepartments %}
+                        <article class="activity-department__item">
+                            <h3 class="activity-department__title">
+                                {{activityDepartment.title}}
+                            </h3>
+                            <p class="activity-department__desc">
+                                {{activityDepartment.description}}
+                            </p>
+                            {% if activityDepartment.activityDepartmentFoto.all %}
+                            <!-- Slider main container -->
+                                <div class="swiper-container3">
+                                    <!-- Additional required wrapper -->
+                                    <div class="swiper-wrapper">
+                                    <!-- Slides -->
+                                    {% for foto in activityDepartment.activityDepartmentFoto.all %}
+                                    <div class="swiper-slide">
+                                        <img class="swiper-s-w-i" src="{{foto.photo.url}}" alt="">
+                                    </div>
+                                    {% endfor %}                   
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                            {% endif %}
+                        </article>
+                        {% endfor %}
+                        <div class="pagination">
+                            <span class="step-links">
+                                {% if activityDepartments.has_previous %}
+                                    <a href="?page=1">&laquo; first</a>
+                                    <a href="?page={{ activityDepartments.previous_page_number }}">previous</a>
+                                {% endif %}
+                        
+                                <span class="current">
+                                    Page {{ activityDepartments.number }} of {{ activityDepartments.paginator.num_pages }}.
+                                </span>
+                        
+                                {% if activityDepartments.has_next %}
+                                    <a href="?page={{ activityDepartments.next_page_number }}">next</a>
+                                    <a href="?page={{ activityDepartments.paginator.num_pages }}">last &raquo;</a>
+                                {% endif %}
+                            </span>
+                        </div>
+                    </div>
+                </div>
                 <div class="about-us-page__item">
                     <h2 class="about-us-page__title">
                        {{department.name}}
@@ -64,40 +113,7 @@
                         {%endfor%}
                     </div>   
                 </div>
-                <div class="about-us-page__item">
-                    <h2 class="about-us-page__title">
-                        {% trans 'Кафедраның қызметі' %} 
-                    </h2>
-                    <div class="activity-department__row">
-                        {% for activityDepartment in activityDepartments %}
-                        <article class="activity-department__item">
-                            <h3 class="activity-department__title">
-                                {{activityDepartment.title}}
-                            </h3>
-                            <p class="activity-department__desc">
-                                {{activityDepartment.description}}
-                            </p>
-                            <!-- Slider main container -->
-                                <div class="swiper-container3">
-                                    <!-- Additional required wrapper -->
-                                    <div class="swiper-wrapper">
-                                    <!-- Slides -->
-                                    {% for foto in activityDepartment.activityDepartmentFoto.all %}
-                                    <div class="swiper-slide">
-                                        <img class="swiper-s-w-i" src="{{foto.photo.url}}" alt="">
-                                    </div>
-                                    {% endfor %}
-                                    
-                                    
-                                    </div>
-                                    <div class="swiper-pagination"></div>
-                                
-                                    
-                                </div>
-                        </article>
-                        {% endfor %}
-                    </div>
-                </div>
+                
                 
                 
             </div>

@@ -11,12 +11,12 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div class="page-header">
                         <h2 class="pageheader-title">Оброзовательные программы</h2>
-                        <p class="pageheader-text">Оброзовательные программы</p>
+                        <p class="pageheader-text">Оброзовательные программы.</p>
                         <div class="page-breadcrumb">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Оброзовательные программы</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Оброзовательные программы</li>
+                                    <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Главная</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Оброзовательные программы.</li>
                                 </ol>
                             </nav>
                         </div>
@@ -38,7 +38,9 @@
                     <!-- ============================================================== -->
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="card">
-                            
+                            <div class="col-12">
+                                
+                            </div>
                             
                             <div class="card-body p-0">
                                 <div class="table-responsive">
@@ -49,21 +51,22 @@
                                                 <th class="border-0">img</th>
                                                 <th class="border-0">name</th>
                                                 <th class="border-0">cat</th>
-                                                <th class="border-0">facult</th>
                                                 <th class="border-0">department</th>
+                                                <th class="border-0">short_description</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {% for eduPro in eduPros %}
+                                            {% for activityDep in activityDeps %}
                                             <tr>
-                                                <td>{{eduPro.id}}</td>
+                                                <td>{{activityDep.id}}</td>
                                                 <td>
                                                     <div class="m-r-10"><img src="{{eduPro.img.url}}" alt="user" class="rounded" width="45"></div>
                                                 </td>
-                                                <td>{{eduPro.name}}</td>
-                                                <td>{{eduPro.cat.name}} </td>
-                                                <td>{{eduPro.facult.name}}</td>
-                                                <td>{{eduPro.department.name}}</td>
+                                                <td>{{activityDep.title}}</td>
+                                                <td>{{activityDep.category.name}} </td>
+                                                <td>{{activityDep.department.name}}</td>
+                                                <td>{{activityDep.short_description}}</td>
+                
                                             </tr>
                                             {% endfor %}
                                         </tbody>

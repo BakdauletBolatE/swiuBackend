@@ -1,8 +1,9 @@
 
 from django import forms
-
-from departments.models import EducationalPrograms
+from departments.models import EducationalPrograms,ActivityDepartment,ActivityDepartmentCat
 from staff.models import Staff
+from faculties.models import Page
+from .models import WidgetItems
 
 
 class EduForm(forms.ModelForm):
@@ -61,3 +62,64 @@ class StuffForm(forms.ModelForm):
     class Meta:
         model = Staff
         fields = ('name_ru','name_en','name_kk','img','email','adress','slug','phone','about_ru','about_en','about_kk','staffCat','facult','department','educationalPrograms','page') 
+
+class PageForm(forms.ModelForm):
+
+    class Meta:
+        model = Page
+        fields = ('title','url','slug','category')
+
+
+class WidgetItemsForm(forms.ModelForm):
+
+    class Meta:
+
+        model = WidgetItems
+        fields = ('__all__')
+
+class ActivityDepForm(forms.ModelForm):
+
+    title = forms.CharField(label='Загаловок деятельности кафедры(ru)', 
+                            max_length=100,
+                            widget=forms.TextInput(attrs={'class': 'form-control'}))
+
+    title_en = forms.CharField(label='Загаловок деятельности кафедры(en)', 
+                            max_length=100,
+                            widget=forms.TextInput(attrs={'class': 'form-control'}))
+
+    title_kk = forms.CharField(label='Загаловок деятельности кафедры(ru)', 
+                            max_length=100,
+                            widget=forms.TextInput(attrs={'class': 'form-control'}))
+    
+    slug = forms.CharField(label='url деятельности кафедры', 
+                            max_length=100,
+                            widget=forms.TextInput(attrs={'class': 'form-control'}))
+    short_description = forms.Field(label='Описание деятельности кафедры(ru)', 
+                           
+                            widget=forms.Textarea(attrs={'class': 'form-control'}))
+
+    short_description_en = forms.Field(label='Описание деятельности кафедры(en)', 
+                           
+                            widget=forms.Textarea(attrs={'class': 'form-control'}))
+
+    short_description_kk = forms.Field(label='Описание деятельности кафедры(kk)', 
+                           
+                            widget=forms.Textarea(attrs={'class': 'form-control'}))
+
+    description = forms.Field(label='Полное описание деятельности кафедры', 
+                            
+                            widget=forms.Textarea(attrs={'class': 'form-control'}))
+    
+    
+    class Meta:
+
+        model = ActivityDepartment
+        fields = ('__all__')
+
+
+class ActivityDepCatForm(forms.ModelForm):
+
+    class Meta:
+
+        model = ActivityDepartmentCat
+        fields = ('__all__')

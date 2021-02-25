@@ -182,6 +182,47 @@
                                     </ul>
                                 </div>
                             </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Страницы<span class="badge badge-success">6</span></a>
+                                <div id="submenu-3" class="collapse submenu" >
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{% url 'pageIndex' %}">Посмотреть Страницы</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{% url 'addPage' %}">Добавить Страницу</a>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </li>
+                          
+                            <li class="nav-item ">
+                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Кафедра деятельности<span class="badge badge-success">6</span></a>
+                                <div id="submenu-4" class="collapse submenu" >
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{% url 'activDepList' %}">Посмотреть Кафедру деятельности</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{% url 'activDepAdd' %}">Добавить Кафедру деятельности</a>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fa fa-fw fa-user-circle"></i>Категория Кафедра деятельности<span class="badge badge-success">6</span></a>
+                                <div id="submenu-5" class="collapse submenu" >
+                                    <ul class="nav flex-column">
+                                       
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{% url 'activDepCatAdd' %}">Добавить Категорию кафедру деятельности</a>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </nav>
@@ -226,6 +267,7 @@
     <script src="{% static 'swiupanel/assets/libs/js/dashboard-ecommerce.js' %}"></script>
     <script src="{% static 'swiupanel/js/fetch.js' %}"></script>
     <script src="{% static 'swiupanel/js/main.js' %}"></script>
+    <script src="{% static 'swiupanel/js/widget.js' %}"></script>
 </body>
  
 </html>

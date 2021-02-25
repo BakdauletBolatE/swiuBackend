@@ -28,20 +28,40 @@ if (search){
 
 
 const idName = document.getElementById('id_name_en');
+const idTitle = document.getElementById('id_title_en');
 let slug = document.getElementById('id_slug');
 
-idName.addEventListener('input',item=>{
-    let string = item.target.value;
-    let new_str = "";
-    for (i=0;i<string.length;i++){
-        if (string[i] == " "){
-            new_str += "-";
+if (idName){
+    idName.addEventListener('input',item=>{
+        let string = item.target.value;
+        let new_str = "";
+        for (i=0;i<string.length;i++){
+            if (string[i] == " "){
+                new_str += "-";
+            }
+            else{
+                new_str += string[i].toLowerCase();
+            }
         }
-        else{
-            new_str += string[i].toLowerCase();
+        slug.value = new_str;
+        
+        
+    })
+}
+if (idTitle){
+    idTitle.addEventListener('input',item=>{
+        let string = item.target.value;
+        let new_str = "";
+        for (i=0;i<string.length;i++){
+            if (string[i] == " "){
+                new_str += "-";
+            }
+            else{
+                new_str += string[i].toLowerCase();
+            }
         }
-    }
-    slug.value = new_str;
-    
-    
-})
+        slug.value = new_str;
+        
+        
+    })
+}

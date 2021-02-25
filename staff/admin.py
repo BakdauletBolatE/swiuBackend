@@ -19,3 +19,5 @@ class StaffAdmin(TranslationAdmin):
     prepopulated_fields = {"slug": ("name",)}
     
 admin.site.register(Staff,StaffAdmin)
+
+admin.site.register(Profile)

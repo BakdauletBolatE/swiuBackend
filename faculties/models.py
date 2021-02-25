@@ -34,8 +34,8 @@ class Page(models.Model):
     title = models.CharField('Название страницы',max_length=255)
     url = models.CharField('Ссылка НУЖНО ИМЯ',max_length=255)
     slug = models.SlugField('slug это обычный слаг',null=True,blank=True)
-    content = RichTextUploadingField('Контентная часть',null=True)
-    img = models.ImageField('Постер страницы',upload_to="Page/")
+    content = RichTextUploadingField('Контентная часть',null=True,blank=True)
+    img = models.ImageField('Постер страницы',upload_to="Page/",blank=True,null=True)
     category = models.ForeignKey(PageCategory,related_name='page',on_delete=models.CASCADE)
 
     def __str__(self):
