@@ -3,7 +3,7 @@ from .models import *
 from faculties.models import PageCategory
 # Create your views here.
 
-def index(request):
+def libindex(request):
 
     years = Year.objects.all()
     pageCats = PageCategory.objects.all()
