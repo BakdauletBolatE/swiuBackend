@@ -7,31 +7,43 @@
 <section class="course">
     <div class="container">
         <div class="course__row">
+            <div class="course-sidebar">
+                <div class="main-sidebar">
+                    <h3 class="main-sidebar__title">
+                        О посте
+                    </h3>
+                    <div class="main-sidebar__list">
+                        <div class="main-sidebar__item">
+                            <div>
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Лайки:</span>
+                            </div>
+                                <span>{{post.likes.count}}</span>
+                        </div>
+                       
+                        <div class="main-sidebar__item">
+                           <div><i class="fas fa-clock"></i><span>Коментарий:</span></div>
+                               <span>{{post.post_com.count}}</span>
+                        </div>
+                        <div class="main-sidebar__item">
+                            <div><i class="fas fa-globe-europe"></i><span>Просмотры:</span></div>
+                                <span>{{page.count}}</span>
+                        </div>
+                          
+                        <a style="display: block;" class="btn" href="">Поставить лайк</a>                           
+                   
+                    </div>
+                </div>
+            </div>
             <div class="course-detail">
                 <h1 class="course__main-title">
                     {{post.title}}
                 </h1>
-                <div class="course__overviews">
-                    <div class="course-over-article">
-                        <h3>Лайки</h3>
-                        <p>{{post.likes.count}}
-                        </p>
-                    </div>
-                    <div class="course-over-article">
-                        <h3>Коментарий</h3>
-                        <p>{{post.post_com.count}}
-                        </p>
-                    </div>
-                    <div class="course-over-article">
-                        <h3>Просмотры</h3>
-                        <p>{{page.count}}
-                        </p>
-                    </div>
-                </div>
+                
                 <div class="course__tab-list">
                     <ul class="course-tab-btns">
                         <li class="course-tab-btn course-tab-btn--active">{{post.created_at}}</li>
-                        <li class="course-tab-btn course-tab-btn--active">Коментарий</li>
+                        <!-- <li class="course-tab-btn course-tab-btn--active">Коментарий</li> -->
                     </ul>
                     <div class="course-tab-content">
                         <h2 class="course-tab-title">
@@ -40,11 +52,23 @@
                         <p class="course-tab-description">
                             {{post.description}}
                         </p>
-                        <div class="course__main-img">
-                            <img src="{{post.post_img.first.img.url}}" alt="">
-                        </div>
+                        {% if post.post_img.all %}
+                        <!-- Slider main container -->
+                            <div class="swiper-container3 mt-4">
+                                <!-- Additional required wrapper -->
+                                <div class="swiper-wrapper">
+                                <!-- Slides -->
+                                {% for foto in post.post_img.all %}
+                                <div class="swiper-slide">
+                                    <img class="swiper-s-w-i" src="{{foto.img.url}}" alt="">
+                                </div>
+                                {% endfor %}                   
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        {% endif %}
                     </div>
-                    <div class="course-tab-content">
+                    <!-- <div class="course-tab-content">
                         {% for com in post.post_com.all %}
                         <div class="mt-5">
                             <h2 class="course-tab-title">
@@ -56,13 +80,11 @@
                         </div>
                         {% endfor %}
                         
-                    </div>
+                    </div> -->
                     
                 </div>
             </div>
-            <div class="course-sidebar">
-                
-            </div>
+            
         </div>
     </div>
 </section>

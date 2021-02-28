@@ -196,7 +196,7 @@
                             <span>{{post.author}}</span>
                         </div>
                         
-                        <div class="comment news__footer-item">
+                        <!-- <div class="comment news__footer-item">
                             <input type="hidden" value="{{post.slug}}">
                                 <i class="none-click far fa-comments"></i>
                                 <input type="hidden" value="{{post.slug}}">
@@ -210,7 +210,7 @@
                                     
                                 </ul>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="news__footer-item ">       
                                 <input type="hidden" value="{{post.slug}}">
                                 <button class="like_btn" type="submit"><i class="none-click far fa-heart"></i></button>            
@@ -219,9 +219,11 @@
                     </div>
                 </div>
             </div>
+           
             {% endfor %}
-            <a style="text-align: center;" class="btn" href="{% url 'postListView' %}">Посмотреть все новости</a>
+           
         </div>
+        <a style="text-align: center; display: block; margin-top: 75px;" class="btn" href="{% url 'postListView' %}">Посмотреть все новости</a>
     </div>
 </section>
 <script>
@@ -270,80 +272,80 @@
                 
         });
     });
-    const comment = document.querySelectorAll('.comment')
-    comment.forEach(com=>{
-        com.addEventListener('click',(com)=>{
-            com = com.target;
-            if (com.classList.contains('comment')){
-                changer = com.lastElementChild;
-                changer.classList.toggle('hide');
-                url = com.firstElementChild.value;
-                lastComments = changer.lastElementChild;
-                fetch('creative/comments/'+url)
-                .then(response => response.json())
-                .then(commits => view(commits))
+    // const comment = document.querySelectorAll('.comment')
+    // comment.forEach(com=>{
+    //     com.addEventListener('click',(com)=>{
+    //         com = com.target;
+    //         if (com.classList.contains('comment')){
+    //             changer = com.lastElementChild;
+    //             changer.classList.toggle('hide');
+    //             url = com.firstElementChild.value;
+    //             lastComments = changer.lastElementChild;
+    //             fetch('creative/comments/'+url)
+    //             .then(response => response.json())
+    //             .then(commits => view(commits))
 
-                function view(data){
-                    data = data.comments;
-                    lastComments.innerHTML = "";
-                    data.forEach(e=>{
-                        li = document.createElement('li');
-                        li.innerHTML = e.author+": "+e.description;
-                        lastComments.append(li)
-                    });
+    //             function view(data){
+    //                 data = data.comments;
+    //                 lastComments.innerHTML = "";
+    //                 data.forEach(e=>{
+    //                     li = document.createElement('li');
+    //                     li.innerHTML = e.author+": "+e.description;
+    //                     lastComments.append(li)
+    //                 });
                     
-                }
+    //             }
                
-            }
-        })
-    })
+    //         }
+    //     })
+    // })
 
     
 
-    const btn = document.querySelectorAll('.comment_btn')
+    // const btn = document.querySelectorAll('.comment_btn')
 
-    btn.forEach((e)=>{
-        e.addEventListener('click',(com)=>{
-            com = com.target
-            let lastComments = com.nextElementSibling;
-            let url = com.previousElementSibling.value;
-            let count = com.parentElement.previousElementSibling;
-            let desciption = com.previousElementSibling.previousElementSibling.value;
-            console.log(count);
+    // btn.forEach((e)=>{
+    //     e.addEventListener('click',(com)=>{
+    //         com = com.target
+    //         let lastComments = com.nextElementSibling;
+    //         let url = com.previousElementSibling.value;
+    //         let count = com.parentElement.previousElementSibling;
+    //         let desciption = com.previousElementSibling.previousElementSibling.value;
+    //         console.log(count);
 
-            let myData = {
-                'slug': url,
-                'desciption':desciption
-            }
+    //         let myData = {
+    //             'slug': url,
+    //             'desciption':desciption
+    //         }
 
-            fetch('creative/comments/add', {
-            method: 'post',
-            credentials: 'same-origin', 
-            headers: {
-                "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-                "X-CSRFToken": "{{csrf_token}}"
-            },
-            body: JSON.stringify(myData)
-            })
-            .then(function (data) {
-                console.log('Request succeeded with JSON response', data);
-            })
-            .then(view)
-            .catch(function (error) {
-                console.log('Request failed', error);
-            });
+    //         fetch('creative/comments/add', {
+    //         method: 'post',
+    //         credentials: 'same-origin', 
+    //         headers: {
+    //             "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+    //             "X-CSRFToken": "{{csrf_token}}"
+    //         },
+    //         body: JSON.stringify(myData)
+    //         })
+    //         .then(function (data) {
+    //             console.log('Request succeeded with JSON response', data);
+    //         })
+    //         .then(view)
+    //         .catch(function (error) {
+    //             console.log('Request failed', error);
+    //         });
 
-            function view(){
-                li = document.createElement('li');
-                li.innerHTML = "{{request.user.username}}"+": "+myData.desciption;
-                lastComments.append(li);
-                desciption.value = "";
-                a = parseInt(count.innerHTML);
-                count.innerHTML = a + 1;
-            }
+    //         function view(){
+    //             li = document.createElement('li');
+    //             li.innerHTML = "{{request.user.username}}"+": "+myData.desciption;
+    //             lastComments.append(li);
+    //             desciption.value = "";
+    //             a = parseInt(count.innerHTML);
+    //             count.innerHTML = a + 1;
+    //         }
 
-        })
-    });
+    //     })
+    // });
 
 
 
@@ -351,23 +353,6 @@
 
   
 
-//   fetch('http://127.0.0.1:8000/creative/comments/add', {
-//     method: 'post',
-//     credentials: 'same-origin', 
-//     headers: {
-//       "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-//       "X-CSRFToken": "{{csrf_token}}"
-//     },
-//     body: JSON.stringify(myData)
-//   })
-//   .then(function (data) {
-//     console.log('Request succeeded with JSON response', data);
-//   })
-//   .catch(function (error) {
-//     console.log('Request failed', error);
-//   });
-//         fetch('http://127.0.0.1:8000/creative/comments/')
-//   .then(response => response.json())
-//   .then(commits => console.log(commits));
+
 </script>
 {% endblock %}
