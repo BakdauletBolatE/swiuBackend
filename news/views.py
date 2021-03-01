@@ -87,7 +87,7 @@ def postListView(request):
     pageCats = PageCategory.objects.all()
     context = {
         'posts':post,
-        'pageCats',pageCats
+        'pageCats': pageCats
     }
 
     return render(request,'news/newsList.html',context)
