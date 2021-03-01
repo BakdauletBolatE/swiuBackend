@@ -38,6 +38,23 @@
                             <div><i class="fas fa-graduation-cap"></i><span>Номер:</span></div>
                                 <span>{{stuff.phone}}</span>
                         </div>
+                        <div class="main-sidebar__item">
+                            <div><i class="fas fa-graduation-cap"></i><span>Факультет:</span></div>
+                                <span>{{stuff.facult.name}}</span>
+                        </div>
+                        
+                        <div class="main-sidebar__item">
+                            <div><i class="fas fa-graduation-cap"></i><span>Кафедра:</span></div>
+                                <span>{{stuff.department.name}}</span>
+                        </div>
+                        <div class="main-sidebar__item">
+                            <div><i class="fas fa-graduation-cap"></i><span>Оброзовательные программы:</span></div>
+                                <span>
+                                    {% for edu in educationalPrograms %}
+                                    {{edu.name}} ,
+                                    {% endfor %}
+                                </span>
+                        </div>
                         
                         <a  style="display: block;" class="btn"href="">Поставить лайк</a>                           
                    

@@ -84,8 +84,10 @@ def viewPostComment(request,url):
 def postListView(request):
 
     post = Post.objects.all()
+    pageCats = PageCategory.objects.all()
     context = {
         'posts':post,
+        'pageCats',pageCats
     }
 
     return render(request,'news/newsList.html',context)
