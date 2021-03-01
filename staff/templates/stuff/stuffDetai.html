@@ -50,7 +50,7 @@
                         <div class="main-sidebar__item">
                             <div><i class="fas fa-graduation-cap"></i><span>Оброзовательные программы:</span></div>
                                 <span>
-                                    {% for edu in educationalPrograms %}
+                                    {% for edu in stuff.educationalPrograms.all %}
                                     {{edu.name}} ,
                                     {% endfor %}
                                 </span>
