@@ -30,7 +30,7 @@
     background-color: $white;
     &:hover{
         .sub-menu{
-            display: block;
+            display: grid;
             transform: scaleY(1);
         }
         .menu__link{
@@ -55,16 +55,22 @@
     background-color: $white;
     list-style: none;
     transform: scaleY(0);
-    min-width: 30rem;
+  
     border-radius: 0 0 0.5rem 0.5rem;
     margin-top:1.7rem;
     z-index: 3;
-    display: block;
+    display: grid;
+   grid-template-columns: 1fr 1fr;
+
     transform-origin: center top 0px;
     transition: 0.2s ease;
     
 }
 .sub-menu__item{
+    display: flex;
+    min-width: 30rem;
+    justify-content: center;
+    align-items: center;
     padding:1rem 2rem;
     border-bottom: 1px solid rgba(128, 128, 128, 0.2);
 
@@ -79,7 +85,7 @@
     }
 }
 .sub-menu__link{
-    
+    display: block;
     color:darken($dark-silver,20%);
     text-decoration: none;
     font-size: 1.5rem;
@@ -138,4 +144,9 @@
 
 .menu__link2{
     color:$dark-blue;
+}
+
+.bgs{
+    padding-bottom: 10rem;
+    background-color: rgb(251, 251, 251);
 }

@@ -42,7 +42,7 @@ def addPage(request):
 def addWidgetType(request):
     if request.method == "POST":
         data = json.loads(request.body);
-        id = data['id']
+        id = data['pageId']
         widgetType = data['widgetType']
         widget = Widget.objects.create(page_id=id,widget_type_id=widgetType)
         widget.save()

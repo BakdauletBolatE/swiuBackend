@@ -7,31 +7,6 @@
 <section class="course">
     <div class="container">
         <div class="course__row">
-            <div class="course-detail">
-                <h1 class="course__main-title">
-                    {{stuff.name}}
-                </h1>
-               
-                <div class="course__tab-list">
-                    <ul class="course-tab-btns">
-                        <li class="course-tab-btn course-tab-btn--active">О Преподавателе</li>
-                    </ul>
-                    <div class="course-tab-content">
-                        <h2 class="course-tab-title">
-                            {{stuff.name}}
-                        </h2>
-                        <div class="course-tab__container">
-                            <img class="course__main-img" src="{{ stuff.img.url }}" alt="">
-                            <p class="course-tab-description">
-                                {{stuff.about}}
-                                
-                                
-                            </p>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
             <div class="course-sidebar">
                 <div class="main-sidebar">
                     <h3 class="main-sidebar__title">
@@ -69,6 +44,32 @@
                     </div>
                 </div>
             </div>
+            <div class="course-detail">
+                <h1 class="course__main-title">
+                    {{stuff.name}}
+                </h1>
+               
+                <div class="course__tab-list">
+                    <ul class="course-tab-btns">
+                        <li class="course-tab-btn course-tab-btn--active">О Преподавателе</li>
+                    </ul>
+                    <div class="course-tab-content">
+                        <h2 class="course-tab-title">
+                            {{stuff.name}}
+                        </h2>
+                        <div class="course-tab__container">
+                            <img class="course__main-img" src="{{ stuff.img.url }}" alt="">
+                            <p class="course-tab-description">
+                                {{stuff.about}}
+                                
+                                
+                            </p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </div>
 </section>

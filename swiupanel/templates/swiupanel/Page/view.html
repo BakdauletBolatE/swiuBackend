@@ -22,7 +22,7 @@
                                             <option value="2">Блок из коробок</option>
                                         </select>                                 
                                     </div>                       
-                                    <button id="btnSW" class="btn">Создать</button>
+                                    <button id="addWidget" class="btn">Создать</button>
                             </div>
                             
                             <div id="row" class="row">
@@ -37,22 +37,40 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <h3 class="card-title">{{item.title }}</h3>
+                                            {% if item.widget_photo %}
+                                            <img class="card-img" src="{{item.widget_photo.url}}" alt="">
+                                            {% endif %}
                                             <p class="card-text">{{item.content}}</p>
                                             <a href="#" class="btn btn-primary">Go somewhere</a>
                                         </div>
                                     </div>
                                 </div>
                                 {% endfor %}
+                                {% if widget.widget_type.id == 1 %}
                                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
                                     <form class="card" enctype="multipart/form-data" class="addWidgetItemForm" method="POST" action="{% url 'addWidgetItem' %}">
                                     {% csrf_token %}
                                         <div class="card-body">
-                                            <p><label for="id_widget_photo">Фото для виджета:</label> <input type="file" name="widget_photo" accept="image/*" id="id_widget_photo"></p>
+                                            <p><label for="id_widget_photo">Фото для виджета: Галерея</label> <input type="file" name="widget_photo" accept="image/*" id="id_widget_photo"></p>
                                             <p><input type="hidden" name="widget" value="{{widget.id}}" id="id_widget"></p>
                                             <button type="submit" class="btn clickToadd">JN</button>
                                         </div>
                                     </form>
                                 </div>
+                                {% elif widget.widget_type.id == 2 %}
+                                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                                    <form class="card" enctype="multipart/form-data" class="addWidgetItemForm" method="POST" action="{% url 'addWidgetItem' %}">
+                                    {% csrf_token %}
+                                        <div class="card-body">
+                                            <p><input type="text" name="title"></p>
+                                            <p><input type="text" name="content"></p>
+                                            <p><label for="id_widget_photo">Фото для виджета:Артикл блок</label> <input type="file" name="widget_photo" accept="image/*" id="id_widget_photo"></p>
+                                            <p><input type="hidden" name="widget" value="{{widget.id}}" id="id_widget"></p>
+                                            <button type="submit" class="btn clickToadd">JN</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                {% endif %}
                                 {%  endfor %}
                             </div>
                         </div>

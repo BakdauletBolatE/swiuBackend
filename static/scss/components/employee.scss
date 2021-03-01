@@ -23,14 +23,14 @@
         top:0;
         left:0;
         background-color: black;
-        opacity: 0.5;
+        opacity: 0.2;
         position: absolute;
         backdrop-filter:blur(5rem);
         transition: 0.2s ease;
     }
     &:hover{
         &::before{
-            opacity: 0.2; 
+            opacity: 0.5; 
             transition: 0.2s ease;
         }
         
@@ -91,15 +91,26 @@
 .accordion__content {
     border-bottom: 1px solid rgb(221, 221, 221);
     // padding: 1.2rem 0px;
+    background-color: transparent;
     position: relative;
+    color: white;
     height: 0px;
     min-height: 0;
-   
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
     transition: 0.3s ease;
     overflow: hidden;
 }
+.accordion__content-bn{
+    border-bottom: none;
+}
+.sub-menu__link-white{
+    color: white !important;
+}
 .accordion__content.active{
-    min-height: 20rem;
+    min-height: auto;
     height: auto; 
     transform: scaleY(1);
     transition: 0.3s ease;
