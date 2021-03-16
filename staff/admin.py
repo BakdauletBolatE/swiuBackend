@@ -16,6 +16,10 @@ admin.site.register(StaffCat,StaffCatAdmin)
 
 class StaffAdmin(TranslationAdmin):
     list_display = ('id', 'name','staffCat')
+    list_display = ('name','order','staffCat')
+    list_filter = ('staffCat','page')
+    ordering = ['order']
+    search_fields = ['name']
     prepopulated_fields = {"slug": ("name",)}
     
 admin.site.register(Staff,StaffAdmin)
