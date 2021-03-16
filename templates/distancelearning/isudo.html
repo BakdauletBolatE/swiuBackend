@@ -1,0 +1,102 @@
+{% extends 'layouts/app.html' %}
+{% load static %}
+{% load i18n %} 
+{% load static i18n %}
+{% block title %}
+{% trans 'Факультеты университета Silkway' %}
+{% endblock %}
+{% block content %}
+
+<div class="container">
+    <h2 class="isudo__bigtitle">
+        ИСУДО 2.0
+    </h2>
+    <div class="isudo row">
+        <a class="isudo__link" href="http://isude.kazmbs.kz/swiu-fulltime-student">
+            <div class="isudo__item isudo__item-before" style="background: url({% static 'img/Compressed/s1.jpg' %}) no-repeat center; background-size: cover;">
+                <h2 class="isudo__title">Кабинет Обучающегося</h2>
+                <h3 class="isudo__subtitle">Очная форма обучения</h3>
+            </div>
+        </a>
+        <a class="isudo__link" href="http://isude.kazmbs.kz/SWIU-STUDENT">
+            <div class="isudo__item isudo__item-before" style="background: url({% static 'img/Compressed/s2.jpg' %}) no-repeat center; background-size: cover;">
+                <h2 class="isudo__title">Кабинет Обучающегося</h2>
+                <h3 class="isudo__subtitle">Сокращенная форма обучения</h3>
+            </div>
+        </a>
+        <a class="isudo__link" href="http://isude.kazmbs.kz/SWIU-MAGISTR-STUDENT">
+            <div class="isudo__item isudo__item-before" style="background: url({% static 'img/Compressed/s3.jpg' %}) no-repeat center; background-size: cover;">
+                <h2 class="isudo__title">Кабинет Обучающегося</h2>
+                <h3 class="isudo__subtitle">Послевузовское форма обучения</h3>
+            </div>
+        </a>
+        <a class="isudo__link" href="http://isude.kazmbs.kz/SWIU-FULLTIME-PPS">
+            <div class="isudo__item isudo__item-before" style="background: url({% static 'img/Compressed/t1.jpg' %}) no-repeat center; background-size: cover;">
+                <h2 class="isudo__title">Кабинет преподавателя</h2>
+                <h3 class="isudo__subtitle">Очная форма обучение</h3>
+            </div>
+        </a>
+        <a class="isudo__link" href="http://isude.kazmbs.kz/swiu-pps">
+            <div class="isudo__item isudo__item-before" style="background: url({% static 'img/Compressed/t2.jpg' %}) no-repeat center; background-size: cover;">
+                <h2 class="isudo__title">Кабинет преподавателя</h2>
+                <h3 class="isudo__subtitle">Сокращенная форма обучения</h3>
+            </div>
+        </a>
+        <a class="isudo__link" href="http://isude.kazmbs.kz/SWIU-magistr-pps">
+            <div class="isudo__item isudo__item-before" style="background: url({% static 'img/Compressed/t3.jpg' %}) no-repeat center; background-size: cover;">
+                <h2 class="isudo__title">Кабинет преподавателя</h2>
+                <h3 class="isudo__subtitle">Послевузовское форма обучения</h3>
+            </div>
+        </a>
+        <a class="isudo__link" href="http://isude.kazmbs.kz/SWIU-fulltime">
+            <div class="isudo__item isudo__item-before" style="background: url({% static 'img/Compressed/a1.jpg' %}) no-repeat center; background-size: cover;">
+                <h2 class="isudo__title">Админстратор</h2>
+                <h3 class="isudo__subtitle">Очная форма обучение</h3>
+            </div>
+        </a>
+        <a class="isudo__link" href="http://isude.kazmbs.kz/SWIU/">
+            <div class="isudo__item isudo__item-before" style="background: url({% static 'img/Compressed/a2.jpg' %}) no-repeat center; background-size: cover;">
+                <h2 class="isudo__title">Админстратор</h2>
+                <h3 class="isudo__subtitle">Сокращенная форма обучения</h3>
+            </div>
+        </a>
+        <a class="isudo__link" href="http://isude.kazmbs.kz/SWIU-MAGISTR">
+            <div class="isudo__item isudo__item-before" style="background: url({% static 'img/Compressed/a3.jpg' %}) no-repeat center; background-size: cover;">
+                <h2 class="isudo__title">Админстратор</h2>
+                <h3 class="isudo__subtitle">Послевузовское форма обучения</h3>
+            </div>
+        </a>
+    </div>
+    <h2 class="isudo__bigtitle">
+        Инструкции пользователям
+    </h2>
+    <div class="isudo mt-4 row">
+        <div class="isudo__item isudo__item-shadow">
+            <div class="isudo__title isudo__title-blue">Обучающийся</div>
+            <a class="isudo__btn" href="{% static 'pdf/student.pdf' %}">Посмотреть</a>
+        </div>
+        <div class="isudo__item isudo__item-shadow">
+            <div class="isudo__title isudo__title-blue">Преподаватель</div>
+            <a class="isudo__btn" href="{% static 'pdf/teacher.pdf' %}">Посмотреть</a>
+        </div>
+        <div class="isudo__item isudo__item-shadow">
+            <div class="isudo__title isudo__title-blue">Администратор</div>
+            <a class="isudo__btn" href="">Посмотреть</a>
+        </div>
+        <div class="isudo__item isudo__item-shadow">
+            <div class="isudo__title isudo__title-blue">Мобильное приложение</div>
+            <a class="isudo__btn" href="{% static 'pdf/app.pdf' %}">Посмотреть</a>
+        </div>
+        <div class="isudo__item isudo__item-shadow">
+            <div class="isudo__title isudo__title-blue">Видеоинструкция</div>
+            <a class="isudo__btn" href="https://www.youtube.com/watch?v=dPnLXnHKu80&feature=youtu.be">Посмотреть</a>
+        </div>
+        <div class="isudo__item isudo__item-shadow">
+            <div class="isudo__title isudo__title-blue">Дополнительно</div>
+            <a class="isudo__btn" href="">Посмотреть</a>
+        </div>
+        
+    </div>
+</div>
+
+{% endblock %}

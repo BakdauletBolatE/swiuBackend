@@ -1,0 +1,80 @@
+.isudo{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+    grid-gap:30px;
+}
+.isudo__bigtitle{
+    font-size: 4.2rem;
+    text-align: center;
+    color:#00194a;
+    margin:80px;
+    display: block;
+}
+.isudo__link{
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.4s ease;
+    &:hover{
+        transition: 0.4s ease;
+        .isudo__item{
+            transform: scale(1.1);
+            transition: 0.4s ease;
+        }
+
+    }
+}
+.isudo__item{
+    height: 35rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color:white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: 0.4s ease;
+    position: relative;
+
+    
+}
+.isudo__item-before{
+    &::before{
+
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        background-color: rgba(0, 0, 0, 0.644);
+    }
+}
+
+.isudo__title, .isudo__subtitle,.isudo__btn{
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    display: block;
+}
+.isudo__title{
+    font-size: 2rem;
+}
+.isudo__subtitle{
+    font-size: 1.8rem;
+    margin-top: 2rem;
+}
+.isudo__btn{
+    padding: 10px 30px;
+    background-color: #00194a;
+    color:white;
+    text-decoration: none;
+    margin-top: 2rem;
+    border-radius: 0.5rem;
+}
+.isudo__title-blue{
+    color:#00194a;
+}
+
+.isudo__item-shadow{
+    box-shadow: 2px 0px 15px rgba(0, 0, 0, 0.157);
+}
