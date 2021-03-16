@@ -35,3 +35,14 @@ def bookDetail(request,url):
         'pageCats':pageCats
     }
     return render(request,'library/book_detail.html',context)
+
+
+
+def dlearning(request):
+
+    pageCats = PageCategory.objects.all()
+    context = {
+        'pageCats':pageCats
+    }
+    return render(request,'distancelearning/isudo.html',context)
+

@@ -31,9 +31,11 @@ class PageCategory(models.Model):
 
 class Page(models.Model):
 
+    order = models.IntegerField('Филтрация',default=0)
     title = models.CharField('Название страницы',max_length=255)
     url = models.CharField('Ссылка НУЖНО ИМЯ',max_length=255)
     slug = models.SlugField('slug это обычный слаг',null=True,blank=True)
+    link = models.CharField('Ссылку на сайт',null=True,blank=True,default=None,max_length=255)
     content = RichTextUploadingField('Контентная часть',null=True,blank=True)
     img = models.ImageField('Постер страницы',upload_to="Page/",blank=True,null=True)
     category = models.ForeignKey(PageCategory,related_name='page',on_delete=models.CASCADE)

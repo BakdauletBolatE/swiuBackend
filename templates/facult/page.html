@@ -2,7 +2,7 @@
 {% load static %}
 {% load i18n %} 
 {% load static i18n %}
-
+{% load snp %}
 {% block title %}
 {{ page.title }}
 {% endblock %}
@@ -21,7 +21,7 @@
        
        
       <div class="employee__row">
-          {% for eduStuff in page.staff.all  %}
+          {% for eduStuff in page.staff.all|order_by:'order'  %}
           <div class="employee__item">
               <img class="employee__img" src="{{eduStuff.img.url}}" alt="">
               <div class="employee__text">

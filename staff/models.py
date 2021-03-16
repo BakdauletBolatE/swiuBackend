@@ -29,6 +29,7 @@ class StaffCat(models.Model):
         return self.name
 
 class Staff(models.Model):
+    order = models.IntegerField('Филтрация',default=0)
     name = models.CharField('Имя персонала',max_length=255)
     slug = models.SlugField('Url персонала',unique=True)
     img = models.ImageField('Изоброжения персонала', upload_to="Staff/Posters")
@@ -40,6 +41,7 @@ class Staff(models.Model):
     adress = models.CharField('Адрес персонала',blank=True,null=True,max_length=255)
     phone = models.CharField('Телефон персонала',blank=True,null=True,max_length=255)
     facult = models.ForeignKey(Facult,on_delete=models.CASCADE,null=True,blank=True)
+    
     about = models.TextField('О персонале')
     page = models.ForeignKey(Page,on_delete=models.CASCADE,related_name='staff',null=True,blank=True)
 
