@@ -18,6 +18,10 @@ class PagePhotoTabulerInline(admin.TabularInline):
 @admin.register(Page)
 class PageAdmin(TranslationAdmin):
     prepopulated_fields = {"slug": ("title",)}
+    list_display = ('title','order','category')
+    list_filter = ('category',)
+    ordering = ['order']
+    search_fields = ['title']
     inlines = [PagePhotoTabulerInline]
 
 @admin.register(PageCategory)
