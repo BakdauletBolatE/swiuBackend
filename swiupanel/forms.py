@@ -79,17 +79,7 @@ class WidgetItemsForm(forms.ModelForm):
 
 class ActivityDepForm(forms.ModelForm):
 
-    title = forms.CharField(label='Загаловок деятельности кафедры(ru)', 
-                            max_length=100,
-                            widget=forms.TextInput(attrs={'class': 'form-control'}))
-
-    title_en = forms.CharField(label='Загаловок деятельности кафедры(en)', 
-                            max_length=100,
-                            widget=forms.TextInput(attrs={'class': 'form-control'}))
-
-    title_kk = forms.CharField(label='Загаловок деятельности кафедры(ru)', 
-                            max_length=100,
-                            widget=forms.TextInput(attrs={'class': 'form-control'}))
+   
     
     slug = forms.CharField(label='url деятельности кафедры', 
                             max_length=100,
