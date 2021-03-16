@@ -58,7 +58,7 @@ class ActivityDepartmentCat(models.Model):
         verbose_name_plural = "Категория деятельности кафедры"
 
 class ActivityDepartment(models.Model):
-    title = models.CharField('Заголовок поста',max_length=255)
+    title = models.CharField('Заголовок поста',max_length=255,null=True,blank=True)
     slug = models.SlugField('Url факультета',unique=True)
     short_description = models.TextField('Краткое описание')
     description = models.TextField('Полная описание',blank=True,null=True)
