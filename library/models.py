@@ -29,7 +29,7 @@ class Book(models.Model):
     slug = models.SlugField(unique=True)
 
     def __str__(self):
-        return f"Книгу {self.name} сделали {self.author.name}"
+        return f"Книгу {self.name} сделали "
 
     class Meta:
         verbose_name = 'Библиотека'
