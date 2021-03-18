@@ -20,12 +20,12 @@ class Book(models.Model):
 
     name = models.CharField("Название книги",max_length=255)
     description = models.TextField("Описание книги")
-    eduProgram = models.ForeignKey(EducationalPrograms,on_delete=models.CASCADE)
-    author = models.ForeignKey(Staff, on_delete=models.CASCADE)
+    eduProgram = models.ForeignKey(EducationalPrograms,on_delete=models.CASCADE,null=True,blank=True)
+    author = models.ForeignKey(Staff, on_delete=models.CASCADE,null=True,blank=True)
     year = models.ForeignKey(Year,on_delete=models.CASCADE)
-    poster = models.ImageField(upload_to="Book/Posters/")
-    img = models.ImageField(upload_to="Book/Posters/")
-    pdffile = models.FileField(upload_to="Book/Pdf")
+    poster = models.ImageField(upload_to="Book/Posters/",null=True,blank=True)
+    img = models.ImageField(upload_to="Book/Posters/" ,null=True,blank=True)
+    pdffile = models.FileField(upload_to="Book/Pdf",null=True,blank=True)
     slug = models.SlugField(unique=True)
 
     def __str__(self):
