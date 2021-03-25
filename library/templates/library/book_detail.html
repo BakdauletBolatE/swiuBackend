@@ -13,7 +13,9 @@
                     <h2 class="book-sidebar__title">{{book.name}}</h2>
                     <p class="book-sidebar__year"><a class="book-sidebar__year" href="{% url 'bookList' book.year.slug %}">{{book.year.year}}</a> жыл</p>
                     <p class="book-sidebar__edu">
+                        {% if book.eduProgram %}
                         <span><a href="{% url 'eduProgDetailView' book.eduProgram.slug %}">Оку Бакдарламасы</a> </span>{{book.eduProgram.name}}
+                        {% endif %}
                     </p>
                     <p class="book-sidebar__description">{{book.description}}</p>
                 </div>
