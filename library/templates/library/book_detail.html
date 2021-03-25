@@ -7,7 +7,9 @@
         <div class="book">
             <div class="book-sidebar">
                 <div class="book-sidebar-item">
+                    {% if book.img %}
                     <img class="book-sidebar__img" src="{{book.img.url}}" alt="">
+                    {% endif %}
                     <h2 class="book-sidebar__title">{{book.name}}</h2>
                     <p class="book-sidebar__year"><a class="book-sidebar__year" href="{% url 'bookList' book.year.slug %}">{{book.year.year}}</a> жыл</p>
                     <p class="book-sidebar__edu">
@@ -50,6 +52,7 @@
     </div>  
 
     <script>
+        
         var url = "{{book.pdffile.url}}"
 
         // Loaded via <script> tag, create shortcut to access PDF.js exports.
