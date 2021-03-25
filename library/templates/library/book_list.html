@@ -8,7 +8,9 @@
     <div class="grid-with-text">
         {% for book in books %}
         <div class="grid-with-text__item">
+            {% if book.poster %}
             <img class="grid-with-text__img" src="{{ book.poster.url }}"/>
+            {% endif %}
             <div class="grid-with-text__text">
                 <h3 class="grid-with-text__title"><a class="grid-with-text__title" href="{% url 'bookDetail' book.slug %}">{{book.name}}</a></h3>
                 <p class="grid-with-text__desc">{{ book.description}}</p>
