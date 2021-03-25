@@ -52,7 +52,7 @@
             </div>
         </div>
     </div>  
-
+    {% if book.pdffile  %}
     <script>
         
         var url = "{{book.pdffile.url}}"
@@ -151,6 +151,6 @@
         console.error(reason);
         });
     </script>
-
+    {% endif %}
 
 {% endblock %}
