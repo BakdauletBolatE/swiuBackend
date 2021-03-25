@@ -25,9 +25,8 @@
           <div class="employee__item">
               <img class="employee__img" src="{{eduStuff.img.url}}" alt="">
               <div class="employee__text">
-                  <div class="employee__name">{{ eduStuff.name}}</div>
-                  <div class="employee__presidency"><a class="employee__presidency" href="{% url 'stuffDetailView' eduStuff.slug  %}">{{eduStuff.position.name}}</a></div>
-                  <div class="employee__country">{{eduStuff.email}}</div>
+                  <div class="employee__name"><a class="employee__presidency" href="{% url 'stuffDetailView' eduStuff.slug  %}">{{ eduStuff.name}}</a></div>
+                  <div class="employee__presidency">{{eduStuff.position.name}}</div>
               </div>
           </div>
           {%endfor%}

@@ -7,6 +7,8 @@
 <section class="course">
     <div class="container">
         <div class="course__row">
+            {% if stuff.page.id == 8 %}
+            {% else %}
             <div class="course-sidebar">
                 <div class="main-sidebar">
                     <h3 class="main-sidebar__title">
@@ -61,6 +63,7 @@
                     </div>
                 </div>
             </div>
+            {% endif %}
             <div class="course-detail">
                 <h1 class="course__main-title">
                     {{stuff.name}}
