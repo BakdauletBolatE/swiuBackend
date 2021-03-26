@@ -15,11 +15,13 @@ def index(request):
 
     quotes = Quote.objects.all()[:3]
     pageCats = PageCategory.objects.all()
-    posts = Post.objects.order_by('-created_at').all()[:4]
+    posts = Post.objects.filter(category_id=1).order_by('-created_at').all()[:3]
+    ads = Post.objects.filter(category_id=2).order_by('-created_at').all()[:3]
     context = {
         'quotes':quotes,
         'posts':posts,
-        'pageCats':pageCats
+        'pageCats':pageCats,
+        'ads':ads
     }
     return render(request,'main/index.html',context)
 
