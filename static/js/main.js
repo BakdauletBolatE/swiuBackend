@@ -54,16 +54,10 @@ const swiper = new Swiper('.swiper-container', {
     // Optional parameters
     direction: 'horizontal',
     loop: true,
-    effect: 'coverflow',
-    coverflowEffect: {
-      rotate: 50,
-      stretch: 0,
-      depth: 100,
-      modifier: 1,
-      slideShadows: true,
-    },
+
+
     
-    grabCursor: true,
+
     breakpoints: {
       // when window width is >= 320px
      

@@ -20,7 +20,7 @@
 }
 .course-tab__container{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-gap:20px;
 }
 .course__main-title{
@@ -107,11 +107,12 @@
     line-height: 2.5rem;
 }
 .course__main-img{
-    width: 100%;
+    width: 50%;
     float: left;
     border-radius: 0.5rem;
     overflow: hidden;
-    margin-bottom: 4rem;
+    margin-bottom: 1.5rem;
+    margin-right: 2rem;
 }
 
 .course-detail{

@@ -24,10 +24,10 @@
           {% for eduStuff in page.staff.all|order_by:'order'  %}
           <div class="employee__item">
               <img class="employee__img" src="{{eduStuff.img.url}}" alt="">
-              <div class="employee__text">
-                  <div class="employee__name"><a class="employee__presidency" href="{% url 'stuffDetailView' eduStuff.slug  %}">{{ eduStuff.name}}</a></div>
-                  <div class="employee__presidency">{{eduStuff.position.name}}</div>
-              </div>
+                <div  class="employee__text">
+                    <div class="employee__name"><a class="employee__name" href="{% url 'stuffDetailView' eduStuff.slug  %}">{{ eduStuff.name}}</a></div>
+                    <div class="employee__presidency">{{eduStuff.position.name}}</div>
+                </div>
           </div>
           {%endfor%}
         </div> 

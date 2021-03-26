@@ -1,6 +1,6 @@
 from django.db import models
 from faculties.models import Facult,Page
-from django import forms
+
 
 
 # Create your models here.
@@ -33,11 +33,11 @@ class EducationalProgramsCat(models.Model):
 class EducationalPrograms(models.Model):
     name = models.CharField('Название кафедры',max_length=255)
     slug = models.SlugField('Url факультета',unique=True)
-    cat = models.ForeignKey(EducationalProgramsCat,on_delete=models.CASCADE, default=0)
+    cat = models.ForeignKey(EducationalProgramsCat,on_delete=models.CASCADE)
     description = models.TextField('Описание кафедра',blank=True,null=True)
     img = models.ImageField('Изображения', upload_to="Edu/Posters/")
-    facult = models.ForeignKey(Facult,on_delete=models.CASCADE,default=0)
-    department = models.ForeignKey(Department,on_delete=models.CASCADE,default=0)
+    facult = models.ForeignKey(Facult,on_delete=models.CASCADE)
+    department = models.ForeignKey(Department,on_delete=models.CASCADE)
     
 
     def __str__(self):
@@ -62,8 +62,8 @@ class ActivityDepartment(models.Model):
     slug = models.SlugField('Url факультета',unique=True)
     short_description = models.TextField('Краткое описание')
     description = models.TextField('Полная описание',blank=True,null=True)
-    department = models.ForeignKey(Department,on_delete=models.CASCADE,default=0)
-    category = models.ForeignKey(ActivityDepartmentCat,on_delete=models.CASCADE,default=0)
+    department = models.ForeignKey(Department,on_delete=models.CASCADE)
+    category = models.ForeignKey(ActivityDepartmentCat,on_delete=models.CASCADE)
 
     
 

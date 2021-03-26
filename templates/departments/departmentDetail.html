@@ -101,9 +101,9 @@
                     <h2 class="about-us-page__title">
                         {% trans 'Кафедра оқытушылары' %}
                     </h2>
-                    <div class="employee__row">
+                    <div class="employee__row employee__row-sm">
                         {% for staffEdu in staffEdus  %}
-                        <div class="employee__item">
+                        <div class="employee__item employee__item-fixed">
                             <img class="employee__img" src="{{staffEdu.img.url}}" alt="">
                             <div class="employee__text">
                                 <div class="employee__name"><a class="employee__presidency" href="{% url 'stuffDetailView' staffEdu.slug  %}">{{ staffEdu.name}}</a></div>

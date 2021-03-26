@@ -54,7 +54,8 @@
 <section class="box-area">
     <div class="container">
         <div class="box-area__row">
-            <article class="box-area__item">
+            <a class="box-area__item__link" href="box-area__item__link">
+                <article class="box-area__item">
                 <div class="box-area__icon">
                     <i style="color:rgb(255, 111, 111); font-size: 6rem;" class="fad fa-chevron-double-up"></i>
                 </div>
@@ -63,24 +64,31 @@
                     <p class="box-area__description">{% trans 'Үздік білім беру бағдарламалары' %}</p>
                 </div>
             </article>
-            <article class="box-area__item">
-                <div class="box-area__icon">
-                    <i style="color:rgb(132, 71, 156); font-size: 6rem;" class="fad fa-book"></i>
-                </div>
-                <div class="box-area__text">
-                    <h3 class="box-area__title">{% trans 'Заманауи кітапхана' %}</h3>
-                    <p class="box-area__description">{% trans 'Үздік білім беру бағдарламалары' %}</p>
-                </div>
-            </article>
-            <article class="box-area__item">
-                <div class="box-area__icon">              
-                    <i  style="color:rgb(44, 151, 234); font-size: 6rem;" class="fad fa-file-certificate"></i>
-                </div>
-                <div class="box-area__text">
-                    <h3 class="box-area__title">{% trans 'Білікті мамандар' %}</h3>
-                    <p class="box-area__description">{% trans 'Үздік білім беру бағдарламалары' %}</p>
-                </div>
-            </article>
+            </a>
+            <a class="box-area__item__link" href="{% url 'libindex' %}">
+                 <article class="box-area__item">
+                    <div class="box-area__icon">
+                        <i style="color:rgb(132, 71, 156); font-size: 6rem;" class="fad fa-book"></i>
+                    </div>
+                    <div class="box-area__text">
+                        <h3 class="box-area__title">{% trans 'Заманауи кітапхана' %}</h3>
+                        <p class="box-area__description">{% trans 'Үздік білім беру бағдарламалары' %}</p>
+                    </div>
+                </article>
+            </a>
+            <a class="box-area__item__link" href="">
+                <article class="box-area__item">
+                    <div class="box-area__icon">
+                        <i  style="color:rgb(44, 151, 234); font-size: 6rem;" class="fad fa-file-certificate"></i>
+                    </div>
+                    <div class="box-area__text">
+                        <h3 class="box-area__title">{% trans 'Білікті мамандар' %}</h3>
+                        <p class="box-area__description">{% trans 'Үздік білім беру бағдарламалары' %}</p>
+                    </div>
+                </article>
+            </a>
+
+
         </div>
     </div>
 </section>

@@ -1,16 +1,22 @@
 from django.db import models
 from django.conf import settings
 from django.utils import timezone
-
+from ckeditor_uploader.fields import RichTextUploadingField
 # Create your models here.
 
 
+class PostCategories(models.Model):
 
+    name = models.CharField('Имя категорий',max_length=255)
+
+    def __str__(self):
+        return self.name
 
 class Post(models.Model):
     title = models.CharField('Заголовок поста',max_length=255)
     slug = models.SlugField(unique=True)
-    description = models.TextField('Описание поста')
+    description = RichTextUploadingField('Контентная часть', null=True, blank=True)
+    categoryr = models.ForeignKey(PostCategories,on_delete=models.CASCADE)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,default=0)
     created_at = models.DateTimeField('Время',default=timezone.now)
 
