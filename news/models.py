@@ -16,7 +16,7 @@ class Post(models.Model):
     title = models.CharField('Заголовок поста',max_length=255)
     slug = models.SlugField(unique=True)
     description = RichTextUploadingField('Контентная часть', null=True, blank=True)
-    categoryr = models.ForeignKey(PostCategories,on_delete=models.CASCADE,default=None)
+
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,default=0)
     created_at = models.DateTimeField('Время',default=timezone.now)
 
