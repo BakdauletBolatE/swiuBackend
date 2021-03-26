@@ -10,8 +10,7 @@ SECRET_KEY = '+v6-04zu!l#h&+p4f(u^un@(+^u0oa$ew2nfs4w5_m=rb=41$d'
 
 
 
-DEBUG = False
-
+DEBUG = True
 
 if DEBUG:
     ALLOWED_HOSTS = ['*']
@@ -76,7 +75,7 @@ if DEBUG:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'swiu',
+            'NAME': 'swiu2',
             'USER': 'postgres',
             'PASSWORD': '123',
             'HOST': 'localhost',
