@@ -10,6 +10,8 @@ class PostImgTabularInline(admin.TabularInline):
 
 class PostsAdmin(admin.ModelAdmin):
     inlines = [PostImgTabularInline]
+    list_filter = ('category',)
+    list_display = ('title','category','created_at')
     prepopulated_fields = {'slug': ('title',)}
 
 admin.site.register(PostComments)
