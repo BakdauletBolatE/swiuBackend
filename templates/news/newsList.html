@@ -13,16 +13,22 @@
             <div class="news">
                 {% for post in posts %}
                 <div class="news__item">
+                    {% if post.post_img.first %}
                     <div class="news__img">
                         <img src="{{post.post_img.first.img.url}}" alt="">
                     </div>
+                    {% else %}
+                    <div class="news__img">
+                        <img src="{% static 'img/unnamedd.png' %}" alt="">
+                    </div>
+                    {% endif %}
                     <div class="news__content">
                         <div class="news__header">
                             <span>{{ post.created_at }}</span>
                             <h3 class="news__title"><a class="news__title" href="{% url 'postDetailView' post.slug %}">{{ post.title}}</a></h3>
                         </div>
                         <div class="news__body">
-                            <p>{{post.description}}</p>
+                            <p>{% autoescape off %}{{post.description}}{% endautoescape %}</p>
                         </div>
                         <div class="news__footer">
                             <div class="news__footer-item">

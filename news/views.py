@@ -81,9 +81,9 @@ def viewPostComment(request,url):
     comment = PostComments.objects.values('description', 'id','author').filter(post=post)[:5]
     return JsonResponse({'comments': list(comment)})
 
-def postListView(request):
+def postListView(request,pk):
 
-    post = Post.objects.all()
+    post = Post.objects.filter(category_id=pk).order_by('-created_at')
     pageCats = PageCategory.objects.all()
     context = {
         'posts':post,

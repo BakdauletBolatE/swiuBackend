@@ -8,5 +8,5 @@ urlpatterns = [
     path('post/like',likePost,name="postLike"),
     path('post/likecount/<slug:url>',likesCount),
     path('post/<slug:url>',postDetailView,name="postDetailView"),
-    path('allposts/',postListView,name="postListView")
+    path('allposts/<int:pk>',postListView,name="postListView")
 ]

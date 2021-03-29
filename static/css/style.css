@@ -1132,6 +1132,7 @@
 }
 
 .footer {
+  margin-top: 10rem;
   padding-top: 10rem;
   background-color: #00194a;
   color: white;
@@ -1541,6 +1542,7 @@
 .news__img {
   display: block;
   border-radius: 0.5rem;
+  height: 30rem;
 }
 .news__img img {
   border-radius: 5px;
