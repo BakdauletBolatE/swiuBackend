@@ -55,7 +55,9 @@ const swiper = new Swiper('.swiper-container', {
     direction: 'horizontal',
     loop: true,
 
-
+    pagination: {
+    el: '.swiper-pagination',
+  },
     
 
     breakpoints: {
@@ -71,10 +73,7 @@ const swiper = new Swiper('.swiper-container', {
     slidesPerView: 1,
     spaceBetween: 30,
 
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
+
     
   
   });

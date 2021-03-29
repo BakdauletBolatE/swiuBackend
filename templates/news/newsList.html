@@ -28,7 +28,7 @@
                             <h3 class="news__title"><a class="news__title" href="{% url 'postDetailView' post.slug %}">{{ post.title}}</a></h3>
                         </div>
                         <div class="news__body">
-                            <p>{% autoescape off %}{{post.description}}{% endautoescape %}</p>
+                            <div>{% autoescape off %}{{post.description}}{% endautoescape %}</div>
                         </div>
                         <div class="news__footer">
                             <div class="news__footer-item">

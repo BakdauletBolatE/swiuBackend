@@ -187,9 +187,15 @@
         <div class="news">
             {% for post in posts %}
             <div class="news__item">
-                <div class="news__img">
-                    <img src="{{post.post_img.first.img.url}}" alt="">
-                </div>
+                {% if post.post_img.first %}
+                    <div class="news__img">
+                        <img src="{{post.post_img.first.img.url}}" alt="">
+                    </div>
+                    {% else %}
+                    <div class="news__img">
+                        <img src="{% static 'img/unnamedd.png' %}" alt="">
+                    </div>
+                    {% endif %}
                 <div class="news__content">
                     <div class="news__header">
                         <span>{{ post.created_at }}</span>

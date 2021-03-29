@@ -50,7 +50,7 @@
                             {{post.title}}
                         </h2>
                         <p class="course-tab-description">
-                            {{post.description}}
+                            {% autoescape off %}{{post.description}}{% endautoescape %}
                         </p>
                         {% if post.post_img.all %}
                         <!-- Slider main container -->
@@ -64,7 +64,7 @@
                                 </div>
                                 {% endfor %}                   
                                 </div>
-                                <div class="swiper-pagination"></div>
+
                             </div>
                         {% endif %}
                     </div>
