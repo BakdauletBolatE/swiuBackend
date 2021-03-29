@@ -1610,7 +1610,7 @@
 .news__body {
   margin-top: 1rem;
 }
-.news__body p {
+.news__body > div {
   font-size: 1.4rem;
   color: #969696;
   border-bottom: 1px solid #eeeeee;

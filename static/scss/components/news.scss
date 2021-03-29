@@ -101,7 +101,7 @@
 }
 .news__body {
     margin-top: 1rem;
-    & p{
+    &>div{
 
         font-size: 1.4rem;
         color: rgb(150, 150, 150);
