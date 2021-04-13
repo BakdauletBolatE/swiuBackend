@@ -9,7 +9,7 @@ class Department(models.Model):
     name = models.CharField('Название кафедры',max_length=255)
     slug = models.SlugField('Url факультета',unique=True)
     description = models.TextField('Описание кафедра',blank=True,null=True)
-    facult = models.ForeignKey(Facult,on_delete=models.CASCADE)
+    facult = models.ForeignKey(Facult,on_delete=models.CASCADE,related_name="departements")
     img = models.ImageField('Изображения', upload_to="Department/Posters/")
 
     def __str__(self):
@@ -37,7 +37,7 @@ class EducationalPrograms(models.Model):
     description = models.TextField('Описание кафедра',blank=True,null=True)
     img = models.ImageField('Изображения', upload_to="Edu/Posters/")
     facult = models.ForeignKey(Facult,on_delete=models.CASCADE)
-    department = models.ForeignKey(Department,on_delete=models.CASCADE)
+    department = models.ForeignKey(Department,on_delete=models.CASCADE,related_name="edupros")
     
 
     def __str__(self):

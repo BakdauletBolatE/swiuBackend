@@ -3,13 +3,16 @@
     position: relative;
     top:-2rem;
     z-index: 10;
-    grid-template-columns: repeat(auto-fit,minmax(20rem,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(32rem,1fr));
     grid-gap:2rem;
 
     @media screen and (max-width:700px){
         top:2rem;
     }
     
+}
+.box-area__item__link{
+    text-decoration: none;
 }
 .box-area__item{
     display: flex;

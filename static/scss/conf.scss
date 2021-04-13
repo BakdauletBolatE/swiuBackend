@@ -1,6 +1,12 @@
 .pcke{
     font-size: 1.5rem;
-    color: rgb(150, 150, 150);
+    color:#666666;
+    line-height: 3rem;
+
+    & > a{
+        color: #404040;
+        text-decoration: none;
+    }
 }
 .titlecke{
     text-align: center;

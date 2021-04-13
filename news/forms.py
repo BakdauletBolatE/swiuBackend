@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Questions,PostComments
+from .models import Questions,PostComments,Request
 
 class QuestionsForm(forms.ModelForm):
     title = forms.CharField(label='Заголовок вашего вопроса', 
@@ -30,4 +30,11 @@ class PostCommentsForm(forms.ModelForm):
 
     class Meta:
         model = PostComments
-        fields = ('title', 'description',) 
+        fields = ('title', 'description',)
+
+class RequestForm(forms.ModelForm):
+
+    class Meta:
+
+        model = Request
+        fields = ('name','email')

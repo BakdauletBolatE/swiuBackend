@@ -1,0 +1,15 @@
+.alert{
+  position: fixed;
+  top:16rem;
+  z-index: 1000;
+  left:2rem;
+  list-style: none;
+}
+.alert__item-success{
+  margin-top: 0.3rem;
+  border-radius: 0.3rem;
+  background: #43d787;
+   padding: 1.4rem;
+  color:white;
+   text-align: center;
+}

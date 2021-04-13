@@ -1,0 +1,35 @@
+{% extends 'layouts/app.html' %}
+{% load i18n %}
+{% load static %}
+{% block title %}
+{% trans "SILKWAY Халықаралық университеті" %}
+{% endblock %}
+{% block content %}
+<div class="container ">
+    {% for fac in facult %}
+
+    <div class="titlecke_border mt-3">{{ fac.name }}</div>
+{% for dep in fac.departements.all %}
+     <div class="titlecke mt-3">{{ dep.name }}</div>
+<div class="grid-with-text">
+    {% for eduPro in dep.edupros.all %}
+     <div class="grid-with-text__item">
+        <img class="grid-with-text__img" src="{{ eduPro.img.url }}"/>
+        <div class="grid-with-text__text">
+            <h3 class="grid-with-text__title"><a class="grid-with-text__title" href="{% url 'eduProgDetailView' eduPro.slug %}">{{eduPro.name}}</a></h3>
+            <p class="grid-with-text__desc">{{ eduPro.description}}</p>
+            <div class="grid-with-text__span">
+                <div class="grid-with-text__span-i">НКАОКО</div>
+                <div class="grid-with-text__span-i">29.01.18-27.01.23 г</div>
+                <div class="grid-with-text__span-i"><span>Шифр: </span>5В010300</div>
+            </div>
+        </div>
+     </div>
+    {% endfor %}
+</div>
+
+{% endfor %}
+{% endfor %}
+</div>
+
+{% endblock %}

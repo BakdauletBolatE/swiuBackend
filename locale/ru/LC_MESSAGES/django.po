@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-11 18:07+0000\n"
+"POT-Creation-Date: 2021-04-03 21:57+0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,226 +20,192 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: SwiuMain/settings/local.py:111 SwiuMain/settings/prod.py:107
-msgid "Russia"
-msgstr ""
-
-#: SwiuMain/settings/local.py:112 SwiuMain/settings/prod.py:108
-msgid "English"
-msgstr ""
-
-#: SwiuMain/settings/local.py:113 SwiuMain/settings/prod.py:109
-msgid "Kazakhstan"
-msgstr ""
-
-#: templates/departments/departmentDetail.html:14
-msgid "Кафедра жайлы"
-msgstr "О кафедре"
-
-#: templates/departments/departmentDetail.html:15
-#: templates/departments/departmentDetail.html:30 templates/main/index.html:118
-msgid "Білім беру бағдарламалары"
-msgstr "Образовательные программы"
-
-#: templates/departments/departmentDetail.html:16
-#: templates/departments/departmentDetail.html:52
-msgid "Кафедра оқытушылары"
-msgstr "Преподаватели кафедры"
-
-#: templates/departments/departmentDetail.html:17
-#: templates/departments/departmentDetail.html:69
+#: .\templates\departments\departmentDetail.html:14
+#: .\templates\departments\departmentDetail.html:24
 msgid "Кафедраның қызметі"
 msgstr "Деятельность отдела"
 
-#: templates/facult/index.html:6
+#: .\templates\departments\departmentDetail.html:15
+msgid "Кафедра жайлы"
+msgstr "О кафедре"
+
+#: .\templates\departments\departmentDetail.html:16
+#: .\templates\departments\departmentDetail.html:80
+#: .\templates\main\index.html:125
+msgid "Білім беру бағдарламалары"
+msgstr "Образовательные программы"
+
+#: .\templates\departments\departmentDetail.html:17
+#: .\templates\departments\departmentDetail.html:102
+msgid "Кафедра оқытушылары"
+msgstr "Преподаватели кафедры"
+
+#: .\templates\distancelearning\isudo.html:6 .\templates\facult\index.html:6
 #, fuzzy
 #| msgid "SILKWAY Халықаралық университеті 1992"
 msgid "Факультеты университета Silkway"
 msgstr "Международный университет SILKWAY 1992"
 
-#: templates/layouts/app.html:28
-msgid "Универ жайлы"
-msgstr "Об университете"
-
-#: templates/layouts/app.html:33 templates/layouts/app.html:145
-msgid "Құрылым"
-msgstr "Структура"
-
-#: templates/layouts/app.html:41 templates/layouts/app.html:161
-msgid "Қашықтықтан оқыту"
-msgstr "Дистанционное обучение"
-
-#: templates/layouts/app.html:45 templates/layouts/app.html:162
-msgid "Кітапхана"
-msgstr "Библиотека"
-
-#: templates/layouts/app.html:61 templates/layouts/app.html:213
-msgid "Шымкент қаласы, Тоқаев көшесі 27. Бас ғимарат"
+#: .\templates\layouts\app.html:32
+#, fuzzy
+#| msgid "Шымкент қаласы, Тоқаев көшесі 27. Бас ғимарат"
+msgid "Шымкент қаласы, Тоқаев көшесі 27a. Бас ғимарат"
 msgstr "Шымкент, улица Токаева 27. Главный корпус"
 
-#: templates/layouts/app.html:64
+#: .\templates\layouts\app.html:35
 msgid "Сіз сұрақтар қойғыңыз келе ме?"
 msgstr "Хотите задать вопросы?"
 
-#: templates/layouts/app.html:147
-msgid "Факультеттер"
-msgstr "Факультеты"
-
-#: templates/layouts/app.html:148
-msgid "Студенттерге арналған фронт-офис"
-msgstr "Фронт-офис для студентов"
-
-#: templates/layouts/app.html:149 templates/layouts/app.html:157
-msgid "Университеттің нұсқаулықтары"
-msgstr "Инструкции университета"
-
-#: templates/layouts/app.html:150 templates/layouts/app.html:158
-msgid "Аккредиттеу"
-msgstr "Аккредитация"
-
-#: templates/layouts/app.html:155
-#, fuzzy
-#| msgid "SILKWAY Халықаралық университеті 1992"
-msgid "Халықаралық ынтымақтастық"
-msgstr "Международный университет SILKWAY 1992"
-
-#: templates/layouts/app.html:156
-msgid "Екі дәрежелі білім"
-msgstr "Два уровня образования"
-
-#: templates/layouts/app.html:194
+#: .\templates\layouts\app.html:170
 msgid "Қораптағы соңғы жаңалықтар мен жаңартуларды алыңыз"
-msgstr "Получайте последние новости и обновления в коробке"
+msgstr "Получайте последние новости и обновления"
 
-#: templates/layouts/app.html:195 templates/layouts/app.html:198
+#: .\templates\layouts\app.html:171 .\templates\layouts\app.html:174
 msgid "Атыңызды енгізіңіз"
 msgstr "Введите ваше имя"
 
-#: templates/layouts/app.html:199
+#: .\templates\layouts\app.html:175
 msgid "Почтаңызды енгізіңіз"
 msgstr "Введите адрес электронной почты"
 
-#: templates/layouts/app.html:200
+#: .\templates\layouts\app.html:176
 msgid "Жазылу"
 msgstr "Подписаться"
 
-#: templates/main/index.html:5
+#: .\templates\main\index.html:5 .\templates\news\newsList.html:5
 #, fuzzy
 #| msgid "SILKWAY Халықаралық университеті 1992"
 msgid "SILKWAY Халықаралық университеті"
 msgstr "Международный университет SILKWAY 1992"
 
-#: templates/main/index.html:18
+#: .\templates\main\index.html:18
 msgid "SILKWAY Халықаралық университеті 1992"
 msgstr "Международный университет SILKWAY 1992"
 
-#: templates/main/index.html:19 templates/main/index.html:33
-#: templates/main/pages/about-us.html:157
+#: .\templates\main\index.html:19 .\templates\main\index.html:33
+#: .\templates\main\pages\about-us.html:157
 msgid "Болашақ мамандарға лайықты білім беру"
 msgstr "Достойное образование для будущих профессионалов"
 
-#: templates/main/index.html:22 templates/main/index.html:36
+#: .\templates\main\index.html:22 .\templates\main\index.html:36
 msgid "Біздің факультеттер"
 msgstr "Наши факультеты"
 
-#: templates/main/index.html:23 templates/main/index.html:37
+#: .\templates\main\index.html:23 .\templates\main\index.html:37
 msgid "Байланыс"
-msgstr "Контакт"
+msgstr "Контакты"
 
-#: templates/main/index.html:34
+#: .\templates\main\index.html:34
 #, fuzzy
 #| msgid "SILKWAY Халықаралық университеті 1992"
 msgid "SILKWAY Халықаралық университеті 1922 ж"
 msgstr "Международный университет SILKWAY 1992"
 
-#: templates/main/index.html:62
+#: .\templates\main\index.html:63
 msgid "Танымал ОП"
 msgstr "Популярные OП"
 
-#: templates/main/index.html:63 templates/main/index.html:72
-#: templates/main/index.html:81
+#: .\templates\main\index.html:64 .\templates\main\index.html:75
+#: .\templates\main\index.html:86
 msgid "Үздік білім беру бағдарламалары"
 msgstr "Лучшие образовательные программы"
 
-#: templates/main/index.html:71
+#: .\templates\main\index.html:74
 msgid "Заманауи кітапхана"
 msgstr "Современная библиотека"
 
-#: templates/main/index.html:80
+#: .\templates\main\index.html:85
 msgid "Білікті мамандар"
 msgstr "Квалифицированные специалисты"
 
-#: templates/main/index.html:98
-msgid "S SILKWAY Университетін таңдаудың 5 себебі 🤩🌏 сондықтан кеттік🚀"
+#: .\templates\main\index.html:106
+#, fuzzy
+#| msgid "S SILKWAY Университетін таңдаудың 5 себебі 🤩🌏 сондықтан кеттік🚀"
+msgid "SILKWAY Университетін таңдаудың 4 себебі 🤩🌏 сондықтан кеттік🚀"
 msgstr "5 причин выбрать университет SILKWAY поэтому мы ушли🚀"
 
-#: templates/main/index.html:101 templates/main/index.html:102
+#: .\templates\main\index.html:109
 msgid "1. Біз аккредиттелген жоғары оқу орнымыз"
 msgstr "1. Мы аккредитованный университет."
 
-#: templates/main/index.html:103
-msgid "3. Бізде - білім гранттары"
+#: .\templates\main\index.html:110
+#, fuzzy
+#| msgid "3. Бізде - білім гранттары"
+msgid "2. Бізде - білім гранттары"
 msgstr "3. У нас есть образовательные гранты."
 
-#: templates/main/index.html:104
-msgid "4. Бай материалдық-техникалық база"
+#: .\templates\main\index.html:111
+#, fuzzy
+#| msgid "4. Бай материалдық-техникалық база"
+msgid "3. Бай материалдық-техникалық база"
 msgstr "4. Богатая материально-техническая база."
 
-#: templates/main/index.html:105
-msgid "5. Біз республикамыздағы ең үздік педагогикалық университетпіз."
+#: .\templates\main\index.html:112
+#, fuzzy
+#| msgid "5. Біз республикамыздағы ең үздік педагогикалық университетпіз."
+msgid "4. Біз республикамыздағы ең үздік педагогикалық университетпіз."
 msgstr "5. Мы лучший педагогический вуз республики."
 
-#: templates/main/index.html:112
+#: .\templates\main\index.html:119
 msgid "Академиялық шетелдік студенттер"
 msgstr "Академические иностранные студенты"
 
-#: templates/main/index.html:124
+#: .\templates\main\index.html:131
 msgid "NR педагогикалық университеттеріндегі орны"
 msgstr "Место в педагогических вузах НР"
 
-#: templates/main/index.html:127
+#: .\templates\main\index.html:134
 msgid "Толығырақ"
 msgstr "Прочитайте больше"
 
-#: templates/main/index.html:137
+#: .\templates\main\index.html:144
 msgid "Біздің менеджерлер кеңес береді"
 msgstr "Наши менеджеры советуют"
 
-#: templates/main/index.html:177
+#: .\templates\main\index.html:184 .\templates\news\newsList.html:11
 msgid "SILKWAY университетінің соңғы жаңалықтары"
 msgstr "Последние новости от SILKWAY University"
 
-#: templates/main/pages/about-us.html:15
+#: .\templates\main\index.html:245
+#, fuzzy
+#| msgid "SILKWAY университетінің соңғы жаңалықтары"
+msgid "SILKWAY университетінің соңғы хабарландырулары"
+msgstr "Последние новости от SILKWAY University"
+
+#: .\templates\main\pages\about-us.html:15
 msgid "Университет тарихы"
 msgstr "История университета"
 
-#: templates/main/pages/about-us.html:16 templates/main/pages/about-us.html:41
+#: .\templates\main\pages\about-us.html:16
+#: .\templates\main\pages\about-us.html:41
 #, fuzzy
 #| msgid "SILKWAY Халықаралық университеті 1992"
 msgid "Халықаралық сарапшылар кеңесі"
 msgstr "Международный университет SILKWAY 1992"
 
-#: templates/main/pages/about-us.html:17 templates/main/pages/about-us.html:76
+#: .\templates\main\pages\about-us.html:17
+#: .\templates\main\pages\about-us.html:76
 msgid "Қамқоршылар кеңесі"
 msgstr "Совет попечителей"
 
-#: templates/main/pages/about-us.html:18
+#: .\templates\main\pages\about-us.html:18
 msgid "Университетті басқару"
 msgstr "Управление университетом"
 
-#: templates/main/pages/about-us.html:19 templates/main/pages/about-us.html:152
+#: .\templates\main\pages\about-us.html:19
+#: .\templates\main\pages\about-us.html:152
 msgid "Миссия және стратегия"
 msgstr "Миссия и стратегия"
 
-#: templates/main/pages/about-us.html:20
+#: .\templates\main\pages\about-us.html:20
 msgid "АККРЕДИТАЦИЯ"
 msgstr "АККРЕДИТАЦИЯ"
 
-#: templates/main/pages/about-us.html:29
+#: .\templates\main\pages\about-us.html:29
 msgid "ТАРИХ"
 msgstr "ИСТОРИЯ"
 
-#: templates/main/pages/about-us.html:33
+#: .\templates\main\pages\about-us.html:33
 msgid ""
 "КСРО ыдырағаннан кейін, посткеңестік кеңістікте нарықтық экономика "
 "элементтері пайда бола бастағанда, білім беру саласында жаңа типтегі "
@@ -286,7 +252,7 @@ msgstr ""
 "Республики Египет университета «Танта Почетный работник образования "
 "республики казахстан», медалью Ыбыррай Алтынсарин."
 
-#: templates/main/pages/about-us.html:43
+#: .\templates\main\pages\about-us.html:43
 msgid ""
 "2018 жылы құрылған ITMO Университеті Халықаралық Кеңесінің басты мақсаты - "
 "Silkway Халықаралық Университетінің халықаралық білім беру ортасында беделін "
@@ -300,11 +266,11 @@ msgstr ""
 "внимание Совета уделяется SWIUПравильное размещение на международном рынке "
 "образования и его международноминтеграция в контекст образования"
 
-#: templates/main/pages/about-us.html:44
+#: .\templates\main\pages\about-us.html:44
 msgid "Халықаралық сарапшылар кеңесінің негізгі міндеттері:"
 msgstr "Основные задачи Международного совета экспертов:"
 
-#: templates/main/pages/about-us.html:46
+#: .\templates\main\pages\about-us.html:46
 msgid ""
 "Халықаралық Silkway университетінің тиімді стратегиясын әзірлеуге және "
 "халықаралық промоушнға көмек;"
@@ -312,7 +278,7 @@ msgstr ""
 "Разработка эффективной стратегии Международного университета Silkway "
 "исодействие в международном продвижении;"
 
-#: templates/main/pages/about-us.html:47
+#: .\templates\main\pages\about-us.html:47
 msgid ""
 "тиімді халықаралық жылжыту үшін стратегиялық бастамалар мен жедел қызметті "
 "дамыту бойынша кеңес беру;"
@@ -320,7 +286,7 @@ msgstr ""
 "Стратегические инициативы и оперативная деятельность для эффективного "
 "международного продвиженияКонсультации по развитию"
 
-#: templates/main/pages/about-us.html:48
+#: .\templates\main\pages\about-us.html:48
 msgid ""
 "ғаламдық және аймақтық стратегиялық серіктестерді таңдауға және серіктестік "
 "келісімдері мен келісімшарттарын жасауға көмек;"
@@ -328,7 +294,7 @@ msgstr ""
 "выбор и партнерство глобальных и региональных стратегических партнеровпомощь "
 "в заключении договоров и контрактов"
 
-#: templates/main/pages/about-us.html:49
+#: .\templates\main\pages\about-us.html:49
 msgid ""
 "профессорлар, зерттеушілер мен оқытушыларды қоса алғанда, халықаралық "
 "деңгейдегі жетекші сарапшыларды тарту;"
@@ -336,7 +302,7 @@ msgstr ""
 "международный, включая профессоров, исследователей и учителейпривлечение "
 "ведущих специалистов уровня"
 
-#: templates/main/pages/about-us.html:50
+#: .\templates\main\pages\about-us.html:50
 msgid ""
 "университеттің халықаралық және ұлттық рейтингтердегі бәсекеге "
 "қабілеттілігін нығайту бойынша кеңес беру."
@@ -344,7 +310,7 @@ msgstr ""
 "Конкурс вуза в международных и национальных рейтингахКонсультации по "
 "наращиванию потенциала"
 
-#: templates/main/pages/about-us.html:78
+#: .\templates\main\pages\about-us.html:78
 msgid ""
 "Халықаралық SILKWAY университетінің Қамқоршылар кеңесі - бұл қоғамның, "
 "мемлекеттің және еңбек нарығының талаптарын ескере отырып, университеттің "
@@ -356,18 +322,18 @@ msgstr ""
 "управления образовательной организацией, созданная для содействия "
 "развитиюкоторое есть тело"
 
-#: templates/main/pages/about-us.html:79
+#: .\templates\main\pages\about-us.html:79
 msgid "Қамқоршылар кеңесінің міндеттері:"
 msgstr "Обязанности Попечительского совета:"
 
-#: templates/main/pages/about-us.html:81
+#: .\templates\main\pages\about-us.html:81
 msgid ""
 "Университеттің даму стратегиялары мен бағдарламаларын құруға және оларды "
 "жүзеге асыруға көмек көрсету;"
 msgstr ""
 "Разработка и реализация стратегий и программ развития вузапомощь в реализации"
 
-#: templates/main/pages/about-us.html:82
+#: .\templates\main\pages\about-us.html:82
 msgid ""
 "ғылыми-зерттеу, инновациялық қызметті дамытуға, іргелі және қолданбалы "
 "ғылыми әзірлемелерді қалыптастыруға, университеттегі оқу және ғылыми "
@@ -377,7 +343,7 @@ msgstr ""
 "научных разработок, преподавания и исследований в университетесодействие в "
 "развитии процесса интеграции"
 
-#: templates/main/pages/about-us.html:83
+#: .\templates\main\pages\about-us.html:83
 msgid ""
 "мамандардың біліктілігін арттыру, сараптамалық және консультациялық қызмет "
 "мәселелерін шешуді талап ететін университеттің халықаралық, ғылыми, "
@@ -387,26 +353,27 @@ msgstr ""
 "научный, требующий решения задач вузасодействие в становлении и развитии "
 "технического и культурного сотрудничества"
 
-#: templates/main/pages/about-us.html:84
+#: .\templates\main\pages\about-us.html:84
 msgid ""
 "түлектер қауымдастығымен бірге университет түлектерін жұмысқа орналастыруға "
 "жәрдемдесу;"
 msgstr ""
 "Трудоустройство выпускников вузов вместе с ассоциацией выпускниковпомощь"
 
-#: templates/main/pages/about-us.html:85 templates/main/pages/about-us.html:167
+#: .\templates\main\pages\about-us.html:85
+#: .\templates\main\pages\about-us.html:167
 msgid "университеттің даму бағдарламаларын іске асыруға қаражат тартуға көмек;"
 msgstr "содействие в сборе средств на реализацию программ развития вузов;"
 
-#: templates/main/pages/about-us.html:156
+#: .\templates\main\pages\about-us.html:156
 msgid "Миссия"
 msgstr "Миссия"
 
-#: templates/main/pages/about-us.html:160
+#: .\templates\main\pages\about-us.html:160
 msgid "Көру"
 msgstr "Чтобы увидеть"
 
-#: templates/main/pages/about-us.html:163
+#: .\templates\main\pages\about-us.html:163
 msgid ""
 "Бәсекеге қабілетті, тұрақты дамып келе жатқан кәсіби педагогикалық және "
 "гуманитарлық-экономикалық білім беру орталығы, жоғары сапалы білім беру және "
@@ -419,7 +386,7 @@ msgstr ""
 "страныОбеспечивает подготовку соответствующих высококвалифицированных "
 "специалистов"
 
-#: templates/main/pages/about-us.html:164
+#: .\templates\main\pages\about-us.html:164
 msgid ""
 "Республикалық және аймақтық деңгейде жоғары деңгейде танылған педагогикалық "
 "білім берудің ғылыми-әдістемелік орталығы."
@@ -427,7 +394,7 @@ msgstr ""
 "Высоко признанный педагогический на национальном и региональном "
 "уровняхНаучно-методический центр образования"
 
-#: templates/main/pages/about-us.html:165
+#: .\templates\main\pages\about-us.html:165
 msgid ""
 "Қазіргі заманғы кадрларды даярлау, қайта даярлау және мұғалімдердің, "
 "тәрбиешілер мен әлеуметтік қызметкерлердің біліктілігін арттырудың негізгі "
@@ -436,7 +403,7 @@ msgstr ""
 "Современная подготовка, переподготовка и переподготовка учителейОсновы "
 "повышения квалификации педагогов и социальных работниковцентр."
 
-#: templates/main/pages/about-us.html:166
+#: .\templates\main\pages\about-us.html:166
 msgid ""
 "Оңтүстік аймақтың білім беру ұйымдарымен серіктестікте инновациялық озық "
 "технологияларды қорыту және енгізу."
@@ -444,11 +411,11 @@ msgstr ""
 "Инновационный лидер в партнерстве с образовательными организациями южного "
 "регионаОбобщение и внедрение технологий"
 
-#: templates/main/pages/about-us.html:172
+#: .\templates\main\pages\about-us.html:172
 msgid "Құндылықтар"
 msgstr "Значения"
 
-#: templates/main/pages/about-us.html:174
+#: .\templates\main\pages\about-us.html:174
 msgid ""
 "Университеттің негізгі құндылықтары оның логотипіне SWIU аббревиатурасы "
 "ретінде енгізілген. Міне, басты хабарлама: «Ақылды, әдепті, жаңашыл және "
@@ -458,7 +425,7 @@ msgstr ""
 "главный посыл: «Умный, вежливый, новаторский иБудь особенным» («Будь умным, "
 "добрым, изобретательным и особенным»)"
 
-#: templates/main/pages/about-us.html:177
+#: .\templates\main\pages\about-us.html:177
 msgid ""
 "Ақылды. Білімділікке, зияткерлікке ұмтылу және интеллектуалды қабілеттерді "
 "арттыру. Ғылыми ойлауды дамыту. Жақсы. Мейірімділік пен дұрыс әрекет ету "
@@ -483,19 +450,19 @@ msgstr ""
 "Почетный работник образования республики казахстан», медалью Ыбыррай "
 "Алтынсарин."
 
-#: templates/main/pages/about-us.html:182
+#: .\templates\main\pages\about-us.html:182
 msgid "2019-2025 жылдарға арналған Халықаралық университеттің даму стратегиясы"
 msgstr "Международная стратегия развития университетов на 2019-2025 годы"
 
-#: templates/main/pages/about-us.html:185
+#: .\templates\main\pages\about-us.html:185
 msgid "Университетті басқару жүйесін жетілдіру"
 msgstr "Совершенствование системы управления университетом"
 
-#: templates/main/pages/about-us.html:186
+#: .\templates\main\pages\about-us.html:186
 msgid "Бәсекеге қабілетті мамандарды даярлау."
 msgstr "Подготовка конкурентоспособных специалистов."
 
-#: templates/main/pages/about-us.html:187
+#: .\templates\main\pages\about-us.html:187
 msgid ""
 "Үздіксіз кәсіптік білім берудің өзекті мәселелері бойынша ғылыми зерттеулер "
 "жүргізу."
@@ -503,7 +470,7 @@ msgstr ""
 "Исследование актуальных вопросов непрерывного профессионального "
 "образованиявождение"
 
-#: templates/main/pages/about-us.html:188
+#: .\templates\main\pages\about-us.html:188
 msgid ""
 "Университеттің бәсекеге қабілеттілігін арттыру үшін сыртқы байланыстар мен "
 "академиялық ұтқырлықты дамыту."
@@ -511,18 +478,145 @@ msgstr ""
 "Внешние связи и повышение конкурентоспособности университетаРазвитие "
 "академической мобильности"
 
-#: templates/main/pages/about-us.html:189
+#: .\templates\main\pages\about-us.html:189
 msgid "Университеттің оқу қызметін жетілдіру және жетілдіру."
 msgstr ""
 "Совершенствование и совершенствование образовательной деятельности вуза."
 
-#: templates/main/pages/about-us.html:190
+#: .\templates\main\pages\about-us.html:190
 msgid "Университеттің материалдық-техникалық базасын дамыту"
 msgstr "Развитие материально-технической базы университета."
 
-#: templates/main/pages/review.html:14
+#: .\templates\main\pages\review.html:14
 msgid "Жіберу"
 msgstr "Отправить"
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:5
+msgid "Select an image to embed"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:27
+msgid "Browse for the image you want, then click 'Embed Image' to continue..."
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:29
+msgid ""
+"No images found. Upload images using the 'Image Button' dialog's 'Upload' "
+"tab."
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:50
+msgid "Images in: "
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:62
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:80
+msgid "Embed Image"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:146
+msgid "Play Slideshow"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:147
+msgid "Pause Slideshow"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:148
+msgid "&lsaquo; Previous Photo"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:149
+msgid "Next Photo &rsaquo;"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:150
+msgid "Next &rsaquo;"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:151
+msgid "&lsaquo; Prev"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:7
+msgid "Django: the Web framework for perfectionists with deadlines."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:346
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:368
+msgid "The install worked successfully! Congratulations!"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:369
+#, python-format
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
+"\">DEBUG=True</a> is in your settings file and you have not configured any "
+"URLs."
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:384
+msgid "Django Documentation"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:385
+msgid "Topics, references, &amp; how-to’s"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:396
+msgid "Tutorial: A Polling App"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:397
+msgid "Get started with Django"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:408
+msgid "Django Community"
+msgstr ""
+
+#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:409
+msgid "Connect, get help, or contribute"
+msgstr ""
+
+#~ msgid "Универ жайлы"
+#~ msgstr "Об университете"
+
+#~ msgid "Құрылым"
+#~ msgstr "Структура"
+
+#~ msgid "Қашықтықтан оқыту"
+#~ msgstr "Дистанционное обучение"
+
+#~ msgid "Кітапхана"
+#~ msgstr "Библиотека"
+
+#~ msgid "Факультеттер"
+#~ msgstr "Факультеты"
+
+#~ msgid "Студенттерге арналған фронт-офис"
+#~ msgstr "Фронт-офис для студентов"
+
+#~ msgid "Университеттің нұсқаулықтары"
+#~ msgstr "Инструкции университета"
+
+#~ msgid "Аккредиттеу"
+#~ msgstr "Аккредитация"
+
+#, fuzzy
+#~| msgid "SILKWAY Халықаралық университеті 1992"
+#~ msgid "Халықаралық ынтымақтастық"
+#~ msgstr "Международный университет SILKWAY 1992"
+
+#~ msgid "Екі дәрежелі білім"
+#~ msgstr "Два уровня образования"
 
 #~ msgid "Университет туралы"
 #~ msgstr "Об университете"

@@ -1,4 +1,4 @@
-from django.urls import path,include
+from django.urls import path
 from .views import *
 
 urlpatterns = [
@@ -8,5 +8,6 @@ urlpatterns = [
     path('post/like',likePost,name="postLike"),
     path('post/likecount/<slug:url>',likesCount),
     path('post/<slug:url>',postDetailView,name="postDetailView"),
-    path('allposts/<int:pk>',postListView,name="postListView")
+    path('allposts/<int:pk>',postListView,name="postListView"),
+    path('requestadd/',requestAdd,name="requestadd")
 ]

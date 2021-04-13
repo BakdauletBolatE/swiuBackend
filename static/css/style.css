@@ -218,7 +218,7 @@
   justify-content: flex-start;
   align-items: center;
   padding: 1rem 2rem;
-  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+  border-right: 1px solid rgba(128, 128, 128, 0.2);
 }
 .sub-menu__item:last-child {
   border-bottom: none;
@@ -867,13 +867,17 @@
   position: relative;
   top: -2rem;
   z-index: 10;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
   grid-gap: 2rem;
 }
 @media screen and (max-width: 700px) {
   .box-area__row {
     top: 2rem;
   }
+}
+
+.box-area__item__link {
+  text-decoration: none;
 }
 
 .box-area__item {
@@ -1356,13 +1360,6 @@
   backdrop-filter: blur(5rem);
   transition: 0.2s ease;
 }
-.employee__item:hover .employee__text {
-  background: #e3e3e3;
-  bottom: 50%;
-  transform: translate(-50%, 50%);
-  transition: 0.2s ease;
-  left: 50%;
-}
 .employee__item:hover::before {
   opacity: 0.5;
   transition: 0.2s ease;
@@ -1431,7 +1428,7 @@
   min-height: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   transition: 0.3s ease;
   overflow: hidden;
@@ -1721,7 +1718,7 @@
   font-size: 2.4rem;
   padding: 1rem;
   display: flex;
-  align-items: center;
+  align-items: baseline;
 }
 
 .slide-menu__item-i {
@@ -1989,7 +1986,12 @@
 
 .pcke {
   font-size: 1.5rem;
-  color: #969696;
+  color: #666666;
+  line-height: 3rem;
+}
+.pcke > a {
+  color: #404040;
+  text-decoration: none;
 }
 
 .titlecke {
@@ -2327,6 +2329,23 @@ span.zoom {
 
 .isudo__item-shadow {
   box-shadow: 2px 0px 15px rgba(0, 0, 0, 0.157);
+}
+
+.alert {
+  position: fixed;
+  top: 16rem;
+  z-index: 1000;
+  left: 2rem;
+  list-style: none;
+}
+
+.alert__item-success {
+  margin-top: 0.3rem;
+  border-radius: 0.3rem;
+  background: #43d787;
+  padding: 1.4rem;
+  color: white;
+  text-align: center;
 }
 
 * {

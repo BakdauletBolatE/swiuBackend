@@ -1,10 +1,11 @@
 from django.shortcuts import render,redirect
-from .forms import QuestionsForm,PostCommentsForm
+from .forms import QuestionsForm,RequestForm
 from .models import *
 from django.http import JsonResponse
 from news.decoretors import counted
 from faculties.models import PageCategory
 import json
+from django.contrib import messages
 
 
 
@@ -71,7 +72,7 @@ def likePost(request):
         if created == False:
             print(session_key)
             like.delete()
-        
+
 
     return redirect('index')
     
@@ -92,3 +93,17 @@ def postListView(request,pk):
 
     return render(request,'news/newsList.html',context)
     
+
+def requestAdd(request):
+
+    if request.method == 'POST':
+
+        form = RequestForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            messages.success(request, f"Уважаемый {form.cleaned_data['name']} вы подписались на нашу обновление")
+            return redirect('index')
+        else:
+            messages.success(request, f"Ошибочка вышла")
+            return redirect('index')

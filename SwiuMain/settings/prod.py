@@ -1,24 +1,23 @@
-
-
 from pathlib import Path
 import os
 
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
+try:
+    from .local import *
+    DEBUG = True
+except ImportError as e:
+    DEBUG = False
 
+
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 SECRET_KEY = '+v6-04zu!l#h&+p4f(u^un@(+^u0oa$ew2nfs4w5_m=rb=41$d'
 
 
 
-DEBUG = False
-
 if DEBUG:
     ALLOWED_HOSTS = ['*']
 else:
-    ALLOWED_HOSTS = ['192.168.32.76', 'localhost','swiu.online']
-
-
-
+    ALLOWED_HOSTS = ['192.168.32.76', 'localhost', 'swiu.online']
 
 INSTALLED_APPS = [
     'modeltranslation',
@@ -53,7 +52,7 @@ ROOT_URLCONF = 'SwiuMain.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR/'templates'],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -70,7 +69,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'SwiuMain.wsgi.application'
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-
 if DEBUG:
     DATABASES = {
         'default': {
@@ -84,17 +82,15 @@ if DEBUG:
     }
 else:
     DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'swiu2',
-        'USER': 'bbb',
-        'PASSWORD': 'bagivox123F',
-        'HOST': 'localhost',
-        'PORT':''
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'swiu2',
+            'USER': 'bbb',
+            'PASSWORD': 'bagivox123F',
+            'HOST': 'localhost',
+            'PORT': ''
+        }
     }
-}
-
-
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -117,8 +113,8 @@ gettext = lambda s: s
 
 LANGUAGES = (
     ('ru', gettext('Russia')),
-    ('en',gettext('English')),
-    ('kk',gettext('Kazakhstan')),
+    ('en', gettext('English')),
+    ('kk', gettext('Kazakhstan')),
 )
 
 LOCALE_PATHS = [
@@ -133,34 +129,35 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-
 STATIC_URL = '/static/'
-
 
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-        STATIC_DIR,
-    ]
+    STATIC_DIR,
+]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
 STATICFILES_FINDERS = (
-        'django.contrib.staticfiles.finders.FileSystemFinder',
-        'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = BASE_DIR / 'media'
 
-
-
-
 CKEDITOR_CONFIGS = {
     'default': {
-        'skin':'office2013'
-        
+        'skin': 'office2013'
+
     }
 }
 
-        
+
+EMAIL_HOST = 'post.mail.kz'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "swiu.edu@mail.kz"
+EMAIL_HOST_PASSWORD = "25nc6UVSGjXnQQK"
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+
 CKEDITOR_UPLOAD_PATH = "uploads/"

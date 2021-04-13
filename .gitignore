@@ -54,6 +54,8 @@ coverage.xml
 *.cover
 .hypothesis/
 
+
+
 # Translations
 *.mo
 *.pot
@@ -61,6 +63,10 @@ coverage.xml
 # Django stuff:
 *.log
 local_settings.py
+local
+.local
+local.py
+.local
 
 # Flask stuff:
 instance/

@@ -99,4 +99,17 @@ class PageHit(models.Model):
     class Meta:
         verbose_name = 'Просмотры страницы'
         verbose_name_plural = "Просмотры страницы"
-    
+
+class Request(models.Model):
+
+    name = models.CharField('Ваше имя',max_length=255)
+    email = models.EmailField('Ваш email')
+
+
+    def __str__(self):
+        return f'{self.name} | {self.email}'
+
+    class Meta:
+
+        verbose_name = 'Заявка'
+        verbose_name_plural = 'Заявки'

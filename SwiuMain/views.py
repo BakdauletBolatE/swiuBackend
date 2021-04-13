@@ -53,3 +53,23 @@ def pageView(request,url):
         'pageCats':pageCats
     }
     return render(request,'facult/page.html',context)
+
+def opView(request):
+
+    facult = Facult.objects.all()
+    pageCats = PageCategory.objects.all()
+
+    context = {
+        'facult': facult,
+        'pageCats': pageCats
+    }
+    return render(request, 'main/pages/op.html', context)
+
+def accreditation(request):
+
+    pageCats = PageCategory.objects.all()
+
+    context = {
+        'pageCats': pageCats
+    }
+    return render(request, 'main/pages/accreditation.html', context)

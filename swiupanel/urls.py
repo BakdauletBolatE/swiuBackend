@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import *
-from .widget import addPage, addWidgetType,indexPage,viewPage,getWidgetJson,addWidgetItem
+from .widget import *
 
 
 urlpatterns = [
@@ -14,6 +14,7 @@ urlpatterns = [
     path('get-facult-json/<str:cat>',getFacultStaff),
     path('get-op-json/<str:op>',getOpJson),
     path('searchedu/<str:search>/',searchEdu,name="searchEdu"),
+
 ]
 
 urlpatterns += [

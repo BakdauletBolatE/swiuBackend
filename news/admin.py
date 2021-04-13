@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Quote,Questions,PageHit,PostImages,Post,PostComments,Like,PostCategories
+from .models import *
 # Register your models here.
 
 admin.site.register(Quote)
@@ -20,3 +20,4 @@ admin.site.register(PostImages)
 admin.site.register(PageHit)
 admin.site.register(Like)
 admin.site.register(PostCategories)
+admin.site.register(Request)

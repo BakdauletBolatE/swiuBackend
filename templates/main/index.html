@@ -54,7 +54,7 @@
 <section class="box-area">
     <div class="container">
         <div class="box-area__row">
-            <a class="box-area__item__link" href="box-area__item__link">
+            <a class="box-area__item__link" href="{% url 'opView' %}">
                 <article class="box-area__item">
                 <div class="box-area__icon">
                     <i style="color:rgb(255, 111, 111); font-size: 6rem;" class="fad fa-chevron-double-up"></i>
@@ -103,14 +103,13 @@
             </div>
             <div class="about-us__text">
                 <h2 class="about-us__title">
-                    {% trans 'S SILKWAY Университетін таңдаудың 5 себебі 🤩🌏 сондықтан кеттік🚀' %}
+                    {% trans 'SILKWAY Университетін таңдаудың 4 себебі 🤩🌏 сондықтан кеттік🚀' %}
                 </h2>
                 <p class="about-us__desciption">
                    {% trans '1. Біз аккредиттелген жоғары оқу орнымыз' %} <br>
-                   {% trans '1. Біз аккредиттелген жоғары оқу орнымыз' %} <br>
-                   {% trans '3. Бізде - білім гранттары' %}<br>
-                   {% trans '4. Бай материалдық-техникалық база' %}<br>
-                   {% trans '5. Біз республикамыздағы ең үздік педагогикалық университетпіз.' %}  <br>
+                   {% trans '2. Бізде - білім гранттары' %}<br>
+                   {% trans '3. Бай материалдық-техникалық база' %}<br>
+                   {% trans '4. Біз республикамыздағы ең үздік педагогикалық университетпіз.' %}  <br>
                 </p>
                 <div class="about-us__box">
                     <div class="about-us__box-item">
@@ -298,7 +297,7 @@
             {% endfor %}
 
         </div>
-        <a style="text-align: center; display: block; margin-top: 75px;" class="btn" href="{% url 'postListView' 2 %}">Посмотреть все обьеявление</a>
+        <a style="text-align: center; display: block; margin-top: 75px;" class="btn" href="{% url 'postListView' 2 %}">Посмотреть все объявления</a>
     </div>
 </section>
 <script>

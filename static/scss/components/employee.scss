@@ -36,13 +36,7 @@
         transition: 0.2s ease;
     }
     &:hover{
-        .employee__text{
-            background: rgb(227, 227, 227);
-            bottom:50%;
-            transform: translate(-50%,50%);
-            transition: 0.2s ease;
-            left: 50%;
-        }
+
         &::before{
             opacity: 0.5; 
             transition: 0.2s ease;
@@ -117,7 +111,7 @@
     min-height: 0;
    display: flex;
    justify-content: center;
-   align-items: center;
+   align-items: flex-start;
    flex-direction: column;
     transition: 0.3s ease;
     overflow: hidden;
