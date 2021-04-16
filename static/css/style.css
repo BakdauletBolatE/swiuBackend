@@ -457,6 +457,8 @@
 
 .course-tab-description {
   font-size: 1.5rem;
+  text-align: justify;
+  text-indent: 3rem;
   color: #666666;
   line-height: 2.5rem;
 }

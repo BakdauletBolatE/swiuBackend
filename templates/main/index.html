@@ -1,5 +1,6 @@
 {% extends 'layouts/app.html' %}
-{% load i18n %} 
+{% load i18n %}
+{% load checkliked %}
 {% load static %}
 {% block title %}
 {% trans "SILKWAY Халықаралық университеті" %}
@@ -226,7 +227,7 @@
                         </div> -->
                         <div class="news__footer-item ">       
                                 <input type="hidden" value="{{post.slug}}">
-                                <button class="like_btn" type="submit"><i class="none-click far fa-heart"></i></button>            
+                                <button class="like_btn {% check post.id request.session.session_key %}" type="submit"><i class="none-click far fa-heart"></i></button>
                             <span class="none-click">{{ post.likes.count }}</span>
                         </div>
                     </div>
@@ -287,7 +288,7 @@
                         </div> -->
                         <div class="news__footer-item ">
                                 <input type="hidden" value="{{post.slug}}">
-                                <button class="like_btn" type="submit"><i class="none-click far fa-heart"></i></button>
+                                <button class="like_btn" type="submit"><i class="none-click red far fa-heart"></i></button>
                             <span class="none-click">{{ post.likes.count }}</span>
                         </div>
                     </div>
@@ -304,129 +305,54 @@
     // const mainsiteurl = "127.0.0.1:8000"
     '{% get_current_language as LANGUAGE_CODE %}'
     const likeBtn = document.querySelectorAll('.like_btn');
-    likeBtn.forEach(e=>{
-        e.addEventListener('click',btn=>{
-           
-            btn = btn.target;
-            if (btn.classList.contains('like_btn')){
-                var url = btn.previousElementSibling.value;
-                var likeCount = btn.nextElementSibling;
-                let myData = {
-                    'slug':url,
-                    'session_key':"{{request.session.session_key}}"
-                }
-                fetch("creative/post/like",{
-                    method:"POST",
-                    headers: {
+
+
+    async function liker(data){
+         let liked = await fetch("creative/post/like",{
+            method:"POST",
+            headers: {
                         "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
                         "X-CSRFToken": "{{csrf_token}}"
-                    },
-                    body: JSON.stringify(myData)
-                })
-                .then(function (data) {
-                console.log('Request succeeded with JSON response', data);
-                })
-                .then(view)
-                .catch(function (error) {
-                    console.log('Request failed', error);
-                });
-                }
-                function view(){
-                    fetch("creative/post/likecount/"+url)
-                    .then(response => response.json())
-                    .then(likes => likesf(likes))
+            },
+            body: JSON.stringify(data)
+        })
+        return await liked
+    }
 
-                    function likesf(datalike){
-                        const dataliker = datalike;
-                        likeCount.innerHTML = dataliker.like
-                    }
+    async function likeCountf(url){
+        let count = await  fetch("creative/post/likecount/"+url);
+        return await count.json();
+    }
+    likeBtn.forEach(like=>{
+        like.addEventListener('click',btn=>{
+             btn = btn.target;
 
-                }
+             if (btn.classList.contains('like_btn')){
+                 let url = btn.previousElementSibling.value;
+                 let likeCount = btn.nextElementSibling;
+                 let myData = {
+                    'slug':url,
+                    'session_key':"{{request.session.session_key}}"
+                 }
+                 liker(myData)
+                 .then(render())
 
-                
-        });
+                 function render(){
+                     likeCountf(url)
+                     .then(data => {
+                         if (btn.classList.contains('active')){
+                             btn.classList.remove('active');
+                             likeCount.innerHTML = parseInt(likeCount.innerHTML)-1;
+                         }else{
+                             btn.classList.add('active');
+                             likeCount.innerHTML = parseInt(likeCount.innerHTML)+1;
+                         }
+
+                     })
+                 }
+             }
+
+        })
     });
-    // const comment = document.querySelectorAll('.comment')
-    // comment.forEach(com=>{
-    //     com.addEventListener('click',(com)=>{
-    //         com = com.target;
-    //         if (com.classList.contains('comment')){
-    //             changer = com.lastElementChild;
-    //             changer.classList.toggle('hide');
-    //             url = com.firstElementChild.value;
-    //             lastComments = changer.lastElementChild;
-    //             fetch('creative/comments/'+url)
-    //             .then(response => response.json())
-    //             .then(commits => view(commits))
-
-    //             function view(data){
-    //                 data = data.comments;
-    //                 lastComments.innerHTML = "";
-    //                 data.forEach(e=>{
-    //                     li = document.createElement('li');
-    //                     li.innerHTML = e.author+": "+e.description;
-    //                     lastComments.append(li)
-    //                 });
-                    
-    //             }
-               
-    //         }
-    //     })
-    // })
-
-    
-
-    // const btn = document.querySelectorAll('.comment_btn')
-
-    // btn.forEach((e)=>{
-    //     e.addEventListener('click',(com)=>{
-    //         com = com.target
-    //         let lastComments = com.nextElementSibling;
-    //         let url = com.previousElementSibling.value;
-    //         let count = com.parentElement.previousElementSibling;
-    //         let desciption = com.previousElementSibling.previousElementSibling.value;
-    //         console.log(count);
-
-    //         let myData = {
-    //             'slug': url,
-    //             'desciption':desciption
-    //         }
-
-    //         fetch('creative/comments/add', {
-    //         method: 'post',
-    //         credentials: 'same-origin', 
-    //         headers: {
-    //             "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-    //             "X-CSRFToken": "{{csrf_token}}"
-    //         },
-    //         body: JSON.stringify(myData)
-    //         })
-    //         .then(function (data) {
-    //             console.log('Request succeeded with JSON response', data);
-    //         })
-    //         .then(view)
-    //         .catch(function (error) {
-    //             console.log('Request failed', error);
-    //         });
-
-    //         function view(){
-    //             li = document.createElement('li');
-    //             li.innerHTML = "{{request.user.username}}"+": "+myData.desciption;
-    //             lastComments.append(li);
-    //             desciption.value = "";
-    //             a = parseInt(count.innerHTML);
-    //             count.innerHTML = a + 1;
-    //         }
-
-    //     })
-    // });
-
-
-
-
-
-  
-
-
 </script>
 {% endblock %}
