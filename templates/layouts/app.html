@@ -97,7 +97,7 @@
                         </div>
                         <ul class="menu__list">
                             {% for cat in pageCats|order_by:'order' %}
-                            <li class="menu__item"><a class="menu__link menu__link2" href="">{{cat.name}}</a>
+                            <li class="menu__item"><a class="menu__link menu__link2" href="{% if cat.linkto != '0' %} {{cat.linkto}} {% endif %}">{{cat.name}}</a>
                                 
                                 <ul class="sub-menu">
                                     {% for page in cat.page.all|order_by:'order' %}
