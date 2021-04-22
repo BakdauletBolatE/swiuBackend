@@ -96,7 +96,7 @@
                             <a href="{% url 'index' %} "><img src="{% static 'img/logo_ru1.png' %}" alt=""></a>
                         </div>
                         <ul class="menu__list">
-                            {% for cat in pageCats %}
+                            {% for cat in pageCats|order_by:'order' %}
                             <li class="menu__item"><a class="menu__link menu__link2" href="">{{cat.name}}</a>
                                 
                                 <ul class="sub-menu">
@@ -139,9 +139,9 @@
                                     {% if page.slug == "1" %}
                                     <li class="slide-sub-menu_ii"><a class="sub-menu__link sub-menu__link-white" href="{% url page.url %}">{{page.title}}</a></li>
                                     {% elif page.link %}
-                                    <li class="slide-sub-menu_ii"><a class="sub-menu__link sub-menu__link-white" href="{{ page.link }}">{{page.title}} {{ page.link }} </a></li>
+                                    <li class="slide-sub-menu_ii"><a class="sub-menu__link sub-menu__link-white" href="{{ page.link }}">{{page.title}} </a></li>
                                     {% else %}
-                                    <li class="slide-sub-menu_ii"><a class="sub-menu__link sub-menu__link-white" href="{% url page.url page.slug %}">{{page.title}} {{ page.link }}</a></li>
+                                    <li class="slide-sub-menu_ii"><a class="sub-menu__link sub-menu__link-white" href="{% url page.url page.slug %}">{{page.title}}</a></li>
                                     {% endif %}
                                     {% endfor %}
                                 </ul>
@@ -168,7 +168,7 @@
             </section>
             
         </header>
-        <div class="bgs" style="">
+        <div class="bgs">
         {% block content %}
         
 

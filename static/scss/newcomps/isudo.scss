@@ -1,13 +1,13 @@
 .isudo{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
-    grid-gap:30px;
+    grid-gap:3rem;
 }
 .isudo__bigtitle{
     font-size: 4.2rem;
     text-align: center;
     color:#00194a;
-    margin:80px;
+    padding:5rem;
     display: block;
 }
 .isudo__link{
@@ -58,10 +58,15 @@
 }
 .isudo__title{
     font-size: 2rem;
+    width: 90%;
+    margin:0 auto;
 }
 .isudo__subtitle{
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+    font-weight: 400;
     margin-top: 2rem;
+    width: 90%;
+    margin:0 auto;
 }
 .isudo__btn{
     padding: 10px 30px;

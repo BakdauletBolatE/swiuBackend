@@ -1,0 +1,39 @@
+.twoblock {
+    display: flex;
+    padding-top: 2rem;
+    flex-wrap: wrap;
+}
+.twoblock__item {
+    flex-basis: calc(50% - 20px);
+    margin-right: 2rem;
+    color:#00194a;
+    &:last-child{
+        margin-right: 0rem;
+    }
+}
+.twoblock__img {
+    width: 100%;
+}
+.twoblock__bigtitle {
+    font-size: 4.5rem;
+    padding-bottom: 0.5rem;
+    position: relative;
+    margin-bottom: 4rem;
+    &::after{
+        width: 20%;
+        height: 0.5rem;
+        position: absolute;
+        bottom:0;
+        content: "";
+        background-color: #00194a;
+        left:0;
+    }
+}
+.twoblock__subtitle {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+.twoblock-text {
+    line-height: 3rem;
+    font-size: 1.5rem;
+}

@@ -147,8 +147,48 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 CKEDITOR_CONFIGS = {
     'default': {
-        'skin': 'office2013'
-
+        'skin': 'office2013',
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+      [
+        'Bold',
+        'Italic',
+        'Underline'
+      ],
+      [
+        'Font',
+        'FontSize',
+        'TextColor',
+        'BGColor'
+      ],
+      [
+        'NumberedList',
+        'BulletedList',
+        '-',
+        'Outdent',
+        'Indent',
+        '-',
+        'JustifyLeft',
+        'JustifyCenter',
+        'JustifyRight',
+        'JustifyBlock'
+      ],
+      [
+        'Link',
+        'Unlink'
+      ],
+      [
+        'RemoveFormat',
+        'Source',
+        'CodeSnippet',
+        'Image',
+        'Youtube'
+      ]
+    ],
+        'extraPlugins': ','.join([
+        'codesnippet',
+        'youtube'
+        ]),
     }
 }
 

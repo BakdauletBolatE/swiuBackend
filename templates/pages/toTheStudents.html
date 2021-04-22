@@ -1,0 +1,68 @@
+{% extends 'layouts/app.html' %}
+{% load static %}
+{% load i18n %} 
+{% load static i18n %}
+{% block title %}
+{% trans 'Абитуриентам' %}
+{% endblock %}
+{% block content %}
+
+<div class="container">
+    <h2 class="isudo__bigtitle">
+        Обучающимся
+    </h2>
+    <div class="isudo row">
+        <a class="isudo__link" href="{% static 'pdf/grapicpredzash.pdf' %}">
+            <div class="isudo__item isudo__item-before" style="background: url({% static 'pdf/background.jpeg' %}) no-repeat center; background-size: cover;">
+                <h2 class="isudo__title">График предварительной защиты дипломных работ</h2>
+                <h3 class="isudo__subtitle">График предварительной защиты дипломных работ</h3>
+            </div>
+        </a>
+        <a class="isudo__link" href="https://cloud.mail.ru/public/2i5i/3zD6u99fQ">
+            <div class="isudo__item isudo__item-before" style="background: url({% static 'pdf/background.jpeg' %}) no-repeat center; background-size: cover;">
+                <h2 class="isudo__title">Путеводитель</h2>
+                <h3 class="isudo__subtitle">для выпускников организаций среднего образования текущего года, сдающих единое национальное тестирование</h3>
+            </div>
+        </a>
+        <a class="isudo__link" href="{% static 'pdf/Дуальное обучение 1.docx' %}">
+            <div class="isudo__item isudo__item-before" style="background: url({% static 'pdf/background.jpeg' %}) no-repeat center; background-size: cover;">
+                <h2 class="isudo__title">Дуальное образование</h2>
+                <h3 class="isudo__subtitle">для выпускников среднего образования прошлых лет, технического и профессионального или послесреднего образования, сдающих единое национальное тестирование</h3>
+            </div>
+        </a>
+        <a class="isudo__link" href="{% static 'pdf/img.jpg' %}">
+            <div class="isudo__item isudo__item-before" style="background: url({% static 'pdf/background.jpeg' %}) no-repeat center; background-size: cover;">
+                <h2 class="isudo__title">Клубы</h2>
+                <h3 class="isudo__subtitle">Онлайн подача заявлений абитуриентов для зачисления</h3>
+            </div>
+        </a>
+        <a class="isudo__link" href="https://docs.google.com/forms/d/e/1FAIpQLSdb8Qx-9ioLi6g5xBR912sFSuz5XiQdQ2eOOPKAEjw726lfaA/viewform">
+            <div class="isudo__item isudo__item-before" style="background: url({% static 'pdf/background.jpeg' %}) no-repeat center; background-size: cover;">
+                <h2 class="isudo__title">Общежитие</h2>
+                <h3 class="isudo__subtitle">Онлайн подача заявлений абитуриентов для зачисления</h3>
+            </div>
+        </a> 
+    </div>
+    <h2 class="isudo__bigtitle">
+        Выпуск 2020г
+    </h2>
+    <div class="isudo row">
+        <a class="isudo__link" href="{% static 'pdf/bakalavrozhnoe.pdf' %}">
+            <div class="isudo__item isudo__item-before" style="background: url({% static 'img/Compressed/s2.jpg' %}) no-repeat center; background-size: cover;">
+                <h2 class="isudo__title">Бакалавриат (очное)</h2>
+            </div>
+        </a>
+        <a class="isudo__link" href="{% static 'pdf/bakalavrozhazhnoe.pdf' %}">
+            <div class="isudo__item isudo__item-before" style="background: url({% static 'img/Compressed/s2.jpg' %}) no-repeat center; background-size: cover;">
+                <h2 class="isudo__title">Бакалавриат (заочное)</h2>
+            </div>
+        </a>
+        <a class="isudo__link" href="{% static 'pdf/afteruni.pdf' %}">
+            <div class="isudo__item isudo__item-before" style="background: url({% static 'img/Compressed/s2.jpg' %}) no-repeat center; background-size: cover;">
+                <h2 class="isudo__title">Послевузовское образование</h2>
+            </div>
+        </a> 
+    </div>
+</div>
+
+{% endblock %}

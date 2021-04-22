@@ -19,7 +19,7 @@ class Facult(models.Model):
 
 class PageCategory(models.Model):
     name = models.CharField('НАзвани катоегрий',max_length=255)
-
+    order = models.IntegerField('Филтрация',default=0)
 
     def __str__(self):
         return self.name

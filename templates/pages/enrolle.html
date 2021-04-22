@@ -1,0 +1,31 @@
+{% extends 'layouts/app.html' %}
+{% load static %}
+{% load i18n %} 
+{% load static i18n %}
+{% block title %}
+{% trans 'Абитуриентам' %}
+{% endblock %}
+{% block content %}
+
+<div class="container">
+    <h2 class="isudo__bigtitle">
+        Поступающим
+        <p style="font-weight: 400; font-size: 20px; margin-top: 10px;">В разделах есть памятки для поступающих в высшие учебные заведения</p>
+    </h2>
+    <div class="isudo row">
+        <a class="isudo__link" href="{% static 'pdf/pamyatka1.pdf' %}">
+            <div class="isudo__item isudo__item-before" style="background: url({% static 'img/Compressed/s1.jpg' %}) no-repeat center; background-size: cover;">
+                <h2 class="isudo__title">Памятка #1</h2>
+                <h3 class="isudo__subtitle">для выпускников организаций среднего образования текущего года, сдающих единое национальное тестирование</h3>
+            </div>
+        </a>
+        <a class="isudo__link" href="{% static 'pdf/pamyatka2.pdf' %}">
+            <div class="isudo__item isudo__item-before" style="background: url({% static 'img/Compressed/s2.jpg' %}) no-repeat center; background-size: cover;">
+                <h2 class="isudo__title">Памятка #2</h2>
+                <h3 class="isudo__subtitle">для выпускников среднего образования прошлых лет, технического и профессионального или послесреднего образования, сдающих единое национальное тестирование</h3>
+            </div>
+        </a> 
+    </div>
+</div>
+
+{% endblock %}

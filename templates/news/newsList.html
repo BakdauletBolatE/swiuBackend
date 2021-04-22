@@ -52,48 +52,55 @@
 
     <script>
         '{% get_current_language as LANGUAGE_CODE %}'
-    const likeBtn = document.querySelectorAll('.like_btn');
-    likeBtn.forEach(e=>{
-        e.addEventListener('click',btn=>{
-           
-            btn = btn.target;
-            if (btn.classList.contains('like_btn')){
-                var url = btn.previousElementSibling.value;
-                var likeCount = btn.nextElementSibling;
-                let myData = {
-                    'slug':url,
-                    'session_key':"{{request.session.session_key}}"
-                }
-                fetch("/{{request.LANGUAGE_CODE}}/creative/post/like",{
-                    method:"POST",
-                    headers: {
-                        "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-                        "X-CSRFToken": "{{csrf_token}}"
-                    },
-                    body: JSON.stringify(myData)
-                })
-                .then(function (data) {
-                console.log('Request succeeded with JSON response', data);
-                })
-                .then(view)
-                .catch(function (error) {
-                    console.log('Request failed', error);
-                });
-                }
-                function view(){
-                    fetch("/{{request.LANGUAGE_CODE}}/creative/post/likecount/"+url)
-                    .then(response => response.json())
-                    .then(likes => likesf(likes))
+        const likeBtn = document.querySelectorAll('.like_btn');
 
-                    function likesf(datalike){
-                        const dataliker = datalike;
-                        likeCount.innerHTML = dataliker.like
-                    }
 
-                }
+async function liker(data){
+     let liked = await fetch("/creative/post/like",{
+        method:"POST",
+        headers: {
+                    "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+                    "X-CSRFToken": "{{csrf_token}}"
+        },
+        body: JSON.stringify(data)
+    })
+    return await liked
+}
 
-                
-        });
-    });
+async function likeCountf(url){
+    let count = await  fetch("/creative/post/likecount/"+url);
+    return await count.json();
+}
+likeBtn.forEach(like=>{
+    like.addEventListener('click',btn=>{
+         btn = btn.target;
+
+         if (btn.classList.contains('like_btn')){
+             let url = btn.previousElementSibling.value;
+             let likeCount = btn.nextElementSibling;
+             let myData = {
+                'slug':url,
+                'session_key':"{{request.session.session_key}}"
+             }
+             liker(myData)
+             .then(render())
+
+             function render(){
+                 likeCountf(url)
+                 .then(data => {
+                     if (btn.classList.contains('active')){
+                         btn.classList.remove('active');
+                         likeCount.innerHTML = parseInt(likeCount.innerHTML)-1;
+                     }else{
+                         btn.classList.add('active');
+                         likeCount.innerHTML = parseInt(likeCount.innerHTML)+1;
+                     }
+
+                 })
+             }
+         }
+
+    })
+});
     </script>
 {% endblock %}

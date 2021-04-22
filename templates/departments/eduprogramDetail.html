@@ -11,27 +11,27 @@
             <div class="course-sidebar">
                 <div class="main-sidebar">
                     <h3 class="main-sidebar__title">
-                        Информация об образовательнем программе
+                        {% trans 'Информация об образовательнем программе' %}
                     </h3>
                     <div class="main-sidebar__list">
                         <div class="main-sidebar__item">
                             <div>
                                 <i class="fas fa-calendar-alt"></i>
-                                <span>CТЕПЕНЬ:</span>
+                                <span>{% trans 'CТЕПЕНЬ:' %}</span>
                             </div>
                                 <span>{{eduProgram.cat.name}}</span>
                         </div>
                        
                         <div class="main-sidebar__item">
-                           <div><i class="fas fa-clock"></i><span>Факультет:</span></div>
+                           <div><i class="fas fa-clock"></i><span>{% 'Факультет:' %}</span></div>
                                <span>{{eduProgram.facult.name}}</span>
                         </div>
                         <div class="main-sidebar__item">
-                            <div><i class="fas fa-globe-europe"></i><span>Кафедра:</span></div>
+                            <div><i class="fas fa-globe-europe"></i><span>{% trans 'Кафедра:' %}</span></div>
                                 <span>{{eduProgram.department.name}}</span>
                         </div>
                           
-                        <a style="display: block;" class="btn" href="">Ставить лайк</a>
+                        <a style="display: block;" class="btn" href="">{% 'Ставить лайк' %}</a>
                    
                     </div>
                 </div>
@@ -45,8 +45,8 @@
                 
                 <div class="course__tab-list">
                     <ul class="course-tab-btns">
-                        <li class="course-tab-btn course-tab-btn--active">О образовательнем программе</li>
-                        <li class="course-tab-btn">Преподаватели</li>
+                        <li class="course-tab-btn course-tab-btn--active">{% trans 'О образовательнем программе' %}</li>
+                        <li class="course-tab-btn">{% trans 'Преподаватели' %}</li>
                         
                     </ul>
                     <div class="course-tab-content">

@@ -73,3 +73,21 @@ def accreditation(request):
         'pageCats': pageCats
     }
     return render(request, 'main/pages/accreditation.html', context)
+
+def enrolleView(request):
+
+    pageCats = PageCategory.objects.all()
+
+    context = {
+        'pageCats': pageCats
+    }
+    return render(request, 'pages/enrolle.html', context)
+
+def toTheStudentsView(request):
+
+    pageCats = PageCategory.objects.all()
+
+    context = {
+        'pageCats': pageCats
+    }
+    return render(request, 'pages/toTheStudents.html', context)
