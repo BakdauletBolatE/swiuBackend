@@ -19,6 +19,7 @@ class Facult(models.Model):
 
 class PageCategory(models.Model):
     name = models.CharField('НАзвани катоегрий',max_length=255)
+    linkto = models.CharField('Ссылка на чего либо',default=0,max_length=255,blank=True,null=True)
     order = models.IntegerField('Филтрация',default=0)
 
     def __str__(self):
