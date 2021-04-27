@@ -35,11 +35,11 @@ msgstr "3. We have educational grants"
 #: .\library\templates\library\teacshingStaff.html:7
 #: .\library\templates\library\teacshingStaff.html:12
 msgid "Оқытушылар құрамының жұмыстары"
-msgstr ""
+msgstr "Works of Teaching Staff"
 
 #: .\library\templates\library\book_list.html:11
 msgid "Постер"
-msgstr ""
+msgstr "Poster"
 
 #: .\library\templates\library\book_list.html:12
 #, fuzzy
@@ -61,24 +61,24 @@ msgstr "Library"
 
 #: .\library\templates\library\book_list.html:15
 msgid "Басылымға шыққан жылы"
-msgstr ""
+msgstr "Edition year"
 
 #: .\library\templates\library\book_list.html:16
 msgid "Қол жетімділігі"
-msgstr ""
+msgstr "Availability"
 
 #: .\library\templates\library\book_list.html:26
 msgid "Постері жоқ"
-msgstr ""
+msgstr "No poster"
 
 #: .\library\templates\library\book_list.html:34
 #: .\library\templates\library\book_list.html:41
 msgid "Таңдалмаған"
-msgstr ""
+msgstr "was not chosen"
 
 #: .\library\templates\library\book_list.html:47
 msgid "Жүктеу"
-msgstr ""
+msgstr "Download"
 
 #: .\library\templates\library\index.html:7
 #, fuzzy
@@ -99,47 +99,47 @@ msgstr "Read more"
 
 #: .\library\templates\library\index.html:31
 msgid "Мерзімді басылымдар"
-msgstr ""
+msgstr "Periodicals"
 
 #: .\library\templates\library\index.html:35
 msgid "Оқырмандар үшін"
-msgstr ""
+msgstr "for Readers"
 
 #: .\library\templates\library\index.html:39
 msgid "Электрондық ресурстар"
-msgstr ""
+msgstr "Electronic resources"
 
 #: .\library\templates\library\index.html:43
 msgid "Республикалық ЖОО аралық электронды кітапхана"
-msgstr ""
+msgstr "Republican interuniversity electronic library"
 
 #: .\library\templates\library\index.html:47
 msgid "ГУМАНИТАРЛЫҚ ЖАҢА БІЛІМ 100 ЖАҢА ОҚУЛЫҚТАР ҚАЗАҚ ТІЛІНДЕ"
-msgstr ""
+msgstr "NEW HUMANITARIAN KNOWLEDGE 100 NEW BOOKS IN KAZAKH LANGUAGE"
 
 #: .\staff\templates\stuff\stuffDetai.html:19
 msgid "Мұғалім туралы"
-msgstr ""
+msgstr "About teacher"
 
 #: .\staff\templates\stuff\stuffDetai.html:41
 msgid "Қызметкерлер туралы ақпарат"
-msgstr ""
+msgstr "Information about employees"
 
 #: .\staff\templates\stuff\stuffDetai.html:47
 msgid "Лауазым"
-msgstr ""
+msgstr "Position"
 
 #: .\staff\templates\stuff\stuffDetai.html:53
 msgid "Пошта"
-msgstr ""
+msgstr "Mail"
 
 #: .\staff\templates\stuff\stuffDetai.html:57
 msgid "Нөмір"
-msgstr ""
+msgstr "Number"
 
 #: .\staff\templates\stuff\stuffDetai.html:61
 msgid "Мекен-жайы"
-msgstr ""
+msgstr "Address"
 
 #: .\staff\templates\stuff\stuffDetai.html:65
 #, fuzzy
@@ -164,7 +164,7 @@ msgstr "Educational programs"
 #: .\templates\departments\eduprogramDetail.html:35
 #: .\templates\news\newsDetail.html:72
 msgid "Лүпіл қою"
-msgstr ""
+msgstr "Like"
 
 #: .\templates\departments\departmentDetail.html:14
 #: .\templates\departments\departmentDetail.html:24
@@ -182,11 +182,11 @@ msgstr "Teachers of the department"
 
 #: .\templates\departments\departmentDetail.html:32
 msgid "Категория:"
-msgstr ""
+msgstr "Category:"
 
 #: .\templates\departments\departmentDetail.html:92
 msgid "Шифр:"
-msgstr ""
+msgstr "Cipher"
 
 #: .\templates\departments\eduprogramDetail.html:15
 #, fuzzy
@@ -196,7 +196,7 @@ msgstr "Educational programs"
 
 #: .\templates\departments\eduprogramDetail.html:21
 msgid "ДӘРЕЖЕСІ:"
-msgstr ""
+msgstr "DEGREE"
 
 #: .\templates\departments\eduprogramDetail.html:27
 #, fuzzy
@@ -218,7 +218,7 @@ msgstr "Educational programs"
 
 #: .\templates\departments\eduprogramDetail.html:50
 msgid "Мұғалімдер"
-msgstr ""
+msgstr "Teachers"
 
 #: .\templates\distancelearning\isudo.html:6 .\templates\facult\index.html:6
 msgid "Факультеты университета Silkway"
@@ -228,46 +228,46 @@ msgstr "Faculties of Silkway University"
 #: .\templates\distancelearning\isudo.html:23
 #: .\templates\distancelearning\isudo.html:29
 msgid "Білім алушының кабинеті"
-msgstr ""
+msgstr "Student's office"
 
 #: .\templates\distancelearning\isudo.html:18
 #: .\templates\distancelearning\isudo.html:36
 #: .\templates\distancelearning\isudo.html:54
 msgid "Күндізгі бөлім"
-msgstr ""
+msgstr "Full-time department"
 
 #: .\templates\distancelearning\isudo.html:24
 #: .\templates\distancelearning\isudo.html:42
 #: .\templates\distancelearning\isudo.html:60
 msgid "Қысқартылған оқу формасы"
-msgstr ""
+msgstr "Short form of study"
 
 #: .\templates\distancelearning\isudo.html:30
 #: .\templates\distancelearning\isudo.html:48
 #: .\templates\distancelearning\isudo.html:66
 msgid "ЖОҒАРЫ ОҚУ ОРНЫНАН КЕЙІНГІ БІЛІМ БЕРУ"
-msgstr ""
+msgstr "Postgraduate education"
 
 #: .\templates\distancelearning\isudo.html:35
 #: .\templates\distancelearning\isudo.html:41
 #: .\templates\distancelearning\isudo.html:47
 msgid "Оқытушы кабинеті"
-msgstr ""
+msgstr "Teacher's office"
 
 #: .\templates\distancelearning\isudo.html:53
 #: .\templates\distancelearning\isudo.html:59
 #: .\templates\distancelearning\isudo.html:65
 #: .\templates\distancelearning\isudo.html:83
 msgid "Админстратор"
-msgstr ""
+msgstr "Administrator"
 
 #: .\templates\distancelearning\isudo.html:71
 msgid "Пайдаланушыларға нұсқаулық"
-msgstr ""
+msgstr "User's manual"
 
 #: .\templates\distancelearning\isudo.html:75
 msgid "Оқушы"
-msgstr ""
+msgstr "Student"
 
 #: .\templates\distancelearning\isudo.html:76
 #: .\templates\distancelearning\isudo.html:80
@@ -300,11 +300,11 @@ msgstr "To see"
 
 #: .\templates\distancelearning\isudo.html:79
 msgid "Мұғалім"
-msgstr ""
+msgstr "Teacher"
 
 #: .\templates\distancelearning\isudo.html:87
 msgid "Мобильді қосымша"
-msgstr ""
+msgstr "Mobile application"
 
 #: .\templates\distancelearning\isudo.html:91
 #, fuzzy
@@ -314,7 +314,7 @@ msgstr "University instructions"
 
 #: .\templates\distancelearning\isudo.html:95
 msgid "қосымша"
-msgstr ""
+msgstr "Additional"
 
 #: .\templates\layouts\app.html:33
 msgid "Сіз сұрақтар қойғыңыз келе ме?"
@@ -322,23 +322,23 @@ msgstr "Do you want to ask questions?"
 
 #: .\templates\layouts\app.html:36
 msgid "Президент блогы"
-msgstr ""
+msgstr "President's blog"
 
 #: .\templates\layouts\app.html:39
 msgid "Ректор блогы"
-msgstr ""
+msgstr "Rector's blog"
 
 #: .\templates\layouts\app.html:42
 msgid "Бітіруші түлектерге"
-msgstr ""
+msgstr "For graduates"
 
 #: .\templates\layouts\app.html:53
 msgid "Нашар көретіндер үшін"
-msgstr ""
+msgstr "For visually impaired"
 
 #: .\templates\layouts\app.html:186
 msgid "Соңғы жаңалықтарды алу үшін аты жөніңізді енгізіңіз"
-msgstr ""
+msgstr "Enter your full name to get the latest news"
 
 #: .\templates\layouts\app.html:191
 msgid "Атыңызды енгізіңіз"
@@ -375,7 +375,7 @@ msgstr "Modern library"
 
 #: .\templates\main\index.html:60
 msgid "Ең жаңа кітаптардан қапы қалмаңыз"
-msgstr ""
+msgstr "Don't miss the newest books"
 
 #: .\templates\main\index.html:70
 msgid "Білікті мамандар"
@@ -391,7 +391,7 @@ msgstr "Qualified specialists"
 #, fuzzy
 #| msgid "S SILKWAY Университетін таңдаудың 5 себебі 🤩🌏 сондықтан кеттік🚀"
 msgid "SILKWAY Университетін таңдаудың 5 себебі"
-msgstr "5 reasons to choose S SILKWAY University 🤩🌏 so we left🚀"
+msgstr "5 reasons to choose SILKWAY University"
 
 #: .\templates\main\index.html:95
 msgid "1. Біз аккредиттелген жоғары оқу орнымыз"
@@ -417,7 +417,7 @@ msgstr "5. We are the best pedagogical university in the republic."
 
 #: .\templates\main\index.html:99
 msgid "5. Студенттердің дамуына барлық жағдайлар жасалынған"
-msgstr ""
+msgstr "All conditions for the development of students are created"
 
 #: .\templates\main\index.html:106
 msgid "Академиялық шетелдік студенттер"
@@ -452,11 +452,11 @@ msgstr "International Council of Experts"
 
 #: .\templates\main\index.html:209
 msgid "Хабарландырулар"
-msgstr ""
+msgstr "Announcements"
 
 #: .\templates\main\index.html:249
 msgid "Барлық Хабарландыруларды көру"
-msgstr ""
+msgstr "see all announcements"
 
 #: .\templates\main\pages\accreditation.html:16
 #, fuzzy
@@ -466,34 +466,40 @@ msgstr "ACCREDITATION"
 
 #: .\templates\main\pages\accreditation.html:17
 msgid "Аккредитация бізге не үшін керек?"
-msgstr ""
+msgstr "Why accreditation is needed?"
 
 #: .\templates\main\pages\accreditation.html:20
 msgid ""
 "1. Оқу орнының имиджі. Білім беру қызметтері нарығында бәсекеге қабілетті "
 "позицияларды нығайту."
 msgstr ""
+"1. Image of the educational institution. Strengthening the competitive" 
+"position in the educational services market."
 
 #: .\templates\main\pages\accreditation.html:21
 #, fuzzy
 #| msgid "Халықаралық ынтымақтастық"
 msgid "2. Халықаралық мойындау."
-msgstr "International cooperation"
+msgstr "2. International cooperation"
 
 #: .\templates\main\pages\accreditation.html:22
 msgid ""
 "3. Университеттің тартымдылығын арттыру. Негізгі мүдделі тараптар сенеді."
 msgstr ""
+"3. Increasing the attractiveness of the university. Trusted by key stakeholders."
+
 
 #: .\templates\main\pages\accreditation.html:23
 msgid ""
 "4. Білім беру сапасын арттыру, қызметтердің халықаралық талаптарға "
 "сәйкестігіне кепілдік беру."
 msgstr ""
+"4. Improving the quality of education, guaranteeing the compliance of" 
+"services with international requirements."
 
 #: .\templates\main\pages\accreditation.html:24
 msgid "5. Енбек нарығында түлектердің бәсекеге қабілеттілігің арттыру."
-msgstr ""
+msgstr "5. Increasing the competitiveness of graduates in the labor market."
 
 #: .\templates\main\pages\accreditation.html:36
 #, fuzzy
@@ -508,7 +514,7 @@ msgstr ""
 
 #: .\templates\main\pages\op.html:24
 msgid "Шифр"
-msgstr ""
+msgstr "Cipher"
 
 #: .\templates\main\pages\review.html:14
 msgid "Жіберу"
@@ -516,51 +522,55 @@ msgstr "Send"
 
 #: .\templates\news\newsDetail.html:52
 msgid "Шығарылым туралы"
-msgstr ""
+msgstr "About post"
 
 #: .\templates\news\newsDetail.html:58
 msgid "Лүпілдер"
-msgstr ""
+msgstr "Likes"
 
 #: .\templates\news\newsDetail.html:64
 msgid "Пікірлер"
-msgstr ""
+msgstr "Comments"
 
 #: .\templates\news\newsDetail.html:68
 msgid "Көрілімдер"
-msgstr ""
+msgstr "Views"
 
 #: .\templates\pages\enrolle.html:6 .\templates\pages\toTheStudents.html:6
 msgid "Абитуриентам"
-msgstr ""
+msgstr "For enrollees"
 
 #: .\templates\pages\enrolle.html:12
 msgid "Талапкерлерге"
-msgstr ""
+msgstr "For enrollees"
 
 #: .\templates\pages\enrolle.html:13
 msgid "Бөлімдерде жоғары оқу орындарына түсушілерге арналған жаднамалар бар"
-msgstr ""
+msgstr "The departments have memos for applicants."
 
 #: .\templates\pages\enrolle.html:18
 msgid "Жаднама #1"
-msgstr ""
+msgstr "Memo #1"
 
 #: .\templates\pages\enrolle.html:19
 msgid ""
 "ұлттық бірыңғай тестілеуден өткен орта білім беру ұйымдарының ағымдағы жылғы "
 "түлектері үшін"
 msgstr ""
+"for graduates of secondary education organizations of the current year" 
+"who have passed the exam UNT"
 
 #: .\templates\pages\enrolle.html:24
 msgid "Жаднама #2"
-msgstr ""
+msgstr "Memo #2"
 
 #: .\templates\pages\enrolle.html:25
 msgid ""
 "өткен жылдардағы орта білім беру, техникалық және кәсіптік немесе орта "
 "білімнен кейінгі білім беруді бітірушілер үшін ұлттық бірыңғай тест тапсыру"
 msgstr ""
+"passing the UNT for graduates of secondary, technical and vocational or"
+"post-secondary education of previous years"
 
 #: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:5
 msgid "Select an image to embed"
