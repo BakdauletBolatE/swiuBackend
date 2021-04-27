@@ -1,7 +1,3 @@
-
-
-
-
 const swiper = new Swiper('.swiper-container', {
     // Optional parameters
     direction: 'horizontal',
@@ -348,3 +344,88 @@ btnD.addEventListener('click',()=>{
   }
   
 })
+
+
+let headerScroll = document.querySelector('#menu');
+document.addEventListener('scroll', function() {
+  if (window.pageYOffset >= 150) {
+    headerScroll.classList.add('scrolled')
+  }
+  else {
+    headerScroll.classList.remove('scrolled')
+  }
+});
+
+let cut = document.querySelectorAll('.news__desc');
+
+function cutted() {
+  for( let i = 0; i < cut.length; i++ ){
+      cut[i].innerText = cut[i].innerText.slice(0,150) + ' ...';
+  };
+}
+
+if (cut){ 
+  cutted();
+}
+
+
+let cut50 = document.querySelectorAll('.cutted50');
+
+function cutted50() {
+  for( let i = 0; i < cut50.length; i++ ){
+    cut50[i].innerText = cut50[i].innerText.slice(0,50) + ' ...';
+  };
+}
+
+if (cut50){ 
+  cutted50();
+}
+
+
+const registrationBtn = document.getElementById('registration');
+
+
+function collectData(){
+      const name = document.querySelector('[name="fio"]').value,
+      group = document.querySelector('[name="group"]').value,
+      phone = document.querySelector('[name="phone"]').value,
+      course = document.querySelector('[name="course"]').value,
+      type = document.querySelector('[name="type"').value;
+
+      myData = {
+        'name':name,
+        'group':group,
+        'phone':phone,
+        'course':course,
+        'type':type
+      }
+
+      return JSON.stringify(myData);
+}
+
+const lCoder = document.getElementById('lCode'),
+    urlSiterr = `http://127.0.0.1/${lCoder.value}`,
+    csrfTokenr = document.getElementById('csrfTokenforLike');
+
+async function saveReg(){
+  console.log(collectData());
+  let saveReg = await fetch(`${urlSiterr}/library/save-regis/`,{
+     method:"POST",
+     headers: {
+                 "Content-type": "application/json; charset=UTF-8",
+                 "X-CSRFToken": csrfTokenr.value
+     },
+     body: collectData()
+     
+ })
+ return await saveReg
+}
+
+
+
+if (registrationBtn){
+  registrationBtn.addEventListener('click',()=>{
+    saveReg()
+    .then(respone => console.log(respone))
+  })
+}

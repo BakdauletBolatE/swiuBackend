@@ -9,7 +9,7 @@
     font-size: 2.4rem;
     color: rgb(24, 43, 73);
     line-height: 3.5rem;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 2.5rem;
 }
 .about-us__desciption{
@@ -88,18 +88,20 @@
 }
 .about-us__box{
     display: grid;
+    align-items: flex-start;
     grid-template-columns: repeat(auto-fit,minmax(10rem,1fr));
 }
 .about-us__box-item{
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
 }
 .about-us__number{
     font-size: 2.8rem;
 }
 .about-us__box-text{
+    text-align: center;
     margin-top: 0.7rem;
     color:rgb(150, 150, 150);
     font-size: 1.4rem;

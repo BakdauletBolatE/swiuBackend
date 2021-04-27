@@ -7,7 +7,7 @@
 {% endblock %}
 {% block content %}
     
-    <section >
+    <section class="mt-3" >
         <form class="review" action="{% url 'questionsView' %}" method="POST">
             {% csrf_token %}
             {{form.as_p}}

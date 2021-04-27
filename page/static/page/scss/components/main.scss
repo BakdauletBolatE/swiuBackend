@@ -1,0 +1,10 @@
+.main{
+    background-color: $silver;
+    padding-top: 2rem;
+    min-height: 101vh;
+}
+.main-grid{
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+    grid-gap:1rem;
+}

@@ -6,41 +6,25 @@
 {% trans "SILKWAY Халықаралық университеті" %}
 {% endblock %}
 {% block content %}
-
-            
 <div class="swiper-container">
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
       <!-- Slides -->
+      {% for slide in slides %}
       <div class="swiper-slide bg">
-            <img class="swiper-slide__img" src="{% static 'img/2.jpg' %}" alt="">
+            <img class="swiper-slide__img" src="{{slide.img.url}}" alt="">
             <div class="swiper-slide__text">
                 <div class="container">
-                    <h3> {% translate "SILKWAY Халықаралық университеті 1992" %}</h3>
-                    <h2 class="mt-1">{% trans 'Болашақ мамандарға лайықты білім беру' %}</h2>
-                    <!-- <h2 class="mt-1">Достойное образование для будущих профессионалов</h2> -->
+                    <h3> {{slide.subTitle}}</h3>
+                    <h2 class="mt-1">{{slide.title}}</h2>
                     <div class="mt-3">
-                        <a class="btn" href="{% url 'facult' %}">{% trans 'Біздің факультеттер' %}</a>
-                        <a class="btn btn--dark-blue" href="">{% trans 'Байланыс' %}</a>
+                        <a class="btn" href="{{slide.link1}}">{{slide.btn}}</a>
+                        <a class="btn btn--dark-blue" href="{{slide.link2}}">{{slide.btn2}}</a>
                     </div>     
                 </div>
             </div>
       </div>
-      <div class="swiper-slide bg">
-        <img class="swiper-slide__img" src="{% static 'img/1.jpeg' %}" alt="">
-        
-        <div class="swiper-slide__text">
-            <div class="container">
-                <h3>{% trans 'Болашақ мамандарға лайықты білім беру' %}</h3>
-                <h2 class="mt-1">{% trans 'SILKWAY Халықаралық университеті 1992 ж' %}</h2>
-                <div class="mt-3">
-                    <a class="btn" href="">{% trans 'Біздің факультеттер' %}</a>
-                    <a class="btn btn--dark-blue" href="">{% trans 'Байланыс' %}</a>
-                </div>     
-            </div>
-        </div>
-  </div>
-      
+      {% endfor %}
     </div>
     
   
@@ -61,8 +45,8 @@
                     <i style="color:rgb(255, 111, 111); font-size: 6rem;" class="fad fa-chevron-double-up"></i>
                 </div>
                 <div class="box-area__text">
-                    <h3 class="box-area__title">{% trans 'Танымал ОП' %}</h3>
-                    <p class="box-area__description">{% trans 'Үздік білім беру бағдарламалары' %}</p>
+                    <h3 class="box-area__title">{% trans 'Білім бағдарламалары' %}</h3>
+                    <p class="box-area__description">{% trans 'Білім бағдарламаларын таңдаңыз' %}</p>
                 </div>
             </article>
             </a>
@@ -73,7 +57,7 @@
                     </div>
                     <div class="box-area__text">
                         <h3 class="box-area__title">{% trans 'Заманауи кітапхана' %}</h3>
-                        <p class="box-area__description">{% trans 'Үздік білім беру бағдарламалары' %}</p>
+                        <p class="box-area__description">{% trans 'Ең жаңа кітаптардан қапы қалмаңыз' %}</p>
                     </div>
                 </article>
             </a>
@@ -84,7 +68,7 @@
                     </div>
                     <div class="box-area__text">
                         <h3 class="box-area__title">{% trans 'Білікті мамандар' %}</h3>
-                        <p class="box-area__description">{% trans 'Үздік білім беру бағдарламалары' %}</p>
+                        <p class="box-area__description">{% trans 'Білікіті мамандардан білім алыңыз' %}</p>
                     </div>
                 </article>
             </a>
@@ -104,13 +88,15 @@
             </div>
             <div class="about-us__text">
                 <h2 class="about-us__title">
-                    {% trans 'SILKWAY Университетін таңдаудың 4 себебі 🤩🌏 сондықтан кеттік🚀' %}
+                    {% trans 'SILKWAY Университетін таңдаудың 5 себебі' %}
+                    <span><i class="far fa-check-circle"></i></span>
                 </h2>
                 <p class="about-us__desciption">
                    {% trans '1. Біз аккредиттелген жоғары оқу орнымыз' %} <br>
                    {% trans '2. Бізде - білім гранттары' %}<br>
                    {% trans '3. Бай материалдық-техникалық база' %}<br>
-                   {% trans '4. Біз республикамыздағы ең үздік педагогикалық университетпіз.' %}  <br>
+                   {% trans '4. Біз республикамыздағы ең үздік педагогикалық университетпіз' %}  <br>
+                   {% trans '5. Студенттердің дамуына барлық жағдайлар жасалынған' %}
                 </p>
                 <div class="about-us__box">
                     <div class="about-us__box-item">
@@ -143,12 +129,8 @@
     <div class="container">
         <div class="testimonial-area__row">
             <h2 class="testimonial-area__title">{% trans 'Біздің менеджерлер кеңес береді' %}</h2>
-            
-                <!-- Slider main container -->
                 <div class="swiper-container2">
-                    <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
-                    <!-- Slides -->
                     {% for quote in quotes %}
                     <div class="swiper-slide">           
                         <div class="testimonial-area__item">
@@ -166,15 +148,9 @@
                         </div>
                     </div>
                     {% endfor %}
-                    
-
                     </div>
-                    <!-- If we need pagination -->
                     <div class="swiper-pagination"></div>
-
-                </div>
-         
-            
+                </div>  
         </div>
     </div>
 </section>
@@ -182,11 +158,12 @@
 <section class="news-area">
     <div class="container">
         <div class="news-area__title">
-            <h2>{% trans 'SILKWAY университетінің соңғы жаңалықтары' %}</h2>
+            <h2>{% trans 'Жаңалықтар' %}</h2>
         </div>
         <div class="news">
             {% for post in posts %}
             <div class="news__item">
+                <span class="news__date">{{ post.created_at|date:"d M Y" }}</span>
                 {% if post.post_img.first %}
                     <div class="news__img">
                         <img src="{{post.post_img.first.img.url}}" alt="">
@@ -198,33 +175,16 @@
                     {% endif %}
                 <div class="news__content">
                     <div class="news__header">
-                        <span>{{ post.created_at|date:"d M Y" }}</span>
-                        <h3 class="news__title"><a class="news__title" href="{% url 'postDetailView' post.slug %}">{{ post.title}}</a></h3>
+                        <h3><a class="news__title" href="{% url 'postDetailView' post.slug %}">{{ post.title}}</a></h3>
                     </div>
                     <div class="news__body">
-                        <div>{% autoescape off %}{{post.description}}{% endautoescape %}</div>
+                        <div class="news__desc">{% autoescape off %}{{post.description}}{% endautoescape %} </div> <a href="{% url 'postDetailView' post.slug %}">{% trans 'толығырақ' %}</a>
                     </div>
                     <div class="news__footer">
                         <div class="news__footer-item">
                             <i class="far fa-user"></i>
                             <span>{{post.author}}</span>
                         </div>
-                        
-                        <!-- <div class="comment news__footer-item">
-                            <input type="hidden" value="{{post.slug}}">
-                                <i class="none-click far fa-comments"></i>
-                                <input type="hidden" value="{{post.slug}}">
-                                <span class="none-click">{{ post.post_com.count }}</span>
-                            
-                            <div class="news__comment hide">
-                                <input class="comment_title review__form" placeholder="Пишите свой коммент">
-                                <input value="{{post.slug}}" class="comment_url" type="hidden">
-                                <button class="btn comment_btn">Отправить</button>
-                                <ul class="lastComments">
-                                    
-                                </ul>
-                            </div>
-                        </div> -->
                         <div class="news__footer-item ">       
                                 <input type="hidden" value="{{post.slug}}">
                                 <button class="like_btn {% check post.id request.session.session_key %}" type="submit"><i class="none-click far fa-heart"></i></button>
@@ -237,17 +197,21 @@
             {% endfor %}
            
         </div>
-        <a style="text-align: center; display: block; margin-top: 75px;" class="btn" href="{% url 'postListView' 1 %}">Посмотреть все новости</a>
+        <div class="btn-group mt-2">
+            <a class="btn btn-block" href="{% url 'postListView' 1 %}"> <span><i class="fas fa-arrow-circle-left"></i></span> {% trans 'Барлық жаңалықтарды көру' %}</a>
+        </div>
+        
     </div>
 </section>
 <section class="news-area">
     <div class="container">
         <div class="news-area__title">
-            <h2>{% trans 'SILKWAY университетінің соңғы хабарландырулары' %}</h2>
+            <h2>{% trans 'Хабарландырулар' %}</h2>
         </div>
         <div class="news">
             {% for post in ads %}
             <div class="news__item">
+                <span class="news__date">{{ post.created_at|date:"d M Y" }}</span>
                 {% if post.post_img %}
                 <div class="news__img">
                     <img src="{{post.post_img.first.img.url}}" alt="">
@@ -259,33 +223,16 @@
                 {% endif %}
                 <div class="news__content">
                     <div class="news__header">
-                        <span>{{ post.created_at|date:"M/d"|lower }}</span>
-                        <h3 class="news__title"><a class="news__title" href="{% url 'postDetailView' post.slug %}">{{ post.title}}</a></h3>
+                        <h3><a class="news__title" href="{% url 'postDetailView' post.slug %}">{{ post.title}}</a></h3>
                     </div>
                     <div class="news__body">
-                        <div>{% autoescape off %}{{post.description}}{% endautoescape %}</div>
+                        <div class="news__desc">{% autoescape off %}{{post.description}}{% endautoescape %} <a href="{% url 'postDetailView' post.slug %}">{% trans 'толығырақ' %}</a></div>
                     </div>
                     <div class="news__footer">
                         <div class="news__footer-item">
                             <i class="far fa-user"></i>
                             <span>{{post.author}}</span>
                         </div>
-
-                        <!-- <div class="comment news__footer-item">
-                            <input type="hidden" value="{{post.slug}}">
-                                <i class="none-click far fa-comments"></i>
-                                <input type="hidden" value="{{post.slug}}">
-                                <span class="none-click">{{ post.post_com.count }}</span>
-
-                            <div class="news__comment hide">
-                                <input class="comment_title review__form" placeholder="Пишите свой коммент">
-                                <input value="{{post.slug}}" class="comment_url" type="hidden">
-                                <button class="btn comment_btn">Отправить</button>
-                                <ul class="lastComments">
-
-                                </ul>
-                            </div>
-                        </div> -->
                         <div class="news__footer-item ">
                                 <input type="hidden" value="{{post.slug}}">
                                 <button class="like_btn" type="submit"><i class="none-click red far fa-heart"></i></button>
@@ -298,61 +245,10 @@
             {% endfor %}
 
         </div>
-        <a style="text-align: center; display: block; margin-top: 75px;" class="btn" href="{% url 'postListView' 2 %}">Посмотреть все объявления</a>
+        <div class="btn-group mt-2">
+            <a class="btn btn-block" href="{% url 'postListView' 1 %}"> <span><i class="fas fa-arrow-circle-left"></i></span> {% trans 'Барлық Хабарландыруларды көру' %}</a>
+        </div>
     </div>
 </section>
-<script>
-    // const mainsiteurl = "127.0.0.1:8000"
-    '{% get_current_language as LANGUAGE_CODE %}'
-    const likeBtn = document.querySelectorAll('.like_btn');
 
-
-    async function liker(data){
-         let liked = await fetch("creative/post/like",{
-            method:"POST",
-            headers: {
-                        "Content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-                        "X-CSRFToken": "{{csrf_token}}"
-            },
-            body: JSON.stringify(data)
-        })
-        return await liked
-    }
-
-    async function likeCountf(url){
-        let count = await  fetch("creative/post/likecount/"+url);
-        return await count.json();
-    }
-    likeBtn.forEach(like=>{
-        like.addEventListener('click',btn=>{
-             btn = btn.target;
-
-             if (btn.classList.contains('like_btn')){
-                 let url = btn.previousElementSibling.value;
-                 let likeCount = btn.nextElementSibling;
-                 let myData = {
-                    'slug':url,
-                    'session_key':"{{request.session.session_key}}"
-                 }
-                 liker(myData)
-                 .then(render())
-
-                 function render(){
-                     likeCountf(url)
-                     .then(data => {
-                         if (btn.classList.contains('active')){
-                             btn.classList.remove('active');
-                             likeCount.innerHTML = parseInt(likeCount.innerHTML)-1;
-                         }else{
-                             btn.classList.add('active');
-                             likeCount.innerHTML = parseInt(likeCount.innerHTML)+1;
-                         }
-
-                     })
-                 }
-             }
-
-        })
-    });
-</script>
 {% endblock %}

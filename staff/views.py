@@ -7,10 +7,12 @@ from faculties.models import PageCategory
 def stuffDetailView(request,url):
     pageCats = PageCategory.objects.all()
     stuff = Staff.objects.get(slug=url)
+    internatiolization = PageCategory.objects.get(id=3)
 
     context = {
         'stuff':stuff,
-        'pageCats':pageCats
+        'pageCats':pageCats,
+        'internatiolization':internatiolization
     }
 
     return render(request,'stuff/stuffDetai.html',context)

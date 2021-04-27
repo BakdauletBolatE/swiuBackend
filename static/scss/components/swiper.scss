@@ -5,11 +5,7 @@
         height: 100vh;
     }
 }
-.swiper-slide{
-   
-    
-    
-}
+
 .bg{
     &::after{
         position: absolute;
@@ -128,7 +124,6 @@
     overflow: hidden;
     width: 80rem;
     display: block;
-    margin:0 auto;
     height: 30rem;
     @media screen and(max-width:900px) {
         width: 50rem;

@@ -1,28 +1,58 @@
 {% extends 'layouts/app.html' %}
-
+{% load i18n %} 
+{% load static i18n %}
 {% block content %}
-<div class="container">
-    <div >
-        <h2 style="text-align: center;" class="about-us-page__title">Труды преподавательско-профессорского состава {{year.year}}</h2>
+<div class="library">
+    <div class="container">
+        <div class="library__main-title">{% trans 'Оқытушылар құрамының жұмыстары' %}: {{year.year}}</div>
+        <table class="fl-table">
+            <thead>
+            <tr>
+                <th>{% trans 'Постер' %}</th>
+                <th>{% trans 'Кітаптың атауы' %}</th>
+                <th>{% trans 'Білім беру бағдарламаласы' %}</th>
+                <th>{% trans 'Кітаптың авторы' %}</th>
+                <th>{% trans 'Басылымға шыққан жылы' %}</th>
+                <th>{% trans 'Қол жетімділігі' %}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for book in books %}
+            <tr>
+                <td> 
+                    {% if book.poster %}
+                    <img height="70px" src="{{ book.poster.url }}"/>
+                    {% else %}
+                    {% trans 'Постері жоқ' %}
+                    {% endif %}
+                </td>
+                <td><a class="library__second-title cutted50" href="{% url 'bookDetail' book.slug %}">{{book.name}}</a></td>
+                <td>
+                    {% if book.eduProgram %}
+                    <a class="library__second-title cutted50" href="{% url 'eduProgDetailView' book.eduProgram.slug %}">{{book.eduProgram}}</a>
+                    {% else %}
+                    {% trans 'Таңдалмаған' %}
+                    {% endif %}
+                </td>
+                <td>
+                    {% if book.author %}
+                    <a class="library__second-title" href="{% url 'stuffDetailView' book.author.slug %}">{{book.author}}</a>
+                    {% else %}
+                    {% trans 'Таңдалмаған' %}
+                    {% endif %}
+                    </td>
+                <td>{{book.year}}</td>
+                <td>
+                    {% if book.pdffile %}
+                    <a class="btn btn-block" href="{{book.pdffile.url}}">{% trans 'Жүктеу' %}</a>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+            <tbody>
+        </table>
+        
     </div>
-    <div class="grid-with-text">
-        {% for book in books %}
-        <div class="grid-with-text__item">
-            {% if book.poster %}
-            <img class="grid-with-text__img" src="{{ book.poster.url }}"/>
-            {% endif %}
-            <div class="grid-with-text__text">
-                <h3 class="grid-with-text__title"><a class="grid-with-text__title" href="{% url 'bookDetail' book.slug %}">{{book.name}}</a></h3>
-                <p class="grid-with-text__desc">{{ book.description}}</p>
-                <div class="grid-with-text__span">
-                    <div class="grid-with-text__span-i">Год: {{book.year.year}}</div>
-                    <div class="grid-with-text__span-i"><span>ОП: </span>{{book.eduProgram.name}}</div>
-                </div>
-            </div>       
-        </div>
-        {% endfor %}
-    </div>  
 </div>
-
 
 {% endblock %}

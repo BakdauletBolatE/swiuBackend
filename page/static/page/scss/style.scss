@@ -1,0 +1,21 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+@import './vars.scss';
+@import 'components/components.scss';
+@import 'normalise.scss';
+@import './header.scss';
+@import 'framework/b-framework.scss';
+html{
+    font-size: 62.5%;
+}
+body{
+    font-size: 1.6rem;
+}
+.container {
+    margin: 0 auto;
+    max-width: 118rem;
+}

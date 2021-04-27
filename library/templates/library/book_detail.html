@@ -14,21 +14,21 @@
                     <p class="book-sidebar__year"><a class="book-sidebar__year" href="{% url 'bookList' book.year.slug %}">{{book.year.year}}</a> жыл</p>
                     <p class="book-sidebar__edu">
                         {% if book.eduProgram %}
-                        <span><a href="{% url 'eduProgDetailView' book.eduProgram.slug %}">Оку Бағдарламасы</a> </span>{{book.eduProgram.name}}
+                        <span><a href="{% url 'eduProgDetailView' book.eduProgram.slug %}">{% trans 'Оку Бағдарламасы' %}</a> </span>{{book.eduProgram.name}}
                         {% endif %}
                     </p>
                     <p class="book-sidebar__description">{{book.description}}</p>
                 </div>
                 <div class="book-sidebar-item">
                     <p class="book-sidebar__more">
-                        Еще рекомендаций от нас:
+                        {% trans 'Бізден басқа ұсыныстар:' %}
                     </p>
+                    {% for rec in recs%}
                     <a class="book-sidebar__btn" href="">
-                        Ә.Е. Сихымбаев, Ф.Ж. Жаббарова Биохимия пәні бойынша зертханалық сабақтарға арналған әдістемелік нұсқаулық.
+                        {{rec.name}}
                     </a>
-                    <a class="book-sidebar__btn" href="">
-                        Ә.Е. Сихымбаев, Ф.Ж. Жаббарова Биохимия пәні бойынша зертханалық сабақтарға арналған әдістемелік нұсқаулық.
-                    </a>
+                    {% endfor %}
+                    
                 </div>
             </div>
             <div class="book-content">

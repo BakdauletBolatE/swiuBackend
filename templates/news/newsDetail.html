@@ -2,39 +2,13 @@
 {% load static %}
 {% block title %}
 {{post.title}}
+{% load i18n %} 
+{% load static i18n %}
 {% endblock %}
 {% block content %}
 <section class="course">
     <div class="container">
         <div class="course__row">
-            <div class="course-sidebar">
-                <div class="main-sidebar">
-                    <h3 class="main-sidebar__title">
-                        О посте
-                    </h3>
-                    <div class="main-sidebar__list">
-                        <div class="main-sidebar__item">
-                            <div>
-                                <i class="fas fa-calendar-alt"></i>
-                                <span>Лайки:</span>
-                            </div>
-                                <span>{{post.likes.count}}</span>
-                        </div>
-                       
-                        <div class="main-sidebar__item">
-                           <div><i class="fas fa-clock"></i><span>Коментарий:</span></div>
-                               <span>{{post.post_com.count}}</span>
-                        </div>
-                        <div class="main-sidebar__item">
-                            <div><i class="fas fa-globe-europe"></i><span>Просмотры:</span></div>
-                                <span>{{page.count}}</span>
-                        </div>
-                          
-                        <a style="display: block;" class="btn" href="">Поставить лайк</a>                           
-                   
-                    </div>
-                </div>
-            </div>
             <div class="course-detail">
                 <h1 class="course__main-title">
                     {{post.title}}
@@ -68,23 +42,38 @@
                             </div>
                         {% endif %}
                     </div>
-                    <!-- <div class="course-tab-content">
-                        {% for com in post.post_com.all %}
-                        <div class="mt-5">
-                            <h2 class="course-tab-title">
-                                {{com.description}}
-                            </h2>
-                            <p class="course-tab-description">
-                                {{com.author}}
-                            </p>
-                        </div>
-                        {% endfor %}
-                        
-                    </div> -->
+                  
                     
                 </div>
             </div>
-            
+            <div class="course-sidebar">
+                <div class="main-sidebar">
+                    <h3 class="main-sidebar__title">
+                        {% trans 'Шығарылым туралы' %}
+                    </h3>
+                    <div class="main-sidebar__list">
+                        <div class="main-sidebar__item">
+                            <div>
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>{% trans 'Лүпілдер' %}:</span>
+                            </div>
+                                <span>{{post.likes.count}}</span>
+                        </div>
+                       
+                        <div class="main-sidebar__item">
+                           <div><i class="fas fa-clock"></i><span>{% trans 'Пікірлер' %}:</span></div>
+                               <span>{{post.post_com.count}}</span>
+                        </div>
+                        <div class="main-sidebar__item">
+                            <div><i class="fas fa-globe-europe"></i><span>{% trans 'Көрілімдер' %}:</span></div>
+                                <span>{{page.count}}</span>
+                        </div>
+                          
+                        <a style="display: inline-block;" class="btn" href="">{% trans 'Лүпіл қою' %}</a>                           
+                   
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>

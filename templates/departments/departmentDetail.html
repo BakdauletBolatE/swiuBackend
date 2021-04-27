@@ -62,8 +62,8 @@
                                 </span>
                         
                                 {% if activityDepartments.has_next %}
-                                    <a href="?page={{ activityDepartments.next_page_number }}">next</a>
-                                    <a href="?page={{ activityDepartments.paginator.num_pages }}">last &raquo;</a>
+                                    <a class="pagination" href="?page={{ activityDepartments.next_page_number }}"><span><i class="fas fa-arrow-circle-left"></i></span></a>
+                                    <a class="pagination" href="?page={{ activityDepartments.paginator.num_pages }}"><span><i class="fas fa-arrow-circle-right"></i></span></a>
                                 {% endif %}
                             </span>
                         </div>
@@ -89,7 +89,7 @@
                                 <div class="grid-with-text__span">
                                     <div class="grid-with-text__span-i">НКАОКО</div>
                                     <div class="grid-with-text__span-i">29.01.18-27.01.23 г</div>
-                                    <div class="grid-with-text__span-i"><span>{% 'Шифр:' %} </span>5В010300</div>
+                                    <div class="grid-with-text__span-i"><span>{% trans 'Шифр:' %} </span>5В010300</div>
                                 </div>
                             </div>       
                         </div>
@@ -107,7 +107,9 @@
                             <img class="employee__img" src="{{staffEdu.img.url}}" alt="">
                             <div class="employee__text">
                                 <div class="employee__name"><a class="employee__presidency" href="{% url 'stuffDetailView' staffEdu.slug  %}">{{ staffEdu.name}}</a></div>
+                                {% if staffEdu.email %}
                                 <div class="employee__country">{{staffEdu.email}}</div>
+                                {% endif %}
                             </div>
                         </div>
                         {%endfor%}

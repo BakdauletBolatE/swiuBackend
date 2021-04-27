@@ -1,6 +1,8 @@
 {% extends 'layouts/app.html' %}
 {% load static %}
 {% block title %}
+{% load i18n %} 
+{% load static i18n %}
 {{stuff.name}}
 {% endblock %}
 {% block content %}
@@ -14,7 +16,7 @@
                
                 <div class="course__tab-list">
                     <ul class="course-tab-btns">
-                        <li class="course-tab-btn course-tab-btn--active">О Преподавателе</li>
+                        <li class="course-tab-btn course-tab-btn--active">{% trans 'Мұғалім туралы' %}</li>
                     </ul>
                     <div class="course-tab-content">
                         <h2 class="course-tab-title">
@@ -36,45 +38,40 @@
             <div class="course-sidebar">
                 <div class="main-sidebar">
                     <h3 class="main-sidebar__title">
-                        Информация о персонале
-                        
+                       {% trans 'Қызметкерлер туралы ақпарат' %}
                     </h3>
                     <div class="main-sidebar__list">
                         <div class="main-sidebar__item">
                             <div>
                                 <i class="fas fa-calendar-alt"></i>
-                                <span>Должность:</span>
+                                <span>{% trans 'Лауазым' %}:</span>
                             </div>
                                 <span>{{stuff.position.name}}</span>
                         </div>
                        
                         <div class="main-sidebar__item">
-                           <div><i class="fas fa-clock"></i><span>Почта:</span></div>
+                           <div><i class="fas fa-clock"></i><span>{% trans 'Пошта' %}:</span></div>
                                <span>{{stuff.email}}</span>
                         </div>
                         <div class="main-sidebar__item">
-                            <div><i class="fas fa-globe-europe"></i><span>Номер:</span></div>
+                            <div><i class="fas fa-globe-europe"></i><span>{% trans 'Нөмір' %}:</span></div>
                                 <span>{{stuff.phone}}</span>
                         </div>
                         <div class="main-sidebar__item">
-                            <div><i class="fas fa-chevron-double-up"></i><span>Адрес:</span></div>
+                            <div><i class="fas fa-chevron-double-up"></i><span>{% trans 'Мекен-жайы' %}:</span></div>
                                 <span>{{stuff.adress}}</span>
                         </div>
                         <div class="main-sidebar__item">
-                            <div><i class="fas fa-graduation-cap"></i><span>Номер:</span></div>
-                                <span>{{stuff.phone}}</span>
-                        </div>
-                        <div class="main-sidebar__item">
-                            <div><i class="fas fa-graduation-cap"></i><span>Факультет:</span></div>
+                            <div><i class="fas fa-graduation-cap"></i><span>{% trans 'Факультет' %}:</span></div>
                                 <span>{{stuff.facult.name}}</span>
                         </div>
                         
                         <div class="main-sidebar__item">
-                            <div><i class="fas fa-graduation-cap"></i><span>Кафедра:</span></div>
+                            <div><i class="fas fa-graduation-cap"></i><span>{% trans 'Кафедра' %}:</span></div>
                                 <span>{{stuff.department.name}}</span>
                         </div>
                         <div class="main-sidebar__item">
-                            <div><i class="fas fa-graduation-cap"></i><span>Оброзовательные программы:</span></div>
+                            <div><i class="fas fa-graduation-cap"></i><span>{% trans 'Білім беру бағдарламалары' %}:</span></div>
                                 <span>
                                     {% for edu in stuff.educationalPrograms.all %}
                                     {{edu.name}} ,
@@ -82,7 +79,7 @@
                                 </span>
                         </div>
                         
-                        <a  style="display: block;" class="btn"href="">Поставить лайк</a>                           
+                        <a  style="display: inline-block;" class="btn"href="">{% trans 'Лүпіл қою' %}</a>                           
                    
                     </div>
                 </div>

@@ -75,10 +75,8 @@
     cursor: pointer;
 }
 .course-tab-btn--active{
-    background: linear-gradient(
-90deg
-, rgb(17, 182, 122) 0%, rgb(0, 148, 68) 100%);
-    color: rgb(255, 255, 255);
+    background: $red;
+    color: white;
 }
 .course-tab-content{
     margin-bottom: 4rem;

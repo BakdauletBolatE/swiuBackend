@@ -1,8 +1,6 @@
 .book-container{
     width: 100%;
     height: 100%;
-    padding-top: 5rem;
-    background-color: #00194a;
 }
 .book{
     display: grid;
@@ -10,7 +8,7 @@
     grid-template-columns: 4fr 10fr;
     margin:0 auto;
     grid-gap:20px;
-    background-color: #00194a;
+
     padding: 10px;
     @media screen and (max-width:900px){
         grid-template-columns: 1fr;

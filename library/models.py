@@ -1,6 +1,7 @@
 from django.db import models
 from departments.models import EducationalPrograms
 from staff.models import Staff
+from departments.models import EducationalPrograms
 # Create your models here.
 
 class Year(models.Model):
@@ -35,5 +36,18 @@ class Book(models.Model):
         verbose_name = 'Библиотека'
         verbose_name_plural = "Библиотеки"
 
+class RegistrationCategory(models.Model):
+
+    name = models.CharField('Тип',max_length=255)
+
+class Registration(models.Model):
+
+    name = models.CharField('Фио',max_length=255)
+    group = models.CharField('Группа',max_length=255,blank=True,null=True)
+    phone = models.CharField('Телефон',max_length=255,blank=True,null=True)
+    course = models.CharField('Курс',max_length=255,blank=True,null=True)
+    op =  models.ForeignKey(EducationalPrograms,on_delete=models.CASCADE,blank=True,null=True)
+    type = models.ForeignKey(RegistrationCategory,on_delete=models.CASCADE,blank=True,null=True)
+    
 
 

@@ -22,7 +22,7 @@ def departmentDetailView(request,url):
     staffEdus = Staff.objects.filter(department=department)
 
     pageCats = PageCategory.objects.all()
-
+    internatiolization = PageCategory.objects.get(id=3)
 
     context = {
         'department':department,
@@ -30,6 +30,7 @@ def departmentDetailView(request,url):
         'eduPros':eduPros,
         'staffEdus':staffEdus,
         'pageCats':pageCats,
+        'internatiolization':internatiolization
         
     }
 
@@ -41,11 +42,13 @@ def eduProgramDetail(request, url):
     eduProgram = EducationalPrograms.objects.get(slug=url)
 
     eduStuffs = Staff.objects.filter(educationalPrograms=eduProgram)
+    internatiolization = PageCategory.objects.get(id=3)
 
     context = {
         'eduStuffs':eduStuffs,
         'eduProgram':eduProgram,
         'pageCats':pageCats,
+        'internatiolization':internatiolization
     }
 
     return render(request,'departments/eduprogramDetail.html',context)

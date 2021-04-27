@@ -26,6 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('i18n/',include('django.conf.urls.i18n')),
     path('swiu-panel/',include('swiupanel.urls')),
+    path('page-const/',include('page.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
 ] 
 

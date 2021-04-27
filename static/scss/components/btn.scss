@@ -18,3 +18,13 @@
         background: $blue-inv;
      }
 }
+
+.btn-block{
+    display: inline-block;
+
+}
+
+.btn-group{
+    display: flex;
+    justify-content: flex-end;
+}

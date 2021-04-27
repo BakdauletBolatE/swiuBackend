@@ -3,8 +3,6 @@ from django import forms
 from departments.models import EducationalPrograms,ActivityDepartment,ActivityDepartmentCat
 from staff.models import Staff
 from faculties.models import Page
-from .models import WidgetItems
-
 
 class EduForm(forms.ModelForm):
 
@@ -70,12 +68,6 @@ class PageForm(forms.ModelForm):
         fields = ('title','url','slug','category')
 
 
-class WidgetItemsForm(forms.ModelForm):
-
-    class Meta:
-
-        model = WidgetItems
-        fields = ('__all__')
 
 class ActivityDepForm(forms.ModelForm):
 

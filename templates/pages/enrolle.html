@@ -9,20 +9,20 @@
 
 <div class="container">
     <h2 class="isudo__bigtitle">
-        Поступающим
-        <p style="font-weight: 400; font-size: 20px; margin-top: 10px;">В разделах есть памятки для поступающих в высшие учебные заведения</p>
+        {% trans 'Талапкерлерге' %}
+        <p style="font-weight: 400; font-size: 20px; margin-top: 10px;">{% trans 'Бөлімдерде жоғары оқу орындарына түсушілерге арналған жаднамалар бар' %}</p>
     </h2>
     <div class="isudo row">
         <a class="isudo__link" href="{% static 'pdf/pamyatka1.pdf' %}">
             <div class="isudo__item isudo__item-before" style="background: url({% static 'img/Compressed/s1.jpg' %}) no-repeat center; background-size: cover;">
-                <h2 class="isudo__title">Памятка #1</h2>
-                <h3 class="isudo__subtitle">для выпускников организаций среднего образования текущего года, сдающих единое национальное тестирование</h3>
+                <h2 class="isudo__title">{% trans 'Жаднама #1' %}</h2>
+                <h3 class="isudo__subtitle">{% trans 'ұлттық бірыңғай тестілеуден өткен орта білім беру ұйымдарының ағымдағы жылғы түлектері үшін' %}</h3>
             </div>
         </a>
         <a class="isudo__link" href="{% static 'pdf/pamyatka2.pdf' %}">
             <div class="isudo__item isudo__item-before" style="background: url({% static 'img/Compressed/s2.jpg' %}) no-repeat center; background-size: cover;">
-                <h2 class="isudo__title">Памятка #2</h2>
-                <h3 class="isudo__subtitle">для выпускников среднего образования прошлых лет, технического и профессионального или послесреднего образования, сдающих единое национальное тестирование</h3>
+                <h2 class="isudo__title">{% trans 'Жаднама #2' %}</h2>
+                <h3 class="isudo__subtitle">{% trans 'өткен жылдардағы орта білім беру, техникалық және кәсіптік немесе орта білімнен кейінгі білім беруді бітірушілер үшін ұлттық бірыңғай тест тапсыру' %}</h3>
             </div>
         </a> 
     </div>

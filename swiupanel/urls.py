@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import *
-from .widget import *
+
 
 
 urlpatterns = [
@@ -17,11 +17,6 @@ urlpatterns = [
 
 ]
 
-urlpatterns += [
-    path('page/',indexPage,name="pageIndex"),
-    path('page/<str:id>/',viewPage,name="viewPage"),
-    path('page/add',addPage,name="addPage"),
-]
 
 urlpatterns += [
     # path('activity/',indexPage,name="pageIndex"),
@@ -29,13 +24,4 @@ urlpatterns += [
     path('activDepAdd/add',activDepAdd,name="activDepAdd"),
     path('activDepList/',activDepList,name="activDepList"),
     path('activityDepCat/add',activDepCatAdd,name="activDepCatAdd")
-]
-
-urlpatterns += [
-    path('widgettype/add/',addWidgetType,name="addWidgetType"),
-    path('getjson-widget/',getWidgetJson,name="getWidgetJson")
-]
-
-urlpatterns += [
-    path('widgetitem/add',addWidgetItem,name="addWidgetItem")
 ]

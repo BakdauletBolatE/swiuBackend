@@ -113,3 +113,21 @@ class Request(models.Model):
 
         verbose_name = 'Заявка'
         verbose_name_plural = 'Заявки'
+
+
+
+
+class Slides(models.Model):
+
+    subTitle = models.CharField(max_length=255,verbose_name="Субтитл")
+    title = models.CharField(max_length=255,verbose_name="Загаловка")
+    btn = models.CharField(max_length=255,verbose_name="Названия первой кнопки")
+    btn2 = models.CharField(max_length=255,verbose_name="Названия второй кнопки")
+    link1 = models.CharField(max_length=255,verbose_name="первая ссылка")
+    link2 = models.CharField(max_length=255,verbose_name="вторая ссылка")
+    img = models.ImageField(upload_to="Slides/")
+
+    class Meta:
+
+        verbose_name = 'Слайд'
+        verbose_name_plural = 'Слайды'

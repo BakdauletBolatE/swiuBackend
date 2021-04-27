@@ -13,3 +13,7 @@ class BookAdmin(TranslationAdmin):
     prepopulated_fields = {"slug": ("name",)}
 
 admin.site.register(Book,BookAdmin)
+
+
+admin.site.register(RegistrationCategory)
+admin.site.register(Registration)

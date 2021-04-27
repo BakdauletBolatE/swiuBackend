@@ -1,20 +1,54 @@
 {% extends 'layouts/app.html' %}
-
+{% load i18n %} 
+{% load static i18n %}
 {% block content %}
-<div class="container">
-    <div >
-        <h2 style="text-align: center;" class="about-us-page__title">Труды преподавательско-профессорского состава</h2>
-    </div>
-    <div class="employee__row">
-    {%for year in years %}
-    <div class="employee__item">
-        <img class="employee__img" src="{{year.img.url}}" alt="">
-        <div class="employee__text">
-            <div class="employee__presidency"><a class="employee__presidency" href="{% url 'bookList' year.slug  %}">{{year.year}}</a></div>     
+<div class="library">
+    <div class="container">
+        <div class="library__main-title"><span><i class="fas fa-book"></i></span>{% trans 'Университет кітапханасы' %}</div>
+        <!-- <div class="library-registration">
+            <div class="">Студентам</div>
+            <div class="">Преводавателям</div>
+            <div id="registration-modal" class="registration__modal">
+                <input type="hidden" value="1" name="type">
+                <input type="text" name="fio" placeholder="ФИО">
+                <input type="text" name="phone" placeholder="Телефон">
+                <select name="course" id="">
+                    <option value="1">1 курс</option>
+                    <option value="2">2 курс</option>
+                    <option value="3">3 курс</option>
+                    <option value="4">4 курс</option>
+                </select>
+                <input type="text" name="group" placeholder="Группа">
+                <button id="registration">Click</button>
+            </div>
+        </div> -->
+        <div class="library-grid">
+            <div class="library-grid__item">
+                <h2 class="library-grid__title">{% trans 'Оқытушылар құрамының жұмыстары' %}</h2>
+                <a class="library-grid__desc btn btn--dark-blue" href="{% url 'teachStaff' %}">{% trans 'Толығырақ' %}</a>
+            </div>
+            <div class="library-grid__item">
+                <h2 class="library-grid__title">{% trans 'Мерзімді басылымдар' %}</h2>
+                <a class="library-grid__desc btn btn--dark-blue" href="">{% trans 'Толығырақ' %}</a>
+            </div>
+            <div class="library-grid__item">
+                <h2 class="library-grid__title">{% trans 'Оқырмандар үшін' %}</h2>
+                <a class="library-grid__desc btn btn--dark-blue" href="http://swiu.online/chitatelyam">{% trans 'Толығырақ' %}</a>
+            </div>
+            <div class="library-grid__item">
+                <h2 class="library-grid__title">{% trans 'Электрондық ресурстар' %}</h2>
+                <a class="library-grid__desc btn btn--dark-blue" href="">{% trans 'Толығырақ' %}</a>
+            </div>
+            <div class="library-grid__item">
+                <h2 class="library-grid__title">{% trans 'Республикалық ЖОО аралық электронды кітапхана' %}</h2>
+                <a class="library-grid__desc btn btn--dark-blue" href="http://rmebrk.kz/">{% trans 'Толығырақ' %}</a>
+            </div>
+            <div class="library-grid__item">
+                <h2 class="library-grid__title">{% trans 'ГУМАНИТАРЛЫҚ ЖАҢА БІЛІМ 100 ЖАҢА ОҚУЛЫҚТАР ҚАЗАҚ ТІЛІНДЕ' %} </h2>
+                <a class="library-grid__desc btn btn--dark-blue" href="https://100kitap.kz/kz">{% trans 'Толығырақ' %}</a>
+            </div>
         </div>
     </div>
-    {% endfor %}
-</div>
 </div>
     
 {% endblock %}

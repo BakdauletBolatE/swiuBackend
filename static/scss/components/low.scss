@@ -118,9 +118,14 @@ span.zoom{
     background: white!important;
 }
 .btn-default{
-    background: #001133;
     color:white;
+    background-color: #00194a;
     padding:10px 10px;
+    cursor: pointer;
     border: none;
     border-radius: 5px;
+
+    &:hover{
+        background-color: darken(#00194a,1%);
+    }
 }

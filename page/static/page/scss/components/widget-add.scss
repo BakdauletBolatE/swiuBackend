@@ -1,0 +1,37 @@
+.widget-add-container{
+    position: relative;
+}
+.widget-add {
+    height: 100px;
+    position: relative;
+    width: 100%;
+}
+.widget-add__button {
+    position: absolute;
+    z-index: 1;
+    top:50%;
+    cursor: pointer;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 5rem;
+
+   
+}
+.widget-add__button-img {
+    width: 100%;
+    height: 100%;
+    transition: 0.2s linear;
+    &:active{
+        transform: rotateZ(20deg);
+        transition: 0.2s linear;
+    }
+}
+.widget-add__line {
+    content: "";
+    width: 100%;
+    height: 0.3rem;
+    top:50%;
+    transform: translateY(-50%);
+    background-color: black;
+    position: absolute;
+}

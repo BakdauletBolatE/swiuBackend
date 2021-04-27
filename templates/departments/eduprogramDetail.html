@@ -1,6 +1,7 @@
 {% extends 'layouts/app.html' %}
 {% load static %}
-
+{% load i18n %} 
+{% load static i18n %}
 {% block title %}
 {{eduProgram.name}}
 {% endblock %}
@@ -11,19 +12,19 @@
             <div class="course-sidebar">
                 <div class="main-sidebar">
                     <h3 class="main-sidebar__title">
-                        {% trans 'Информация об образовательнем программе' %}
+                        {% trans 'Білім беру бағдарламасы туралы ақпарат' %}
                     </h3>
                     <div class="main-sidebar__list">
                         <div class="main-sidebar__item">
                             <div>
                                 <i class="fas fa-calendar-alt"></i>
-                                <span>{% trans 'CТЕПЕНЬ:' %}</span>
+                                <span>{% trans 'ДӘРЕЖЕСІ:' %}</span>
                             </div>
                                 <span>{{eduProgram.cat.name}}</span>
                         </div>
                        
                         <div class="main-sidebar__item">
-                           <div><i class="fas fa-clock"></i><span>{% 'Факультет:' %}</span></div>
+                           <div><i class="fas fa-clock"></i><span>{% trans 'Факультет:' %}</span></div>
                                <span>{{eduProgram.facult.name}}</span>
                         </div>
                         <div class="main-sidebar__item">
@@ -31,7 +32,7 @@
                                 <span>{{eduProgram.department.name}}</span>
                         </div>
                           
-                        <a style="display: block;" class="btn" href="">{% 'Ставить лайк' %}</a>
+                        <a style="display: inline-block;" class="btn" href="">{% trans 'Лүпіл қою' %}</a>
                    
                     </div>
                 </div>
@@ -45,8 +46,8 @@
                 
                 <div class="course__tab-list">
                     <ul class="course-tab-btns">
-                        <li class="course-tab-btn course-tab-btn--active">{% trans 'О образовательнем программе' %}</li>
-                        <li class="course-tab-btn">{% trans 'Преподаватели' %}</li>
+                        <li class="course-tab-btn course-tab-btn--active">{% trans 'Білім беру бағдарламасы туралы' %}</li>
+                        <li class="course-tab-btn">{% trans 'Мұғалімдер' %}</li>
                         
                     </ul>
                     <div class="course-tab-content">
@@ -71,7 +72,7 @@
                             {%endfor%}
                         </div> 
                     </div>
-                    <div class="course-tab-content">
+                    <!-- <div class="course-tab-content">
                         <h2 class="course-tab-title">
                             Course Description
                         </h2>
@@ -79,7 +80,7 @@
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere nesciunt harum facilis odit inventore molestias qui asperiores recusandae architecto mollitia provident ipsa unde, praesentium impedit enim voluptate ducimus, saepe autem. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda optio sequi suscipit et modi! Corporis obcaecati rerum et, explicabo inventore, aliquid, odit modi harum libero culpa distinctio. Nemo, aliquid dignissimos. Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio earum accusantium quam eius dignissimos quaerat voluptatem excepturi aliquid dolor ducimus. Illo porro maiores fuga dignissimos temporibus odio nulla nobis nemo. Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         </p>
-                    </div>
+                    </div> -->
                 </div>
             </div>
            
