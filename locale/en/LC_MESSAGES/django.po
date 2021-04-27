@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-27 14:00+0600\n"
+"POT-Creation-Date: 2021-04-27 19:43+0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -473,8 +473,8 @@ msgid ""
 "1. Оқу орнының имиджі. Білім беру қызметтері нарығында бәсекеге қабілетті "
 "позицияларды нығайту."
 msgstr ""
-"1. Image of the educational institution. Strengthening the competitive" 
-"position in the educational services market."
+"1. Image of the educational institution. Strengthening the "
+"competitiveposition in the educational services market."
 
 #: .\templates\main\pages\accreditation.html:21
 #, fuzzy
@@ -486,16 +486,16 @@ msgstr "2. International cooperation"
 msgid ""
 "3. Университеттің тартымдылығын арттыру. Негізгі мүдделі тараптар сенеді."
 msgstr ""
-"3. Increasing the attractiveness of the university. Trusted by key stakeholders."
-
+"3. Increasing the attractiveness of the university. Trusted by key "
+"stakeholders."
 
 #: .\templates\main\pages\accreditation.html:23
 msgid ""
 "4. Білім беру сапасын арттыру, қызметтердің халықаралық талаптарға "
 "сәйкестігіне кепілдік беру."
 msgstr ""
-"4. Improving the quality of education, guaranteeing the compliance of" 
-"services with international requirements."
+"4. Improving the quality of education, guaranteeing the compliance "
+"ofservices with international requirements."
 
 #: .\templates\main\pages\accreditation.html:24
 msgid "5. Енбек нарығында түлектердің бәсекеге қабілеттілігің арттыру."
@@ -557,8 +557,8 @@ msgid ""
 "ұлттық бірыңғай тестілеуден өткен орта білім беру ұйымдарының ағымдағы жылғы "
 "түлектері үшін"
 msgstr ""
-"for graduates of secondary education organizations of the current year" 
-"who have passed the exam UNT"
+"for graduates of secondary education organizations of the current yearwho "
+"have passed the exam UNT"
 
 #: .\templates\pages\enrolle.html:24
 msgid "Жаднама #2"
@@ -569,8 +569,8 @@ msgid ""
 "өткен жылдардағы орта білім беру, техникалық және кәсіптік немесе орта "
 "білімнен кейінгі білім беруді бітірушілер үшін ұлттық бірыңғай тест тапсыру"
 msgstr ""
-"passing the UNT for graduates of secondary, technical and vocational or"
-"post-secondary education of previous years"
+"passing the UNT for graduates of secondary, technical and vocational orpost-"
+"secondary education of previous years"
 
 #: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:5
 msgid "Select an image to embed"
