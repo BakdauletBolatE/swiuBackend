@@ -46,10 +46,12 @@ class PageListView(ListView):
 
     def get_queryset(self):
         return Page.objects.filter(category_id=self.kwargs['pk']).order_by('order')
+
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         context['categories'] = PageCategory.objects.all()
         return context
+
 class PageDetailView(DetailView):
     model = Page
     context_object_name = 'page'
@@ -57,7 +59,6 @@ class PageDetailView(DetailView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        pageWidgetsArray = []
         page = context['page']
         pageWidgets = Widget.objects.filter(page=page).order_by('order')
         context['pageWidgets'] = pageWidgets

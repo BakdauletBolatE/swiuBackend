@@ -1,0 +1,41 @@
+.form{
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(35rem,1fr));
+    grid-gap:3rem;
+}
+.breadcamp{
+    margin-top: 3rem;
+
+    & a{
+        color:black;
+    }
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+}
+.form-label{
+    margin-bottom: 1rem;
+}
+.form-control{
+    display: block;
+    padding: 1rem 1.5rem;
+    width: 100%;
+    font-size: 1.8rem;
+    background-color: $silver;
+    border:none;
+    border-left:3px solid $mainColorGreen;
+    margin-bottom: 2rem;
+    &:focus{
+        outline: none;
+    }
+}
+.btn{
+    background-color: $mainColorOrange;
+    padding: 1rem 2rem;
+    color:white;
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
+}

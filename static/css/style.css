@@ -1559,7 +1559,11 @@
 .news__item {
   display: flex;
   position: relative;
+  border-radius: 5px;
+  overflow: hidden;
   flex-direction: column;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 20px;
 }
 .news__img {
   display: block;
@@ -1586,10 +1590,7 @@
 
 .news__content {
   width: 100%;
-  box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 20px;
   padding: 1.8rem;
-  background: white;
-  border-radius: 5px;
   position: relative;
   display: flex;
   flex-direction: column;

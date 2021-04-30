@@ -1,0 +1,17 @@
+{% extends 'layouts/apppage.html' %}
+
+{% load static %}
+{% block content %}
+<div class="container">
+    <form method="post" style="display: flex; justify-content: center; align-items: center; flex-direction: column; height: 40vh;">{% csrf_token %}
+        <p class="title">Уверены что хотите удалить "{{ object }}"?</p>
+        <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px;" class="">
+            <input class="btn" type="submit" value="Удалить">
+            <a  class="btn " style="margin-left: 5px;" href="{% url 'pageListView' cat_id %}">Нет</a>
+        </div>
+        
+    </form>
+</div>
+
+
+{% endblock %}
