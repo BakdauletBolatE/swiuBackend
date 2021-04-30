@@ -5,6 +5,7 @@
 
 <div class="main">
     <input type="hidden" value="{{csrf_token}}" id="csrf_token">
+   
     <div class="container">
         <div class="main-grid">
             <div class="sidebar">
@@ -57,56 +58,46 @@
                     <form action="{% url 'addWidget' page.id %}" method="POST"  class="widget-form">
                         {% csrf_token %}
                         <input class="widget-input" name="type" type="hidden" value="widgettext">
-                        <!-- <div class="toolbar">
-                            <div class="toolbar__item">
-                                <button
-                                    class="toolbar__btn"
-                                    type="button"
-                                    data-command="justifyCenter"
-                                >JC</button>
-                            </div>
-                            <div class="toolbar__item">
-                                <button
-                                    class="toolbar__btn"
-                                    type="button"
-                                    data-command="bold"
-                                >B</button>
-                            </div>
-                        </div> -->
-                        <input class="widget-input" name="title" type="text" placeholder="Введите загаловок">
-                        <!-- <div name="description" placeholder="Введите описание" contenteditable="true" class="widget-textarea">
-
-                        </div> -->
-                        <textarea id="widget-textarea" class="widget-textarea" name="description" placeholder="Введите описание"></textarea>
-                        <button>Сохранить</button>
+                        <input class="widget-input" name="title" type="text"  placeholder="Введите загаловок[ru]">
+                        <input class="widget-input" name="title_kk" type="text"  placeholder="Введите загаловок[kk]">
+                        <input class="widget-input" name="title_en" type="text"  placeholder="Введите загаловок[en]">
+                        <textarea id="widget-textarea" class="widget-textarea" contenteditable="true" name="description" placeholder="Введите описание[ru]"></textarea>
+                        <textarea id="widget-textarea" class="widget-textarea" contenteditable="true" name="description_kk" placeholder="Введите описание[kk]"></textarea>
+                        <textarea id="widget-textarea" class="widget-textarea" contenteditable="true" name="description_en" placeholder="Введите описание[en]"></textarea>
+                        <button class="btn">Сохранить</button>
                     </form>
                     <form action="{% url 'addWidget' page.id %}" method="POST"  class="widget-form"> 
                         {% csrf_token %}
                         <input class="widget-input" name="type" type="hidden" value="widgetonlytext">
-                        <textarea  class="widget-textarea" name="description" placeholder="Введите описание"></textarea>
+                        <textarea  class="widget-textarea" name="description" placeholder="Введите описание[ru]"></textarea>
+                        <textarea  class="widget-textarea" name="description_kk" placeholder="Введите описание[kk]"></textarea>
+                        <textarea  class="widget-textarea" name="description__en" placeholder="Введите описание[en]"></textarea>
                         <button>Сохранить</button>
                     </form>
                     <form action="{% url 'addWidget' page.id %}" enctype="multipart/form-data" method="POST"  class="widget-form"> 
                         {% csrf_token %}
                         <input class="widget-input" name="type" type="hidden" value="widgetphoto">
-                        <input class="widget-input" name="title" type="text" placeholder="Введите загаловок">
-                        <textarea  class="widget-textarea" name="description" placeholder="Введите описание"></textarea>
+                        <input class="widget-input" name="title" type="text" placeholder="Введите загаловок[ru]">
+                        <input class="widget-input" name="title_kk" type="text" placeholder="Введите загаловок[kk]">
+                        <input class="widget-input" name="title_en" type="text" placeholder="Введите загаловок[en]">
+                        <textarea  class="widget-textarea" name="description" placeholder="Введите описание[ru]"></textarea>
+                        <textarea  class="widget-textarea" name="description_kk" placeholder="Введите описание[kk]"></textarea>
+                        <textarea  class="widget-textarea" name="description_en" placeholder="Введите описание[en]"></textarea>
                         <input name="image" class="widget-input-file" type="file">
-                        <button>Сохранить</button>
+                        <button class="btn">Сохранить</button>
                     </form>
                     <form action="{% url 'addWidget' page.id %}" enctype="multipart/form-data" method="POST"  class="widget-form"> 
                         {% csrf_token %}
                         <input class="widget-input" name="type" type="hidden" value="widgetgallery">
                         <input class="widget-input" name="title" type="text" placeholder="Введите загаловок">
                         <input name="images" multiple class="widget-input-file" type="file">
-                        <button>Сохранить</button>
+                        <button class="btn">Сохранить</button>
                     </form>
                     
                     <div id="realpage"class="realpage">
                         {% for widget in pageWidgets %}
                         {{ widget|renderWidget }}
-                        {% endfor %}
-                       
+                        {% endfor %}        
                     </div>
                     
                 </div>

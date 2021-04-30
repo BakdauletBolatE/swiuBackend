@@ -27,8 +27,11 @@ def renderWidget(widgetQS):
 
         template = f"""
             <div data-pk='{widgetQS.id}' class="widget--item widgetwihttext">
-                <h2 class="widgetwihttext__title">{title}</h2>
-                <p class="widgetwihttext__description">{description}</p>
+            <input type="hidden" value={widget.id} class="widget--id" />
+            <input type="hidden" name="type" value=widgettext />
+            <a class="widget--item-editable">Сохранить</a>
+                <h2 data-widget="title" class="widgetwihttext__title">{title}</h2>
+                <p data-widget="description" class="widgetwihttext__description">{description}</p>
             </div>
         """
         return mark_safe(template)
@@ -46,7 +49,10 @@ def renderWidget(widgetQS):
 
         template = f"""
             <div data-pk='{widgetQS.id}' class="widget--item widgetwihttext">
-                            <p class="widgetwihttext__description">{description}</p>
+                <input type="hidden" value={widget.id} class="widget--id" />
+                <input type="hidden" name="type" value=widgetonlytext />
+                <a class="widget--item-editable">Изменить</a>
+                <p data-widget="description" class="widgetwihttext__description">{description}</p>
             </div>
         """
         return mark_safe(template)
@@ -68,8 +74,10 @@ def renderWidget(widgetQS):
 
         template = f"""
             <div data-pk='{widgetQS.id}' class="widget--item widgetwithphoto">
-              
-                <p class="widgetwithphoto__description">{description}</p>
+                <input type="hidden" value={widget.id} class="widget--id" />
+                <input type="hidden" name="type" value=widgetphoto />
+                <a class="widget--item-editable">Изменить</a>
+                <p data-widget="description" class="widgetwithphoto__description">{description}</p>
                 <div class="widgetwithphoto__photo-block">
                     <img class="widgetwithphoto__photo" src="{image}" alt="">
                 </div>
@@ -90,7 +98,10 @@ def renderWidget(widgetQS):
         else:
             images = ""
 
-        template = f"<div data-pk='{widgetQS.id}' class='widget--item widgetwithgallery'>"  
+        template = f"""<div data-pk='{widgetQS.id}' class='widget--item widgetwithgallery'>
+                <input type="hidden" value={widget.id} class="widget--id" />
+                <input type="hidden" name="type" value=widgetgallery />
+        """  
         for image in images:
             template += f"""
                 <div  class="widgetwithphoto__photo-block">

@@ -1,6 +1,6 @@
 from django.db import models
 from ckeditor_uploader.fields import RichTextUploadingField
-
+from django.urls import reverse
 # Create your models here.
 
 class Facult(models.Model):
@@ -25,6 +25,8 @@ class PageCategory(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self): # Тут мы создали новый метод
+        return reverse('pageListView', args=[str(self.id)])
     class Meta:
         verbose_name = "Категория Страницы"
         verbose_name_plural = "Категорий Страницы"
@@ -43,7 +45,10 @@ class Page(models.Model):
 
     def __str__(self):
         return self.title
+    
 
+    def get_absolute_url(self): # Тут мы создали новый метод
+        return reverse('pageDetailView', args=[str(self.id)])
     class Meta:
         verbose_name = "Страница"
         verbose_name_plural = "Страницы"

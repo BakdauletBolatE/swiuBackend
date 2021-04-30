@@ -1,15 +1,44 @@
-from page.forms import WidgetPhotoForm, WidgetTextForm,WidgetOnlyTextForm
-from page.models import Widget,WidgetGalery,WidgetText,WidgetPhoto,WidgetGalleryPhotos
+from django.views.generic.base import View
+from django.views.generic.edit import DeleteView
+from page.forms import PageForm, WidgetPhotoForm, WidgetTextForm,WidgetOnlyTextForm
+from page.models import Widget,WidgetGalery,WidgetGalleryPhotos, WidgetOnlyText, WidgetPhoto, WidgetText
 from django.shortcuts import get_object_or_404, render,redirect
 from faculties.models import Page, PageCategory
 from django.http import HttpResponse
-from django.views.generic import ListView,DetailView,CreateView
-from django.urls import reverse
+from django.views.generic import ListView,DetailView,CreateView,UpdateView
+from django.urls import reverse,reverse_lazy
 import json
 
 # Create your views here.
 
+class WidgetTextUpdateView(View):
 
+    def post(self,request,pk):
+
+        widget = json.loads(request.body)
+        type = widget['type']
+ 
+        if type == "widgettext":
+            widgetObject = get_object_or_404(WidgetText,id=pk)
+            if widgetObject:
+                widgetObject.title = widget['title']
+                widgetObject.description = widget['description']
+                widgetObject.save()
+        
+        if type == "widgetonlytext":
+            widgetObject = get_object_or_404(WidgetOnlyText,id=pk)
+            if widgetObject:
+                widgetObject.description = widget['description']
+                widgetObject.save()
+
+        if type == "widgetphoto":
+            widgetObject = get_object_or_404(WidgetPhoto,id=pk)
+            if widgetObject:
+                widgetObject.title = widget['title']
+                widgetObject.description = widget['description']
+                widgetObject.save()
+
+        return HttpResponse("Hello")
 class PageListView(ListView):
     model = Page
     context_object_name = 'pages'
@@ -21,10 +50,6 @@ class PageListView(ListView):
         context = super().get_context_data(**kwargs)
         context['categories'] = PageCategory.objects.all()
         return context
-
-        
-
-
 class PageDetailView(DetailView):
     model = Page
     context_object_name = 'page'
@@ -37,6 +62,39 @@ class PageDetailView(DetailView):
         pageWidgets = Widget.objects.filter(page=page).order_by('order')
         context['pageWidgets'] = pageWidgets
         return context
+
+class PageCreateView(CreateView):
+
+    model = Page
+    template_name = 'page/page_form.html'
+    form_class = PageForm
+
+class PageUpdateView(UpdateView):
+
+    model = Page
+    template_name = 'page/page_form.html'
+    form_class = PageForm
+
+
+class PageDeleteView(DeleteView):
+
+    model = Page
+    template_name = "page/page_confirm_delete.html"
+
+    def get_success_url(self):    
+        return reverse_lazy('pageListView', kwargs = {'pk': self.kwargs['cat_id']})
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['cat_id'] = self.kwargs['cat_id']
+        return context
+    
+
+class PageCategoryCreateView(CreateView):
+
+    model = PageCategory
+    fields = ['name','name_kk','name_en','linkto']
+    template_name = 'page/pageCategory_form.html'
 
 def orderedPages(request):
 

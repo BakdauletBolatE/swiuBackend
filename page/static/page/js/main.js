@@ -8,7 +8,6 @@ const widgetContainer = document.getElementById('widgets'),
 
 let widgetgroup = document.getElementById('realpage');
 
-
 function UpdateDataOrder(list,listClass){
     let widgetgrouparray = []
     items = list.querySelectorAll('.'+listClass);

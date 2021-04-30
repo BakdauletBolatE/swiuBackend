@@ -1,8 +1,39 @@
 .realpage {
 }
-.widget--item{
+.realpage .widget--item-editable.active{
+    display: block;
+}
+.realpage .widget--item-editable{
+    content: "\1F589";
+    font-size: 12px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    position: absolute;
+    right: -10px;
+    display: none;
+    top:-10px;
+    background-color: $mainColorOrange;
+    padding: 0px 5px;
+    border-radius: 5px;
+    color:white;
+    z-index: 1;
+    text-decoration: none;
+    transform: scale(1);
+    &:hover{
+        transform: scale(1.2);
+    }
+}
+.realpage .widget--item{
+    position: relative;
+    &:hover{
+        background-color: #f2f2f2;
+    }
+  
     
 }
+
 .widgetwihttext {
     margin-bottom: 1rem;
 }

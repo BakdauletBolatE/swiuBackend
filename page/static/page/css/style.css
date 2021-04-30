@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap");
 * {
   margin: 0;
@@ -163,6 +164,7 @@
 }
 
 .widget-textarea {
+  margin-bottom: 2rem;
   display: block;
   width: 100%;
   font-size: 1.4rem;
@@ -174,6 +176,25 @@
 }
 .widget-textarea:focus {
   outline: none;
+}
+
+.page-detail {
+  position: relative;
+}
+
+.btn-create {
+  position: absolute;
+  font-size: 1.5rem;
+  background-color: #EB742A;
+  padding: 1rem 2rem;
+  color: white;
+  border-radius: 5px;
+  right: 0;
+  top: 0;
+}
+.btn-create a {
+  color: white;
+  text-decoration: none;
 }
 
 .lined-title {
@@ -189,6 +210,7 @@
   background-color: #ffffff;
   padding: 3.3rem 2.1rem;
   border-radius: 0.5rem;
+  position: relative;
 }
 
 .sidebar__nav {
@@ -299,6 +321,86 @@
   display: grid;
   grid-template-columns: 2fr 4fr;
   grid-gap: 1rem;
+}
+
+.form {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+  grid-gap: 3rem;
+}
+
+.breadcamp {
+  margin-top: 3rem;
+}
+.breadcamp a {
+  color: black;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  margin-bottom: 1rem;
+}
+
+.form-control {
+  display: block;
+  padding: 1rem 1.5rem;
+  width: 100%;
+  font-size: 1.8rem;
+  background-color: #f2f2f2;
+  border: none;
+  border-left: 3px solid #009A9E;
+  margin-bottom: 2rem;
+}
+.form-control:focus {
+  outline: none;
+}
+
+.btn {
+  background-color: #EB742A;
+  padding: 1rem 2rem;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.realpage .widget--item-editable.active {
+  display: block;
+}
+
+.realpage .widget--item-editable {
+  content: "🖉";
+  font-size: 12px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  right: -10px;
+  display: none;
+  top: -10px;
+  background-color: #EB742A;
+  padding: 0px 5px;
+  border-radius: 5px;
+  color: white;
+  z-index: 1;
+  text-decoration: none;
+  transform: scale(1);
+}
+.realpage .widget--item-editable:hover {
+  transform: scale(1.2);
+}
+
+.realpage .widget--item {
+  position: relative;
+}
+.realpage .widget--item:hover {
+  background-color: #f2f2f2;
 }
 
 .widgetwihttext {
