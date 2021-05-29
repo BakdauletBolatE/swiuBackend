@@ -75,9 +75,9 @@ if DEBUG:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'swiu2',
+            'NAME': 'swiu',
             'USER': 'postgres',
-            'PASSWORD': '123',
+            'PASSWORD': '2580',
             'HOST': 'localhost',
             'PORT': '5432',
         }
