@@ -2,7 +2,6 @@
 {% load static %}
 {% load i18n %} 
 {% load static i18n %}
-{% load widgetRender %}
 {% load snp %}
 {% block title %}
 {{ page.title }}
@@ -33,9 +32,7 @@
           {% endif %}
       </div>
       <div class="page">
-        {% for widget in widgets %}
-          {{widget|renderWidget}}
-        {% endfor %}
+      
       </div>
       <div id="animated-thumbnials" class="mt-3 gallery_grid">
         {% for photo in page.pageImages.all %}

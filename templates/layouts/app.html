@@ -56,11 +56,7 @@
                             <div class="top-bar__que">
                                 <a class="link" href="http://association.swiu.kz/site/association">{% trans 'Бітіруші түлектерге' %}</a>
                             </div>
-                            {% if request.user.is_authenticated %}
-                            <div class="top-bar__que">
-                                <a class="link" href="{% url 'pageListView' 1 %}">Страницы</a>
-                            </div>
-                            {% endif %}
+                            
                         </div>
                         <div class="top-bar__left">
                             <div class="social">
@@ -114,7 +110,7 @@
                 <div class="container">
                     <div class="menu__row">
                         <div class="logo-area__img">
-                            <a href="{% url 'index' %} "><img src="{% static 'img/logo_ru1.png' %}" alt=""></a>
+                            <a href="{% url 'index' %} "><img src="{% static 'img/orda-logo.png' %}" alt=""></a>
                         </div>
                         <ul class="menu__list">
                             {% for cat in pageCats|order_by:'order' %}
@@ -214,7 +210,7 @@
             <div class="container">
                 <div class="footer__row">
                     <div class="footer__item">
-                        <img src="{% static 'img/logo_ru.png' %}" alt="">
+                        <img src="{% static 'img/orda-logo-light.png' %}" alt="">
 
                         <div>
                             <i class="fas icon-c-w fa-map-marker-alt"></i>
@@ -246,7 +242,7 @@
         </footer>
         <div class="footer2">
             <div class="container">
-                <p>Copyright © 2020 SWIU</p>
+                <p>Copyright © 2020 ORDA UNIVERSITY</p>
             </div>
         </div>
         <input type="hidden" name="" id="csrfTokenforLike" value={{csrf_token}}>

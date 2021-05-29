@@ -1,6 +1,6 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin
-
+from django_summernote.admin import SummernoteModelAdmin
 
 from .models import *
 
@@ -16,10 +16,11 @@ class PagePhotoTabulerInline(admin.TabularInline):
     model = PageImages
 
 @admin.register(Page)
-class PageAdmin(TranslationAdmin):
+class PageAdmin(SummernoteModelAdmin,TranslationAdmin):
     prepopulated_fields = {"slug": ("title",)}
     list_display = ('title','order','category')
     list_filter = ('category',)
+    summernote_fields = ('content_ru', 'content_en', 'content_kk')
     ordering = ['order']
     search_fields = ['title']
     inlines = [PagePhotoTabulerInline]

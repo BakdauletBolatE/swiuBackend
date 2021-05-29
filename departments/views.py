@@ -8,47 +8,29 @@ from django.core.paginator import Paginator
 def departmentDetailView(request,url):
 
     department = Department.objects.get(slug=url)
-
     activityDepartments = ActivityDepartment.objects.filter(department=department)
-
     paginator = Paginator(activityDepartments, 5) # Show 5 contacts per page.
-
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    
-
     eduPros = EducationalPrograms.objects.filter(department=department)
-
     staffEdus = Staff.objects.filter(department=department)
-
-    pageCats = PageCategory.objects.all()
-    internatiolization = PageCategory.objects.get(id=3)
 
     context = {
         'department':department,
         'activityDepartments':page_obj,
         'eduPros':eduPros,
-        'staffEdus':staffEdus,
-        'pageCats':pageCats,
-        'internatiolization':internatiolization
-        
+        'staffEdus':staffEdus,        
     }
 
     return render(request,'departments/departmentDetail.html',context)
 
 def eduProgramDetail(request, url):
-    pageCats = PageCategory.objects.all()
-    
+
     eduProgram = EducationalPrograms.objects.get(slug=url)
-
     eduStuffs = Staff.objects.filter(educationalPrograms=eduProgram)
-    internatiolization = PageCategory.objects.get(id=3)
-
     context = {
         'eduStuffs':eduStuffs,
         'eduProgram':eduProgram,
-        'pageCats':pageCats,
-        'internatiolization':internatiolization
     }
 
     return render(request,'departments/eduprogramDetail.html',context)

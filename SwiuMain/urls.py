@@ -25,9 +25,7 @@ from django.conf.urls.i18n import i18n_patterns
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('i18n/',include('django.conf.urls.i18n')),
-    path('swiu-panel/',include('swiupanel.urls')),
-    path('page-const/',include('page.urls')),
-    path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('summernote/', include('django_summernote.urls')),
 ] 
 
 
@@ -35,7 +33,7 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
     path('',index,name="index"),
-    path('about-university',aboutUs,name="aboutU"),
+    path('about-university/',aboutUs,name="aboutU"),
     path('thebestop/',opView,name="opView"),
     path('accreditation/',accreditation,name="accreditation"),
     path('to-the-students/',toTheStudentsView,name="toTheStudents"),

@@ -1,5 +1,4 @@
 from django.db import models
-from ckeditor_uploader.fields import RichTextUploadingField
 from django.urls import reverse
 # Create your models here.
 
@@ -11,6 +10,9 @@ class Facult(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('facultDetailView', args=[self.slug])
 
     class Meta:
         verbose_name = "Факультет"
@@ -39,7 +41,7 @@ class Page(models.Model):
     url = models.CharField('Ссылка НУЖНО ИМЯ',max_length=255)
     slug = models.SlugField('slug это обычный слаг',null=True,blank=True)
     link = models.CharField('Ссылку на сайт',null=True,blank=True,default=None,max_length=255)
-    content = RichTextUploadingField('Контентная часть',null=True,blank=True)
+    content = models.TextField('Контентная часть',null=True,blank=True)
     img = models.ImageField('Постер страницы',upload_to="Page/",blank=True,null=True)
     category = models.ForeignKey(PageCategory,related_name='page',on_delete=models.CASCADE)
 

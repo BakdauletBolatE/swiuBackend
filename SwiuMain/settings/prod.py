@@ -27,16 +27,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'rest_framework',
     'faculties',
     'departments',
     'staff',
     'news',
     'library',
-    'ckeditor',
-    'swiupanel',
-    'page'
 ]
+
+INSTALLED_APPS += ('django_summernote', )
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -62,7 +61,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.media'
+                'django.template.context_processors.media',
+                'faculties.context_processors.page_categories'
             ],
         },
     },
@@ -147,59 +147,6 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = BASE_DIR / 'media'
 
-CKEDITOR_CONFIGS = {
-    'default': {
-        'skin': 'office2013',
-        'toolbar': 'Custom',
-        'toolbar_Custom': [
-      [
-        'Bold',
-        'Italic',
-        'Underline'
-      ],
-      [
-        'Font',
-        'FontSize',
-        'TextColor',
-        'BGColor'
-      ],
-      [
-        'NumberedList',
-        'BulletedList',
-        '-',
-        'Outdent',
-        'Indent',
-        '-',
-        'JustifyLeft',
-        'JustifyCenter',
-        'JustifyRight',
-        'JustifyBlock'
-      ],
-      [
-        'Link',
-        'Unlink'
-      ],
-      [
-        'RemoveFormat',
-        'Source',
-        'CodeSnippet',
-        'Image',
-        'Youtube'
-      ]
-    ],
-        'extraPlugins': ','.join([
-        'codesnippet',
-        'youtube'
-        ]),
-    }
-}
+SUMMERNOTE_THEME = 'bs4'
 
 
-EMAIL_HOST = 'post.mail.kz'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = "swiu.edu@mail.kz"
-EMAIL_HOST_PASSWORD = "25nc6UVSGjXnQQK"
-EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
-
-CKEDITOR_UPLOAD_PATH = "uploads/"

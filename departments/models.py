@@ -1,5 +1,6 @@
 from django.db import models
 from faculties.models import Facult,Page
+from django.urls import reverse
 
 
 
@@ -14,6 +15,9 @@ class Department(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('departmentDetailView', args=[self.slug])
 
     class Meta:
         verbose_name = "Кафедра"
@@ -42,6 +46,9 @@ class EducationalPrograms(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('eduProgDetailView', args=[self.slug])
 
     class Meta:
         verbose_name = "Оброзовательные программа"

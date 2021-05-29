@@ -45,6 +45,10 @@ class Staff(models.Model):
     about = models.TextField('О персонале')
     page = models.ForeignKey(Page,on_delete=models.CASCADE,related_name='staff',null=True,blank=True)
 
+
+    def get_absolute_url(self):
+        return reverse('stuffDetailView', args=[self.slug])
+        
     class Meta:
         verbose_name = 'Персонал'
         verbose_name_plural = 'Персонали'

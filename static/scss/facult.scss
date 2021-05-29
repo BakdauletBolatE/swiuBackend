@@ -69,10 +69,10 @@
             height: 100%;
             position: relative;
             text-decoration: none;
-            background: #001777;
+            background: $dark-blue;
 
             &:hover{
-                background: darken(#001777,4%);
+                background: darken($dark-blue,4%);
             }
             
         }
