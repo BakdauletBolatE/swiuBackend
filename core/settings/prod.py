@@ -1,5 +1,3 @@
-
-
 from pathlib import Path
 import os
 
@@ -9,8 +7,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 SECRET_KEY = '+v6-04zu!l#h&+p4f(u^un@(+^u0oa$ew2nfs4w5_m=rb=41$d'
 
 
-
-DEBUG = False
+try:
+    from .local import *
+    DEBUG = True
+except ImportError as e:
+    DEBUG = False
 
 
 if DEBUG:
@@ -35,7 +36,6 @@ INSTALLED_APPS = [
     'news',
     'library',
     'ckeditor',
-    'swiupanel'
 ]
 
 MIDDLEWARE = [
@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'SwiuMain.urls'
+ROOT_URLCONF = 'core.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'SwiuMain.wsgi.application'
+WSGI_APPLICATION = 'core.wsgi.application'
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 
@@ -78,7 +78,7 @@ if DEBUG:
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'swiu',
             'USER': 'postgres',
-            'PASSWORD': '123',
+            'PASSWORD': '2580',
             'HOST': 'localhost',
             'PORT': '5432',
         }
@@ -137,13 +137,11 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-
-
-STATIC_DIR = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-        STATIC_DIR,
+        BASE_DIR / 'static'
     ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 STATICFILES_FINDERS = (
         'django.contrib.staticfiles.finders.FileSystemFinder',
         'django.contrib.staticfiles.finders.AppDirectoriesFinder',
