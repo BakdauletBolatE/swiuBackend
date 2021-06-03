@@ -1057,7 +1057,7 @@
 }
 @media screen and (max-width: 700px) {
   .testimonial-area {
-    height: 60rem;
+    height: 80rem;
   }
 }
 .testimonial-area::after {
