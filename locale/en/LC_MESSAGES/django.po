@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-03 20:44+0600\n"
+"POT-Creation-Date: 2021-06-03 20:53+0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -266,8 +266,6 @@ msgstr "Like"
 #: templates/departments/eduprogramDetail.html:6
 #: templates/departments/eduprogramDetail.html:15
 #: templates/distancelearning/isudo.html:6
-#, fuzzy
-#| msgid "SILKWAY Халықаралық университеті"
 msgid "\"ОРДА\" университеті"
 msgstr "\"ORDA\" University"
 
@@ -418,16 +416,12 @@ msgid "қосымша"
 msgstr "Additional"
 
 #: templates/facult/facultDetail.html:6 templates/facult/facultDetail.html:12
-#, fuzzy
-#| msgid "SILKWAY университетінің соңғы жаңалықтары"
 msgid "\"ОРДА\" университетінің факультеті"
-msgstr "The latest news from \"ORDA\" University"
+msgstr "Faculty of \"ORDA\" University "
 
 #: templates/facult/index.html:6 templates/facult/index.html:12
-#, fuzzy
-#| msgid "SILKWAY университетінің соңғы жаңалықтары"
 msgid "\"ОРДА\" университетінің факультеттері"
-msgstr "The latest news from \"ORDA\" University"
+msgstr "Faculties of \"ORDA\" University "
 
 #: templates/layouts/app.html:48
 msgid "Сіз сұрақтар қойғыңыз келе ме?"
