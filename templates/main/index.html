@@ -3,7 +3,7 @@
 {% load checkliked %}
 {% load static %}
 {% block title %}
-{% trans "ORDA университеті" %}
+{% trans "ОРДА университеті" %}
 {% endblock %}
 {% block content %}
 <div class="swiper-container">
@@ -88,7 +88,9 @@
             </div>
             <div class="about-us__text">
                 <h2 class="about-us__title">
-                    {% trans 'SILKWAY Университетін таңдаудың 5 себебі' %}
+                    <div style="display: inline-block">
+                        {% trans '"ОРДА" университетін таңдаудың 5 себебі' %}
+                    </div>
                     <span><i class="far fa-check-circle"></i></span>
                 </h2>
                 <p class="about-us__desciption">
@@ -115,7 +117,7 @@
                         <h2 class="about-us__number blue">
                             4
                         </h2>
-                        <p class="about-us__box-text">{% trans 'NR педагогикалық университеттеріндегі орны' %}</p>
+                        <p class="about-us__box-text">{% trans '4 педагогикалық университеттеріндегі орны' %}</p>
                     </div>
                 </div>
                 <a class="btn about-us__btn mt-5" href="">{% trans 'Толығырақ' %}</a>
@@ -181,15 +183,19 @@
                         <div class="news__desc">{% autoescape off %}{{post.description}}{% endautoescape %} </div> <a href="{% url 'postDetailView' post.slug %}">{% trans 'толығырақ' %}</a>
                     </div>
                     <div class="news__footer">
-                        <div class="news__footer-item">
+                        <div class="news__footer__one">
+                            <div class="news__footer-item">
                             <i class="far fa-user"></i>
                             <span>{{post.author}}</span>
                         </div>
-                        <div class="news__footer-item ">       
+                        <div class="news__footer-item ">
                                 <input type="hidden" value="{{post.slug}}">
                                 <button class="like_btn {% check post.id request.session.session_key %}" type="submit"><i class="none-click far fa-heart"></i></button>
                             <span class="none-click">{{ post.likes.count }}</span>
                         </div>
+                        </div>
+
+                        <a class="btn about-us__btn justify-content-right" href="{% url 'postDetailView' post.slug %}">{% trans 'Толығырақ' %}</a>
                     </div>
                 </div>
             </div>
@@ -229,15 +235,19 @@
                         <div class="news__desc">{% autoescape off %}{{post.description}}{% endautoescape %} <a href="{% url 'postDetailView' post.slug %}">{% trans 'толығырақ' %}</a></div>
                     </div>
                     <div class="news__footer">
-                        <div class="news__footer-item">
+                        <div class="news__footer__one">
+                            <div class="news__footer-item">
                             <i class="far fa-user"></i>
                             <span>{{post.author}}</span>
                         </div>
                         <div class="news__footer-item ">
                                 <input type="hidden" value="{{post.slug}}">
-                                <button class="like_btn" type="submit"><i class="none-click red far fa-heart"></i></button>
+                                <button class="like_btn {% check post.id request.session.session_key %}" type="submit"><i class="none-click far fa-heart"></i></button>
                             <span class="none-click">{{ post.likes.count }}</span>
                         </div>
+                        </div>
+
+                        <a class="btn about-us__btn justify-content-right" href="{% url 'postDetailView' post.slug %}">{% trans 'Толығырақ' %}</a>
                     </div>
                 </div>
             </div>

@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-27 19:43+0600\n"
+"POT-Creation-Date: 2021-06-03 20:44+0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,457 +18,577 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\library\templates\library\book_detail.html:17
+#: env/lib/python3.9/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:5
+msgid "Select an image to embed"
+msgstr ""
+
+#: env/lib/python3.9/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:27
+msgid "Browse for the image you want, then click 'Embed Image' to continue..."
+msgstr ""
+
+#: env/lib/python3.9/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:29
+msgid ""
+"No images found. Upload images using the 'Image Button' dialog's 'Upload' "
+"tab."
+msgstr ""
+
+#: env/lib/python3.9/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:50
+msgid "Images in: "
+msgstr ""
+
+#: env/lib/python3.9/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:62
+#: env/lib/python3.9/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:80
+msgid "Embed Image"
+msgstr ""
+
+#: env/lib/python3.9/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:146
+msgid "Play Slideshow"
+msgstr ""
+
+#: env/lib/python3.9/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:147
+msgid "Pause Slideshow"
+msgstr ""
+
+#: env/lib/python3.9/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:148
+msgid "&lsaquo; Previous Photo"
+msgstr ""
+
+#: env/lib/python3.9/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:149
+msgid "Next Photo &rsaquo;"
+msgstr ""
+
+#: env/lib/python3.9/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:150
+msgid "Next &rsaquo;"
+msgstr ""
+
+#: env/lib/python3.9/site-packages/ckeditor_uploader/templates/ckeditor/browse.html:151
+msgid "&lsaquo; Prev"
+msgstr ""
+
+#: env/lib/python3.9/site-packages/django/views/templates/default_urlconf.html:7
+msgid "Django: the Web framework for perfectionists with deadlines."
+msgstr ""
+
+#: env/lib/python3.9/site-packages/django/views/templates/default_urlconf.html:346
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+
+#: env/lib/python3.9/site-packages/django/views/templates/default_urlconf.html:368
+msgid "The install worked successfully! Congratulations!"
+msgstr ""
+
+#: env/lib/python3.9/site-packages/django/views/templates/default_urlconf.html:369
+#, python-format
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
+"\">DEBUG=True</a> is in your settings file and you have not configured any "
+"URLs."
+msgstr ""
+
+#: env/lib/python3.9/site-packages/django/views/templates/default_urlconf.html:384
+msgid "Django Documentation"
+msgstr ""
+
+#: env/lib/python3.9/site-packages/django/views/templates/default_urlconf.html:385
+msgid "Topics, references, &amp; how-to’s"
+msgstr ""
+
+#: env/lib/python3.9/site-packages/django/views/templates/default_urlconf.html:396
+msgid "Tutorial: A Polling App"
+msgstr ""
+
+#: env/lib/python3.9/site-packages/django/views/templates/default_urlconf.html:397
+msgid "Get started with Django"
+msgstr ""
+
+#: env/lib/python3.9/site-packages/django/views/templates/default_urlconf.html:408
+msgid "Django Community"
+msgstr ""
+
+#: env/lib/python3.9/site-packages/django/views/templates/default_urlconf.html:409
+msgid "Connect, get help, or contribute"
+msgstr ""
+
+#: library/templates/library/book_detail.html:18
 #, fuzzy
 #| msgid "Білім беру бағдарламалары"
 msgid "Оку Бағдарламасы"
 msgstr "Educational programs"
 
-#: .\library\templates\library\book_detail.html:24
+#: library/templates/library/book_detail.html:25
 #, fuzzy
 #| msgid "3. Бізде - білім гранттары"
 msgid "Бізден басқа ұсыныстар:"
 msgstr "3. We have educational grants"
 
-#: .\library\templates\library\book_list.html:7
-#: .\library\templates\library\index.html:27
-#: .\library\templates\library\teacshingStaff.html:7
-#: .\library\templates\library\teacshingStaff.html:12
+#: library/templates/library/book_list.html:7
+#: library/templates/library/index.html:27
+#: library/templates/library/teacshingStaff.html:7
+#: library/templates/library/teacshingStaff.html:12
 msgid "Оқытушылар құрамының жұмыстары"
 msgstr "Works of Teaching Staff"
 
-#: .\library\templates\library\book_list.html:11
+#: library/templates/library/book_list.html:11
 msgid "Постер"
 msgstr "Poster"
 
-#: .\library\templates\library\book_list.html:12
+#: library/templates/library/book_list.html:12
 #, fuzzy
 #| msgid "Кітапхана"
 msgid "Кітаптың атауы"
 msgstr "Library"
 
-#: .\library\templates\library\book_list.html:13
+#: library/templates/library/book_list.html:13
 #, fuzzy
 #| msgid "Білім беру бағдарламалары"
 msgid "Білім беру бағдарламаласы"
 msgstr "Educational programs"
 
-#: .\library\templates\library\book_list.html:14
+#: library/templates/library/book_list.html:14
 #, fuzzy
 #| msgid "Кітапхана"
 msgid "Кітаптың авторы"
 msgstr "Library"
 
-#: .\library\templates\library\book_list.html:15
+#: library/templates/library/book_list.html:15
 msgid "Басылымға шыққан жылы"
 msgstr "Edition year"
 
-#: .\library\templates\library\book_list.html:16
+#: library/templates/library/book_list.html:16
 msgid "Қол жетімділігі"
 msgstr "Availability"
 
-#: .\library\templates\library\book_list.html:26
+#: library/templates/library/book_list.html:26
 msgid "Постері жоқ"
 msgstr "No poster"
 
-#: .\library\templates\library\book_list.html:34
-#: .\library\templates\library\book_list.html:41
+#: library/templates/library/book_list.html:34
+#: library/templates/library/book_list.html:41
 msgid "Таңдалмаған"
 msgstr "was not chosen"
 
-#: .\library\templates\library\book_list.html:47
+#: library/templates/library/book_list.html:47
 msgid "Жүктеу"
 msgstr "Download"
 
-#: .\library\templates\library\index.html:7
+#: library/templates/library/index.html:7
 #, fuzzy
 #| msgid "Университет тарихы"
 msgid "Университет кітапханасы"
 msgstr "University History"
 
-#: .\library\templates\library\index.html:28
-#: .\library\templates\library\index.html:32
-#: .\library\templates\library\index.html:36
-#: .\library\templates\library\index.html:40
-#: .\library\templates\library\index.html:44
-#: .\library\templates\library\index.html:48
-#: .\library\templates\library\teacshingStaff.html:13
-#: .\templates\main\index.html:121
+#: library/templates/library/index.html:28
+#: library/templates/library/index.html:32
+#: library/templates/library/index.html:36
+#: library/templates/library/index.html:40
+#: library/templates/library/index.html:44
+#: library/templates/library/index.html:48
+#: library/templates/library/teacshingStaff.html:13
+#: templates/main/index.html:123 templates/main/index.html:198
+#: templates/main/index.html:250
 msgid "Толығырақ"
 msgstr "Read more"
 
-#: .\library\templates\library\index.html:31
+#: library/templates/library/index.html:31
 msgid "Мерзімді басылымдар"
 msgstr "Periodicals"
 
-#: .\library\templates\library\index.html:35
+#: library/templates/library/index.html:35
 msgid "Оқырмандар үшін"
 msgstr "for Readers"
 
-#: .\library\templates\library\index.html:39
+#: library/templates/library/index.html:39
 msgid "Электрондық ресурстар"
 msgstr "Electronic resources"
 
-#: .\library\templates\library\index.html:43
+#: library/templates/library/index.html:43
 msgid "Республикалық ЖОО аралық электронды кітапхана"
 msgstr "Republican interuniversity electronic library"
 
-#: .\library\templates\library\index.html:47
+#: library/templates/library/index.html:47
 msgid "ГУМАНИТАРЛЫҚ ЖАҢА БІЛІМ 100 ЖАҢА ОҚУЛЫҚТАР ҚАЗАҚ ТІЛІНДЕ"
 msgstr "NEW HUMANITARIAN KNOWLEDGE 100 NEW BOOKS IN KAZAKH LANGUAGE"
 
-#: .\staff\templates\stuff\stuffDetai.html:19
+#: staff/templates/stuff/stuffDetai.html:19
 msgid "Мұғалім туралы"
 msgstr "About teacher"
 
-#: .\staff\templates\stuff\stuffDetai.html:41
+#: staff/templates/stuff/stuffDetai.html:41
 msgid "Қызметкерлер туралы ақпарат"
 msgstr "Information about employees"
 
-#: .\staff\templates\stuff\stuffDetai.html:47
+#: staff/templates/stuff/stuffDetai.html:47
 msgid "Лауазым"
 msgstr "Position"
 
-#: .\staff\templates\stuff\stuffDetai.html:53
+#: staff/templates/stuff/stuffDetai.html:53
 msgid "Пошта"
 msgstr "Mail"
 
-#: .\staff\templates\stuff\stuffDetai.html:57
+#: staff/templates/stuff/stuffDetai.html:57
 msgid "Нөмір"
 msgstr "Number"
 
-#: .\staff\templates\stuff\stuffDetai.html:61
+#: staff/templates/stuff/stuffDetai.html:61
 msgid "Мекен-жайы"
 msgstr "Address"
 
-#: .\staff\templates\stuff\stuffDetai.html:65
+#: staff/templates/stuff/stuffDetai.html:65
 #, fuzzy
 #| msgid "Факультеттер"
 msgid "Факультет"
 msgstr "Faculties"
 
-#: .\staff\templates\stuff\stuffDetai.html:70
+#: staff/templates/stuff/stuffDetai.html:70
 #, fuzzy
 #| msgid "Кафедра жайлы"
 msgid "Кафедра"
 msgstr "About the department"
 
-#: .\staff\templates\stuff\stuffDetai.html:74
-#: .\templates\departments\departmentDetail.html:16
-#: .\templates\departments\departmentDetail.html:80
-#: .\templates\main\index.html:112
+#: staff/templates/stuff/stuffDetai.html:74
+#: templates/departments/departmentDetail.html:17
+#: templates/departments/departmentDetail.html:81 templates/main/index.html:114
 msgid "Білім беру бағдарламалары"
 msgstr "Educational programs"
 
-#: .\staff\templates\stuff\stuffDetai.html:82
-#: .\templates\departments\eduprogramDetail.html:35
-#: .\templates\news\newsDetail.html:72
+#: staff/templates/stuff/stuffDetai.html:82
+#: templates/departments/eduprogramDetail.html:35
+#: templates/news/newsDetail.html:72
 msgid "Лүпіл қою"
 msgstr "Like"
 
-#: .\templates\departments\departmentDetail.html:14
-#: .\templates\departments\departmentDetail.html:24
+#: templates/departments/departmentDetail.html:6
+#: templates/departments/departmentDetail.html:11
+#: templates/departments/eduprogramDetail.html:6
+#: templates/departments/eduprogramDetail.html:15
+#: templates/distancelearning/isudo.html:6
+#, fuzzy
+#| msgid "SILKWAY Халықаралық университеті"
+msgid "\"ОРДА\" университеті"
+msgstr "\"ORDA\" University"
+
+#: templates/departments/departmentDetail.html:15
+#: templates/departments/departmentDetail.html:25
 msgid "Кафедраның қызметі"
 msgstr "Activities of the department"
 
-#: .\templates\departments\departmentDetail.html:15
+#: templates/departments/departmentDetail.html:16
 msgid "Кафедра жайлы"
 msgstr "About the department"
 
-#: .\templates\departments\departmentDetail.html:17
-#: .\templates\departments\departmentDetail.html:102
+#: templates/departments/departmentDetail.html:18
+#: templates/departments/departmentDetail.html:103
 msgid "Кафедра оқытушылары"
 msgstr "Teachers of the department"
 
-#: .\templates\departments\departmentDetail.html:32
+#: templates/departments/departmentDetail.html:33
 msgid "Категория:"
 msgstr "Category:"
 
-#: .\templates\departments\departmentDetail.html:92
+#: templates/departments/departmentDetail.html:93
 msgid "Шифр:"
 msgstr "Cipher"
 
-#: .\templates\departments\eduprogramDetail.html:15
+#: templates/departments/eduprogramDetail.html:15
 #, fuzzy
 #| msgid "Білім беру бағдарламалары"
 msgid "Білім беру бағдарламасы туралы ақпарат"
 msgstr "Educational programs"
 
-#: .\templates\departments\eduprogramDetail.html:21
+#: templates/departments/eduprogramDetail.html:21
 msgid "ДӘРЕЖЕСІ:"
 msgstr "DEGREE"
 
-#: .\templates\departments\eduprogramDetail.html:27
+#: templates/departments/eduprogramDetail.html:27
 #, fuzzy
 #| msgid "Факультеттер"
 msgid "Факультет:"
 msgstr "Faculties"
 
-#: .\templates\departments\eduprogramDetail.html:31
+#: templates/departments/eduprogramDetail.html:31
 #, fuzzy
 #| msgid "Кафедра жайлы"
 msgid "Кафедра:"
 msgstr "About the department"
 
-#: .\templates\departments\eduprogramDetail.html:49
+#: templates/departments/eduprogramDetail.html:49
 #, fuzzy
 #| msgid "Білім беру бағдарламалары"
 msgid "Білім беру бағдарламасы туралы"
 msgstr "Educational programs"
 
-#: .\templates\departments\eduprogramDetail.html:50
+#: templates/departments/eduprogramDetail.html:50
 msgid "Мұғалімдер"
 msgstr "Teachers"
 
-#: .\templates\distancelearning\isudo.html:6 .\templates\facult\index.html:6
-msgid "Факультеты университета Silkway"
-msgstr "Faculties of Silkway University"
-
-#: .\templates\distancelearning\isudo.html:17
-#: .\templates\distancelearning\isudo.html:23
-#: .\templates\distancelearning\isudo.html:29
+#: templates/distancelearning/isudo.html:17
+#: templates/distancelearning/isudo.html:23
+#: templates/distancelearning/isudo.html:29
 msgid "Білім алушының кабинеті"
 msgstr "Student's office"
 
-#: .\templates\distancelearning\isudo.html:18
-#: .\templates\distancelearning\isudo.html:36
-#: .\templates\distancelearning\isudo.html:54
+#: templates/distancelearning/isudo.html:18
+#: templates/distancelearning/isudo.html:36
+#: templates/distancelearning/isudo.html:54
 msgid "Күндізгі бөлім"
 msgstr "Full-time department"
 
-#: .\templates\distancelearning\isudo.html:24
-#: .\templates\distancelearning\isudo.html:42
-#: .\templates\distancelearning\isudo.html:60
+#: templates/distancelearning/isudo.html:24
+#: templates/distancelearning/isudo.html:42
+#: templates/distancelearning/isudo.html:60
 msgid "Қысқартылған оқу формасы"
 msgstr "Short form of study"
 
-#: .\templates\distancelearning\isudo.html:30
-#: .\templates\distancelearning\isudo.html:48
-#: .\templates\distancelearning\isudo.html:66
+#: templates/distancelearning/isudo.html:30
+#: templates/distancelearning/isudo.html:48
+#: templates/distancelearning/isudo.html:66
 msgid "ЖОҒАРЫ ОҚУ ОРНЫНАН КЕЙІНГІ БІЛІМ БЕРУ"
 msgstr "Postgraduate education"
 
-#: .\templates\distancelearning\isudo.html:35
-#: .\templates\distancelearning\isudo.html:41
-#: .\templates\distancelearning\isudo.html:47
+#: templates/distancelearning/isudo.html:35
+#: templates/distancelearning/isudo.html:41
+#: templates/distancelearning/isudo.html:47
 msgid "Оқытушы кабинеті"
 msgstr "Teacher's office"
 
-#: .\templates\distancelearning\isudo.html:53
-#: .\templates\distancelearning\isudo.html:59
-#: .\templates\distancelearning\isudo.html:65
-#: .\templates\distancelearning\isudo.html:83
+#: templates/distancelearning/isudo.html:53
+#: templates/distancelearning/isudo.html:59
+#: templates/distancelearning/isudo.html:65
+#: templates/distancelearning/isudo.html:83
 msgid "Админстратор"
 msgstr "Administrator"
 
-#: .\templates\distancelearning\isudo.html:71
+#: templates/distancelearning/isudo.html:71
 msgid "Пайдаланушыларға нұсқаулық"
 msgstr "User's manual"
 
-#: .\templates\distancelearning\isudo.html:75
+#: templates/distancelearning/isudo.html:75
 msgid "Оқушы"
 msgstr "Student"
 
-#: .\templates\distancelearning\isudo.html:76
-#: .\templates\distancelearning\isudo.html:80
-#: .\templates\distancelearning\isudo.html:84
-#: .\templates\distancelearning\isudo.html:88
-#: .\templates\distancelearning\isudo.html:92
-#: .\templates\distancelearning\isudo.html:96
-#: .\templates\main\pages\accreditation.html:52
-#: .\templates\main\pages\accreditation.html:60
-#: .\templates\main\pages\accreditation.html:68
-#: .\templates\main\pages\accreditation.html:76
-#: .\templates\main\pages\accreditation.html:84
-#: .\templates\main\pages\accreditation.html:91
-#: .\templates\main\pages\accreditation.html:98
-#: .\templates\main\pages\accreditation.html:106
-#: .\templates\main\pages\accreditation.html:114
-#: .\templates\main\pages\accreditation.html:122
-#: .\templates\main\pages\accreditation.html:130
-#: .\templates\main\pages\accreditation.html:138
-#: .\templates\main\pages\accreditation.html:146
-#: .\templates\main\pages\accreditation.html:154
-#: .\templates\main\pages\accreditation.html:162
-#: .\templates\main\pages\accreditation.html:170
-#: .\templates\main\pages\accreditation.html:178
-#: .\templates\main\pages\accreditation.html:186
-#: .\templates\main\pages\accreditation.html:194
-#: .\templates\main\pages\accreditation.html:202
+#: templates/distancelearning/isudo.html:76
+#: templates/distancelearning/isudo.html:80
+#: templates/distancelearning/isudo.html:84
+#: templates/distancelearning/isudo.html:88
+#: templates/distancelearning/isudo.html:92
+#: templates/distancelearning/isudo.html:96
+#: templates/main/pages/accreditation.html:52
+#: templates/main/pages/accreditation.html:60
+#: templates/main/pages/accreditation.html:68
+#: templates/main/pages/accreditation.html:76
+#: templates/main/pages/accreditation.html:84
+#: templates/main/pages/accreditation.html:91
+#: templates/main/pages/accreditation.html:98
+#: templates/main/pages/accreditation.html:106
+#: templates/main/pages/accreditation.html:114
+#: templates/main/pages/accreditation.html:122
+#: templates/main/pages/accreditation.html:130
+#: templates/main/pages/accreditation.html:138
+#: templates/main/pages/accreditation.html:146
+#: templates/main/pages/accreditation.html:154
+#: templates/main/pages/accreditation.html:162
+#: templates/main/pages/accreditation.html:170
+#: templates/main/pages/accreditation.html:178
+#: templates/main/pages/accreditation.html:186
+#: templates/main/pages/accreditation.html:194
+#: templates/main/pages/accreditation.html:202
 msgid "Көру"
 msgstr "To see"
 
-#: .\templates\distancelearning\isudo.html:79
+#: templates/distancelearning/isudo.html:79
 msgid "Мұғалім"
 msgstr "Teacher"
 
-#: .\templates\distancelearning\isudo.html:87
+#: templates/distancelearning/isudo.html:87
 msgid "Мобильді қосымша"
 msgstr "Mobile application"
 
-#: .\templates\distancelearning\isudo.html:91
+#: templates/distancelearning/isudo.html:91
 #, fuzzy
 #| msgid "Университеттің нұсқаулықтары"
 msgid "Видео нұсқаулық"
 msgstr "University instructions"
 
-#: .\templates\distancelearning\isudo.html:95
+#: templates/distancelearning/isudo.html:95
 msgid "қосымша"
 msgstr "Additional"
 
-#: .\templates\layouts\app.html:33
+#: templates/facult/facultDetail.html:6 templates/facult/facultDetail.html:12
+#, fuzzy
+#| msgid "SILKWAY университетінің соңғы жаңалықтары"
+msgid "\"ОРДА\" университетінің факультеті"
+msgstr "The latest news from \"ORDA\" University"
+
+#: templates/facult/index.html:6 templates/facult/index.html:12
+#, fuzzy
+#| msgid "SILKWAY университетінің соңғы жаңалықтары"
+msgid "\"ОРДА\" университетінің факультеттері"
+msgstr "The latest news from \"ORDA\" University"
+
+#: templates/layouts/app.html:48
 msgid "Сіз сұрақтар қойғыңыз келе ме?"
 msgstr "Do you want to ask questions?"
 
-#: .\templates\layouts\app.html:36
+#: templates/layouts/app.html:51
 msgid "Президент блогы"
 msgstr "President's blog"
 
-#: .\templates\layouts\app.html:39
+#: templates/layouts/app.html:54
 msgid "Ректор блогы"
 msgstr "Rector's blog"
 
-#: .\templates\layouts\app.html:42
+#: templates/layouts/app.html:57
 msgid "Бітіруші түлектерге"
 msgstr "For graduates"
 
-#: .\templates\layouts\app.html:53
+#: templates/layouts/app.html:64
 msgid "Нашар көретіндер үшін"
 msgstr "For visually impaired"
 
-#: .\templates\layouts\app.html:186
+#: templates/layouts/app.html:197
 msgid "Соңғы жаңалықтарды алу үшін аты жөніңізді енгізіңіз"
 msgstr "Enter your full name to get the latest news"
 
-#: .\templates\layouts\app.html:191
+#: templates/layouts/app.html:202
 msgid "Атыңызды енгізіңіз"
 msgstr "Enter your name"
 
-#: .\templates\layouts\app.html:192
+#: templates/layouts/app.html:203
 msgid "Почтаңызды енгізіңіз"
 msgstr "Enter your mail"
 
-#: .\templates\layouts\app.html:193
+#: templates/layouts/app.html:204
 msgid "Жазылу"
 msgstr "Subscribe"
 
-#: .\templates\main\index.html:6 .\templates\main\pages\accreditation.html:5
-#: .\templates\main\pages\op.html:5 .\templates\news\newsList.html:8
-msgid "SILKWAY Халықаралық университеті"
-msgstr "SILKWAY International University"
+#: templates/main/index.html:6
+#, fuzzy
+#| msgid "SILKWAY Халықаралық университеті"
+msgid "ОРДА университеті"
+msgstr "\"ORDA\" University"
 
-#: .\templates\main\index.html:48
+#: templates/main/index.html:48
 #, fuzzy
 #| msgid "Білім беру бағдарламалары"
 msgid "Білім бағдарламалары"
 msgstr "Educational programs"
 
-#: .\templates\main\index.html:49
+#: templates/main/index.html:49
 #, fuzzy
 #| msgid "Білім беру бағдарламалары"
 msgid "Білім бағдарламаларын таңдаңыз"
 msgstr "Educational programs"
 
-#: .\templates\main\index.html:59
+#: templates/main/index.html:59
 msgid "Заманауи кітапхана"
 msgstr "Modern library"
 
-#: .\templates\main\index.html:60
+#: templates/main/index.html:60
 msgid "Ең жаңа кітаптардан қапы қалмаңыз"
 msgstr "Don't miss the newest books"
 
-#: .\templates\main\index.html:70
+#: templates/main/index.html:70
 msgid "Білікті мамандар"
 msgstr "Qualified specialists"
 
-#: .\templates\main\index.html:71
+#: templates/main/index.html:71
 #, fuzzy
 #| msgid "Білікті мамандар"
 msgid "Білікіті мамандардан білім алыңыз"
 msgstr "Qualified specialists"
 
-#: .\templates\main\index.html:91
-#, fuzzy
-#| msgid "S SILKWAY Университетін таңдаудың 5 себебі 🤩🌏 сондықтан кеттік🚀"
-msgid "SILKWAY Университетін таңдаудың 5 себебі"
-msgstr "5 reasons to choose SILKWAY University"
+#: templates/main/index.html:92
+msgid "\"ОРДА\" университетін таңдаудың 5 себебі"
+msgstr "5 reasons to choose \"ORDA\" University"
 
-#: .\templates\main\index.html:95
+#: templates/main/index.html:97
 msgid "1. Біз аккредиттелген жоғары оқу орнымыз"
 msgstr "1. We are an accredited university"
 
-#: .\templates\main\index.html:96
+#: templates/main/index.html:98
 #, fuzzy
 #| msgid "3. Бізде - білім гранттары"
 msgid "2. Бізде - білім гранттары"
 msgstr "3. We have educational grants"
 
-#: .\templates\main\index.html:97
+#: templates/main/index.html:99
 #, fuzzy
 #| msgid "4. Бай материалдық-техникалық база"
 msgid "3. Бай материалдық-техникалық база"
 msgstr "4. Rich material and technical base"
 
-#: .\templates\main\index.html:98
+#: templates/main/index.html:100
 #, fuzzy
 #| msgid "5. Біз республикамыздағы ең үздік педагогикалық университетпіз."
 msgid "4. Біз республикамыздағы ең үздік педагогикалық университетпіз"
 msgstr "5. We are the best pedagogical university in the republic."
 
-#: .\templates\main\index.html:99
+#: templates/main/index.html:101
 msgid "5. Студенттердің дамуына барлық жағдайлар жасалынған"
 msgstr "All conditions for the development of students are created"
 
-#: .\templates\main\index.html:106
+#: templates/main/index.html:108
 msgid "Академиялық шетелдік студенттер"
 msgstr "Academic foreign students"
 
-#: .\templates\main\index.html:118
-msgid "NR педагогикалық университеттеріндегі орны"
-msgstr "Place in NR pedagogical universities"
+#: templates/main/index.html:120
+#, fuzzy
+#| msgid "NR педагогикалық университеттеріндегі орны"
+msgid "4 педагогикалық университеттеріндегі орны"
+msgstr "Place in 4 pedagogical universities"
 
-#: .\templates\main\index.html:131
+#: templates/main/index.html:133
 msgid "Біздің менеджерлер кеңес береді"
 msgstr "Our managers advise"
 
-#: .\templates\main\index.html:161
+#: templates/main/index.html:163
 #, fuzzy
 #| msgid "Құндылықтар"
 msgid "Жаңалықтар"
 msgstr "Values"
 
-#: .\templates\main\index.html:181 .\templates\main\index.html:229
-#: .\templates\news\newsList.html:34
+#: templates/main/index.html:183 templates/main/index.html:235
+#: templates/news/newsList.html:34
 #, fuzzy
 #| msgid "Толығырақ"
 msgid "толығырақ"
 msgstr "Read more"
 
-#: .\templates\main\index.html:201
+#: templates/main/index.html:207
 #, fuzzy
 #| msgid "Халықаралық сарапшылар кеңесі"
 msgid "Барлық жаңалықтарды көру"
 msgstr "International Council of Experts"
 
-#: .\templates\main\index.html:209
+#: templates/main/index.html:215
 msgid "Хабарландырулар"
 msgstr "Announcements"
 
-#: .\templates\main\index.html:249
+#: templates/main/index.html:259
 msgid "Барлық Хабарландыруларды көру"
 msgstr "see all announcements"
 
-#: .\templates\main\pages\accreditation.html:16
+#: templates/main/pages/accreditation.html:5 templates/main/pages/op.html:5
+#, fuzzy
+#| msgid "Университет тарихы"
+msgid "ORDA университеті"
+msgstr "University History"
+
+#: templates/main/pages/accreditation.html:16
 #, fuzzy
 #| msgid "АККРЕДИТАЦИЯ"
 msgid "АККРЕДИТТЕУ"
 msgstr "ACCREDITATION"
 
-#: .\templates\main\pages\accreditation.html:17
+#: templates/main/pages/accreditation.html:17
 msgid "Аккредитация бізге не үшін керек?"
 msgstr "Why accreditation is needed?"
 
-#: .\templates\main\pages\accreditation.html:20
+#: templates/main/pages/accreditation.html:20
 msgid ""
 "1. Оқу орнының имиджі. Білім беру қызметтері нарығында бәсекеге қабілетті "
 "позицияларды нығайту."
@@ -476,20 +596,20 @@ msgstr ""
 "1. Image of the educational institution. Strengthening the "
 "competitiveposition in the educational services market."
 
-#: .\templates\main\pages\accreditation.html:21
+#: templates/main/pages/accreditation.html:21
 #, fuzzy
 #| msgid "Халықаралық ынтымақтастық"
 msgid "2. Халықаралық мойындау."
 msgstr "2. International cooperation"
 
-#: .\templates\main\pages\accreditation.html:22
+#: templates/main/pages/accreditation.html:22
 msgid ""
 "3. Университеттің тартымдылығын арттыру. Негізгі мүдделі тараптар сенеді."
 msgstr ""
 "3. Increasing the attractiveness of the university. Trusted by key "
 "stakeholders."
 
-#: .\templates\main\pages\accreditation.html:23
+#: templates/main/pages/accreditation.html:23
 msgid ""
 "4. Білім беру сапасын арттыру, қызметтердің халықаралық талаптарға "
 "сәйкестігіне кепілдік беру."
@@ -497,11 +617,11 @@ msgstr ""
 "4. Improving the quality of education, guaranteeing the compliance "
 "ofservices with international requirements."
 
-#: .\templates\main\pages\accreditation.html:24
+#: templates/main/pages/accreditation.html:24
 msgid "5. Енбек нарығында түлектердің бәсекеге қабілеттілігің арттыру."
 msgstr "5. Increasing the competitiveness of graduates in the labor market."
 
-#: .\templates\main\pages\accreditation.html:36
+#: templates/main/pages/accreditation.html:36
 #, fuzzy
 #| msgid ""
 #| "университеттің даму бағдарламаларын іске асыруға қаражат тартуға көмек;"
@@ -512,47 +632,58 @@ msgstr ""
 "assistance in raising funds for the implementation of university development "
 "programs;"
 
-#: .\templates\main\pages\op.html:24
+#: templates/main/pages/op.html:24
 msgid "Шифр"
 msgstr "Cipher"
 
-#: .\templates\main\pages\review.html:14
+#: templates/main/pages/review.html:14
 msgid "Жіберу"
 msgstr "Send"
 
-#: .\templates\news\newsDetail.html:52
+#: templates/news/newsDetail.html:5
+#, fuzzy
+#| msgid "SILKWAY университетінің соңғы жаңалықтары"
+msgid "ОРДА университетінің жаңалықтары"
+msgstr "The latest news from \"ORDA\" University"
+
+#: templates/news/newsDetail.html:52
 msgid "Шығарылым туралы"
 msgstr "About post"
 
-#: .\templates\news\newsDetail.html:58
+#: templates/news/newsDetail.html:58
 msgid "Лүпілдер"
 msgstr "Likes"
 
-#: .\templates\news\newsDetail.html:64
+#: templates/news/newsDetail.html:64
 msgid "Пікірлер"
 msgstr "Comments"
 
-#: .\templates\news\newsDetail.html:68
+#: templates/news/newsDetail.html:68
 msgid "Көрілімдер"
 msgstr "Views"
 
-#: .\templates\pages\enrolle.html:6 .\templates\pages\toTheStudents.html:6
-msgid "Абитуриентам"
-msgstr "For enrollees"
+#: templates/news/newsList.html:8
+#, fuzzy
+#| msgid "SILKWAY университетінің соңғы жаңалықтары"
+msgid "ORDA университетінің жаңалықтары"
+msgstr "The latest news from \"ORDA\" University"
 
-#: .\templates\pages\enrolle.html:12
-msgid "Талапкерлерге"
-msgstr "For enrollees"
+#: templates/pages/enrolle.html:6 templates/pages/enrolle.html:12
+#: templates/pages/toTheStudents.html:6
+#, fuzzy
+#| msgid "SILKWAY университетінің соңғы жаңалықтары"
+msgid "\"ОРДА\" университетінің талапкерлеріне"
+msgstr "The latest news from \"ORDA\" University"
 
-#: .\templates\pages\enrolle.html:13
+#: templates/pages/enrolle.html:13
 msgid "Бөлімдерде жоғары оқу орындарына түсушілерге арналған жаднамалар бар"
 msgstr "The departments have memos for applicants."
 
-#: .\templates\pages\enrolle.html:18
+#: templates/pages/enrolle.html:18
 msgid "Жаднама #1"
 msgstr "Memo #1"
 
-#: .\templates\pages\enrolle.html:19
+#: templates/pages/enrolle.html:19
 msgid ""
 "ұлттық бірыңғай тестілеуден өткен орта білім беру ұйымдарының ағымдағы жылғы "
 "түлектері үшін"
@@ -560,11 +691,11 @@ msgstr ""
 "for graduates of secondary education organizations of the current yearwho "
 "have passed the exam UNT"
 
-#: .\templates\pages\enrolle.html:24
+#: templates/pages/enrolle.html:24
 msgid "Жаднама #2"
 msgstr "Memo #2"
 
-#: .\templates\pages\enrolle.html:25
+#: templates/pages/enrolle.html:25
 msgid ""
 "өткен жылдардағы орта білім беру, техникалық және кәсіптік немесе орта "
 "білімнен кейінгі білім беруді бітірушілер үшін ұлттық бірыңғай тест тапсыру"
@@ -572,103 +703,14 @@ msgstr ""
 "passing the UNT for graduates of secondary, technical and vocational orpost-"
 "secondary education of previous years"
 
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:5
-msgid "Select an image to embed"
-msgstr ""
+#~ msgid "Факультеты университета Silkway"
+#~ msgstr "Faculties of Silkway University"
 
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:27
-msgid "Browse for the image you want, then click 'Embed Image' to continue..."
-msgstr ""
+#~ msgid "Абитуриентам"
+#~ msgstr "For enrollees"
 
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:29
-msgid ""
-"No images found. Upload images using the 'Image Button' dialog's 'Upload' "
-"tab."
-msgstr ""
-
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:50
-msgid "Images in: "
-msgstr ""
-
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:62
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:80
-msgid "Embed Image"
-msgstr ""
-
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:146
-msgid "Play Slideshow"
-msgstr ""
-
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:147
-msgid "Pause Slideshow"
-msgstr ""
-
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:148
-msgid "&lsaquo; Previous Photo"
-msgstr ""
-
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:149
-msgid "Next Photo &rsaquo;"
-msgstr ""
-
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:150
-msgid "Next &rsaquo;"
-msgstr ""
-
-#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:151
-msgid "&lsaquo; Prev"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:7
-msgid "Django: the Web framework for perfectionists with deadlines."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:346
-#, python-format
-msgid ""
-"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
-"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:368
-msgid "The install worked successfully! Congratulations!"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:369
-#, python-format
-msgid ""
-"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
-"%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
-"\">DEBUG=True</a> is in your settings file and you have not configured any "
-"URLs."
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:384
-msgid "Django Documentation"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:385
-msgid "Topics, references, &amp; how-to’s"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:396
-msgid "Tutorial: A Polling App"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:397
-msgid "Get started with Django"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:408
-msgid "Django Community"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:409
-msgid "Connect, get help, or contribute"
-msgstr ""
-
-#~ msgid "Университет тарихы"
-#~ msgstr "University History"
+#~ msgid "Талапкерлерге"
+#~ msgstr "For enrollees"
 
 #~ msgid "Халықаралық сарапшылар кеңесі"
 #~ msgstr "International Council of Experts"
@@ -973,14 +1015,6 @@ msgstr ""
 
 #~ msgid "Үздік білім беру бағдарламалары"
 #~ msgstr "The best educational programs"
-
-#~ msgid "SILKWAY университетінің соңғы жаңалықтары"
-#~ msgstr "The latest news from SILKWAY University"
-
-#, fuzzy
-#~| msgid "SILKWAY университетінің соңғы жаңалықтары"
-#~ msgid "SILKWAY университетінің соңғы хабарландырулары"
-#~ msgstr "The latest news from SILKWAY University"
 
 #~ msgid "Универ жайлы"
 #~ msgstr "About the university"

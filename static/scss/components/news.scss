@@ -123,10 +123,13 @@
 }
 .news__footer {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     color:$dark-blue;
     position: relative;
+}
+.news__footer__one{
+    display: flex;
 }
 .news__footer-item {
     

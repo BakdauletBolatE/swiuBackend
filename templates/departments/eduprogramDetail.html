@@ -3,7 +3,7 @@
 {% load i18n %} 
 {% load static i18n %}
 {% block title %}
-{{eduProgram.name}}
+{{eduProgram.name}} {% trans '"ОРДА" университеті' %}
 {% endblock %}
 {% block content %}
 <section class="course">
@@ -12,7 +12,7 @@
             <div class="course-sidebar">
                 <div class="main-sidebar">
                     <h3 class="main-sidebar__title">
-                        {% trans 'Білім беру бағдарламасы туралы ақпарат' %}
+                        {% trans 'Білім беру бағдарламасы туралы ақпарат' %} {% trans '"ОРДА" университеті' %}
                     </h3>
                     <div class="main-sidebar__list">
                         <div class="main-sidebar__item">

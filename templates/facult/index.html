@@ -3,12 +3,15 @@
 {% load i18n %} 
 {% load static i18n %}
 {% block title %}
-{% trans 'Факультеты университета ORDA' %}
+{% trans '"ОРДА" университетінің факультеттері' %}
 {% endblock %}
 {% block content %}
 <div style="margin-top: 0; padding-top: 3rem;" class="facult">
     <div class="container">
-        <div class="facult__row mb-10">
+        <h1 class="titlecke mb-10">
+           {% trans '"ОРДА" университетінің факультеттері' %}
+        </h1>
+        <div class="facult__row">
             {% for facult in facults %}
             <div class="facult__item">
                 <img src="{{ facult.photo.url }}" alt="">
