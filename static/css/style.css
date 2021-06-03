@@ -1052,13 +1052,7 @@
   background: url("../img/3.jpg") no-repeat;
   background-size: cover;
   position: relative;
-  height: 55rem;
   background-position: center;
-}
-@media screen and (max-width: 700px) {
-  .testimonial-area {
-    height: 80rem;
-  }
 }
 .testimonial-area::after {
   content: "";
