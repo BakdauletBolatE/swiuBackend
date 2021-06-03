@@ -17,7 +17,7 @@ SECRET_KEY = '+v6-04zu!l#h&+p4f(u^un@(+^u0oa$ew2nfs4w5_m=rb=41$d'
 if DEBUG:
     ALLOWED_HOSTS = ['*']
 else:
-    ALLOWED_HOSTS = ['192.168.32.76', 'localhost', 'swiu.online','80.241.36.163']
+    ALLOWED_HOSTS = ['192.168.32.76', 'localhost', 'swiu.online','80.241.36.163','orda-university.kz']
 
 INSTALLED_APPS = [
     'modeltranslation',
