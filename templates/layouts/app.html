@@ -175,6 +175,23 @@
                         <div class="logo">
                             <a href="{% url 'index' %} "></a><img src="{% static 'img/orda-logo-light.png' %}" alt="">
                         </div>
+                        <div class="language">
+                                <form action="{% url 'set_language' %}" method="POST" >
+                                    {% csrf_token %}
+                                    <input name="next" type="hidden" value="{{ redirect_to }}">
+                                    <select onchange="this.form.submit()"  name="language" id="">
+                                        {% get_current_language as LANGUAGE_CODE %}
+                                        {% get_available_languages as LANGUAGES %}
+                                        {% get_language_info_list for LANGUAGES as languages %}
+                                        {% for language in languages %}
+
+                                        <option  value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %}selected{% endif %}>
+                                            {{ language.name_local}}({{language.code}})
+                                        </option>
+                                        {% endfor %}
+                                    </select>
+                                </form>
+                            </div>
                         <div class="burger">
                             <i class="bur-c fas fa-bars"></i>
                         </div>
