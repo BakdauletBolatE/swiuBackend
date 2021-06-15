@@ -14,7 +14,7 @@ def index(request):
     quotes = Quote.objects.all()[:3]
     posts = Post.objects.filter(category_id=1).order_by('-created_at').all()[:3]
     ads = Post.objects.filter(category_id=2).order_by('-created_at').all()[:3]
-    slides = Slides.objects.all()
+    slides = Slides.objects.all().order_by('-id')
     context = {
         'quotes':quotes,
         'posts':posts,
