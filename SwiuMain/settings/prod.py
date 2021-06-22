@@ -28,7 +28,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'adminsortable2',
-    'django_image_compressor',
     'faculties',
     'departments',
     'staff',
