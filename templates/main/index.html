@@ -12,7 +12,13 @@
       <!-- Slides -->
       {% for slide in slides %}
       <div class="swiper-slide bg">
+            {% if slide.video_url %}
+            <video style="width:100%; height: 100%; object-fit: cover;" autoplay muted loop>
+                <source src="{% static slide.video_url %}">
+            </video>
+            {% else %}
             <img class="swiper-slide__img" src="{{slide.img.url}}" alt="">
+            {% endif %}
             <div class="swiper-slide__text">
                 <div class="container">
                     <h3> {{slide.subTitle}}</h3>
@@ -20,7 +26,7 @@
                     <div class="mt-3">
                         <a class="btn" href="{{slide.link1}}">{{slide.btn}}</a>
                         <a class="btn btn--dark-blue" href="{{slide.link2}}">{{slide.btn2}}</a>
-                    </div>     
+                    </div>
                 </div>
             </div>
       </div>

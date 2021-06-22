@@ -121,6 +121,7 @@ class Slides(models.Model):
 
     subTitle = models.CharField(max_length=255,verbose_name="Субтитл")
     title = models.CharField(max_length=255,verbose_name="Загаловка")
+    video_url = models.CharField(max_length=255, blank=True, null=True)
     btn = models.CharField(max_length=255,verbose_name="Названия первой кнопки")
     btn2 = models.CharField(max_length=255,verbose_name="Названия второй кнопки")
     link1 = models.CharField(max_length=255,verbose_name="первая ссылка")
