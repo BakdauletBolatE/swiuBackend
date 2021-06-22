@@ -11,10 +11,10 @@
     <section class="news-area">
         <div class="container">
             <div class="news-area__title">
-                <!-- <h2>{{posts}}</h2> -->
+                 <h2>{{category.name}}</h2>
             </div>
             <div class="news">
-                {% for post in posts %}
+                {% for post in page_obj %}
                 <div class="news__item">
                     <span class="news__date">{{ post.created_at|date:"d M Y" }}</span>
                     {% if post.post_img.first %}
@@ -29,9 +29,6 @@
                     <div class="news__content">
                         <div class="news__header">
                             <h3><a class="news__title" href="{% url 'postDetailView' post.slug %}">{{ post.title}}</a></h3>
-                        </div>
-                        <div class="news__body">
-                            <div class="news__desc">{% autoescape off %}{{post.description}}{% endautoescape %} </div> <a href="{% url 'postDetailView' post.slug %}">{% trans 'толығырақ' %}</a>
                         </div>
                         <div class="news__footer">
                             <div class="news__footer-item">
@@ -49,6 +46,30 @@
                 {% endfor %}
             </div>
         </div>
+
+
+<section class="pagination mt-4">
+	<nav class="paged">
+        {% if page_obj.has_previous %}
+        <a href="?page=1" class="previous">Первый</a>
+        <a href="?page={{ page_obj.previous_page_number }}" class="previous">&laquo; Назад</a>
+        {% endif %}
+		<div class="pages">
+            <span class="current">
+                 {{ page_obj.number }}
+            </span>
+            <span>
+                {{ page_obj.paginator.num_pages }}
+            </span>
+        </div>
+        {% if page_obj.has_next %}
+		<a href="?page={{ page_obj.next_page_number }}" class="next">Вперед &raquo;</a>
+        <a href="?page={{ page_obj.paginator.num_pages }}" class="next">Последний</a>
+         {% endif %}
+        </nav>
+
+</section>
+
     </section>
 
 {% endblock %}

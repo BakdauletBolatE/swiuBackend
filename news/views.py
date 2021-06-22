@@ -4,6 +4,7 @@ from .models import *
 from django.http import JsonResponse
 from news.decoretors import counted
 from faculties.models import PageCategory
+from django.core.paginator import Paginator
 import json
 from django.contrib import messages
 
@@ -65,14 +66,15 @@ def likePost(request):
     
 
 def postListView(request,pk):
-
+    category = PostCategories.objects.get(id=pk)
     post = Post.objects.filter(category_id=pk).order_by('-created_at')
-    pageCats = PageCategory.objects.all()
-    internatiolization = PageCategory.objects.get(id=3)
+    paginator = Paginator(post, 9)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
     context = {
-        'posts':post,
-        'pageCats': pageCats,
-        'internatiolization':internatiolization
+        'category':category,
+        'page_obj': page_obj,
     }
 
     return render(request,'news/newsList.html',context)

@@ -6,9 +6,19 @@ $green:rgb(17, 182, 122);
 $red-c:#144ca3;
 $red-inv:linear-gradient(90deg,rgb(150, 0, 24) 0%,   rgb(136, 15, 35));
 
+$red:#a80537;
+$red-inv: #82052a;
 
-$red: linear-gradient(90deg, rgba(250,112,66,1) 0%, rgba(148,34,0,1) 100%);
-$red-inv:linear-gradient(90deg, rgba(148,34,0,1) 0%, rgba(250,112,66,1) 100%);
+$red-old: linear-gradient(90deg, rgba(250,112,66,1) 0%, rgba(148,34,0,1) 100%);
+$red-inv-old:linear-gradient(90deg, rgba(148,34,0,1) 0%, rgba(250,112,66,1) 100%);
 
-$blue:linear-gradient(90deg, #12408b 0%, rgb(8, 36, 80) 100%);
-$blue-inv:linear-gradient(90deg,rgb(10, 37, 82) 0%, #12408b  100%);
+$blue:#13408b;
+$blue-inv: #13356d;
+$blue-inv-old:linear-gradient(90deg,rgb(10, 37, 82) 0%, #12408b  100%);
+
+
+$blue-old:linear-gradient(90deg, #12408b 0%, rgb(8, 36, 80) 100%);
+
+.red{
+  color:$red;
+}

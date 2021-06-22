@@ -2,6 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap");
+.red {
+  color: #a80537;
+}
+
 .top-bar {
   background: #12408b;
   color: white;
@@ -423,7 +427,7 @@
 }
 
 .course-tab-btn--active {
-  background: linear-gradient(90deg, #fa7042 0%, #942200 100%);
+  background: #a80537;
   color: white;
 }
 
@@ -592,7 +596,7 @@
   }
 }
 .swiper-button-prev:hover {
-  background: linear-gradient(90deg, #fa7042 0%, #942200 100%);
+  background: #a80537;
 }
 
 .swiper-button-next {
@@ -609,7 +613,7 @@
   }
 }
 .swiper-button-next:hover {
-  background: linear-gradient(90deg, #fa7042 0%, #942200 100%);
+  background: #a80537;
 }
 
 .activity-department__row {
@@ -679,21 +683,21 @@
 .btn {
   text-decoration: none;
   border: none;
-  background: linear-gradient(90deg, #fa7042 0%, #942200 100%);
+  background: #a80537;
   padding: 1.1rem;
   border-radius: 0.5rem;
   color: white;
   font-size: 1.4rem;
 }
 .btn:hover {
-  background: linear-gradient(90deg, #942200 0%, #fa7042 100%);
+  background: #82052a;
 }
 
 .btn--dark-blue {
-  background: linear-gradient(90deg, #12408b 0%, #082450 100%);
+  background: #13408b;
 }
 .btn--dark-blue:hover {
-  background: linear-gradient(90deg, #0a2552 0%, #12408b 100%);
+  background: #13356d;
 }
 
 .btn-block {
@@ -981,6 +985,7 @@
   right: -4rem;
   z-index: 2;
   width: 20rem;
+  text-decoration: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1049,7 +1054,7 @@
 }
 
 .testimonial-area {
-  background: url("../img/3.jpg") no-repeat;
+  background: url("../img/3.webp") no-repeat;
   background-size: cover;
   position: relative;
   background-position: center;
@@ -1195,7 +1200,7 @@
 }
 
 .newsletter__row {
-  background: linear-gradient(90deg, #fa7042 0%, #942200 100%);
+  background: #a80537;
   border-radius: 5px;
   padding: 3.7rem 4rem 4rem;
   width: 100%;
@@ -1274,11 +1279,11 @@
   width: 100%;
 }
 .about-us-page__litem:hover {
-  background: linear-gradient(90deg, #fa7042 0%, #942200 100%);
+  background: #a80537;
   color: white;
 }
 .about-us-page__litem--active {
-  background: linear-gradient(90deg, #fa7042 0%, #942200 100%);
+  background: #a80537;
   color: white;
 }
 
@@ -1614,13 +1619,13 @@
   line-height: 2rem;
   font-weight: 500;
   margin-right: 1rem;
-  background: linear-gradient(90deg, #12408b 0%, #082450 100%);
+  background: #13408b;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   box-shadow: 0px 1rem 2rem rgba(0, 0, 0, 0.2);
 }
 .news__date:hover {
-  background: linear-gradient(90deg, #0a2552 0%, #12408b 100%);
+  background: #13356d;
 }
 
 .news__title {
@@ -2736,6 +2741,60 @@ span.zoom {
     text-align: center;
   }
 }
+.pagination nav {
+  padding: 0;
+  text-align: center;
+  clear: both;
+  display: block;
+}
+.pagination nav a, .pagination nav span {
+  text-decoration: none;
+  padding: 0.25em;
+  line-height: 2em;
+  display: inline-block;
+  font-weight: bold;
+  color: #13408b;
+}
+@media all and (max-width: 580px) {
+  .pagination nav a, .pagination nav span {
+    margin: 0.25em;
+  }
+}
+.pagination nav a:hover {
+  color: #010204;
+}
+.pagination nav .previous {
+  text-align: right;
+}
+.pagination nav .next {
+  text-align: left;
+}
+.pagination nav .pages {
+  display: inline-block;
+}
+.pagination nav .pages a, .pagination nav .pages span {
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  border: 3px solid #ec511d;
+  line-height: 1;
+}
+.pagination nav .pages .current {
+  background-color: #ec511d;
+  color: white;
+  font-weight: bold;
+  border-color: transparent;
+}
+.pagination nav .pages a:hover {
+  border-color: transparent;
+  background-color: #ec511d;
+}
+@media all and (max-width: 580px) {
+  .pagination nav {
+    font-size: 1.25em;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
