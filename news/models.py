@@ -1,8 +1,7 @@
 from django.db import models
 from django.conf import settings
 from django.utils import timezone
-# Create your models here.
-
+from .vendor import compress
 
 class PostCategories(models.Model):
 
@@ -43,8 +42,17 @@ class PostImages(models.Model):
     img = models.ImageField('Изображения',upload_to='Posts/Images')
     post = models.ForeignKey(Post,related_name="post_img", on_delete=models.CASCADE,default=0)
 
+
     def __str__(self):
         return self.post.title
+
+    def save(self, *args, **kwargs):
+        # call the compress function
+        new_image = compress(self.img)
+        # set self.image to new_image
+        self.img = new_image
+        # save
+        super().save(*args, **kwargs)
 
     class Meta:
         verbose_name = 'Фотография поста'

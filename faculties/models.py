@@ -29,7 +29,9 @@ class PageCategory(models.Model):
 
     def get_absolute_url(self): # Тут мы создали новый метод
         return reverse('pageListView', args=[str(self.id)])
+
     class Meta:
+        ordering = ['order']
         verbose_name = "Категория Страницы"
         verbose_name_plural = "Категорий Страницы"
 
@@ -47,11 +49,14 @@ class Page(models.Model):
 
     def __str__(self):
         return self.title
+
+
     
 
     def get_absolute_url(self): # Тут мы создали новый метод
         return reverse('pageDetailView', args=[str(self.id)])
     class Meta:
+        ordering = ['order']
         verbose_name = "Страница"
         verbose_name_plural = "Страницы"
 
