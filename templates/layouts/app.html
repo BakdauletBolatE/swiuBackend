@@ -16,27 +16,11 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <meta name="google-site-verification" content="Gvea7wooVUWDcrPNDjiGmazivgtQ7PAqS0vXikKtnXQ" />
     <link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/galety.css' %}">
 </head>
 <body>
-<meta name="google-site-verification" content="Gvea7wooVUWDcrPNDjiGmazivgtQ7PAqS0vXikKtnXQ" />
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
-   ym(77103193, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
-   });
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/77103193" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
     <div class="page">
 
         <header class="header">
@@ -111,7 +95,7 @@
                 <div class="container">
                     <div class="menu__row">
                         <div class="logo-area__img">
-                            <a href="{% url 'index' %} "><img src="{% static 'img/orda-logo.png' %}" alt=""></a>
+                            <a href="{% url 'index' %} "><img src="{% static 'img/orda-logo-min.png' %}" alt=""></a>
                         </div>
                         <ul class="menu__list">
                             {% for cat in pageCats|order_by:'order' %}
@@ -273,7 +257,6 @@
 <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-    <script src="{% static './fontawesome/js/all.min.js' %}"></script>
     <script src="{% static 'js/tab.js' %}"></script>
     
     <script src="{% static 'js/like.js' %}"></script>
