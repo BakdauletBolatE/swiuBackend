@@ -1,12 +1,12 @@
 from pathlib import Path
 import os
 
-try:
-    from .local import *
-    DEBUG = True
-except ImportError as e:
-    DEBUG = True
-
+# try:
+#     from .local import *
+#     DEBUG = True
+# except ImportError as e:
+#     DEBUG = True
+DEBUG = True
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
