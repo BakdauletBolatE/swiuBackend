@@ -356,30 +356,9 @@ document.addEventListener('scroll', function() {
   }
 });
 
-let cut = document.querySelectorAll('.news__desc');
-
-function cutted() {
-  for( let i = 0; i < cut.length; i++ ){
-      cut[i].innerText = cut[i].innerText.slice(0,150) + ' ...';
-  };
-}
-
-if (cut){ 
-  cutted();
-}
 
 
-let cut50 = document.querySelectorAll('.cutted50');
 
-function cutted50() {
-  for( let i = 0; i < cut50.length; i++ ){
-    cut50[i].innerText = cut50[i].innerText.slice(0,50) + ' ...';
-  };
-}
-
-if (cut50){ 
-  cutted50();
-}
 
 
 const registrationBtn = document.getElementById('registration');

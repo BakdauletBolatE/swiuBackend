@@ -14,6 +14,7 @@ class PostCategories(models.Model):
 class Post(models.Model):
     title = models.CharField('Заголовок поста',max_length=255)
     slug = models.SlugField(unique=True)
+    short_description = models.TextField('Краткое', null=True, blank=True)
     description = models.TextField('Контентная часть', null=True, blank=True)
     category = models.ForeignKey(PostCategories,on_delete=models.CASCADE)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,default=0)

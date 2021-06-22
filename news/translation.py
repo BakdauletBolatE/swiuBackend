@@ -10,7 +10,7 @@ class FacultTranslationOptions(TranslationOptions):
 @register(Post)
 class FacultTranslationOptions(TranslationOptions):
 
-    fields = ('title','description')
+    fields = ('title', 'description', 'short_description')
 
 
 @register(Slides)

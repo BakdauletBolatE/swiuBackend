@@ -1,6 +1,6 @@
 "use strict";
 const lCode = document.getElementById('lCode'),
-    urlSite = `http://swiu.online/${lCode.value}`,
+    urlSite = `https://orda.edu.kz/${lCode.value}`,
     acc = document.querySelectorAll('.accordion__title');
 
 acc.forEach(event=>{

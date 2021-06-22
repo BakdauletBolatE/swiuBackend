@@ -1585,17 +1585,18 @@
 
 .news__content {
   width: 100%;
+  height: 16rem;
   padding: 1.8rem;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: auto;
   z-index: 1;
 }
 @media screen and (max-width: 700px) {
   .news__content {
     flex-basis: 100%;
+    height: auto;
   }
 }
 
@@ -1628,6 +1629,18 @@
   display: block;
   text-decoration: none;
   padding-top: 0.5rem;
+}
+@media screen and (max-width: 700px) {
+  .news__title {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.silver-color {
+  background: #a7a7a7 !important;
+}
+.silver-color:hover {
+  background: #929292 !important;
 }
 
 .news__desc {

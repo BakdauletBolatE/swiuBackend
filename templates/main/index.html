@@ -179,14 +179,12 @@
                     <div class="news__header">
                         <h3><a class="news__title" href="{% url 'postDetailView' post.slug %}">{{ post.title}}</a></h3>
                     </div>
-                    <div class="news__body">
-                        <div class="news__desc">{% autoescape off %}{{post.description}}{% endautoescape %} </div> <a href="{% url 'postDetailView' post.slug %}">{% trans 'толығырақ' %}</a>
-                    </div>
+
                     <div class="news__footer">
                         <div class="news__footer__one">
                             <div class="news__footer-item">
                             <i class="far fa-user"></i>
-                            <span>{{post.author}}</span>
+                            <span>Orda.edu</span>
                         </div>
                         <div class="news__footer-item ">
                                 <input type="hidden" value="{{post.slug}}">
@@ -195,7 +193,7 @@
                         </div>
                         </div>
 
-                        <a class="btn about-us__btn justify-content-right" href="{% url 'postDetailView' post.slug %}">{% trans 'Толығырақ' %}</a>
+
                     </div>
                 </div>
             </div>
@@ -204,7 +202,7 @@
            
         </div>
         <div class="btn-group mt-2">
-            <a class="btn btn-block" href="{% url 'postListView' 1 %}"> <span><i class="fas fa-arrow-circle-left"></i></span> {% trans 'Барлық жаңалықтарды көру' %}</a>
+            <a class="btn btn-block silver-color" href="{% url 'postListView' 1 %}"> <span><i class="fas fa-arrow-circle-left"></i></span> {% trans 'Барлық жаңалықтарды көру' %}</a>
         </div>
         
     </div>
@@ -231,14 +229,12 @@
                     <div class="news__header">
                         <h3><a class="news__title" href="{% url 'postDetailView' post.slug %}">{{ post.title}}</a></h3>
                     </div>
-                    <div class="news__body">
-                        <div class="news__desc">{% autoescape off %}{{post.description}}{% endautoescape %} <a href="{% url 'postDetailView' post.slug %}">{% trans 'толығырақ' %}</a></div>
-                    </div>
+
                     <div class="news__footer">
                         <div class="news__footer__one">
                             <div class="news__footer-item">
                             <i class="far fa-user"></i>
-                            <span>{{post.author}}</span>
+                            <span>Orda.edu</span>
                         </div>
                         <div class="news__footer-item ">
                                 <input type="hidden" value="{{post.slug}}">
@@ -246,8 +242,6 @@
                             <span class="none-click">{{ post.likes.count }}</span>
                         </div>
                         </div>
-
-                        <a class="btn about-us__btn justify-content-right" href="{% url 'postDetailView' post.slug %}">{% trans 'Толығырақ' %}</a>
                     </div>
                 </div>
             </div>
@@ -256,7 +250,7 @@
 
         </div>
         <div class="btn-group mt-2">
-            <a class="btn btn-block" href="{% url 'postListView' 1 %}"> <span><i class="fas fa-arrow-circle-left"></i></span> {% trans 'Барлық Хабарландыруларды көру' %}</a>
+            <a class="btn btn-block silver-color" href="{% url 'postListView' 1 %}"> <span><i class="fas fa-arrow-circle-left"></i></span> {% trans 'Барлық Хабарландыруларды көру' %}</a>
         </div>
     </div>
 </section>
