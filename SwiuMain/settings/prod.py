@@ -5,7 +5,7 @@ try:
     from .local import *
     DEBUG = True
 except ImportError as e:
-    DEBUG = True
+    DEBUG = Trusse
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
