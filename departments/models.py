@@ -3,9 +3,6 @@ from faculties.models import Facult,Page
 from django.urls import reverse
 
 
-
-# Create your models here.
-
 class Department(models.Model):
     name = models.CharField('Название кафедры',max_length=255)
     slug = models.SlugField('Url факультета',unique=True)

@@ -30,7 +30,6 @@ urlpatterns = [
 
 
 
-
 urlpatterns += i18n_patterns(
     path('',index,name="index"),
     path('about-university/',aboutUs,name="aboutU"),
