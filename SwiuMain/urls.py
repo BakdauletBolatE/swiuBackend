@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
+from django.http import HttpResponse
 from django.conf.urls.static import static
 from .views import index,aboutUs,pageView,opView,accreditation,enrolleView,toTheStudentsView
 
@@ -43,6 +44,7 @@ urlpatterns += i18n_patterns(
     path('creative/',include('news.urls')),
     path('<slug:url>/',pageView,name="pageView"),
     path('library/',include('library.urls')),
+    path(r'^mailru-domainXdass4HzgPGJaVSv\.html$', lambda r: HttpResponse("User-agent: *\nDisallow:", mimetype="text/plain"))
 )
 
 if settings.DEBUG:
