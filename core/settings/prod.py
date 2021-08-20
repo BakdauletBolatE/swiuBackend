@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'news',
     'library',
     'ckeditor',
+    'changeuniver',
 ]
 
 MIDDLEWARE = [
