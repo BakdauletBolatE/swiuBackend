@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'staff',
     'news',
     'library',
+    'changeuniver',
 ]
 
 INSTALLED_APPS += ('django_summernote', )
