@@ -2,6 +2,7 @@ from django.db import models
 from docxtpl import DocxTemplate
 from django.conf import settings
 import datetime
+from departments.models import EducationalPrograms
 
 
 class Shifr(models.Model):
@@ -29,7 +30,7 @@ class Zayavka(models.Model):
     surname = models.CharField('Фамилия', max_length=255)
     name = models.CharField('Имя', max_length=255)
     last_name = models.CharField('Отчество', max_length=255)
-    shifr_name = models.ForeignKey(Shifr, on_delete=models.CASCADE, verbose_name='Мамандық шифры, атауы')
+    shifr_name = models.ForeignKey(EducationalPrograms, on_delete=models.CASCADE, verbose_name='Мамандық шифры, атауы')
     course = models.SmallIntegerField('Курс',max_length=4, default=1)
     top = models.CharField('Топ', max_length=12)
     phone = models.CharField('Тел номері', max_length=11)
