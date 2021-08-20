@@ -10,12 +10,12 @@ def main(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Файлы были успешно загружены')
-            return redirect('/')
+            return redirect('/changeuniver/')
         else:
             print('eror')
             print(form.errors)
             messages.error(request, 'Форма неверно заполнена ')
-            return redirect('/')    
+            return redirect('/changeuniver/')    
 
     context = {
         'form': ZayavkaApp()
