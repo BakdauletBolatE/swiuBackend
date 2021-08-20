@@ -16,7 +16,7 @@ class ZayavkaApp(forms.ModelForm):
     shifr_name = forms.ModelChoiceField(queryset=EducationalPrograms.objects.all(), to_field_name="id",widget=forms.Select(attrs={'class': 'form-select'}) )
     language = forms.ChoiceField(choices=lang, widget=forms.Select(attrs={'class': 'form-select'}))
     rejim = forms.ChoiceField(choices=rejim, widget=forms.Select(attrs={'class': 'form-select'}))
-    created_at = forms.DateField(input_formats=settings.DATE_INPUT_FORMATS)
+    
     class Meta:
         model = Zayavka
         fields = ['surname','name','last_name', 'shifr_name', 'course', 'top', 'phone', 'rejim', 'language',]
