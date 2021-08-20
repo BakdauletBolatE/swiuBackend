@@ -14,7 +14,7 @@ def main(request):
         else:
             print('eror')
             print(form.errors)
-            messages.error(request, 'Форма неверно заполнена ')
+            messages.error(request, f'{form.errors}Форма неверно заполнена ')
             return redirect('/changeuniver/')    
 
     context = {
